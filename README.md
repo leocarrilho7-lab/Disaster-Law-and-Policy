@@ -1,5 +1,4 @@
-Disaster Law and Policy
-Course wiki for Disaster Law and Policy: International and Comparative Perspectives, a 30 hour elective taught in English at FGV Direito Rio. Instead of a linear reading list, the course materials are published as a small graph: each work, author, concept, legal instrument and case is a page, and the links between pages are typed relations, so a case you reach from one session also shows you the other sessions that cite it.
+Wiki for Disaster Law and Policy: International and Comparative Perspectives, a 30 hour elective taught in English at FGV Direito Rio. Instead of a linear reading list, the course materials are published as a small graph: each work, author, concept, legal instrument and case is a page, and the links between pages are typed relations, so a case you reach from one session also shows you the other sessions that cite it.
 
 Read it at https://leocarrilho7-lab.github.io/Disaster-Law-and-Policy/.
 
