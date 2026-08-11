@@ -29,6 +29,14 @@ p{margin:0 0 16px;}
 a{color:var(--link);text-decoration:none;}
 a:hover{text-decoration:underline;}
 .meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.futura{color:var(--muted);}
+.controles{position:fixed;top:0.8rem;right:1.2rem;display:flex;gap:0.5rem;z-index:10;}
+.controles button{font-size:0.95rem;min-height:44px;padding:0.55rem 1.1rem;
+background:#3366cc;color:#ffffff;border:1px solid #26489a;border-radius:4px;
+font-weight:600;cursor:pointer;}
+.controles button:hover{background:#26489a;}
+.controles button:focus-visible{outline:3px solid #ffffff;outline-offset:2px;}
+:root[data-theme="dark"] .controles button{background:#4a7fe0;border-color:#3366cc;}
 .badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
 a.badge{text-decoration:none;}
 .broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
@@ -71,9 +79,9 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <button class="theme-toggle" onclick="toggleWikiTheme()">Light/Dark</button>
 <button id="lang-toggle" class="theme-toggle" style="right:8.5rem" onclick="toggleLang()">EN / PT</button>
 <div class="layout">
-<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto">Estrutura do texto</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-em-tres-niveis">Conceitos em três níveis</a></li><li><a href="#sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</a></li><li><a href="#sec-checagem-factual-duas-datas-erradas-na-mesma-frase">Checagem factual: duas datas erradas na mesma frase</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita">Contexto de escrita</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao-e-legado">Recepção e legado</a></li><li><a href="#sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</a></li><li><a href="#sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</a></li><li><a href="#sec-pressupostos-desta-leitura">Pressupostos desta leitura</a></li><li><a href="#sec-rubrica-final">Rubrica final</a></li><li><a href="#sec-aparato-de-citacao-adr-0009">Aparato de citação (ADR-0009)</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong>Disaster Law and Policy, wiki</strong></a>
-<a href="../graph.html">View the concept graph</a>
-<a href="../tags.html">Index by tag</a>
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto">Estrutura do texto</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-em-tres-niveis">Conceitos em três níveis</a></li><li><a href="#sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</a></li><li><a href="#sec-checagem-factual-duas-datas-erradas-na-mesma-frase">Checagem factual: duas datas erradas na mesma frase</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita">Contexto de escrita</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao-e-legado">Recepção e legado</a></li><li><a href="#sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</a></li><li><a href="#sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</a></li><li><a href="#sec-rubrica-final">Rubrica final</a></li><li><a href="#sec-aparato-de-citacao">Aparato de citação</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
+<a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
 <div id="busca-resultados" class="busca-resultados" hidden></div>
 <div class="area">session</div>
@@ -104,10 +112,11 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
 <a href="verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
 <a href="lauta-2014.html">Disaster Law</a>
-<a href="farber-faure-2010.html">Disaster Law (coletanea)</a>
-<a href="farber-2010.html">Disaster Law and Policy, 2a ed.</a>
-<a href="lauta-faure-2016.html">Disaster Risk Management (capítulo)</a>
+<a href="farber-faure-2010.html">Disaster Law (edited collection)</a>
+<a href="farber-2010.html">Disaster Law and Policy, 2nd ed.</a>
+<a href="lauta-faure-2016.html">Disaster Risk Management (chapter)</a>
 <a href="lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="ejrr-laquila-2014.html">EJRR symposium on the L&#x27;Aquila Seven</a>
 <a href="verchick-2010.html">Facing Catastrophe</a>
 <a href="alemanno-2011.html">Governing Disasters</a>
 <a href="antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
@@ -115,43 +124,42 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
 <a href="faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
 <a href="beck-1992.html">Risk Society: Towards a New Modernity</a>
-<a href="ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a>
 <a href="binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
 <a href="kuhn-1970.html">The Structure of Scientific Revolutions</a>
-<a href="perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a>
-<a href="perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a>
+<a href="perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
+<a href="perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a>
 <div class="area">legislation</div>
-<a href="../legislacao/acordo-de-paris-2015.html">Acordo de Paris sobre mudança do clima</a>
-<a href="../legislacao/agenda-2030.html">Agenda 2030 para o Desenvolvimento Sustentável</a>
-<a href="../legislacao/adis-abeba-2015.html">Agenda de Ação de Adis Abeba</a>
-<a href="../legislacao/habitat-iii-2016.html">Habitat III, Nova Agenda Urbana</a>
-<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Gestão de riscos, princípios e diretrizes</a>
-<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Vocabulário de gestão de risco</a>
-<a href="../legislacao/marco-de-sendai-2015.html">Marco de Sendai para a Redução do Risco de Desastres 2015-2030</a>
-<a href="../legislacao/protocolo-de-montreal-1987.html">Protocolo de Montreal sobre substâncias que destroem a camada de ozônio</a>
+<a href="../legislacao/agenda-2030.html">2030 Agenda for Sustainable Development</a>
+<a href="../legislacao/adis-abeba-2015.html">Addis Ababa Action Agenda</a>
+<a href="../legislacao/habitat-iii-2016.html">Habitat III, New Urban Agenda</a>
+<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Risk management, principles and guidelines</a>
+<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Risk management vocabulary</a>
+<a href="../legislacao/protocolo-de-montreal-1987.html">Montreal Protocol on Substances that Deplete the Ozone Layer</a>
+<a href="../legislacao/acordo-de-paris-2015.html">Paris Agreement on climate change</a>
+<a href="../legislacao/marco-de-sendai-2015.html">Sendai Framework for Disaster Risk Reduction 2015-2030</a>
 <div class="area">case</div>
-<a href="../julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a>
-<a href="../julgados/laquila-cassacao-2016.html">Caso L&#x27;Aquila, os sete cientistas</a>
-<a href="../julgados/mariana-jf-2024.html">Mariana, absolvição criminal na Justiça Federal</a>
-<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana, homologação do acordo de repactuação</a>
-<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana e outros v. BHP Group</a>
-<a href="../julgados/neubauer-2021.html">Neubauer e outros v. Alemanha</a>
-<a href="../julgados/itlos-parecer-2024.html">Parecer consultivo sobre mudança climática e direito do mar</a>
-<a href="../julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a>
-<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. Estado dos Países Baixos</a>
-<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz e outros v. Suíça</a>
+<a href="../julgados/itlos-parecer-2024.html">Advisory opinion on climate change and the law of the sea</a>
+<a href="../julgados/cij-parecer-clima-2025.html">Advisory opinion on the obligations of States in respect of climate change</a>
+<a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a>
+<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a>
+<a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a>
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a>
+<a href="../julgados/neubauer-2021.html">Neubauer and Others v. Germany</a>
+<a href="../julgados/laquila-cassacao-2016.html">The L&#x27;Aquila case: the seven scientists</a>
+<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. State of the Netherlands</a>
+<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
 <div class="area">concept</div>
-<a href="../conceitos/capacidade-institucional.html">#capacidade-institucional (nota de referência)</a>
-<a href="../conceitos/normal-accidents.html">Acidente normal (propriedade estrutural do sistema)</a>
-<a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a>
-<a href="../conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>
-<a href="../conceitos/dysfunction.html">Disfunção de processo social</a>
-<a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a>
-<a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a>
-<a href="../conceitos/s02-montagem-da-sessao.html">Montagem da sessão S02, 2026.2 (nota de projeto)</a>
-<a href="../conceitos/quarantelli-criterios-brasil.html">Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)</a>
-<a href="../conceitos/porcao-juridica.html">Porção jurídica (legal bite-sizes)</a>
-<a href="../conceitos/risk-society.html">Sociedade de risco</a></nav>
+<a href="../conceitos/s02-montagem-da-sessao.html">Assembling session S02, 2026.2 (project note)</a>
+<a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a>
+<a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a>
+<a href="../conceitos/quarantelli-criterios-brasil.html">Do Quarantelli&#x27;s six criteria hold in the Brazilian arrangement? (fleeting note)</a>
+<a href="../conceitos/dysfunction.html">Dysfunction of a social process</a>
+<a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a>
+<a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a>
+<a href="../conceitos/legal-exceptionalism.html">Legal exceptionalism</a>
+<a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a>
+<a href="../conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a>
+<a href="../conceitos/risk-society.html">Risk society</a></nav>
 <main>
 <h1>Catastrophes Are Different from Disasters</h1>
 <div class="meta">type: text<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#catastrophe">catastrophe</a> <a class="badge" href="../tags.html#disaster-law">disaster-law</a></div>
@@ -165,10 +173,6 @@ pela apostila <span class="selo selo-fato" title="fato conferido na fonte: confe
 sem paginação impressa própria; a apostila cita este texto por critério, não por página
 ("QUARANTELLI, 2005, criteria 1 to 6"). As páginas indicadas abaixo são do PDF espelhado
 (proveniência da wiki), não da paginação original da publicação.</p>
-<p><strong>Tipo de revisão.</strong> Conceitual, com elementos da revisão da tese, idêntico ao adotado em
-<a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, por decisão do pesquisador em 10/08/2026. A escolha governa o que
-esta leitura promete: os conceitos em três níveis e a semântica histórica vêm em profundidade
-máxima, e a rubrica final pesa mais a utilidade para outros casos.</p>
 <h2 id="sec-argumento">Argumento</h2>
 <p>Leitura complementar de <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>. Usando o furacão Katrina como caso quase didático, Quarantelli
 argumenta que catástrofe difere de desastre por capacidade institucional, não por magnitude, e dá
@@ -492,22 +496,7 @@ lista está completa, e passaria a importar para que decisão ela serve.</p>
 campo: aceita que a distinção é útil, e nega que ela seja achado empírico. Não é óbvio, porque o
 campo a trata como documentação; não é absurdo, porque o próprio ensaio admite que a pesquisa não
 fechou. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
-<p><strong>Trava anti-caricatura, cumprida.</strong> A exposição das seções anteriores foi escrita de modo que o
-leitor não consiga inferir se esta leitura concorda ou discorda da tese de Quarantelli. Teste do
-clichê mais próximo: a exposição <strong>não</strong> reduz o ensaio à posição canônica de que "desastres são
-socialmente construídos", que seria o clichê do campo. O autor afirma algo mais estreito e mais
-verificável, que é a incapacitação institucional como critério.</p>
-<h2 id="sec-pressupostos-desta-leitura">Pressupostos desta leitura</h2>
-<p>O repertório aplicado aqui é declarado: conceitos em três níveis com polo negativo e estrutura de
-agregação, reconstrução do argumento em cinco elementos com garantia dos elos frágeis, grade de
-força probatória em quatro campos e problematização por tipo de pressuposto. Ele é o mesmo aplicado
-a <a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, por exigência de paridade, e essa exigência é ela própria uma
-escolha: um ensaio de fórum web de seis páginas e um artigo de periódico não são o mesmo objeto, e
-aplicar-lhes a mesma grade produz, no primeiro, mais seções declarando ausência do que no segundo.
-As ausências aqui não são todas defeito do texto; parte é efeito do gênero, e onde consegui separar
-as duas coisas, separei.</p>
 <h2 id="sec-rubrica-final">Rubrica final</h2>
-<p>Os pesos seguem o tipo declarado, revisão da tese, em que a quinta pergunta pesa mais.</p>
 <p><strong>Os pressupostos são compatíveis com os fatos conhecidos?</strong> Em parte. A grade da comunidade é
 coerente com o corpus de casos do autor, e as duas datas erradas mostram que o texto não foi
 conferido nesse nível.</p>
@@ -519,15 +508,15 @@ pesquisa não fechou.</p>
 <p><strong>Quanto o argumento é melhor que as explicações rivais?</strong> A rival principal, a de que catástrofe é
 desastre grande, é enfraquecida pelo critério 2 e pela observação do nível individual, que uma
 explicação de magnitude não prevê.</p>
-<p><strong>Quão útil é para entender outros casos?</strong> É a pergunta de maior peso aqui, e a resposta é: útil
+<p><strong>Quão útil é para entender outros casos?</strong> Útil
 como lista de verificação, limitado como teste. Sem estrutura de agregação declarada, aplicá-lo a um
 caso novo exige que o analista decida por conta própria quantos critérios bastam, e essa decisão
 fica sem lastro no texto.</p>
-<h2 id="sec-aparato-de-citacao-adr-0009">Aparato de citação (ADR-0009)</h2>
+<h2 id="sec-aparato-de-citacao">Aparato de citação</h2>
 <p>Lista de referências enxuta: três obras, todas processadas. Duas são ancoradas no corpo, uma só na
 lista, e a diferença está declarada em cada nó.</p>
-<p><a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> sustenta as distinções conceituais que o ensaio pressupõe em vez de
-reconstruir (p. 2). <a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> é invocado como "forthcoming" para sustentar que a pesquisa
+<p><a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a> sustenta as distinções conceituais que o ensaio pressupõe em vez de
+reconstruir (p. 2). <a href="../textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a> é invocado como "forthcoming" para sustentar que a pesquisa
 ainda não fechou a questão (p. 4). <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a> aparece só na lista de referências (p. 5), sem
 atribuição no corpo.</p>
 <p><strong>O que o aparato revela:</strong> as três referências são de um único debate, o de definição do que conta
@@ -536,8 +525,8 @@ bibliográfica o que a leitura de <a href="../conceitos/lauta-2017-leitura.html"
 textos de <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> operam em planos que não se tocam, e a ponte entre eles é trabalho a fazer, não
 algo que a bibliografia já tenha feito.</p>
 <h2 id="sec-ver-tambem">Ver também</h2>
-<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> · <a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a> · <a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a> · <a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> ·
-<a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> · <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>.</p></div>
+<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> · <a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a> · <a href="../conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a> · <a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a> ·
+<a href="../textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a> · <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>.</p></div>
 <div data-lang="en"><h1>Catastrophes Are Different from Disasters</h1>
 <p>QUARANTELLI, Enrico L. Catastrophes Are Different from Disasters: Some Implications for Crisis
 Planning and Managing Drawn from Katrina. Web publication (SSRC, Understanding Katrina), 11 Jun.
@@ -546,10 +535,6 @@ library and cited by the coursepack <span class="selo selo-fato" title="fato con
 no print pagination of its own; the coursepack cites this text by criterion, not by page
 ("QUARANTELLI, 2005, criteria 1 to 6"). The pages given below are those of the mirrored PDF (wiki
 provenance), not the publication's original pagination.</p>
-<p><strong>Type of review.</strong> Conceptual, with elements of the thesis review, identical to the one adopted for
-<a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, by the researcher's decision of 10 Aug. 2026. That choice governs what
-this reading promises: concepts at three levels and historical semantics at maximum depth, and a
-final rubric that weights usefulness for other cases most heavily.</p>
 <h2>Argument</h2>
 <p>Complementary reading for <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>. Using Hurricane Katrina as an almost textbook case, Quarantelli
 argues that a catastrophe differs from a disaster by institutional capacity rather than by
@@ -876,22 +861,7 @@ list is complete would stop mattering, and what decision it serves would start t
 field's presuppositions: it accepts that the distinction is useful, and denies that it is an
 empirical finding. It is not obvious, because the field treats it as documentation; it is not
 absurd, because the essay itself admits the research has not closed. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
-<p><strong>Anti-caricature guard, met.</strong> The exposition in the preceding sections was written so that the
-reader cannot infer whether this reading agrees or disagrees with Quarantelli's claim. Nearest-cliché
-test: the exposition does <strong>not</strong> reduce the essay to the field's canonical position that "disasters
-are socially constructed". The author asserts something narrower and more checkable, namely
-institutional incapacitation as the criterion.</p>
-<h2>Presuppositions of this reading</h2>
-<p>The repertoire applied here is declared: concepts at three levels with negative pole and aggregation
-structure, reconstruction of the argument in five elements with warrants for the weak links, a grid
-of evidentiary strength in four fields, and problematisation by type of presupposition. It is the
-same repertoire applied to <a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, as parity required, and that requirement is
-itself a choice: a six-page web forum essay and a journal article are not the same object, and
-applying one grid to both produces, in the former, more sections declaring absence than in the
-latter. The absences here are not all defects of the text; part is an effect of genre, and where I
-could separate the two, I did.</p>
 <h2>Final rubric</h2>
-<p>The weights follow the declared type, thesis review, in which the fifth question weighs most.</p>
 <p><strong>Are the presuppositions compatible with known facts?</strong> In part. The community grid is coherent
 with the author's case corpus, and the two wrong dates show the text was not checked at that level.</p>
 <p><strong>Do the conclusions follow from the premises?</strong> The claim of definition, yes. The policy claim,
@@ -902,15 +872,14 @@ research has not closed.</p>
 <p><strong>How much better is the argument than rival explanations?</strong> The main rival, that a catastrophe is a
 large disaster, is weakened by criterion 2 and by the observation at the individual level, which an
 explanation from magnitude does not predict.</p>
-<p><strong>How useful is it for understanding other cases?</strong> This is the heaviest question here, and the
-answer is: useful as a checklist, limited as a test. With no declared aggregation structure, applying
+<p><strong>How useful is it for understanding other cases?</strong> Useful as a checklist, limited as a test. With no declared aggregation structure, applying
 it to a new case requires the analyst to decide alone how many criteria suffice, and that decision
 has no footing in the text.</p>
-<h2>Citation apparatus (ADR-0009)</h2>
+<h2>Citation apparatus</h2>
 <p>A spare reference list: three works, all processed. Two are anchored in the body, one only in the
 list, and the difference is declared in each node.</p>
-<p><a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> sustains the conceptual distinctions the essay presupposes rather than
-reconstructs (p. 2). <a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> is invoked as "forthcoming" to sustain that research has not
+<p><a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a> sustains the conceptual distinctions the essay presupposes rather than
+reconstructs (p. 2). <a href="../textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a> is invoked as "forthcoming" to sustain that research has not
 settled the question (p. 4). <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a> appears only in the reference list (p. 5), with no
 attribution in the body.</p>
 <p><strong>What the apparatus reveals:</strong> the three references belong to a single debate, that of defining
@@ -919,14 +888,14 @@ the bibliographic route what the reading of <a href="../conceitos/lauta-2017-lei
 another: the two <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> texts operate on planes that never meet, and the bridge between them is
 work still to be done, not something the bibliography has already done.</p>
 <h2>See also</h2>
-<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> · <a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a> · <a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a> · <a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> ·
-<a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> · <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>.</p></div>
+<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> · <a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a> · <a href="../conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a> · <a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a> ·
+<a href="../textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a> · <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>.</p></div>
 
-<h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> cites</span> <a href="textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a> (p. 5)</li><li><span class="rel-etype">-> cites</span> <a href="textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> (p. 4)</li><li><span class="rel-etype">-> cites</span> <a href="textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> (p. 2)</li><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a> (p. 1, 2, 5)</li><li><span class="rel-etype">-> belongs to session</span> <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> (complementar)</li><li><span class="rel-etype"><- wrote</span> <a href="../autores/quarantelli.html">Enrico L. Quarantelli</a></li></ul>
+<h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> cites</span> <a href="textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a> (p. 5)</li><li><span class="rel-etype">-> cites</span> <a href="textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a> (p. 4)</li><li><span class="rel-etype">-> cites</span> <a href="textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a> (p. 2)</li><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a> (p. 1, 2, 5)</li><li><span class="rel-etype">-> belongs to session</span> <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> (complementar)</li><li><span class="rel-etype"><- wrote</span> <a href="../autores/quarantelli.html">Enrico L. Quarantelli</a></li></ul>
 
 <h2>Neighbourhood in the graph</h2>
 <div id="cy-local"></div>
-<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "author:perry", "label": "Ronald W. Perry", "href": "../autores/perry.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:quarantelli", "label": "Enrico L. Quarantelli", "href": "../autores/quarantelli.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:scanlon", "label": "Joseph Scanlon", "href": "../autores/scanlon.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "concept:capacidade-institucional", "label": "#capacidade-institucional (nota de referência)", "href": "../conceitos/capacidade-institucional.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster Risk (efeitos da incerteza)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-vs-catastrophe", "label": "Desastre vs. catástrofe (capacidade institucional)", "href": "../conceitos/disaster-vs-catastrophe.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Disfunção de processo social", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Leitura de Lauta 2017 (nota literária)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:quarantelli-criterios-brasil", "label": "Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)", "href": "../conceitos/quarantelli-criterios-brasil.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:s02-montagem-da-sessao", "label": "Montagem da sessão S02, 2026.2 (nota de projeto)", "href": "../conceitos/s02-montagem-da-sessao.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "session:s02", "label": "S02: Why Study Disaster Law", "href": "../sessoes/s02.html", "foco": "0"}, "classes": "session"}, {"data": {"id": "text:beck-1992", "label": "Risk Society: Towards a New Modernity", "href": "../textos/beck-1992.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-2017", "label": "Dysfunction and Disruption: Disaster Risks and the Law", "href": "../textos/lauta-2017.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perrow-1984", "label": "Normal Accidents: Living with High-Risk Technologies", "href": "../textos/perrow-1984.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perry-2006", "label": "What Is a Disaster? (capítulo no Handbook of Disaster Research)", "href": "../textos/perry-2006.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perry-quarantelli-2005", "label": "What Is a Disaster? New Answers to Old Questions (orgs.)", "href": "../textos/perry-quarantelli-2005.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:quarantelli-2005", "label": "Catastrophes Are Different from Disasters", "href": "../textos/quarantelli-2005.html", "foco": "1"}, "classes": "text foco"}, {"data": {"id": "text:scanlon-1991", "label": "Convergence Revisited: A New Perspective on a Little Studied Topic", "href": "../textos/scanlon-1991.html", "foco": "0"}, "classes": "text"}], "edges": [{"data": {"id": "le0", "source": "author:perry", "target": "text:perry-2006"}, "classes": "escreveu"}, {"data": {"id": "le1", "source": "author:perry", "target": "text:perry-quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le2", "source": "author:quarantelli", "target": "text:perry-quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le3", "source": "author:quarantelli", "target": "text:quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le4", "source": "author:scanlon", "target": "text:scanlon-1991"}, "classes": "escreveu"}, {"data": {"id": "le5", "source": "concept:capacidade-institucional", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:capacidade-institucional", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:disaster-vs-catastrophe", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:disaster-vs-catastrophe", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:quarantelli-criterios-brasil", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:s02-montagem-da-sessao", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "text:beck-1992", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le18", "source": "text:lauta-2017", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le19", "source": "text:lauta-2017", "target": "concept:dysfunction"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le20", "source": "text:lauta-2017", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le21", "source": "text:perrow-1984", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le22", "source": "text:quarantelli-2005", "target": "text:perry-2006"}, "classes": "cita"}, {"data": {"id": "le23", "source": "text:quarantelli-2005", "target": "text:perry-quarantelli-2005"}, "classes": "cita"}, {"data": {"id": "le24", "source": "text:quarantelli-2005", "target": "text:scanlon-1991"}, "classes": "cita"}, {"data": {"id": "le25", "source": "text:quarantelli-2005", "target": "concept:disaster-vs-catastrophe"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le26", "source": "text:quarantelli-2005", "target": "session:s02"}, "classes": "pertence_a_sessao"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "author"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "text"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "concept"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "session"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislation"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "case"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "wrote"}, "pertence_a_sessao": {"color": "#c9a227", "label": "belongs to session"}, "desenvolve_conceito": {"color": "#4d8067", "label": "develops concept"}, "cita": {"color": "#9b5de5", "label": "cites"}, "relaciona_se_com": {"color": "#c1503a", "label": "relates to"}, "define_conceito": {"color": "#6d597a", "label": "defines concept"}, "instancia_conceito": {"color": "#9d0208", "label": "instantiates concept"}};</script>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "author:perry", "label": "Ronald W. Perry", "href": "../autores/perry.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:quarantelli", "label": "Enrico L. Quarantelli", "href": "../autores/quarantelli.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:scanlon", "label": "Joseph Scanlon", "href": "../autores/scanlon.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "concept:capacidade-institucional", "label": "Institutional capacity (reference note)", "href": "../conceitos/capacidade-institucional.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster risk (effects of uncertainty)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-vs-catastrophe", "label": "Disaster vs. catastrophe (institutional capacity)", "href": "../conceitos/disaster-vs-catastrophe.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Dysfunction of a social process", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Reading of Lauta 2017 (literature note)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:quarantelli-criterios-brasil", "label": "Do Quarantelli's six criteria hold in the Brazilian arrangement? (fleeting note)", "href": "../conceitos/quarantelli-criterios-brasil.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:s02-montagem-da-sessao", "label": "Assembling session S02, 2026.2 (project note)", "href": "../conceitos/s02-montagem-da-sessao.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "session:s02", "label": "S02: Why Study Disaster Law", "href": "../sessoes/s02.html", "foco": "0"}, "classes": "session"}, {"data": {"id": "text:beck-1992", "label": "Risk Society: Towards a New Modernity", "href": "../textos/beck-1992.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-2017", "label": "Dysfunction and Disruption: Disaster Risks and the Law", "href": "../textos/lauta-2017.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perrow-1984", "label": "Normal Accidents: Living with High-Risk Technologies", "href": "../textos/perrow-1984.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perry-2006", "label": "What Is a Disaster? (chapter in the Handbook of Disaster Research)", "href": "../textos/perry-2006.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perry-quarantelli-2005", "label": "What Is a Disaster? New Answers to Old Questions (eds.)", "href": "../textos/perry-quarantelli-2005.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:quarantelli-2005", "label": "Catastrophes Are Different from Disasters", "href": "../textos/quarantelli-2005.html", "foco": "1"}, "classes": "text foco"}, {"data": {"id": "text:scanlon-1991", "label": "Convergence Revisited: A New Perspective on a Little Studied Topic", "href": "../textos/scanlon-1991.html", "foco": "0"}, "classes": "text"}], "edges": [{"data": {"id": "le0", "source": "author:perry", "target": "text:perry-2006"}, "classes": "escreveu"}, {"data": {"id": "le1", "source": "author:perry", "target": "text:perry-quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le2", "source": "author:quarantelli", "target": "text:perry-quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le3", "source": "author:quarantelli", "target": "text:quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le4", "source": "author:scanlon", "target": "text:scanlon-1991"}, "classes": "escreveu"}, {"data": {"id": "le5", "source": "concept:capacidade-institucional", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:capacidade-institucional", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:disaster-vs-catastrophe", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:disaster-vs-catastrophe", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:quarantelli-criterios-brasil", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:s02-montagem-da-sessao", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "text:beck-1992", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le18", "source": "text:lauta-2017", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le19", "source": "text:lauta-2017", "target": "concept:dysfunction"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le20", "source": "text:lauta-2017", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le21", "source": "text:perrow-1984", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le22", "source": "text:quarantelli-2005", "target": "text:perry-2006"}, "classes": "cita"}, {"data": {"id": "le23", "source": "text:quarantelli-2005", "target": "text:perry-quarantelli-2005"}, "classes": "cita"}, {"data": {"id": "le24", "source": "text:quarantelli-2005", "target": "text:scanlon-1991"}, "classes": "cita"}, {"data": {"id": "le25", "source": "text:quarantelli-2005", "target": "concept:disaster-vs-catastrophe"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le26", "source": "text:quarantelli-2005", "target": "session:s02"}, "classes": "pertence_a_sessao"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "author"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "text"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "concept"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "session"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislation"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "case"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "wrote"}, "pertence_a_sessao": {"color": "#c9a227", "label": "belongs to session"}, "desenvolve_conceito": {"color": "#4d8067", "label": "develops concept"}, "cita": {"color": "#9b5de5", "label": "cites"}, "relaciona_se_com": {"color": "#c1503a", "label": "relates to"}, "define_conceito": {"color": "#6d597a", "label": "defines concept"}, "instancia_conceito": {"color": "#9d0208", "label": "instantiates concept"}};</script>
 <footer>Generated from the wiki source. This page is built, not written by hand.<br></footer>
 </main>
 </div>
@@ -941,38 +910,6 @@ work still to be done, not something the bibliography has already done.</p>
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('dlp-wiki-theme', next);
   };
-})();
-</script>
-<script>
-(function(){
-  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
-  function aplicar(l){
-    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
-    // emitem nem o bloco data-lang="en" nem o botao de idioma. Sem esta linha, quem escolhia EN e
-    // seguia um wikilink ate uma delas via o TEXTO SUMIR (o bloco pt ficava hidden e nao havia
-    // bloco en para mostrar), sem botao naquela pagina para desfazer e com a escolha persistida em
-    // localStorage. Cair para 'pt' quando a pagina nao tem o idioma pedido e o comportamento certo:
-    // a preferencia global continua salva e volta a valer na proxima pagina que tenha traducao.
-    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
-    document.querySelectorAll('[data-lang]').forEach(function(el){
-      el.hidden = (el.getAttribute('data-lang') !== alvo);
-    });
-    document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
-    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
-    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
-    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
-    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
-    // nao recebe aviso nenhum.
-    var aviso = document.getElementById('aviso-sem-traducao');
-    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
-  }
-  window.toggleLang = function(){
-    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
-    var novo = atual === 'pt' ? 'en' : 'pt';
-    localStorage.setItem('dlp-wiki-lang', novo);
-    aplicar(novo);
-  };
-  aplicar(salvo);
 })();
 </script>
 <script>

@@ -291,7 +291,7 @@
     {
       "data": {
         "id": "concept:capacidade-institucional",
-        "label": "#capacidade-institucional (nota de referência)",
+        "label": "Institutional capacity (reference note)",
         "ntype": "concept",
         "href": "conceitos/capacidade-institucional.html",
         "status": "complete",
@@ -309,7 +309,7 @@
     {
       "data": {
         "id": "concept:disaster-risk",
-        "label": "Disaster Risk (efeitos da incerteza)",
+        "label": "Disaster risk (effects of uncertainty)",
         "ntype": "concept",
         "href": "conceitos/disaster-risk.html",
         "status": "complete",
@@ -327,7 +327,7 @@
     {
       "data": {
         "id": "concept:disaster-vs-catastrophe",
-        "label": "Desastre vs. catástrofe (capacidade institucional)",
+        "label": "Disaster vs. catastrophe (institutional capacity)",
         "ntype": "concept",
         "href": "conceitos/disaster-vs-catastrophe.html",
         "status": "complete",
@@ -345,7 +345,7 @@
     {
       "data": {
         "id": "concept:dysfunction",
-        "label": "Disfunção de processo social",
+        "label": "Dysfunction of a social process",
         "ntype": "concept",
         "href": "conceitos/dysfunction.html",
         "status": "complete",
@@ -363,7 +363,7 @@
     {
       "data": {
         "id": "concept:lauta-2017-leitura",
-        "label": "Leitura de Lauta 2017 (nota literária)",
+        "label": "Reading of Lauta 2017 (literature note)",
         "ntype": "concept",
         "href": "conceitos/lauta-2017-leitura.html",
         "status": "complete",
@@ -381,7 +381,7 @@
     {
       "data": {
         "id": "concept:legal-exceptionalism",
-        "label": "Excepcionalismo jurídico",
+        "label": "Legal exceptionalism",
         "ntype": "concept",
         "href": "conceitos/legal-exceptionalism.html",
         "status": "complete",
@@ -399,7 +399,7 @@
     {
       "data": {
         "id": "concept:normal-accidents",
-        "label": "Acidente normal (propriedade estrutural do sistema)",
+        "label": "Normal accident (a structural property of the system)",
         "ntype": "concept",
         "href": "conceitos/normal-accidents.html",
         "status": "complete",
@@ -417,7 +417,7 @@
     {
       "data": {
         "id": "concept:porcao-juridica",
-        "label": "Porção jurídica (legal bite-sizes)",
+        "label": "Legal bite-sizes (the juridical portion)",
         "ntype": "concept",
         "href": "conceitos/porcao-juridica.html",
         "status": "complete",
@@ -435,7 +435,7 @@
     {
       "data": {
         "id": "concept:quarantelli-criterios-brasil",
-        "label": "Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)",
+        "label": "Do Quarantelli's six criteria hold in the Brazilian arrangement? (fleeting note)",
         "ntype": "concept",
         "href": "conceitos/quarantelli-criterios-brasil.html",
         "status": "complete",
@@ -453,7 +453,7 @@
     {
       "data": {
         "id": "concept:risk-society",
-        "label": "Sociedade de risco",
+        "label": "Risk society",
         "ntype": "concept",
         "href": "conceitos/risk-society.html",
         "status": "complete",
@@ -471,7 +471,7 @@
     {
       "data": {
         "id": "concept:s02-montagem-da-sessao",
-        "label": "Montagem da sessão S02, 2026.2 (nota de projeto)",
+        "label": "Assembling session S02, 2026.2 (project note)",
         "ntype": "concept",
         "href": "conceitos/s02-montagem-da-sessao.html",
         "status": "complete",
@@ -489,7 +489,7 @@
     {
       "data": {
         "id": "julgado:brumadinho-denuncia",
-        "label": "Brumadinho, a denúncia e a contagem de vítimas",
+        "label": "Brumadinho: the criminal charge and the victim count",
         "ntype": "julgado",
         "href": "julgados/brumadinho-denuncia.html",
         "status": "complete",
@@ -505,7 +505,7 @@
     {
       "data": {
         "id": "julgado:cij-parecer-clima-2025",
-        "label": "Parecer consultivo sobre obrigações dos Estados quanto à mudança climática",
+        "label": "Advisory opinion on the obligations of States in respect of climate change",
         "ntype": "julgado",
         "href": "julgados/cij-parecer-clima-2025.html",
         "status": "complete",
@@ -521,7 +521,7 @@
     {
       "data": {
         "id": "julgado:itlos-parecer-2024",
-        "label": "Parecer consultivo sobre mudança climática e direito do mar",
+        "label": "Advisory opinion on climate change and the law of the sea",
         "ntype": "julgado",
         "href": "julgados/itlos-parecer-2024.html",
         "status": "complete",
@@ -537,7 +537,7 @@
     {
       "data": {
         "id": "julgado:klimaseniorinnen-2024",
-        "label": "Verein KlimaSeniorinnen Schweiz e outros v. Suíça",
+        "label": "Verein KlimaSeniorinnen Schweiz and Others v. Switzerland",
         "ntype": "julgado",
         "href": "julgados/klimaseniorinnen-2024.html",
         "status": "complete",
@@ -553,7 +553,7 @@
     {
       "data": {
         "id": "julgado:laquila-cassacao-2016",
-        "label": "Caso L'Aquila, os sete cientistas",
+        "label": "The L'Aquila case: the seven scientists",
         "ntype": "julgado",
         "href": "julgados/laquila-cassacao-2016.html",
         "status": "complete",
@@ -569,7 +569,7 @@
     {
       "data": {
         "id": "julgado:mariana-ewhc-2025",
-        "label": "Município de Mariana e outros v. BHP Group",
+        "label": "Município de Mariana and Others v. BHP Group",
         "ntype": "julgado",
         "href": "julgados/mariana-ewhc-2025.html",
         "status": "complete",
@@ -585,7 +585,7 @@
     {
       "data": {
         "id": "julgado:mariana-jf-2024",
-        "label": "Mariana, absolvição criminal na Justiça Federal",
+        "label": "Mariana: criminal acquittal in the Federal Court",
         "ntype": "julgado",
         "href": "julgados/mariana-jf-2024.html",
         "status": "complete",
@@ -601,7 +601,7 @@
     {
       "data": {
         "id": "julgado:mariana-stf-homologacao-2024",
-        "label": "Mariana, homologação do acordo de repactuação",
+        "label": "Mariana: approval of the renegotiated settlement",
         "ntype": "julgado",
         "href": "julgados/mariana-stf-homologacao-2024.html",
         "status": "complete",
@@ -617,7 +617,7 @@
     {
       "data": {
         "id": "julgado:neubauer-2021",
-        "label": "Neubauer e outros v. Alemanha",
+        "label": "Neubauer and Others v. Germany",
         "ntype": "julgado",
         "href": "julgados/neubauer-2021.html",
         "status": "complete",
@@ -633,7 +633,7 @@
     {
       "data": {
         "id": "julgado:urgenda-2019",
-        "label": "Urgenda Foundation v. Estado dos Países Baixos",
+        "label": "Urgenda Foundation v. State of the Netherlands",
         "ntype": "julgado",
         "href": "julgados/urgenda-2019.html",
         "status": "complete",
@@ -649,7 +649,7 @@
     {
       "data": {
         "id": "legislation:acordo-de-paris-2015",
-        "label": "Acordo de Paris sobre mudança do clima",
+        "label": "Paris Agreement on climate change",
         "ntype": "legislation",
         "href": "legislacao/acordo-de-paris-2015.html",
         "status": "complete",
@@ -665,7 +665,7 @@
     {
       "data": {
         "id": "legislation:adis-abeba-2015",
-        "label": "Agenda de Ação de Adis Abeba",
+        "label": "Addis Ababa Action Agenda",
         "ntype": "legislation",
         "href": "legislacao/adis-abeba-2015.html",
         "status": "complete",
@@ -681,7 +681,7 @@
     {
       "data": {
         "id": "legislation:agenda-2030",
-        "label": "Agenda 2030 para o Desenvolvimento Sustentável",
+        "label": "2030 Agenda for Sustainable Development",
         "ntype": "legislation",
         "href": "legislacao/agenda-2030.html",
         "status": "complete",
@@ -697,7 +697,7 @@
     {
       "data": {
         "id": "legislation:habitat-iii-2016",
-        "label": "Habitat III, Nova Agenda Urbana",
+        "label": "Habitat III, New Urban Agenda",
         "ntype": "legislation",
         "href": "legislacao/habitat-iii-2016.html",
         "status": "complete",
@@ -713,7 +713,7 @@
     {
       "data": {
         "id": "legislation:iso-31000-2009",
-        "label": "ISO 31000:2009, Gestão de riscos, princípios e diretrizes",
+        "label": "ISO 31000:2009, Risk management, principles and guidelines",
         "ntype": "legislation",
         "href": "legislacao/iso-31000-2009.html",
         "status": "complete",
@@ -729,7 +729,7 @@
     {
       "data": {
         "id": "legislation:iso-guide-73-2009",
-        "label": "ISO Guide 73:2009, Vocabulário de gestão de risco",
+        "label": "ISO Guide 73:2009, Risk management vocabulary",
         "ntype": "legislation",
         "href": "legislacao/iso-guide-73-2009.html",
         "status": "complete",
@@ -745,7 +745,7 @@
     {
       "data": {
         "id": "legislation:marco-de-sendai-2015",
-        "label": "Marco de Sendai para a Redução do Risco de Desastres 2015-2030",
+        "label": "Sendai Framework for Disaster Risk Reduction 2015-2030",
         "ntype": "legislation",
         "href": "legislacao/marco-de-sendai-2015.html",
         "status": "complete",
@@ -761,7 +761,7 @@
     {
       "data": {
         "id": "legislation:protocolo-de-montreal-1987",
-        "label": "Protocolo de Montreal sobre substâncias que destroem a camada de ozônio",
+        "label": "Montreal Protocol on Substances that Deplete the Ozone Layer",
         "ntype": "legislation",
         "href": "legislacao/protocolo-de-montreal-1987.html",
         "status": "complete",
@@ -857,7 +857,7 @@
     {
       "data": {
         "id": "text:ejrr-laquila-2014",
-        "label": "Simposio EJRR sobre os L'Aquila Seven",
+        "label": "EJRR symposium on the L'Aquila Seven",
         "ntype": "text",
         "href": "textos/ejrr-laquila-2014.html",
         "status": "stub",
@@ -873,7 +873,7 @@
     {
       "data": {
         "id": "text:farber-2010",
-        "label": "Disaster Law and Policy, 2a ed.",
+        "label": "Disaster Law and Policy, 2nd ed.",
         "ntype": "text",
         "href": "textos/farber-2010.html",
         "status": "stub",
@@ -889,7 +889,7 @@
     {
       "data": {
         "id": "text:farber-faure-2010",
-        "label": "Disaster Law (coletanea)",
+        "label": "Disaster Law (edited collection)",
         "ntype": "text",
         "href": "textos/farber-faure-2010.html",
         "status": "stub",
@@ -969,7 +969,7 @@
     {
       "data": {
         "id": "text:lauta-faure-2016",
-        "label": "Disaster Risk Management (capítulo)",
+        "label": "Disaster Risk Management (chapter)",
         "ntype": "text",
         "href": "textos/lauta-faure-2016.html",
         "status": "stub",
@@ -1033,7 +1033,7 @@
     {
       "data": {
         "id": "text:perry-2006",
-        "label": "What Is a Disaster? (capítulo no Handbook of Disaster Research)",
+        "label": "What Is a Disaster? (chapter in the Handbook of Disaster Research)",
         "ntype": "text",
         "href": "textos/perry-2006.html",
         "status": "stub",
@@ -1049,7 +1049,7 @@
     {
       "data": {
         "id": "text:perry-quarantelli-2005",
-        "label": "What Is a Disaster? New Answers to Old Questions (orgs.)",
+        "label": "What Is a Disaster? New Answers to Old Questions (eds.)",
         "ntype": "text",
         "href": "textos/perry-quarantelli-2005.html",
         "status": "stub",

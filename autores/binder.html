@@ -29,6 +29,14 @@ p{margin:0 0 16px;}
 a{color:var(--link);text-decoration:none;}
 a:hover{text-decoration:underline;}
 .meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.futura{color:var(--muted);}
+.controles{position:fixed;top:0.8rem;right:1.2rem;display:flex;gap:0.5rem;z-index:10;}
+.controles button{font-size:0.95rem;min-height:44px;padding:0.55rem 1.1rem;
+background:#3366cc;color:#ffffff;border:1px solid #26489a;border-radius:4px;
+font-weight:600;cursor:pointer;}
+.controles button:hover{background:#26489a;}
+.controles button:focus-visible{outline:3px solid #ffffff;outline-offset:2px;}
+:root[data-theme="dark"] .controles button{background:#4a7fe0;border-color:#3366cc;}
 .badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
 a.badge{text-decoration:none;}
 .broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
@@ -71,9 +79,9 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <button class="theme-toggle" onclick="toggleWikiTheme()">Light/Dark</button>
 
 <div class="layout">
-<nav class="sidebar"><a href="../index.html"><strong>Disaster Law and Policy, wiki</strong></a>
-<a href="../graph.html">View the concept graph</a>
-<a href="../tags.html">Index by tag</a>
+<nav class="sidebar"><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
+<a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
 <div id="busca-resultados" class="busca-resultados" hidden></div>
 <div class="area">session</div>
@@ -104,10 +112,11 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
 <a href="../textos/verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
 <a href="../textos/lauta-2014.html">Disaster Law</a>
-<a href="../textos/farber-faure-2010.html">Disaster Law (coletanea)</a>
-<a href="../textos/farber-2010.html">Disaster Law and Policy, 2a ed.</a>
-<a href="../textos/lauta-faure-2016.html">Disaster Risk Management (capítulo)</a>
+<a href="../textos/farber-faure-2010.html">Disaster Law (edited collection)</a>
+<a href="../textos/farber-2010.html">Disaster Law and Policy, 2nd ed.</a>
+<a href="../textos/lauta-faure-2016.html">Disaster Risk Management (chapter)</a>
 <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="../textos/ejrr-laquila-2014.html">EJRR symposium on the L&#x27;Aquila Seven</a>
 <a href="../textos/verchick-2010.html">Facing Catastrophe</a>
 <a href="../textos/alemanno-2011.html">Governing Disasters</a>
 <a href="../textos/antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
@@ -115,43 +124,42 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
 <a href="../textos/faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
 <a href="../textos/beck-1992.html">Risk Society: Towards a New Modernity</a>
-<a href="../textos/ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a>
 <a href="../textos/binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
 <a href="../textos/kuhn-1970.html">The Structure of Scientific Revolutions</a>
-<a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a>
-<a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a>
+<a href="../textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
+<a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a>
 <div class="area">legislation</div>
-<a href="../legislacao/acordo-de-paris-2015.html">Acordo de Paris sobre mudança do clima</a>
-<a href="../legislacao/agenda-2030.html">Agenda 2030 para o Desenvolvimento Sustentável</a>
-<a href="../legislacao/adis-abeba-2015.html">Agenda de Ação de Adis Abeba</a>
-<a href="../legislacao/habitat-iii-2016.html">Habitat III, Nova Agenda Urbana</a>
-<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Gestão de riscos, princípios e diretrizes</a>
-<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Vocabulário de gestão de risco</a>
-<a href="../legislacao/marco-de-sendai-2015.html">Marco de Sendai para a Redução do Risco de Desastres 2015-2030</a>
-<a href="../legislacao/protocolo-de-montreal-1987.html">Protocolo de Montreal sobre substâncias que destroem a camada de ozônio</a>
+<a href="../legislacao/agenda-2030.html">2030 Agenda for Sustainable Development</a>
+<a href="../legislacao/adis-abeba-2015.html">Addis Ababa Action Agenda</a>
+<a href="../legislacao/habitat-iii-2016.html">Habitat III, New Urban Agenda</a>
+<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Risk management, principles and guidelines</a>
+<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Risk management vocabulary</a>
+<a href="../legislacao/protocolo-de-montreal-1987.html">Montreal Protocol on Substances that Deplete the Ozone Layer</a>
+<a href="../legislacao/acordo-de-paris-2015.html">Paris Agreement on climate change</a>
+<a href="../legislacao/marco-de-sendai-2015.html">Sendai Framework for Disaster Risk Reduction 2015-2030</a>
 <div class="area">case</div>
-<a href="../julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a>
-<a href="../julgados/laquila-cassacao-2016.html">Caso L&#x27;Aquila, os sete cientistas</a>
-<a href="../julgados/mariana-jf-2024.html">Mariana, absolvição criminal na Justiça Federal</a>
-<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana, homologação do acordo de repactuação</a>
-<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana e outros v. BHP Group</a>
-<a href="../julgados/neubauer-2021.html">Neubauer e outros v. Alemanha</a>
-<a href="../julgados/itlos-parecer-2024.html">Parecer consultivo sobre mudança climática e direito do mar</a>
-<a href="../julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a>
-<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. Estado dos Países Baixos</a>
-<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz e outros v. Suíça</a>
+<a href="../julgados/itlos-parecer-2024.html">Advisory opinion on climate change and the law of the sea</a>
+<a href="../julgados/cij-parecer-clima-2025.html">Advisory opinion on the obligations of States in respect of climate change</a>
+<a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a>
+<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a>
+<a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a>
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a>
+<a href="../julgados/neubauer-2021.html">Neubauer and Others v. Germany</a>
+<a href="../julgados/laquila-cassacao-2016.html">The L&#x27;Aquila case: the seven scientists</a>
+<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. State of the Netherlands</a>
+<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
 <div class="area">concept</div>
-<a href="../conceitos/capacidade-institucional.html">#capacidade-institucional (nota de referência)</a>
-<a href="../conceitos/normal-accidents.html">Acidente normal (propriedade estrutural do sistema)</a>
-<a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a>
-<a href="../conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>
-<a href="../conceitos/dysfunction.html">Disfunção de processo social</a>
-<a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a>
-<a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a>
-<a href="../conceitos/s02-montagem-da-sessao.html">Montagem da sessão S02, 2026.2 (nota de projeto)</a>
-<a href="../conceitos/quarantelli-criterios-brasil.html">Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)</a>
-<a href="../conceitos/porcao-juridica.html">Porção jurídica (legal bite-sizes)</a>
-<a href="../conceitos/risk-society.html">Sociedade de risco</a></nav>
+<a href="../conceitos/s02-montagem-da-sessao.html">Assembling session S02, 2026.2 (project note)</a>
+<a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a>
+<a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a>
+<a href="../conceitos/quarantelli-criterios-brasil.html">Do Quarantelli&#x27;s six criteria hold in the Brazilian arrangement? (fleeting note)</a>
+<a href="../conceitos/dysfunction.html">Dysfunction of a social process</a>
+<a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a>
+<a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a>
+<a href="../conceitos/legal-exceptionalism.html">Legal exceptionalism</a>
+<a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a>
+<a href="../conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a>
+<a href="../conceitos/risk-society.html">Risk society</a></nav>
 <main>
 <h1>Denis Binder</h1>
 <div class="meta">type: author &middot; <span title="Entry only started: it carries the reference and the links, but not yet the full reading of the work.">draft</span><br></div>
@@ -182,38 +190,6 @@ deste autor.</p></div>
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('dlp-wiki-theme', next);
   };
-})();
-</script>
-<script>
-(function(){
-  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
-  function aplicar(l){
-    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
-    // emitem nem o bloco data-lang="en" nem o botao de idioma. Sem esta linha, quem escolhia EN e
-    // seguia um wikilink ate uma delas via o TEXTO SUMIR (o bloco pt ficava hidden e nao havia
-    // bloco en para mostrar), sem botao naquela pagina para desfazer e com a escolha persistida em
-    // localStorage. Cair para 'pt' quando a pagina nao tem o idioma pedido e o comportamento certo:
-    // a preferencia global continua salva e volta a valer na proxima pagina que tenha traducao.
-    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
-    document.querySelectorAll('[data-lang]').forEach(function(el){
-      el.hidden = (el.getAttribute('data-lang') !== alvo);
-    });
-    document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
-    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
-    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
-    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
-    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
-    // nao recebe aviso nenhum.
-    var aviso = document.getElementById('aviso-sem-traducao');
-    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
-  }
-  window.toggleLang = function(){
-    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
-    var novo = atual === 'pt' ? 'en' : 'pt';
-    localStorage.setItem('dlp-wiki-lang', novo);
-    aplicar(novo);
-  };
-  aplicar(salvo);
 })();
 </script>
 <script>
