@@ -1,0 +1,1359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dysfunction and Disruption: Disaster Risks and the Law, Wiki Disaster Law and Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+:root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
+--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
+--muted:#a2a9b1;--card:#1b1f24;--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+font-size:16px;line-height:26px;}
+.layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
+nav.sidebar a:hover{text-decoration:underline;}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
+h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
+margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h2{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:24px;font-weight:400;line-height:1.3;
+margin:1.6rem 0 0.4rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h3{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;font-size:19.2px;font-weight:700;margin:1.2rem 0 0.3rem;}
+p{margin:0 0 16px;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
+a.badge{text-decoration:none;}
+.broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
+blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--border);color:var(--muted);}
+.rel-list{list-style:none;padding:0;font-size:0.94rem;}
+.rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
+.rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
+footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
+.theme-toggle{position:fixed;top:0.8rem;right:1.2rem;font-size:0.78rem;background:var(--card);border:1px solid var(--border);border-radius:2px;padding:0.3rem 0.7rem;cursor:pointer;color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
+ padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
+.selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
+.selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
+.selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
+.busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a:last-child{border-bottom:none;}
+.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
+.ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
+.ficha li{margin:0.12rem 0;}
+#cy-local{width:100%;height:340px;border:1px solid var(--border);border-radius:2px;background:var(--bg);margin-top:0.4rem;}
+table{border-collapse:collapse;width:100%;font-size:0.94rem;margin:0.6rem 0;}
+th,td{border:1px solid var(--border);padding:0.4rem 0.55rem;text-align:left;vertical-align:top;}
+th{background:var(--th);font-weight:700;}
+/* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
+   separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
+   de baixo. */
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
+.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc ul{list-style:none;padding-left:0;margin:0;}
+.toc ul ul{padding-left:0.8rem;}
+.toc li{margin:0.12rem 0;}
+nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleWikiTheme()">Claro/Escuro</button>
+<button id="lang-toggle" class="theme-toggle" style="right:8.5rem" onclick="toggleLang()">EN / PT</button>
+<div class="layout">
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto">Estrutura do texto</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-em-tres-niveis">Conceitos em três níveis</a></li><li><a href="#sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</a></li><li><a href="#sec-checagem-factual-a-unica-evidencia-empirica-propria-e-falsa">Checagem factual: a única evidência empírica própria é falsa</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita-por-que-este-texto-tem-esta-forma">Contexto de escrita: por que este texto tem esta forma</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao-zero-citacoes-e-o-que-isso-significa">Recepção: zero citações, e o que isso significa</a></li><li><a href="#sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</a></li><li><a href="#sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong>Disaster Law and Policy, wiki</strong></a>
+<a href="../graph.html">Ver grafo de conceitos</a>
+<a href="../tags.html">Índice por tag</a>
+<input id="busca-campo" type="search" placeholder="buscar..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
+<div id="busca-resultados" class="busca-resultados" hidden></div>
+<div class="area">sessão</div>
+<a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
+<div class="area">autor</div>
+<a href="../autores/alemanno.html">Alberto Alemanno</a>
+<a href="../autores/wibisana.html">Andri G. Wibisana</a>
+<a href="../autores/van-aaken.html">Anne van Aaken</a>
+<a href="../autores/perrow.html">Charles Perrow</a>
+<a href="../autores/farber.html">Daniel A. Farber</a>
+<a href="../autores/binder.html">Denis Binder</a>
+<a href="../autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="../autores/antonovic.html">Janis Antonovic</a>
+<a href="../autores/scanlon.html">Joseph Scanlon</a>
+<a href="../autores/lauta.html">Kristian Cedervall Lauta</a>
+<a href="../autores/faure.html">Michael G. Faure</a>
+<a href="../autores/luhmann.html">Niklas Luhmann</a>
+<a href="../autores/posner.html">Richard A. Posner</a>
+<a href="../autores/verchick.html">Robert R. M. Verchick</a>
+<a href="../autores/perry.html">Ronald W. Perry</a>
+<a href="../autores/lyster.html">Rosemary Lyster</a>
+<a href="../autores/kuhn.html">Thomas S. Kuhn</a>
+<a href="../autores/beck.html">Ulrich Beck</a>
+<div class="area">texto</div>
+<a href="posner-2004.html">Catastrophe: Risk and Response</a>
+<a href="quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
+<a href="lyster-2015.html">Climate Justice and Disaster Law</a>
+<a href="scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
+<a href="verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
+<a href="lauta-2014.html">Disaster Law</a>
+<a href="farber-faure-2010.html">Disaster Law (coletanea)</a>
+<a href="farber-2010.html">Disaster Law and Policy, 2a ed.</a>
+<a href="lauta-faure-2016.html">Disaster Risk Management (capítulo)</a>
+<a href="lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="verchick-2010.html">Facing Catastrophe</a>
+<a href="alemanno-2011.html">Governing Disasters</a>
+<a href="antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
+<a href="luhmann-2004.html">Law as a Social System</a>
+<a href="perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
+<a href="beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a>
+<a href="binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
+<a href="kuhn-1970.html">The Structure of Scientific Revolutions</a>
+<a href="perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a>
+<a href="perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a>
+<div class="area">legislação</div>
+<a href="../legislacao/acordo-de-paris-2015.html">Acordo de Paris sobre mudança do clima</a>
+<a href="../legislacao/agenda-2030.html">Agenda 2030 para o Desenvolvimento Sustentável</a>
+<a href="../legislacao/adis-abeba-2015.html">Agenda de Ação de Adis Abeba</a>
+<a href="../legislacao/habitat-iii-2016.html">Habitat III, Nova Agenda Urbana</a>
+<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Gestão de riscos, princípios e diretrizes</a>
+<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Vocabulário de gestão de risco</a>
+<a href="../legislacao/marco-de-sendai-2015.html">Marco de Sendai para a Redução do Risco de Desastres 2015-2030</a>
+<a href="../legislacao/protocolo-de-montreal-1987.html">Protocolo de Montreal sobre substâncias que destroem a camada de ozônio</a>
+<div class="area">julgado</div>
+<a href="../julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a>
+<a href="../julgados/laquila-cassacao-2016.html">Caso L&#x27;Aquila, os sete cientistas</a>
+<a href="../julgados/mariana-jf-2024.html">Mariana, absolvição criminal na Justiça Federal</a>
+<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana, homologação do acordo de repactuação</a>
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana e outros v. BHP Group</a>
+<a href="../julgados/neubauer-2021.html">Neubauer e outros v. Alemanha</a>
+<a href="../julgados/itlos-parecer-2024.html">Parecer consultivo sobre mudança climática e direito do mar</a>
+<a href="../julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a>
+<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. Estado dos Países Baixos</a>
+<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz e outros v. Suíça</a>
+<div class="area">conceito</div>
+<a href="../conceitos/capacidade-institucional.html">#capacidade-institucional (nota de referência)</a>
+<a href="../conceitos/normal-accidents.html">Acidente normal (propriedade estrutural do sistema)</a>
+<a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a>
+<a href="../conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>
+<a href="../conceitos/dysfunction.html">Disfunção de processo social</a>
+<a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a>
+<a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a>
+<a href="../conceitos/s02-montagem-da-sessao.html">Montagem da sessão S02, 2026.2 (nota de projeto)</a>
+<a href="../conceitos/quarantelli-criterios-brasil.html">Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)</a>
+<a href="../conceitos/porcao-juridica.html">Porção jurídica (legal bite-sizes)</a>
+<a href="../conceitos/risk-society.html">Sociedade de risco</a></nav>
+<main>
+<h1>Dysfunction and Disruption: Disaster Risks and the Law</h1>
+<div class="meta">tipo: texto<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#disaster-law">disaster-law</a> <a class="badge" href="../tags.html#regulatory-failure">regulatory-failure</a></div>
+<ul class="ficha"><li><strong>neste corpus:</strong> 1 apontam para ele, 25 saem dele</li></ul>
+
+<div data-lang="pt" hidden><h1>Dysfunction and Disruption: Disaster Risks and the Law</h1>
+<p>LAUTA, Kristian Cedervall. Dysfunction and Disruption: Disaster Risks and the Law. <em>European
+Journal of Risk Regulation</em>, v. 8, n. 1, p. 83-87, 2017.</p>
+<h2 id="sec-argumento">Argumento</h2>
+<p>Leitura obrigatória de <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>. Lauta parte de uma virada pessoal (o 11 de setembro de 2001, no
+início de sua formação em Direito) para argumentar que o direito se tornou central na forma como
+as sociedades definem e respondem a desastre, não porque o desastre seja um choque externo, mas
+porque boa parte dos riscos que mais importam hoje é <a href="../conceitos/dysfunction.html">disfunção</a> de processos sociais
+dos quais a própria sociedade se beneficia (energia centralizada, ocupação de áreas costeiras,
+produção de alimentos). Uma vez que a fonte do dano é um processo que a sociedade escolheu e do
+qual lucra, o tratamento jurídico muda: tradicionalmente esses riscos eram absorvidos por alguma
+forma de <a href="../conceitos/legal-exceptionalism.html">excepcionalismo jurídico</a> (estado de emergência, ato de Deus,
+necessidade), e Lauta argumenta que este não é mais o caso hoje. O direito não chega depois do
+evento para limpar a bagunça; ele já está lá, no alvará e no padrão de projeto, fixando de
+antemão o que conta como risco aceitável.</p>
+<h2 id="sec-problema-e-metodo">Problema e método</h2>
+<p>Seção 4 do relatório. O problema tem duas partes. A condição é que os riscos com consequências
+potencialmente desastrosas não são assumidos por decisão jurídica; a consequência indesejável é que
+o instrumental do direito, construído para riscos decididos, perde tração sobre eles. O tipo é
+conceitual, porque o ensaio pede que o leitor mude o que pensa, e não o que faz.</p>
+<p>O objetivo é declarado logo na abertura, e é modesto: "On the joyful occasion of the relaunch of
+EJRR, I will offer an account of such risks' significance for law in general, and legal scholarship
+in particular" (p. 83). Ele promete um relato, não uma demonstração, e é apenas isso que se pode
+cobrar dele.</p>
+<p>O método é o do ensaio programático em primeira pessoa, com trajetória biográfica, definição
+conceitual por contraste e mapeamento do campo por notas e agenda. Não há metodologia declarada,
+hipótese, corpus normativo ou jurisprudencial analisado, nem dados: a prova é conceitual e
+bibliográfica, distribuída em 22 notas quase todas de referência simples. Como o contexto de escrita
+mostra que o formato foi imposto pelo editor, a ausência de método não é descuido do autor, e
+cobrá-la seria cobrar do texto um gênero que ele não é.</p>
+<table>
+<thead>
+<tr>
+<th>Seção</th>
+<th>Tese</th>
+<th>Condição</th>
+<th>Consequência</th>
+<th>Tipo</th>
+<th>Página</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abertura</td>
+<td>não enuncia tese própria</td>
+<td>experiência de fragilidade institucional</td>
+<td>nenhuma enunciada</td>
+<td>ausente</td>
+<td>83</td>
+</tr>
+<tr>
+<td>I. Disaster Risk</td>
+<td>o risco relevante é disfunção, não decisão</td>
+<td>risco não assumido intencionalmente</td>
+<td>não cabe em porções jurídicas</td>
+<td>conceitual</td>
+<td>84-85</td>
+</tr>
+<tr>
+<td>II. Risk Regulation</td>
+<td>o campo interessa por resistir a solução doutrinária</td>
+<td>o direito já regula, mas sem categoria adequada</td>
+<td>o campo não é ciência de quebra-cabeças</td>
+<td>conceitual</td>
+<td>85-86</td>
+</tr>
+<tr>
+<td>III. Future Research</td>
+<td>é preciso instituições para bens públicos globais</td>
+<td>riscos cada vez mais globais e extremos</td>
+<td>lacuna crítica na literatura jurídica</td>
+<td>prático</td>
+<td>86-87</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-estrutura-do-texto">Estrutura do texto</h2>
+<p>Seção 5. Trata-se de ensaio programático de balanço e agenda, encomendado, dirigido à comunidade de
+regulação de risco e com função inaugural. A abertura estabelece a experiência de fragilidade; a
+seção I converte a experiência em conceito, a <a href="../conceitos/dysfunction.html">disfunção</a>; a II mostra que o direito já
+respondeu, embora sem categoria adequada; a III projeta a agenda; e o fecho retorna à janela do
+escritório, fechando o círculo aberto na abertura, o que faz o texto terminar em registro pessoal e
+não em proposição.</p>
+<p><strong>O achado de arquitetura:</strong> a abertura é a única seção sem tese própria, e funciona como dispositivo
+de autorização, em que a experiência pessoal legitima o objeto. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span> A biografia precede o
+conceito, o que instala o desastre como experiência antes de instalá-lo como categoria e blinda a
+definição contra a objeção de arbitrariedade, porque discordar dela passa a parecer discordar de uma
+experiência.</p>
+<p>A ordem das seções faz, assim, o trabalho argumentativo que o texto não faz explicitamente. Colocar
+o mapeamento do campo antes da agenda faz a agenda parecer decorrência, e não escolha; e terminar na
+janela do escritório, e não em proposição, retira do leitor o ponto exato em que ele poderia
+discordar.</p>
+<h2 id="sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</h2>
+<p>Seção 6. <strong>A espécie da alegação principal é de definição e classificação, não de causa nem de
+política.</strong> Isso governa o que se pode exigir dela: alegação de definição se sustenta por raciocínio
+sobre semelhanças e diferenças, não por evidência empírica, e cobrar dados de uma alegação de
+definição é erro de categoria. A única passagem em que o ensaio muda de espécie e passa a alegar
+fato é a do ozônio, e é exatamente a que a checagem abaixo derruba. A coincidência não é casual: o
+texto erra onde sai do seu próprio gênero.</p>
+<p>O percurso é o seguinte. A categoria de risco que interessa ao direito hoje não é aquela com que a
+literatura de regulação trabalha, para a qual risco é algo deliberadamente assumido por decisão e,
+portanto, administrável por remédios jurídicos. O risco que Lauta estuda é outro, efeito da
+incerteza com consequências potencialmente desastrosas e em regra não assumido intencionalmente,
+dividido em dois grupos que se hibridizam, os do ambiente natural e, sobretudo, os que emergem como
+disfunções de outros processos ou instituições sociais. A consequência jurídica é o núcleo: riscos
+assim não chegam em <a href="../conceitos/porcao-juridica.html">porções jurídicas</a>, estão tecidos em estruturas sociais,
+cultura e interesses de mercado, não são quantificados nem quantificáveis de modo significativo, e
+emergem em sistema adaptativo complexo, o que os torna indetermináveis no tempo e no espaço. O passo
+seguinte é histórico: o direito tratou esses riscos por <a href="../conceitos/legal-exceptionalism.html">excepcionalismo</a>, e
+isso mudou, porque nos últimos trinta anos surgiu um corpo expressivo de regulação em todas as fases
+da gestão do risco. Daí o interesse do campo, que não é ciência de quebra-cabeças no sentido de
+<a href="../textos/kuhn-1970.html">Kuhn</a>, e sim campo que expande e desafia categorias, pressupostos e metodologias.</p>
+<p><strong>Reconhecimento e resposta à objeção praticamente não existem, e isso é o achado, não uma omissão
+desta leitura.</strong> A única concessão é a da p. 86, em que admite que os casos de responsabilidade podem
+ser vistos como ordinários antes de afirmar que desafiam; e a nota 5 antecipa objeção ao reconhecer
+que a alegação de não quantificabilidade é "incredibly controversial", remetendo a
+<a href="../textos/posner-2004.html">Posner</a> sem enfrentá-la.</p>
+<p><strong>Os dois elos mais frágeis são garantias não ditas.</strong> O primeiro vai de "não quantificável" para "o
+direito precisa mudar": a garantia silenciosa é que, quando um objeto não se deixa quantificar, o
+instrumental jurídico construído sobre quantificação perde legitimidade, e não apenas precisão. É
+pressuposto disciplinar, e o texto não o enuncia. O segundo vai de "o risco é disfunção de processos
+benéficos" para "o excepcionalismo é inadequado": a garantia silenciosa é que, quando o dano decorre
+de arranjo do qual a sociedade se beneficia, tratá-lo como exceção externa oculta a escolha coletiva
+que o produziu. Este segundo elo é o mais fértil da peça e o que o autor menos desenvolve, e é
+também onde a garantia falha, porque não se mostra que os riscos examinados sejam instância plausível
+da circunstância geral. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Ethos e densidade.</strong> O ensaio adensa pouco o argumento e enfrenta pouco a objeção, o que rebaixa o
+ethos na chave técnica; em compensação, constrói autoridade por outra via, a da experiência declarada
+na abertura. A resposta que o texto dá à pergunta tácita sobre confiança é biográfica, não
+argumentativa. Medida parágrafo a parágrafo, a densidade confirma o padrão: a abertura vive no nível
+mais concreto, com data, idade e lugar; o parágrafo que sustenta a tese oscila entre o conceitual
+alto e um único exemplo concreto, o colapso da produção de energia na Holanda; e o fecho permanece
+nos níveis altos, com uma única descida ao concreto, a passagem do ozônio, que é precisamente a que
+falha na conferência factual.</p>
+<h2 id="sec-conceitos-em-tres-niveis">Conceitos em três níveis</h2>
+<p>Seção 7. Cada conceito entra como ficha, do nível básico ao indicador observável, com a estrutura de
+agregação declarada.</p>
+<table>
+<thead>
+<tr>
+<th>Conceito</th>
+<th>Nível básico</th>
+<th>Dimensões</th>
+<th>Nível indicador</th>
+<th>Agregação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../conceitos/dysfunction.html">Disfunção</a></td>
+<td>propriedade de um risco que emerge como subproduto de processo social benéfico, e não de decisão que o assuma</td>
+<td>origem em processo social; benefício auferido desse processo; ausência de assunção deliberada</td>
+<td>os três exemplos do texto (dependência de infraestrutura, habitação costeira, produção eficiente de alimentos) mais o exemplo holandês</td>
+<td>conjunção: a ausência de qualquer dimensão exclui o caso</td>
+</tr>
+<tr>
+<td><a href="../conceitos/porcao-juridica.html">Porção jurídica</a></td>
+<td>unidade de fato que uma categoria jurídica consegue recortar e processar inteira</td>
+<td>delimitação temporal; delimitação espacial; imputabilidade a sujeito</td>
+<td>a expressão "legal bite-sizes" e a série de negações que a acompanha na p. 84</td>
+<td>conjunção</td>
+</tr>
+<tr>
+<td><a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a></td>
+<td>tratamento do desastre como estado fora da normalidade jurídica</td>
+<td>estado de emergência; ato de Deus; necessidade</td>
+<td>a tríade da p. 85</td>
+<td>disjunção: qualquer das três formas basta</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A lacuna conceitual mais consequente do ensaio</strong> está na primeira linha da tabela: o critério de
+suficiência da disfunção não é declarado, e o polo negativo tampouco. Disfunção só se define contra
+função, e alguém precisa dizer qual é a função e para quem ela funciona. O autor não declara a
+estrutura, e registra-se que não declarou. A porção jurídica, em compensação, é o conceito mais
+produtivo da peça, e os casos brasileiros mostram que ele descreve com precisão o que aconteceu em
+Mariana e em Brumadinho. Quanto ao excepcionalismo, o ensaio afirma que deixou de ser o tratamento
+dominante, e os casos confirmam pelo lado da prática: o que se vê hoje é o desastre processado por
+categorias ordinárias, homicídio culposo, responsabilidade civil e direitos fundamentais, com
+resultados incompatíveis entre si.</p>
+<h2 id="sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</h2>
+<p>Seção 12. Quatro termos que o ensaio usa carregam história que ele não abre.</p>
+<p><strong>Risco como efeito da incerteza.</strong> A formulação é do <a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009</a>,
+definição 1.1, importada por remissão expressa pela <a href="../legislacao/iso-31000-2009.html">ISO 31000:2009</a>. <span class="selo selo-fato" title="fato conferido na fonte: conferido em ISO Guide 73:2009, definicao 1.1 (2026-07-25)">✓</span> A
+versão pertinente é a de 2009, porque a segunda edição da ISO 31000 é de fevereiro de 2018,
+posterior ao texto. <span class="selo selo-fato" title="fato conferido na fonte: conferido em ISO 31000:2018, registro de publicacao (2026-07-25)">✓</span></p>
+<p><strong>Risco e perigo em <a href="../textos/luhmann-2004.html">Luhmann</a>.</strong> A distinção não é de grau de dano nem opõe risco a
+segurança: é distinção de atribuição. O mesmo dano possível é risco quando atribuído a decisão
+própria, e perigo quando atribuído ao ambiente. <span class="selo selo-fato" title="fato conferido na fonte: conferido em LUHMANN, Law as a Social System; distincao consolidada na doutrina (2026-07-25)">✓</span> Ela é assimétrica e relacional, de modo que
+o que é risco para quem decide é perigo para quem sofre sem ter decidido. <strong>A consequência é o achado
+mais fino desta leitura:</strong> o ensaio quer o efeito luhmanniano, que é deslocar o risco para fora da
+decisão jurídica, mas usa a definição da ISO, que é objetivista e neutra quanto ao sinal. A distinção
+risco e perigo daria ao argumento exatamente o que ele procura, porque o risco de desastre é perigo
+para quem o suporta e risco para quem decide sobre a infraestrutura. O texto não a mobiliza, e ela é
+a ferramenta que resolveria a lacuna distributiva registrada mais abaixo. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Risco existencial.</strong> Bostrom, no <em>Journal of Evolution and Technology</em>, v. 9, n. 1, 2002, define
+como risco cujo resultado adverso aniquilaria a vida inteligente originada na Terra ou reduziria
+permanente e drasticamente o seu potencial. <span class="selo selo-fato" title="fato conferido na fonte: conferido em BOSTROM, Journal of Evolution and Technology, v. 9, n. 1, 2002 (2026-07-25)">✓</span> O Centre for the Study of Existential Risk foi
+fundado em 2012 por Huw Price, Martin Rees e Jaan Tallinn, e Lauta foi visitante ali em 2017, o que
+explica o parágrafo final do ensaio e a nota 21. <span class="selo selo-fato" title="fato conferido na fonte: conferido em pagina institucional do CSER, Universidade de Cambridge (2026-07-25)">✓</span></p>
+<p><strong>Vulnerabilidade.</strong> O modelo pressão e liberação, de Wisner, Blaikie, Cannon e Davis, desloca o eixo
+do agente físico para a economia política, por uma progressão de três níveis, causas de fundo,
+pressões dinâmicas e condições inseguras, que se encontra com o evento físico. <span class="selo selo-fato" title="fato conferido na fonte: conferido em WISNER, BLAIKIE, CANNON e DAVIS, At Risk (2026-07-25)">✓</span> A divergência
+sobre o ano da segunda edição está resolvida: é 2004, Routledge, ISBN 0-415-25216-4; o ano de 2005
+vem da resenha publicada naquele ano e propagada por registros derivados, e 2003 não tem lastro
+documental algum. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Routledge, registro de catalogo, ISBN 0-415-25216-4 (2026-07-25)">✓</span></p>
+<p><strong>Desastre e catástrofe.</strong> A distinção de <a href="../textos/quarantelli-2005.html">Quarantelli</a> opera por seis critérios
+organizacionais, e não físicos, detalhados em <a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a>: o critério é a capacidade
+residual de resposta, não a magnitude do agente. O ensaio de Lauta usa "disaster" como termo genérico
+e não incorpora a distinção, embora ela seja diretamente pertinente ao seu conceito de disfunção. A
+divergência sobre o número de critérios, quatro ou seis, está registrada em
+<a href="../conceitos/quarantelli-criterios-brasil.html">Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)</a> e foi resolvida pela fonte primária local.</p>
+<h2 id="sec-checagem-factual-a-unica-evidencia-empirica-propria-e-falsa">Checagem factual: a única evidência empírica própria é falsa</h2>
+<p>Seção 9.1 do relatório de revisão. A passagem do ozônio (p. 87) é <strong>o único ponto do ensaio em que
+ele tenta provar algo empiricamente</strong>, e é onde erra. Detalhe integral em
+<a href="../legislacao/protocolo-de-montreal-1987.html">Protocolo de Montreal sobre substâncias que destroem a camada de ozônio</a>; em resumo, e tudo <span class="selo selo-fato" title="fato conferido na fonte: conferido em FARMAN, GARDINER e SHANKLIN, Nature, v. 315, p. 207-210, 1985; series de NASA, NOAA, WMO e UNEP (2026-07-25)">✓</span>: a data erra por sete anos (detecção em
+1985, não 1992); o problema <strong>não está resolvido</strong> (retorno aos valores de 1980 projetado para
+cerca de 2066 na Antártida); e o erro cronológico mais grave é que as concentrações só atingiram o
+pico por volta de 2000, mais de uma década <strong>depois</strong> da entrada em vigor do Protocolo, de modo que
+a inércia química de décadas entre a norma e o efeito é exatamente o que o exemplo apaga.</p>
+<p><strong>Segundo achado literal:</strong> a citação da <a href="../legislacao/iso-guide-73-2009.html">ISO</a> está <strong>truncada</strong>. A norma define
+risco como efeito da incerteza <em>sobre objetivos</em>, e a Nota 1 registra que o efeito pode ser
+positivo. Lauta corta justamente a parte que torna a definição neutra quanto ao sinal, que é o que
+a opõe a Luhmann. O truncamento <strong>enfraquece o argumento que pretendia sustentar</strong>.</p>
+<p><strong>Terceiro:</strong> <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> a atribuição da frase de Luhmann à página 155 de <em>Law as a Social
+System</em> não foi verificável em fonte aberta. A substância da distinção é doutrina consolidada, mas
+a localização é atribuição do próprio autor. Lacuna <strong>L3</strong>, redutível por aquisição do exemplar.</p>
+<p><strong>O padrão que isto revela</strong>, e que é o resultado mais útil da leitura: quando o texto desce ao
+concreto para provar, ele erra; quando permanece no conceitual, ele convence.</p>
+<h2 id="sec-casos-e-aplicacoes">Casos e aplicações</h2>
+<p>Seção 14. O ensaio não reconstrói caso algum: remete ao simpósio do próprio periódico sobre os
+L'Aquila Seven, em <a href="../textos/ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a>, e a um levantamento de casos penais após desastres. O que
+segue é o que aconteceu depois, e o que a distinção dele ilumina sem que ele soubesse.</p>
+<p><strong>L'Aquila, o desfecho.</strong> O Tribunale condenou os sete em 22 de outubro de 2012; a Corte d'Appello
+absolveu seis e manteve a condenação de Bernardo De Bernardinis em 10 de novembro de 2014; e a Corte
+de Cassação rejeitou os recursos em <a href="../julgados/laquila-cassacao-2016.html">Caso L&#x27;Aquila, os sete cientistas</a>. A divergência sobre o número da
+decisão está resolvida em favor de 12478 de 2016, conferido no cabeçalho do texto oficial. <span class="selo selo-fato" title="fato conferido na fonte: conferido em cabecalho do texto oficial: Penale Sent. Sez. 4 Num. 12478 Anno 2016 (2026-07-25)">✓</span> A
+origem do erro também está identificada: um portal muito indexado em italiano publica como 12748,
+com transposição de dígitos. <span class="selo selo-fato" title="fato conferido na fonte: conferido em portal Giurisprudenza Penale (2026-07-25)">✓</span></p>
+<p><strong>Mariana, e o mesmo fato produzindo três resultados incompatíveis.</strong> A Justiça Federal absolveu
+Samarco, Vale e BHP e as pessoas físicas em 14 de novembro de 2024, por ausência de prova do nexo
+causal (<a href="../julgados/mariana-jf-2024.html">Mariana, absolvição criminal na Justiça Federal</a>). <span class="selo selo-fato" title="fato conferido na fonte: conferido em sentenca da Justica Federal, 14/11/2024 (2026-07-25)">✓</span> O acordo de repactuação de R$ 170 bilhões foi assinado em 25 de
+outubro de 2024 e homologado pelo STF em 6 de novembro de 2024
+(<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana, homologação do acordo de repactuação</a>). <span class="selo selo-fato" title="fato conferido na fonte: conferido em decisao de homologacao do STF, 06/11/2024 (2026-07-25)">✓</span> E a High Court of Justice inglesa decidiu pela
+responsabilidade da controladora em 14 de novembro de 2025, com mais de 600 mil demandantes
+(<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana e outros v. BHP Group</a>). <span class="selo selo-fato" title="fato conferido na fonte: conferido em Municipio de Mariana e outros v. BHP Group, [2025] EWHC 3001 (TCC) (2026-07-25)">✓</span> <strong>É a demonstração empírica mais forte disponível da tese do
+ensaio:</strong> o risco de desastre não vem em porções jurídicas, e cada porção aplicada ao mesmo fato
+produz resultado incompatível com as outras.</p>
+<p><strong>Brumadinho, o caso em estado puro.</strong> A denúncia imputa 270 homicídios qualificados, porque o art.
+121 do Código Penal pressupõe pessoa nascida com vida; o Ministério Público de Minas Gerais, por sua
+vez, conta 272 vítimas, incluindo os dois nascituros de gestantes atingidas
+(<a href="../julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a>). <span class="selo selo-fato" title="fato conferido na fonte: conferido em denuncia do MPMG e comunicacao oficial do orgao (2026-07-25)">✓</span> A divergência não é erro de imprensa nem imprecisão de contagem:
+<strong>a diferença de duas vidas é produzida pela categoria, e não pelo fato.</strong> Nenhuma passagem do ensaio
+chega a essa formulação, e ela é o melhor exemplo brasileiro do que ele quis dizer.</p>
+<p><strong>O parecer da Corte Internacional de Justiça, que confirma e ao mesmo tempo qualifica a tese.</strong> No
+parecer de 23 de julho de 2025 (<a href="../julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a>), o parágrafo 172 enuncia que o direito
+mais diretamente aplicável compreende onze corpos normativos, da Carta das Nações Unidas ao direito
+internacional dos direitos humanos, e o parágrafo 171 rejeita expressamente que os tratados
+climáticos constituam <em>lex specialis</em> capaz de afastar as demais regras. Onze corpos normativos
+convocados para responder a uma pergunta é a confirmação institucional mais forte que a tese poderia
+receber, e vem de um tribunal, não de um comentarista. Que os tratados de ozônio integrem essa lista
+tem ironia própria, porque o ozônio é justamente o exemplo empírico que a checagem acima derruba.</p>
+<p><strong>A qualificação, que é o achado mais consequente.</strong> Nos parágrafos 435 a 438, a Corte enfrenta
+exatamente o que Lauta chamou de severos testes de estresse dos conceitos de causalidade e culpa, e
+conclui que o padrão do nexo causal suficientemente direto e certo é flexível o bastante para o
+contexto climático, exigindo apreciação em concreto caso a caso. Oito anos depois do ensaio, <strong>a
+categoria dobra e não quebra.</strong> A forma forte da tese, segundo a qual o risco de desastre desorganiza
+as categorias jurídicas, fica por isso rebaixada: as categorias resistem, ao custo de perderem
+determinação.</p>
+<p><strong>Quatro portas de entrada para o mesmo risco.</strong> <a href="../julgados/urgenda-2019.html">Urgenda</a> entra pela do ilícito civil
+e do dever de cuidado; <a href="../julgados/neubauer-2021.html">Neubauer</a>, pela dos direitos fundamentais como garantia
+intertemporal de liberdade; <a href="../julgados/klimaseniorinnen-2024.html">KlimaSeniorinnen</a>, pela das obrigações positivas
+do art. 8; e o <a href="../julgados/itlos-parecer-2024.html">parecer do ITLOS</a>, pela do direito do mar, ao qualificar as
+emissões antrópicas como poluição do meio marinho. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Hoge Raad ECLI:NL:HR:2019:2006; BVerfG 1 BvR 2656/18; CEDH 53600/20; ITLOS caso 31 (2026-07-25)">✓</span> Quatro perímetros de dever, nenhum
+comensurável com os outros.</p>
+<p><strong>O caso dentro do caso.</strong> Em KlimaSeniorinnen, a Grande Câmara julgou procedente o pedido da
+associação quanto ao art. 8, por 16 votos a 1, e declarou inadmissíveis as quatro requerentes
+individuais por não preencherem o status de vítima do art. 34. <span class="selo selo-fato" title="fato conferido na fonte: conferido em acordao KlimaSeniorinnen, CEDH, 09/04/2024, peticao 53600/20 (2026-07-25)">✓</span> A mesma exposição ao mesmo
+risco existe ou não conforme a categoria processual de legitimidade, e isso ocorre dentro de um único
+acórdão. É a tese de Lauta operando em escala mínima.</p>
+<p><strong>Exercício para a sessão.</strong> Sobre qualquer um dos casos acima, aplicar a pergunta de Luhmann: para
+quem isto é risco, por ter decidido, e para quem é perigo, por ter sido exposto?</p>
+<h2 id="sec-grade-de-forca-probatoria">Grade de força probatória</h2>
+<p>Seção 15 do relatório. Escala verbal, nunca numérica: percentual e nota de zero a dez seriam
+precisão falsa.</p>
+<table>
+<thead>
+<tr>
+<th>Evidência</th>
+<th>Certeza teórica</th>
+<th>Unicidade teórica</th>
+<th>Unicidade empírica</th>
+<th>Certeza empírica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exemplo holandês da dependência de energia</td>
+<td>alta</td>
+<td>baixa: teorias rivais produzem o mesmo exemplo</td>
+<td>média: é exemplo construído, não observado</td>
+<td>baixa</td>
+</tr>
+<tr>
+<td>Passagem do ozônio</td>
+<td>alta</td>
+<td>baixa</td>
+<td><strong>muito baixa</strong>: a fonte é o próprio autor e o enunciado é falso</td>
+<td>não se aplica</td>
+</tr>
+<tr>
+<td>Corpo de regulação dos últimos trinta anos</td>
+<td>média</td>
+<td>baixa</td>
+<td>alta: verificável em fontes oficiais</td>
+<td>alta</td>
+</tr>
+<tr>
+<td><a href="../julgados/cij-parecer-clima-2025.html">Parecer da CIJ</a>, §§ 171 e 172</td>
+<td>alta</td>
+<td><strong>alta</strong>: difícil imaginar explicação rival que produza onze corpos normativos</td>
+<td>alta: fonte primária e integral</td>
+<td>alta</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusão da grade.</strong> A tese conceitual recebe sustentação <strong>forte de uma evidência que o ensaio
+não tinha</strong> (o parecer da CIJ, de 2025) e <strong>fraca das evidências que ele apresenta</strong>. Por isso a
+afirmação de que o risco de desastre não vem em <a href="../conceitos/porcao-juridica.html">porções jurídicas</a> fica
+registrada como <strong>bem sustentada</strong>, ao passo que a afirmação de que ele desorganiza as categorias
+fica registrada como <strong>qualificada</strong>.</p>
+<p><strong>Alarme de corroboração excessiva.</strong> Os quatro casos climáticos (<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. Estado dos Países Baixos</a>,
+<a href="../julgados/neubauer-2021.html">Neubauer e outros v. Alemanha</a>, <a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz e outros v. Suíça</a>, <a href="../julgados/itlos-parecer-2024.html">Parecer consultivo sobre mudança climática e direito do mar</a>) ajustam-se muito bem à tese.
+Isso <strong>rebaixa</strong> a unicidade empírica em vez de elevá-la, porque foram selecionados por quem
+procurava casos que a instanciam. Registra-se o viés de seleção, e não se lhes atribui peso
+confirmatório.</p>
+<h2 id="sec-contexto-de-escrita-por-que-este-texto-tem-esta-forma">Contexto de escrita: por que este texto tem esta forma</h2>
+<p>Seção 10. <strong>A constatação que reordena toda a leitura:</strong> a estrutura em três partes não é escolha
+autoral, é o formulário editorial. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span> O v. 8, n. 1, de março de 2017, é o primeiro número do
+periódico publicado pela Cambridge University Press, sob o dossiê "Cambridge Inaugural
+Issue". <span class="selo selo-fato" title="fato conferido na fonte: conferido em fasciculo EJRR v. 8, n. 1, Cambridge Core (2026-07-25)">✓</span> O editorial de abertura, de Alberto <a href="../autores/alemanno.html">Alemanno</a>, descreve o formato: o
+editor convidou os membros do próprio conselho editorial a um exercício de autorreflexão,
+respondendo a três perguntas, uma pessoal, sobre a história de cada um com a regulação de risco, uma
+descritiva, sobre como definir o campo, e uma normativa, sobre o futuro dele. <span class="selo selo-fato" title="fato conferido na fonte: conferido em ALEMANNO, editorial do fasciculo, DOI 10.1017/err.2017.4 (2026-07-25)">✓</span> Ler o ensaio
+como artigo de tese é lê-lo mal: abrir por memória pessoal e fechar por prognóstico, que pareceria
+idiossincrasia, é cumprimento de consigna.</p>
+<p>A peça está classificada na seção "Contributions", e não como artigo de pesquisa, o que significa que
+é texto por convite e sem revisão por pares. <span class="selo selo-fato" title="fato conferido na fonte: conferido em classificacao do periodico no proprio fasciculo (2026-07-25)">✓</span> Essa classificação governa tudo o que dele se
+pode exigir.</p>
+<p><strong>Quem escreve, e de onde.</strong> <a href="../autores/lauta.html">Lauta</a> nasceu em 1982 e fez toda a formação na Universidade de
+Copenhague, com doutorado em 2012. <span class="selo selo-fato" title="fato conferido na fonte: conferido em dados institucionais autodeclarados, Universidade de Copenhague (2026-07-25)">✓</span> Em 2017 era Associate Professor no Center for
+International Law, Conflict and Crisis, e no mesmo ano foi <em>visiting scholar</em> no Centre for the Study
+of Existential Risk, em Cambridge, o que explica o parágrafo final sobre risco existencial. <span class="selo selo-fato" title="fato conferido na fonte: conferido em curriculo institucional e nota de autor do proprio artigo (2026-07-25)">✓</span>
+<strong>Ele não é autor externo convidado:</strong> era Senior Editor do próprio periódico, e especificamente
+Senior Editor para Disaster Law desde 2016. <span class="selo selo-fato" title="fato conferido na fonte: conferido em pagina de conselho editorial da Cambridge arquivada em outubro de 2017 (2026-07-25)">✓</span> É membro do conselho respondendo ao chamado da
+própria casa.</p>
+<p><strong>O financiamento, com duas correções ao que o asterisco da p. 83 sugere.</strong> Primeira: "UCPH 2016" é
+o nome do fundo estratégico da universidade, não o ano do edital, e as verbas foram concedidas em
+janeiro de 2013 a dezoito projetos interdisciplinares. <span class="selo selo-fato" title="fato conferido na fonte: conferido em registro do programa da Universidade de Copenhague (2026-07-25)">✓</span> Segunda: Lauta não coordenava o
+projeto Changing Disasters; era Deputy-PI e autor da candidatura, e o PI era Morten Broberg. <span class="selo selo-fato" title="fato conferido na fonte: conferido em registro do projeto Changing Disasters (2026-07-25)">✓</span></p>
+<p><strong>O achado que decorre das duas correções.</strong> Morten Broberg, o PI do projeto que financiou o ensaio,
+assina outra contribuição no mesmo fascículo, às p. 101-105. <span class="selo selo-fato" title="fato conferido na fonte: conferido em sumario do fasciculo EJRR v. 8, n. 1 (2026-07-25)">✓</span> Dois membros do mesmo projeto
+financiado aparecem no mesmo dossiê, o que, somado ao cargo editorial, desloca a peça do gênero
+contribuição científica para o gênero <strong>posicionamento institucional</strong>. Isso não a invalida, e muda o
+que ela prova: ela é evidência de agenda de um centro de pesquisa, não de consenso de um campo.</p>
+<p><strong>Contra quem.</strong> O ensaio não nomeia adversário. Seu alvo é a definição decisionista de risco,
+associada no texto a <a href="../textos/luhmann-2004.html">Luhmann</a>, na nota 2, e à <a href="../legislacao/iso-31000-2009.html">ISO 31000</a>, na nota
+3. Os demais nomes citados são arrolados como marcos do campo, não como oponentes.</p>
+<p><strong>Divergência registrada e não arbitrada:</strong> o editorial afirma que o resultado foi uma coleção de
+vinte peças, mas o sumário publicado do fascículo lista vinte e uma contribuições, com a de Lauta em
+décimo quinto lugar. <span class="selo selo-pendente" title="não verificado: divergente">✗</span> A causa não foi determinada.</p>
+<h2 id="sec-estilo-e-metodo">Estilo e método</h2>
+<p>Seção 11. Os três movimentos retóricos da introdução, com o sinal linguístico que os identifica.</p>
+<table>
+<thead>
+<tr>
+<th>Movimento</th>
+<th>Frase</th>
+<th>Sinal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estabelecer o território</td>
+<td>"I came to study risks with potentially disastrous consequences" (p. 83)</td>
+<td>verbo de trajetória pessoal em primeira pessoa</td>
+</tr>
+<tr>
+<td>Estabelecer o nicho por contra-alegação</td>
+<td>"I am not talking about that kind of risk" (p. 84)</td>
+<td>negação explícita da posição alheia</td>
+</tr>
+<tr>
+<td>Ocupar o nicho</td>
+<td>"I will offer an account of such risks' significance for law" (p. 83)</td>
+<td>anúncio de propósito com futuro volitivo</td>
+</tr>
+</tbody>
+</table>
+<p>O nicho é estabelecido por contra-alegação, que é o movimento mais forte da tipologia, e ainda assim
+sem nomear quem sustenta a posição rejeitada: a peça rejeita uma definição, não um autor.</p>
+<p><strong>Tratamento da literatura, e o que ele revela.</strong> Das 22 notas, quase todas são de referência simples,
+e o autor citado quase nunca é sujeito da frase; a forma dominante é a não integral, com a obra
+remetida a nota. Isso é notável porque a linha de base disciplinar aponta em sentido contrário: em
+filosofia e nas humanidades a forma integral é a preferida, e a média de citações por artigo em
+disciplinas moles fica entre 75 e 104, contra as 22 notas deste ensaio. <span class="selo selo-fato" title="fato conferido na fonte: conferido em HYLAND, linhas de base de citacao disciplinar (2026-07-25)">✓</span> <strong>A peça se comporta
+bibliograficamente como texto de ciências duras</strong>, com baixa densidade e forma não integral, o que é
+coerente com o gênero de cinco páginas por convite e incoerente com a tradição do campo em que se
+inscreve.</p>
+<p><strong>Verbos relatores.</strong> O ensaio quase não os usa, porque quase não relata: enumera. Onde relata, usa
+verbos que não comprometem, como "explored" e "have sought". Não há assimetria entre aliados e
+adversários porque não há adversários nomeados.</p>
+<p><strong>Teste do autor ausente.</strong> O ensaio passa com folga, e por um motivo que é o inverso do problema
+típico: é integralmente escrito em primeira pessoa, com o autor como sujeito da maior parte das
+asserções. O risco aqui não é o do autor ausente, é o do <strong>autor onipresente</strong>, porque a autoridade
+da peça repousa na posição de quem fala, e não na evidência apresentada. Na prosa, o texto favorece
+sujeitos curtos e concretos na abertura e no fecho, e sujeitos longos e abstratos no miolo conceitual,
+o que confirma o mapa de densidade registrado acima.</p>
+<h2 id="sec-recepcao-zero-citacoes-e-o-que-isso-significa">Recepção: zero citações, e o que isso significa</h2>
+<p>Seção 13 do relatório. As quatro bases registram <strong>zero</strong> citações deste ensaio (ver o bloco
+<code>reception</code> no frontmatter, com data de consulta por base). O dado que muda a leitura: o mesmo
+perfil do autor registra <strong>958 citações no total, com índice h de 14</strong>. <span class="selo selo-fato" title="fato conferido na fonte: conferido em perfil verificado do autor no Google Academico (2026-07-25)">✓</span></p>
+<p>Não se trata de autor que não circula: trata-se <strong>deste ensaio</strong> que não circula. Qualquer
+afirmação sobre o impacto desta peça específica seria falsa, e quem quiser tratá-la como marco do
+campo estará contrariando o único dado disponível.</p>
+<p><strong>Anomalia de metadados</strong>, que explica parte da invisibilidade: o Crossref registra
+<code>reference-count</code> igual a zero para o ensaio, enquanto o Semantic Scholar extraiu sete referências
+do mesmo texto. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Crossref e Semantic Scholar, registros do mesmo DOI (2026-07-25)">✓</span> As referências existem na página e não foram depositadas como metadado pela
+editora.</p>
+<p><strong>Consequência para o uso:</strong> a peça serve como enunciado conciso e citável de uma tese conceitual,
+<strong>não como fonte de autoridade</strong>. Para autoridade, o caminho é <em>Disaster Law</em>, de 2014, que circula.</p>
+<h2 id="sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</h2>
+<p>Seção 16. <strong>Nenhuma lacuna bloqueante permanece.</strong> A bloqueante da passagem anterior, o acesso ao
+parecer da CIJ, foi fechada com o exemplar integral de 140 páginas localizado em pasta de outra
+disciplina, o que confirma o valor da regra que manda ler a vizinhança antes de buscar fora.</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>O que falta</th>
+<th>Estatuto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L3</td>
+<td>a objeção de <a href="../textos/verchick-2012.html">Verchick</a> não foi lida na fonte primária, e por isso não está resumida</td>
+<td>redutível por aquisição</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>o <em>front matter</em> do fascículo não foi acessado, por bloqueio da editora; a confirmação do cargo editorial apoia-se em página institucional arquivada da mesma época</td>
+<td>redutível por aquisição</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>a atribuição da frase de Luhmann à p. 155 de <em>Law as a Social System</em> segue <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span></td>
+<td>redutível pelo exemplar</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>o resultado da sessão da Segunda Turma do TRF6 de 10 de junho de 2026, sobre as apelações de Mariana, não foi encontrado</td>
+<td>dado externo pontual</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>a posição própria de Grove sobre despolitização, e a genealogia de "act of God" no <em>common law</em>, que segue sem fonte de qualidade</td>
+<td>irredutível</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A fila de aquisição</strong> reúne <a href="../textos/lauta-2014.html">Disaster Law</a> (2014), as cinco peças do simpósio sobre
+L'Aquila, a resenha de Karen da Costa, <a href="../textos/lyster-2015.html">Lyster</a>, Verchick, <em>At Risk</em> e o exemplar de
+<em>Law as a Social System</em>. Quarantelli e Beck não entram, porque já estão na mesma pasta.</p>
+<p><strong>Divergências registradas e não arbitradas</strong>, que ficam expostas em vez de resolvidas à força: vinte
+contra vinte e uma contribuições no fascículo; 24 contra 25 de março para o depósito da decisão da
+Cassação; e a paginação de Bostrom entre 1-30 e 1-31.</p>
+<h2 id="sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</h2>
+<p>Seção 17. Lacuna e problematização não são a mesma coisa. As lacunas acima são dos modos canônicos,
+sobretudo de negligência; a problematização é outra operação, e percorre os pressupostos que o texto
+não sabe que tem.</p>
+<p><strong>Pressuposto de escola.</strong> O ensaio partilha com a regulação de risco a ideia de que o problema do
+direito diante do desastre é de adequação de instrumentos. Desafiar isso é problematização menor,
+porque permanece dentro da mesma conversa.</p>
+<p><strong>Pressuposto de metáfora-raiz, e a crítica de fundo desta leitura.</strong> A metáfora que organiza o
+objeto é a da disfunção, que é orgânica e sistêmica, e pressupõe uma função normal contra a qual a
+disfunção se recorta. O ensaio nunca diz qual é essa função nem para quem ela funciona. <strong>A metáfora
+faz o trabalho político de apresentar como falha de sistema aquilo que pode ser distribuição
+deliberada de exposição.</strong> Isto se verifica por leitura integral das cinco páginas: a palavra
+"vulnerability" aparece sem jamais vir acompanhada de distribuição, classe, raça ou território. O
+ensaio nomeia a vulnerabilidade como o eixo que ganha centralidade e não pergunta quem a produz nem
+quem a suporta. Fica a um passo da literatura crítica de vulnerabilidade, que sustenta tese vizinha
+da sua, e não dá o passo: não dialoga com Wisner, Oliver-Smith nem
+<a href="../textos/quarantelli-2005.html">Quarantelli</a>. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Pressuposto de campo, o mais fundo e o mais difícil de ver.</strong> Tanto o ensaio quanto seus
+adversários decisionistas partilham o chão de que o risco é uma propriedade de eventos, e discutem
+apenas se ela decorre de decisão ou de incerteza. O chão não debatido é que exista algo como o risco
+<strong>antes da atribuição</strong>. É precisamente esse chão que a distinção risco e perigo de
+<a href="../textos/luhmann-2004.html">Luhmann</a> desfaz, e é por isso que o ensaio, ao citar Luhmann sem mobilizá-lo, cita a
+ferramenta que dissolveria seu próprio pressuposto.</p>
+<p><strong>Dois enigmas para pesquisa</strong>, formulados de modo acionável porque nomeiam o conhecimento prévio que
+contrariam. O primeiro: por que a vulnerabilidade se tornou o eixo declarado do campo do direito dos
+desastres, apesar de o instrumental jurídico continuar organizado em torno do evento e da decisão? O
+segundo, que decorre dos casos: por que as categorias jurídicas absorveram o risco climático sem se
+romperem, apesar de a literatura ter previsto a ruptura? O parecer da CIJ é o fato que contradiz a
+expectativa, e a resposta provável é que as categorias se preservam ao custo de perderem
+determinação, fenômeno diferente do previsto e mais interessante que ele.</p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> para a sessão · <a href="../conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>, <a href="../conceitos/dysfunction.html">Disfunção de processo social</a>, <a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a>,
+<a href="../conceitos/porcao-juridica.html">Porção jurídica (legal bite-sizes)</a> para os conceitos · <a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a> para a nota literária ·
+<a href="../textos/posner-2004.html">Catastrophe: Risk and Response</a>, <a href="../textos/verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>, <a href="../textos/lyster-2015.html">Climate Justice and Disaster Law</a> para as obras citadas (stubs, cruzam para
+S04/S06/S09) · <a href="../julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a> e <a href="../julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a> para os casos que testam a tese.</p></div>
+<div data-lang="en"><h1>Dysfunction and Disruption: Disaster Risks and the Law</h1>
+<p>LAUTA, Kristian Cedervall. Dysfunction and Disruption: Disaster Risks and the Law. <em>European
+Journal of Risk Regulation</em>, v. 8, n. 1, p. 83-87, 2017.</p>
+<h2>Argument</h2>
+<p>Required reading for <a href="../sessoes/s02.html">S02</a>. Lauta starts from a personal turning point (September 11, 2001, at
+the beginning of his legal training) to argue that law became central to the way societies define
+and respond to disaster, not because disaster is an external shock, but because a good part of the
+risks that matter most today is <a href="../conceitos/dysfunction.html">dysfunction</a> of social processes from which society
+itself benefits (centralised energy, occupation of coastal areas, food production). Once the source
+of the harm is a process that society chose and profits from, the legal treatment changes:
+traditionally these risks were absorbed by some form of <a href="../conceitos/legal-exceptionalism.html">legal
+exceptionalism</a> (state of emergency, act of God, necessity), and Lauta argues that this is no
+longer the case today. The law does not arrive after the event to clean up the mess; it is already
+there, in the permit and in the design standard, settling in advance what counts as acceptable risk.</p>
+<h2>Problem and method</h2>
+<p>Section 4 of the report. The problem has two parts. The condition is that risks with potentially
+disastrous consequences are not assumed by legal decision; the undesirable consequence is that the
+toolkit of law, built for decided risks, loses traction over them. The type is conceptual, because
+the essay asks the reader to change what he thinks, and not what he does.</p>
+<p>The objective is declared in the opening lines, and it is modest: "On the joyful occasion of the
+relaunch of EJRR, I will offer an account of such risks' significance for law in general, and legal
+scholarship in particular" (p. 83). He promises an account, not a demonstration, and that is all
+that can be demanded of him.</p>
+<p>The method is that of the programmatic essay in the first person, with a biographical trajectory,
+conceptual definition by contrast, and a mapping of the field through notes and agenda. There is no
+declared methodology, hypothesis, body of legislation or case law analysed, nor data: the proof is
+conceptual and bibliographic, distributed across 22 notes that are almost all simple references.
+Since the context of writing shows that the format was imposed by the editor, the absence of method
+is not carelessness on the author's part, and to demand it would be to demand of the text a genre
+that it is not.</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Thesis</th>
+<th>Condition</th>
+<th>Consequence</th>
+<th>Type</th>
+<th>Page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opening</td>
+<td>states no thesis of its own</td>
+<td>experience of institutional fragility</td>
+<td>none stated</td>
+<td>absent</td>
+<td>83</td>
+</tr>
+<tr>
+<td>I. Disaster Risk</td>
+<td>the relevant risk is dysfunction, not decision</td>
+<td>risk not intentionally assumed</td>
+<td>does not fit into legal bite-sizes</td>
+<td>conceptual</td>
+<td>84-85</td>
+</tr>
+<tr>
+<td>II. Risk Regulation</td>
+<td>the field matters because it resists doctrinal solution</td>
+<td>law already regulates, but without an adequate category</td>
+<td>the field is not puzzle-solving science</td>
+<td>conceptual</td>
+<td>85-86</td>
+</tr>
+<tr>
+<td>III. Future Research</td>
+<td>institutions for global public goods are needed</td>
+<td>risks increasingly global and extreme</td>
+<td>critical gap in the legal literature</td>
+<td>practical</td>
+<td>86-87</td>
+</tr>
+</tbody>
+</table>
+<h2>Structure of the text</h2>
+<p>Section 5. This is a programmatic essay of stocktaking and agenda, commissioned, addressed to the
+risk regulation community and with an inaugural function. The opening establishes the experience of
+fragility; section I converts the experience into a concept, <a href="../conceitos/dysfunction.html">dysfunction</a>; section II
+shows that law has already responded, though without an adequate category; section III projects the
+agenda; and the closing returns to the office window, closing the circle opened at the start, which
+makes the text end in a personal register and not in a proposition.</p>
+<p><strong>The architectural finding:</strong> the opening is the only section without a thesis of its own, and it
+works as a device of authorisation, in which personal experience legitimates the object. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span>
+Biography precedes concept, which installs disaster as experience before installing it as category
+and shields the definition against the objection of arbitrariness, because disagreeing with it comes
+to look like disagreeing with an experience.</p>
+<p>The order of the sections thus does the argumentative work that the text does not do explicitly.
+Placing the mapping of the field before the agenda makes the agenda look like a consequence rather
+than a choice; and ending at the office window, rather than on a proposition, takes from the reader
+the exact point at which he could disagree.</p>
+<h2>The argument reconstructed, and its two weak links</h2>
+<p>Section 6. <strong>The species of the main claim is one of definition and classification, not of cause or
+of policy.</strong> This governs what can be demanded of it: a claim of definition is sustained by
+reasoning about similarities and differences, not by empirical evidence, and to demand data of a
+claim of definition is a category mistake. The only passage in which the essay changes species and
+starts to claim fact is the ozone passage, and it is exactly the one the fact check below brings
+down. The coincidence is not accidental: the text errs where it leaves its own genre.</p>
+<p>The path is the following. The category of risk that matters to law today is not the one the
+regulation literature works with, for which risk is something deliberately assumed by decision and
+therefore manageable by legal remedies. The risk Lauta studies is another, an effect of uncertainty
+with potentially disastrous consequences and as a rule not intentionally assumed, divided into two
+groups that hybridise, those of the natural environment and, above all, those that emerge as
+dysfunctions of other social processes or institutions. The legal consequence is the core: risks
+like these do not arrive in <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a>, they are woven into social
+structures, culture and market interests, they are neither quantified nor meaningfully
+quantifiable, and they emerge in a complex adaptive system, which makes them indeterminable in time
+and in space. The next step is historical: law treated these risks by
+<a href="../conceitos/legal-exceptionalism.html">exceptionalism</a>, and this changed, because over the last thirty years a
+substantial body of regulation emerged across every phase of risk management. Hence the interest of
+the field, which is not puzzle-solving science in <a href="../textos/kuhn-1970.html">Kuhn</a>'s sense, but a field that
+expands and challenges categories, assumptions and methodologies.</p>
+<p><strong>Acknowledgement of and response to objections practically do not exist, and that is the finding,
+not an omission of this reading.</strong> The only concession is the one on p. 86, where he admits that the
+liability cases may be seen as ordinary before asserting that they challenge; and note 5 anticipates
+an objection by acknowledging that the claim of non-quantifiability is "incredibly controversial",
+referring to <a href="../textos/posner-2004.html">Posner</a> without confronting it.</p>
+<p><strong>The two weakest links are unstated warrants.</strong> The first runs from "not quantifiable" to "the law
+must change": the silent warrant is that, when an object does not allow itself to be quantified, the
+legal toolkit built upon quantification loses legitimacy, and not merely precision. It is a
+disciplinary assumption, and the text does not state it. The second runs from "risk is dysfunction
+of beneficial processes" to "exceptionalism is inadequate": the silent warrant is that, when harm
+follows from an arrangement from which society benefits, treating it as an external exception
+conceals the collective choice that produced it. This second link is the most fertile of the piece
+and the one the author develops least, and it is also where the warrant fails, because it is not
+shown that the risks examined are a plausible instance of the general circumstance. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Ethos and density.</strong> The essay thickens the argument little and confronts objections little, which
+lowers the ethos in the technical key; in compensation, it builds authority by another route, that
+of the experience declared in the opening. The answer the text gives to the tacit question about
+trust is biographical, not argumentative. Measured paragraph by paragraph, the density confirms the
+pattern: the opening lives at the most concrete level, with date, age and place; the paragraph that
+sustains the thesis oscillates between the high conceptual level and a single concrete example, the
+collapse of energy production in the Netherlands; and the closing remains at the high levels, with a
+single descent to the concrete, the ozone passage, which is precisely the one that fails the fact
+check.</p>
+<h2>Concepts at three levels</h2>
+<p>Section 7. Each concept enters as a record, from the basic level to the observable indicator, with
+the aggregation structure declared.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Basic level</th>
+<th>Dimensions</th>
+<th>Indicator level</th>
+<th>Aggregation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../conceitos/dysfunction.html">Dysfunction</a></td>
+<td>property of a risk that emerges as a by-product of a beneficial social process, and not of a decision that assumes it</td>
+<td>origin in a social process; benefit drawn from that process; absence of deliberate assumption</td>
+<td>the three examples in the text (infrastructure dependence, coastal housing, efficient food production) plus the Dutch example</td>
+<td>conjunction: the absence of any dimension excludes the case</td>
+</tr>
+<tr>
+<td><a href="../conceitos/porcao-juridica.html">Legal bite-size</a></td>
+<td>unit of fact that a legal category manages to carve out and process whole</td>
+<td>temporal delimitation; spatial delimitation; attributability to a subject</td>
+<td>the expression "legal bite-sizes" and the series of negations that accompanies it on p. 84</td>
+<td>conjunction</td>
+</tr>
+<tr>
+<td><a href="../conceitos/legal-exceptionalism.html">Legal exceptionalism</a></td>
+<td>treatment of disaster as a state outside legal normality</td>
+<td>state of emergency; act of God; necessity</td>
+<td>the triad on p. 85</td>
+<td>disjunction: any of the three forms suffices</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The most consequential conceptual gap in the essay</strong> is in the first row of the table: the
+sufficiency criterion for dysfunction is not declared, and neither is the negative pole. Dysfunction
+is defined only against function, and someone has to say what the function is and for whom it
+functions. The author does not declare the structure, and it is recorded that he did not. The legal
+bite-size, in compensation, is the most productive concept of the piece, and the Brazilian cases
+show that it describes with precision what happened in Mariana and in Brumadinho. As for
+exceptionalism, the essay asserts that it ceased to be the dominant treatment, and the cases confirm
+this from the side of practice: what one sees today is disaster processed through ordinary
+categories, negligent homicide, civil liability and fundamental rights, with results incompatible
+with one another.</p>
+<h2>Historical semantics of the concepts</h2>
+<p>Section 12. Four terms the essay uses carry a history that it does not open.</p>
+<p><strong>Risk as the effect of uncertainty.</strong> The formulation belongs to <a href="../legislacao/iso-guide-73-2009.html">ISO Guide
+73:2009</a>, definition 1.1, imported by express reference by <a href="../legislacao/iso-31000-2009.html">ISO 31000:2009</a>.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em ISO Guide 73:2009, definicao 1.1 (2026-07-25)">✓</span> The pertinent version is the 2009 one, because the second edition of
+ISO 31000 is from February 2018, later than the text. <span class="selo selo-fato" title="fato conferido na fonte: conferido em ISO 31000:2018, registro de publicacao (2026-07-25)">✓</span></p>
+<p><strong>Risk and danger in <a href="../textos/luhmann-2004.html">Luhmann</a>.</strong> The distinction is not one of degree of harm, nor
+does it oppose risk to safety: it is a distinction of attribution. The same possible harm is risk
+when attributed to one's own decision, and danger when attributed to the environment.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em LUHMANN, Law as a Social System; distincao consolidada na doutrina (2026-07-25)">✓</span> It is asymmetric and relational, so that what is risk for whoever
+decides is danger for whoever suffers without having decided. <strong>The consequence is the finest
+finding of this reading:</strong> the essay wants the Luhmannian effect, which is to displace risk outside
+legal decision, but it uses the ISO definition, which is objectivist and neutral as to sign. The
+risk and danger distinction would give the argument exactly what it seeks, because disaster risk is
+danger for whoever bears it and risk for whoever decides about the infrastructure. The text does not
+mobilise it, and it is the tool that would resolve the distributive gap recorded further below.
+<span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Existential risk.</strong> Bostrom, in the <em>Journal of Evolution and Technology</em>, v. 9, n. 1, 2002,
+defines it as a risk whose adverse outcome would annihilate intelligent life originating on Earth or
+permanently and drastically curtail its potential. <span class="selo selo-fato" title="fato conferido na fonte: conferido em BOSTROM, Journal of Evolution and Technology, v. 9, n. 1, 2002 (2026-07-25)">✓</span> The Centre for
+the Study of Existential Risk was founded in 2012 by Huw Price, Martin Rees and Jaan Tallinn, and
+Lauta was a visitor there in 2017, which explains the final paragraph of the essay and note 21.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em pagina institucional do CSER, Universidade de Cambridge (2026-07-25)">✓</span></p>
+<p><strong>Vulnerability.</strong> The pressure and release model, by Wisner, Blaikie, Cannon and Davis, shifts the
+axis from the physical agent to political economy, through a progression of three levels, root
+causes, dynamic pressures and unsafe conditions, which meets the physical event.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em WISNER, BLAIKIE, CANNON e DAVIS, At Risk (2026-07-25)">✓</span> The divergence about the year of the second edition is settled: it
+is 2004, Routledge, ISBN 0-415-25216-4; the year 2005 comes from the review published that year and
+propagated by derivative records, and 2003 has no documentary basis at all.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Routledge, registro de catalogo, ISBN 0-415-25216-4 (2026-07-25)">✓</span></p>
+<p><strong>Disaster and catastrophe.</strong> <a href="../textos/quarantelli-2005.html">Quarantelli</a>'s distinction operates through six
+organisational criteria, and not physical ones, detailed in <a href="../conceitos/disaster-vs-catastrophe.html">the entry on
+disaster versus catastrophe</a>: the criterion is residual response capacity, not the magnitude of the
+agent. Lauta's essay uses "disaster" as a generic term and does not incorporate the distinction,
+although it is directly pertinent to his concept of dysfunction. The divergence about the number of
+criteria, four or six, is recorded in <a href="../conceitos/quarantelli-criterios-brasil.html">the entry on the Brazilian
+criteria</a> and was settled by the local primary source.</p>
+<h2>Fact check: the one piece of original empirical evidence is false</h2>
+<p>Section 9.1 of the review report. The ozone passage (p. 87) is <strong>the one point in the essay where he
+tries to prove something empirically</strong>, and it is where he gets it wrong. Full detail in
+<a href="../legislacao/protocolo-de-montreal-1987.html">the Montreal Protocol</a>; in summary, and all of it
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em FARMAN, GARDINER e SHANKLIN, Nature, v. 315, p. 207-210, 1985; series de NASA, NOAA, WMO e UNEP (2026-07-25)">✓</span>: the date is off by seven years (detection in 1985, not 1992); the problem
+<strong>is not solved</strong> (return to 1980 values projected for around 2066 over Antarctica); and the more
+serious chronological error is that concentrations only peaked around 2000, more than a decade
+<strong>after</strong> the Protocol entered into force, so that the decades of chemical inertia between the rule
+and the effect are exactly what the example erases.</p>
+<p><strong>Second literal finding:</strong> the <a href="../legislacao/iso-guide-73-2009.html">ISO</a> citation is <strong>truncated</strong>. The standard
+defines risk as the effect of uncertainty <em>on objectives</em>, and Note 1 records that the effect can be
+positive. Lauta cuts exactly the part that makes the definition neutral as to sign, which is what
+opposes it to Luhmann. The truncation <strong>weakens the very argument it was meant to support</strong>.</p>
+<p><strong>Third:</strong> <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> the attribution of Luhmann's sentence to page 155 of <em>Law as a Social
+System</em> was not verifiable in an open source. The substance of the distinction is settled doctrine,
+but the location is the author's own attribution. Gap <strong>L3</strong>, reducible by acquiring the copy.</p>
+<p><strong>The pattern this reveals</strong>, which is the most useful result of the reading: when the text descends
+to the concrete in order to prove, it gets it wrong; when it stays at the conceptual level, it
+convinces.</p>
+<h2>Cases and applications</h2>
+<p>Section 14. The essay reconstructs no case at all: it refers to the symposium in the journal itself
+on the L'Aquila Seven, in <a href="../textos/ejrr-laquila-2014.html">the 2014 symposium</a>, and to a survey of criminal
+cases after disasters. What follows is what happened afterwards, and what his distinction
+illuminates without his having known it.</p>
+<p><strong>L'Aquila, the outcome.</strong> The Tribunale convicted the seven on October 22, 2012; the Corte
+d'Appello acquitted six and upheld the conviction of Bernardo De Bernardinis on November 10, 2014;
+and the Corte di Cassazione rejected the appeals in <a href="../julgados/laquila-cassacao-2016.html">the 2016 judgment</a>. The
+divergence about the number of the decision is settled in favour of 12478 of 2016, checked in the
+header of the official text. <span class="selo selo-fato" title="fato conferido na fonte: conferido em cabecalho do texto oficial: Penale Sent. Sez. 4 Num. 12478 Anno 2016 (2026-07-25)">✓</span> The origin of the error is also
+identified: a heavily indexed Italian portal publishes it as 12748, with transposed digits.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em portal Giurisprudenza Penale (2026-07-25)">✓</span></p>
+<p><strong>Mariana, and the same fact producing three incompatible results.</strong> The Federal Court acquitted
+Samarco, Vale and BHP and the individual defendants on November 14, 2024, for absence of proof of
+causal nexus (<a href="../julgados/mariana-jf-2024.html">the federal ruling</a>). <span class="selo selo-fato" title="fato conferido na fonte: conferido em sentenca da Justica Federal, 14/11/2024 (2026-07-25)">✓</span> The
+renegotiation agreement of R$ 170 billion was signed on October 25, 2024 and approved by the Supreme
+Federal Court on November 6, 2024 (<a href="../julgados/mariana-stf-homologacao-2024.html">the approval</a>).
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em decisao de homologacao do STF, 06/11/2024 (2026-07-25)">✓</span> And the English High Court of Justice ruled for the liability of
+the parent company on November 14, 2025, with more than 600 thousand claimants
+(<a href="../julgados/mariana-ewhc-2025.html">the English judgment</a>). <span class="selo selo-fato" title="fato conferido na fonte: conferido em Municipio de Mariana e outros v. BHP Group, [2025] EWHC 3001 (TCC) (2026-07-25)">✓</span> <strong>It is the strongest empirical
+demonstration available of the essay's thesis:</strong> disaster risk does not come in legal bite-sizes,
+and each bite-size applied to the same fact produces a result incompatible with the others.</p>
+<p><strong>Brumadinho, the case in its pure state.</strong> The indictment charges 270 aggravated homicides, because
+art. 121 of the Penal Code presupposes a person born alive; the Public Prosecutor's Office of Minas
+Gerais, in turn, counts 272 victims, including the two unborn children of pregnant women struck by
+the wave (<a href="../julgados/brumadinho-denuncia.html">the indictment</a>). <span class="selo selo-fato" title="fato conferido na fonte: conferido em denuncia do MPMG e comunicacao oficial do orgao (2026-07-25)">✓</span> The divergence is
+neither a press error nor imprecision in counting: <strong>the difference of two lives is produced by the
+category, and not by the fact.</strong> No passage of the essay reaches this formulation, and it is the best
+Brazilian example of what he meant.</p>
+<p><strong>The advisory opinion of the International Court of Justice, which confirms and at the same time
+qualifies the thesis.</strong> In the advisory opinion of July 23, 2025 (<a href="../julgados/cij-parecer-clima-2025.html">the ICJ
+advisory opinion</a>), paragraph 172 states that the most directly applicable law comprises eleven
+bodies of norms, from the Charter of the United Nations to international human rights law, and
+paragraph 171 expressly rejects the proposition that the climate treaties constitute <em>lex specialis</em>
+capable of displacing the remaining rules. Eleven bodies of norms summoned to answer one question is
+the strongest institutional confirmation the thesis could receive, and it comes from a court, not
+from a commentator. That the ozone treaties are part of that list has an irony of its own, because
+ozone is precisely the empirical example that the fact check above brings down.</p>
+<p><strong>The qualification, which is the most consequential finding.</strong> In paragraphs 435 to 438, the Court
+confronts exactly what Lauta called severe stress tests of the concepts of causation and fault, and
+concludes that the standard of a sufficiently direct and certain causal nexus is flexible enough for
+the climate context, requiring assessment in concrete terms case by case. Eight years after the
+essay, <strong>the category bends and does not break.</strong> The strong form of the thesis, according to which
+disaster risk disorganises legal categories, is thereby downgraded: the categories hold, at the cost
+of losing determinacy.</p>
+<p><strong>Four points of entry for the same risk.</strong> <a href="../julgados/urgenda-2019.html">Urgenda</a> enters through tort and the
+duty of care; <a href="../julgados/neubauer-2021.html">Neubauer</a>, through fundamental rights as an intertemporal guarantee
+of freedom; <a href="../julgados/klimaseniorinnen-2024.html">KlimaSeniorinnen</a>, through the positive obligations of art. 8;
+and <a href="../julgados/itlos-parecer-2024.html">the ITLOS advisory opinion</a>, through the law of the sea, by classifying
+anthropogenic emissions as pollution of the marine environment. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Hoge Raad ECLI:NL:HR:2019:2006; BVerfG 1 BvR 2656/18; CEDH 53600/20; ITLOS caso 31 (2026-07-25)">✓</span> Four
+perimeters of duty, none commensurable with the others.</p>
+<p><strong>The case within the case.</strong> In KlimaSeniorinnen, the Grand Chamber upheld the association's claim
+under art. 8 by 16 votes to 1, and declared the four individual applicants inadmissible for failing
+to meet the victim status of art. 34. <span class="selo selo-fato" title="fato conferido na fonte: conferido em acordao KlimaSeniorinnen, CEDH, 09/04/2024, peticao 53600/20 (2026-07-25)">✓</span> The same exposure to the same
+risk exists or does not exist depending on the procedural category of standing, and this happens
+within a single judgment. It is Lauta's thesis operating at minimal scale.</p>
+<p><strong>Exercise for the session.</strong> On any of the cases above, apply Luhmann's question: for whom is this
+risk, for having decided, and for whom is it danger, for having been exposed?</p>
+<h2>Evidentiary strength grid</h2>
+<p>Section 15 of the report. A verbal scale, never a numerical one: a percentage or a score from zero
+to ten would be false precision.</p>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Theoretical certainty</th>
+<th>Theoretical uniqueness</th>
+<th>Empirical uniqueness</th>
+<th>Empirical certainty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dutch example of energy dependence</td>
+<td>high</td>
+<td>low: rival theories produce the same example</td>
+<td>medium: it is a constructed example, not observed</td>
+<td>low</td>
+</tr>
+<tr>
+<td>The ozone passage</td>
+<td>high</td>
+<td>low</td>
+<td><strong>very low</strong>: the source is the author himself and the statement is false</td>
+<td>not applicable</td>
+</tr>
+<tr>
+<td>Body of regulation from the last thirty years</td>
+<td>medium</td>
+<td>low</td>
+<td>high: verifiable in official sources</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a href="../julgados/cij-parecer-clima-2025.html">ICJ advisory opinion</a>, §§ 171 and 172</td>
+<td>high</td>
+<td><strong>high</strong>: hard to imagine a rival explanation that produces eleven bodies of norms</td>
+<td>high: primary and full-text source</td>
+<td>high</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion of the grid.</strong> The conceptual thesis receives <strong>strong support from evidence the essay
+did not have</strong> (the 2025 ICJ advisory opinion) and <strong>weak support from the evidence it does
+present</strong>. This is why the claim that disaster risk does not come in
+<a href="../conceitos/porcao-juridica.html">legal bite-sizes</a> is recorded as <strong>well supported</strong>, while the claim that it
+disorganises the categories is recorded as <strong>qualified</strong>.</p>
+<p><strong>Overcorroboration alarm.</strong> The four climate cases (<a href="../julgados/urgenda-2019.html">Urgenda</a>,
+<a href="../julgados/neubauer-2021.html">Neubauer</a>, <a href="../julgados/klimaseniorinnen-2024.html">KlimaSeniorinnen</a>,
+<a href="../julgados/itlos-parecer-2024.html">the ITLOS advisory opinion</a>) fit the thesis very well. This <strong>lowers</strong> rather
+than raises empirical uniqueness, because they were selected by someone looking for cases that
+instantiate it. The selection bias is recorded, and no confirmatory weight is assigned to them.</p>
+<h2>Context of writing: why this text has this form</h2>
+<p>Section 10. <strong>The finding that reorders the whole reading:</strong> the three-part structure is not an
+authorial choice, it is the editorial template. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span> Volume 8, issue 1, of March 2017, is the
+first issue of the journal published by Cambridge University Press, under the "Cambridge Inaugural
+Issue" heading. <span class="selo selo-fato" title="fato conferido na fonte: conferido em fasciculo EJRR v. 8, n. 1, Cambridge Core (2026-07-25)">✓</span> The opening editorial, by Alberto <a href="../autores/alemanno.html">Alemanno</a>,
+describes the format: the editor invited the members of the journal's own editorial board to an
+exercise in self-reflection, answering three questions, a personal one, about each author's history
+with risk regulation, a descriptive one, about how to define the field, and a normative one, about
+its future. <span class="selo selo-fato" title="fato conferido na fonte: conferido em ALEMANNO, editorial do fasciculo, DOI 10.1017/err.2017.4 (2026-07-25)">✓</span> To read the essay as a thesis article is to read it
+badly: opening with personal memory and closing with prognosis, which would look like idiosyncrasy,
+is compliance with a brief.</p>
+<p>The piece is classified in the "Contributions" section, and not as a research article, which means
+it is a commissioned text without peer review. <span class="selo selo-fato" title="fato conferido na fonte: conferido em classificacao do periodico no proprio fasciculo (2026-07-25)">✓</span> That
+classification governs everything that can be demanded of it.</p>
+<p><strong>Who writes, and from where.</strong> <a href="../autores/lauta.html">Lauta</a> was born in 1982 and did all of his training at the
+University of Copenhagen, with a doctorate in 2012. <span class="selo selo-fato" title="fato conferido na fonte: conferido em dados institucionais autodeclarados, Universidade de Copenhague (2026-07-25)">✓</span> In 2017 he was Associate
+Professor at the Center for International Law, Conflict and Crisis, and in the same year he was a
+<em>visiting scholar</em> at the Centre for the Study of Existential Risk, in Cambridge, which explains the
+final paragraph on existential risk. <span class="selo selo-fato" title="fato conferido na fonte: conferido em curriculo institucional e nota de autor do proprio artigo (2026-07-25)">✓</span> <strong>He is not an invited outside
+author:</strong> he was Senior Editor of the journal itself, and specifically Senior Editor for Disaster Law
+from 2016. <span class="selo selo-fato" title="fato conferido na fonte: conferido em pagina de conselho editorial da Cambridge arquivada em outubro de 2017 (2026-07-25)">✓</span> He is a board member answering a call from his own house.</p>
+<p><strong>The funding, with two corrections to what the asterisk on p. 83 suggests.</strong> First: "UCPH 2016" is
+the name of the university's strategic fund, not the year of the call, and the grants were awarded in
+January 2013 to eighteen interdisciplinary projects. <span class="selo selo-fato" title="fato conferido na fonte: conferido em registro do programa da Universidade de Copenhague (2026-07-25)">✓</span> Second: Lauta did not
+coordinate the Changing Disasters project; he was Deputy-PI and author of the application, and the PI
+was Morten Broberg. <span class="selo selo-fato" title="fato conferido na fonte: conferido em registro do projeto Changing Disasters (2026-07-25)">✓</span></p>
+<p><strong>The finding that follows from the two corrections.</strong> Morten Broberg, the PI of the project that
+funded the essay, signs another contribution in the same issue, at p. 101-105.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em sumario do fasciculo EJRR v. 8, n. 1 (2026-07-25)">✓</span> Two members of the same funded project appear in the same collection,
+which, added to the editorial position, moves the piece from the genre of scientific contribution to
+the genre of <strong>institutional positioning</strong>. This does not invalidate it, and it changes what it
+proves: it is evidence of the agenda of a research centre, not of the consensus of a field.</p>
+<p><strong>Against whom.</strong> The essay names no adversary. Its target is the decisionist definition of risk,
+associated in the text with <a href="../textos/luhmann-2004.html">Luhmann</a>, in note 2, and with <a href="../legislacao/iso-31000-2009.html">ISO
+31000</a>, in note 3. The other names cited are listed as landmarks of the field, not as opponents.</p>
+<p><strong>Divergence recorded and not arbitrated:</strong> the editorial states that the result was a collection of
+twenty pieces, but the published table of contents of the issue lists twenty-one contributions, with
+Lauta's in fifteenth place. <span class="selo selo-pendente" title="não verificado: divergente">✗</span> The cause was not determined.</p>
+<h2>Style and method</h2>
+<p>Section 11. The three rhetorical moves of the introduction, with the linguistic signal that
+identifies them.</p>
+<table>
+<thead>
+<tr>
+<th>Move</th>
+<th>Sentence</th>
+<th>Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Establishing the territory</td>
+<td>"I came to study risks with potentially disastrous consequences" (p. 83)</td>
+<td>verb of personal trajectory in the first person</td>
+</tr>
+<tr>
+<td>Establishing the niche by counter-claim</td>
+<td>"I am not talking about that kind of risk" (p. 84)</td>
+<td>explicit negation of someone else's position</td>
+</tr>
+<tr>
+<td>Occupying the niche</td>
+<td>"I will offer an account of such risks' significance for law" (p. 83)</td>
+<td>announcement of purpose with volitional future</td>
+</tr>
+</tbody>
+</table>
+<p>The niche is established by counter-claim, which is the strongest move in the typology, and even so
+without naming who holds the rejected position: the piece rejects a definition, not an author.</p>
+<p><strong>Treatment of the literature, and what it reveals.</strong> Of the 22 notes, almost all are simple
+references, and the cited author is almost never the subject of the sentence; the dominant form is
+the non-integral one, with the work relegated to a note. This is notable because the disciplinary
+baseline points the other way: in philosophy and the humanities the integral form is the preferred
+one, and the average number of citations per article in soft disciplines lies between 75 and 104,
+against the 22 notes of this essay. <span class="selo selo-fato" title="fato conferido na fonte: conferido em HYLAND, linhas de base de citacao disciplinar (2026-07-25)">✓</span> <strong>The piece behaves
+bibliographically like a hard-science text</strong>, with low density and non-integral form, which is
+coherent with the genre of five commissioned pages and incoherent with the tradition of the field in
+which it inscribes itself.</p>
+<p><strong>Reporting verbs.</strong> The essay hardly uses them, because it hardly reports: it enumerates. Where it
+does report, it uses verbs that do not commit, such as "explored" and "have sought". There is no
+asymmetry between allies and adversaries because there are no named adversaries.</p>
+<p><strong>Absent author test.</strong> The essay passes comfortably, and for a reason that is the inverse of the
+typical problem: it is written entirely in the first person, with the author as the subject of most
+of the assertions. The risk here is not that of the absent author, it is that of the <strong>omnipresent
+author</strong>, because the authority of the piece rests on the position of whoever speaks, and not on the
+evidence presented. In the prose, the text favours short and concrete subjects in the opening and the
+closing, and long and abstract subjects in the conceptual middle, which confirms the density map
+recorded above.</p>
+<h2>Reception: zero citations, and what that means</h2>
+<p>Section 13 of the report. All four databases record <strong>zero</strong> citations for this essay (see the
+<code>reception</code> block in the frontmatter, with the consultation date for each database). The data point
+that changes the reading: the same author's profile records <strong>958 citations in total, with an h-index
+of 14</strong>. <span class="selo selo-fato" title="fato conferido na fonte: conferido em perfil verificado do autor no Google Academico (2026-07-25)">✓</span></p>
+<p>This is not an author who does not circulate: it is <strong>this essay</strong> that does not circulate. Any claim
+about the impact of this specific piece would be false, and anyone who wants to treat it as a
+landmark of the field would be contradicting the only data available.</p>
+<p><strong>Metadata anomaly</strong>, which explains part of the invisibility: Crossref records a <code>reference-count</code> of
+zero for the essay, while Semantic Scholar extracted seven references from the same text.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Crossref e Semantic Scholar, registros do mesmo DOI (2026-07-25)">✓</span> The references exist on the page and were not deposited as metadata
+by the publisher.</p>
+<p><strong>Consequence for use:</strong> the piece works as a concise, citable statement of a conceptual thesis, <strong>not
+as an authority source</strong>. For authority, the path is <em>Disaster Law</em>, from 2014, which does circulate.</p>
+<h2>Classified gaps and acquisition queue</h2>
+<p>Section 16. <strong>No blocking gap remains.</strong> The blocking one from the previous pass, access to the ICJ
+advisory opinion, was closed with the full 140-page copy located in a folder of another course, which
+confirms the value of the rule that says to read the neighbourhood before searching outside.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What is missing</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L3</td>
+<td><a href="../textos/verchick-2012.html">Verchick</a>'s objection was not read in the primary source, and for that reason is not summarised</td>
+<td>reducible by acquisition</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>the <em>front matter</em> of the issue was not accessed, because of a publisher block; confirmation of the editorial position rests on an archived institutional page from the same period</td>
+<td>reducible by acquisition</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>the attribution of Luhmann's sentence to p. 155 of <em>Law as a Social System</em> remains <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span></td>
+<td>reducible by the copy</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>the outcome of the session of the Second Panel of the TRF6 of June 10, 2026, on the Mariana appeals, was not found</td>
+<td>isolated external datum</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>Grove's own position on depoliticisation, and the genealogy of "act of God" in the <em>common law</em>, which remains without a quality source</td>
+<td>irreducible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The acquisition queue</strong> brings together <a href="../textos/lauta-2014.html">Disaster Law</a> (2014), the five pieces of the
+L'Aquila symposium, Karen da Costa's review, <a href="../textos/lyster-2015.html">Lyster</a>, Verchick, <em>At Risk</em> and the copy
+of <em>Law as a Social System</em>. Quarantelli and Beck do not enter, because they are already in the same
+folder.</p>
+<p><strong>Divergences recorded and not arbitrated</strong>, which are left exposed rather than resolved by force:
+twenty against twenty-one contributions in the issue; 24 against 25 March for the filing of the
+Cassation decision; and Bostrom's pagination between 1-30 and 1-31.</p>
+<h2>Problematizing the assumptions</h2>
+<p>Section 17. Gap and problematisation are not the same thing. The gaps above are of the canonical
+modes, above all of neglect; problematisation is another operation, and it runs through the
+assumptions the text does not know it has.</p>
+<p><strong>School assumption.</strong> The essay shares with risk regulation the idea that the problem of law before
+disaster is one of adequacy of instruments. To challenge this is minor problematisation, because it
+remains within the same conversation.</p>
+<p><strong>Root-metaphor assumption, and the underlying critique of this reading.</strong> The metaphor that
+organises the object is that of dysfunction, which is organic and systemic, and presupposes a normal
+function against which dysfunction is carved out. The essay never says what that function is nor for
+whom it functions. <strong>The metaphor does the political work of presenting as system failure what may be
+deliberate distribution of exposure.</strong> This is verified by an integral reading of the five pages: the
+word "vulnerability" appears without ever being accompanied by distribution, class, race or
+territory. The essay names vulnerability as the axis that gains centrality and does not ask who
+produces it nor who bears it. It stops one step short of the critical vulnerability literature, which
+sustains a thesis neighbouring its own, and does not take the step: it does not engage with Wisner,
+Oliver-Smith or <a href="../textos/quarantelli-2005.html">Quarantelli</a>. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Field assumption, the deepest and the hardest to see.</strong> Both the essay and its decisionist
+adversaries share the ground that risk is a property of events, and argue only about whether it
+follows from decision or from uncertainty. The undebated ground is that there should exist something
+like risk <strong>before attribution</strong>. It is precisely this ground that <a href="../textos/luhmann-2004.html">Luhmann</a>'s risk
+and danger distinction undoes, and that is why the essay, in citing Luhmann without mobilising him,
+cites the tool that would dissolve its own assumption.</p>
+<p><strong>Two puzzles for research</strong>, formulated in an actionable way because they name the prior knowledge
+they contradict. The first: why did vulnerability become the declared axis of the field of disaster
+law, even though the legal toolkit remains organised around the event and the decision? The second,
+which follows from the cases: why did legal categories absorb climate risk without breaking, even
+though the literature had predicted the rupture? The ICJ advisory opinion is the fact that
+contradicts the expectation, and the likely answer is that the categories are preserved at the cost
+of losing determinacy, a phenomenon different from the one predicted and more interesting than it.</p>
+<h2>See also</h2>
+<p><a href="../sessoes/s02.html">S02</a> for the session · <a href="../conceitos/disaster-risk.html">Disaster Risk</a>, <a href="../conceitos/dysfunction.html">dysfunction</a>,
+<a href="../conceitos/legal-exceptionalism.html">legal exceptionalism</a>, <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a> for the concepts
+· <a href="../conceitos/lauta-2017-leitura.html">the reading note</a> for the literary note · <a href="../textos/posner-2004.html">Posner 2004</a>,
+<a href="../textos/verchick-2012.html">Verchick 2012</a>, <a href="../textos/lyster-2015.html">Lyster 2015</a> for the cited works (stubs, crossing
+into S04/S06/S09) · <a href="../julgados/cij-parecer-clima-2025.html">the 2025 ICJ advisory opinion</a> and
+<a href="../julgados/brumadinho-denuncia.html">the Brumadinho indictment</a> for the cases that test the thesis.</p></div>
+
+<h2>Relações</h2><ul class="rel-list"><li><span class="rel-etype">-> cita</span> <a href="../legislacao/acordo-de-paris-2015.html">Acordo de Paris sobre mudança do clima</a> (p. 4)</li><li><span class="rel-etype">-> cita</span> <a href="../legislacao/agenda-2030.html">Agenda 2030 para o Desenvolvimento Sustentável</a> (p. 4)</li><li><span class="rel-etype">-> cita</span> <a href="../legislacao/adis-abeba-2015.html">Agenda de Ação de Adis Abeba</a> (p. 4)</li><li><span class="rel-etype">-> cita</span> <a href="textos/posner-2004.html">Catastrophe: Risk and Response</a> (p. 2)</li><li><span class="rel-etype">-> cita</span> <a href="textos/lyster-2015.html">Climate Justice and Disaster Law</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/verchick-2012.html">Disaster Justice: The Geography of Human Capability</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/lauta-2014.html">Disaster Law</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/farber-faure-2010.html">Disaster Law (coletanea)</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/farber-2010.html">Disaster Law and Policy, 2a ed.</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/lauta-faure-2016.html">Disaster Risk Management (capítulo)</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/verchick-2010.html">Facing Catastrophe</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/alemanno-2011.html">Governing Disasters</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="../legislacao/habitat-iii-2016.html">Habitat III, Nova Agenda Urbana</a> (p. 4)</li><li><span class="rel-etype">-> cita</span> <a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Gestão de riscos, princípios e diretrizes</a> (p. 2)</li><li><span class="rel-etype">-> cita</span> <a href="textos/antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/luhmann-2004.html">Law as a Social System</a> (p. 2)</li><li><span class="rel-etype">-> cita</span> <a href="../legislacao/marco-de-sendai-2015.html">Marco de Sendai para a Redução do Risco de Desastres 2015-2030</a> (p. 4)</li><li><span class="rel-etype">-> cita</span> <a href="textos/faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a> (p. 3)</li><li><span class="rel-etype">-> cita</span> <a href="textos/ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a> (p. 4)</li><li><span class="rel-etype">-> cita</span> <a href="textos/binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a> (p. 4)</li><li><span class="rel-etype">-> cita</span> <a href="textos/kuhn-1970.html">The Structure of Scientific Revolutions</a> (p. 3)</li><li><span class="rel-etype">-> desenvolve conceito</span> <a href="../conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a> (p. 2)</li><li><span class="rel-etype">-> desenvolve conceito</span> <a href="../conceitos/dysfunction.html">Disfunção de processo social</a> (p. 2)</li><li><span class="rel-etype">-> desenvolve conceito</span> <a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a> (p. 3)</li><li><span class="rel-etype">-> pertence à sessão</span> <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> (obrigatoria)</li><li><span class="rel-etype"><- escreveu</span> <a href="../autores/lauta.html">Kristian Cedervall Lauta</a></li></ul>
+<h2>Mencionado sem ligação em</h2><ul class="rel-list"><li><a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a> <span class="rel-etype">Dysfunction and Disruption: Disaster Risks and the Law</span><div class="mencao-trecho">…permanentes que dela derivaram ( , , ). LAUTA, Kristian Cedervall. Dysfunction and Disruption: Disaster Risks and the Law. *European Journal of Risk Regulation*, v. 8, n. 1, p. 83-87, 2017.…</div></li></ul>
+<h2>Vizinhança no grafo</h2>
+<div id="cy-local"></div>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "author:alemanno", "label": "Alberto Alemanno", "href": "../autores/alemanno.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:antonovic", "label": "Janis Antonovic", "href": "../autores/antonovic.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:binder", "label": "Denis Binder", "href": "../autores/binder.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:farber", "label": "Daniel A. Farber", "href": "../autores/farber.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:faure", "label": "Michael G. Faure", "href": "../autores/faure.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:kuhn", "label": "Thomas S. Kuhn", "href": "../autores/kuhn.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:lauta", "label": "Kristian Cedervall Lauta", "href": "../autores/lauta.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:luhmann", "label": "Niklas Luhmann", "href": "../autores/luhmann.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:lyster", "label": "Rosemary Lyster", "href": "../autores/lyster.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:posner", "label": "Richard A. Posner", "href": "../autores/posner.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:van-aaken", "label": "Anne van Aaken", "href": "../autores/van-aaken.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:verchick", "label": "Robert R. M. Verchick", "href": "../autores/verchick.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:wibisana", "label": "Andri G. Wibisana", "href": "../autores/wibisana.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "concept:capacidade-institucional", "label": "#capacidade-institucional (nota de referência)", "href": "../conceitos/capacidade-institucional.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster Risk (efeitos da incerteza)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-vs-catastrophe", "label": "Desastre vs. catástrofe (capacidade institucional)", "href": "../conceitos/disaster-vs-catastrophe.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Disfunção de processo social", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Leitura de Lauta 2017 (nota literária)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Excepcionalismo jurídico", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:normal-accidents", "label": "Acidente normal (propriedade estrutural do sistema)", "href": "../conceitos/normal-accidents.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:porcao-juridica", "label": "Porção jurídica (legal bite-sizes)", "href": "../conceitos/porcao-juridica.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:risk-society", "label": "Sociedade de risco", "href": "../conceitos/risk-society.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "julgado:cij-parecer-clima-2025", "label": "Parecer consultivo sobre obrigações dos Estados quanto à mudança climática", "href": "../julgados/cij-parecer-clima-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:laquila-cassacao-2016", "label": "Caso L'Aquila, os sete cientistas", "href": "../julgados/laquila-cassacao-2016.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "legislation:acordo-de-paris-2015", "label": "Acordo de Paris sobre mudança do clima", "href": "../legislacao/acordo-de-paris-2015.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:adis-abeba-2015", "label": "Agenda de Ação de Adis Abeba", "href": "../legislacao/adis-abeba-2015.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:agenda-2030", "label": "Agenda 2030 para o Desenvolvimento Sustentável", "href": "../legislacao/agenda-2030.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:habitat-iii-2016", "label": "Habitat III, Nova Agenda Urbana", "href": "../legislacao/habitat-iii-2016.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:iso-31000-2009", "label": "ISO 31000:2009, Gestão de riscos, princípios e diretrizes", "href": "../legislacao/iso-31000-2009.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:iso-guide-73-2009", "label": "ISO Guide 73:2009, Vocabulário de gestão de risco", "href": "../legislacao/iso-guide-73-2009.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:marco-de-sendai-2015", "label": "Marco de Sendai para a Redução do Risco de Desastres 2015-2030", "href": "../legislacao/marco-de-sendai-2015.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "session:s02", "label": "S02: Why Study Disaster Law", "href": "../sessoes/s02.html", "foco": "0"}, "classes": "session"}, {"data": {"id": "text:alemanno-2011", "label": "Governing Disasters", "href": "../textos/alemanno-2011.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:antonovic-vanaaken-2016", "label": "Is International Law Conducive to Prevent Looming Disasters?", "href": "../textos/antonovic-vanaaken-2016.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:beck-1992", "label": "Risk Society: Towards a New Modernity", "href": "../textos/beck-1992.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:binder-2016", "label": "The Increasing Application of Criminal Law to Disasters and Tragedies", "href": "../textos/binder-2016.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:ejrr-laquila-2014", "label": "Simposio EJRR sobre os L'Aquila Seven", "href": "../textos/ejrr-laquila-2014.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:farber-2010", "label": "Disaster Law and Policy, 2a ed.", "href": "../textos/farber-2010.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:farber-faure-2010", "label": "Disaster Law (coletanea)", "href": "../textos/farber-faure-2010.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:faure-wibisana-2013", "label": "Regulating Disasters, Climate Change and Environmental Harm", "href": "../textos/faure-wibisana-2013.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:kuhn-1970", "label": "The Structure of Scientific Revolutions", "href": "../textos/kuhn-1970.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-2014", "label": "Disaster Law", "href": "../textos/lauta-2014.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-2017", "label": "Dysfunction and Disruption: Disaster Risks and the Law", "href": "../textos/lauta-2017.html", "foco": "1"}, "classes": "text foco"}, {"data": {"id": "text:lauta-faure-2016", "label": "Disaster Risk Management (capítulo)", "href": "../textos/lauta-faure-2016.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:luhmann-2004", "label": "Law as a Social System", "href": "../textos/luhmann-2004.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lyster-2015", "label": "Climate Justice and Disaster Law", "href": "../textos/lyster-2015.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perrow-1984", "label": "Normal Accidents: Living with High-Risk Technologies", "href": "../textos/perrow-1984.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:posner-2004", "label": "Catastrophe: Risk and Response", "href": "../textos/posner-2004.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:quarantelli-2005", "label": "Catastrophes Are Different from Disasters", "href": "../textos/quarantelli-2005.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:verchick-2010", "label": "Facing Catastrophe", "href": "../textos/verchick-2010.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:verchick-2012", "label": "Disaster Justice: The Geography of Human Capability", "href": "../textos/verchick-2012.html", "foco": "0"}, "classes": "text"}], "edges": [{"data": {"id": "le0", "source": "author:alemanno", "target": "text:alemanno-2011"}, "classes": "escreveu"}, {"data": {"id": "le1", "source": "author:antonovic", "target": "text:antonovic-vanaaken-2016"}, "classes": "escreveu"}, {"data": {"id": "le2", "source": "author:binder", "target": "text:binder-2016"}, "classes": "escreveu"}, {"data": {"id": "le3", "source": "author:farber", "target": "text:farber-2010"}, "classes": "escreveu"}, {"data": {"id": "le4", "source": "author:farber", "target": "text:farber-faure-2010"}, "classes": "escreveu"}, {"data": {"id": "le5", "source": "author:faure", "target": "text:farber-faure-2010"}, "classes": "escreveu"}, {"data": {"id": "le6", "source": "author:faure", "target": "text:faure-wibisana-2013"}, "classes": "escreveu"}, {"data": {"id": "le7", "source": "author:faure", "target": "text:lauta-faure-2016"}, "classes": "escreveu"}, {"data": {"id": "le8", "source": "author:kuhn", "target": "text:kuhn-1970"}, "classes": "escreveu"}, {"data": {"id": "le9", "source": "author:lauta", "target": "text:lauta-2014"}, "classes": "escreveu"}, {"data": {"id": "le10", "source": "author:lauta", "target": "text:lauta-2017"}, "classes": "escreveu"}, {"data": {"id": "le11", "source": "author:lauta", "target": "text:lauta-faure-2016"}, "classes": "escreveu"}, {"data": {"id": "le12", "source": "author:luhmann", "target": "text:luhmann-2004"}, "classes": "escreveu"}, {"data": {"id": "le13", "source": "author:lyster", "target": "text:lyster-2015"}, "classes": "escreveu"}, {"data": {"id": "le14", "source": "author:posner", "target": "text:posner-2004"}, "classes": "escreveu"}, {"data": {"id": "le15", "source": "author:van-aaken", "target": "text:antonovic-vanaaken-2016"}, "classes": "escreveu"}, {"data": {"id": "le16", "source": "author:verchick", "target": "text:verchick-2010"}, "classes": "escreveu"}, {"data": {"id": "le17", "source": "author:verchick", "target": "text:verchick-2012"}, "classes": "escreveu"}, {"data": {"id": "le18", "source": "author:wibisana", "target": "text:faure-wibisana-2013"}, "classes": "escreveu"}, {"data": {"id": "le19", "source": "concept:capacidade-institucional", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le20", "source": "concept:capacidade-institucional", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le21", "source": "concept:capacidade-institucional", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le22", "source": "concept:capacidade-institucional", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le23", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le24", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le25", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le26", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le27", "source": "concept:disaster-risk", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le28", "source": "concept:disaster-risk", "target": "concept:risk-society"}, "classes": "relaciona_se_com"}, {"data": {"id": "le29", "source": "concept:disaster-vs-catastrophe", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le30", "source": "concept:disaster-vs-catastrophe", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le31", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le32", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le33", "source": "concept:dysfunction", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le34", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le35", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le36", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le37", "source": "concept:lauta-2017-leitura", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le38", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le39", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le40", "source": "concept:legal-exceptionalism", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le41", "source": "concept:normal-accidents", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le42", "source": "concept:porcao-juridica", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le43", "source": "concept:porcao-juridica", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le44", "source": "concept:porcao-juridica", "target": "concept:lauta-2017-leitura"}, "classes": "relaciona_se_com"}, {"data": {"id": "le45", "source": "concept:porcao-juridica", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le46", "source": "concept:risk-society", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le47", "source": "julgado:cij-parecer-clima-2025", "target": "legislation:acordo-de-paris-2015"}, "classes": "cita"}, {"data": {"id": "le48", "source": "julgado:cij-parecer-clima-2025", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le49", "source": "julgado:cij-parecer-clima-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le50", "source": "julgado:laquila-cassacao-2016", "target": "concept:legal-exceptionalism"}, "classes": "instancia_conceito"}, {"data": {"id": "le51", "source": "legislation:iso-31000-2009", "target": "concept:disaster-risk"}, "classes": "define_conceito"}, {"data": {"id": "le52", "source": "legislation:iso-guide-73-2009", "target": "concept:disaster-risk"}, "classes": "define_conceito"}, {"data": {"id": "le53", "source": "text:beck-1992", "target": "concept:risk-society"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le54", "source": "text:beck-1992", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le55", "source": "text:lauta-2017", "target": "legislation:acordo-de-paris-2015"}, "classes": "cita"}, {"data": {"id": "le56", "source": "text:lauta-2017", "target": "legislation:adis-abeba-2015"}, "classes": "cita"}, {"data": {"id": "le57", "source": "text:lauta-2017", "target": "legislation:agenda-2030"}, "classes": "cita"}, {"data": {"id": "le58", "source": "text:lauta-2017", "target": "legislation:habitat-iii-2016"}, "classes": "cita"}, {"data": {"id": "le59", "source": "text:lauta-2017", "target": "legislation:iso-31000-2009"}, "classes": "cita"}, {"data": {"id": "le60", "source": "text:lauta-2017", "target": "legislation:marco-de-sendai-2015"}, "classes": "cita"}, {"data": {"id": "le61", "source": "text:lauta-2017", "target": "text:alemanno-2011"}, "classes": "cita"}, {"data": {"id": "le62", "source": "text:lauta-2017", "target": "text:antonovic-vanaaken-2016"}, "classes": "cita"}, {"data": {"id": "le63", "source": "text:lauta-2017", "target": "text:binder-2016"}, "classes": "cita"}, {"data": {"id": "le64", "source": "text:lauta-2017", "target": "text:ejrr-laquila-2014"}, "classes": "cita"}, {"data": {"id": "le65", "source": "text:lauta-2017", "target": "text:farber-2010"}, "classes": "cita"}, {"data": {"id": "le66", "source": "text:lauta-2017", "target": "text:farber-faure-2010"}, "classes": "cita"}, {"data": {"id": "le67", "source": "text:lauta-2017", "target": "text:faure-wibisana-2013"}, "classes": "cita"}, {"data": {"id": "le68", "source": "text:lauta-2017", "target": "text:kuhn-1970"}, "classes": "cita"}, {"data": {"id": "le69", "source": "text:lauta-2017", "target": "text:lauta-2014"}, "classes": "cita"}, {"data": {"id": "le70", "source": "text:lauta-2017", "target": "text:lauta-faure-2016"}, "classes": "cita"}, {"data": {"id": "le71", "source": "text:lauta-2017", "target": "text:luhmann-2004"}, "classes": "cita"}, {"data": {"id": "le72", "source": "text:lauta-2017", "target": "text:lyster-2015"}, "classes": "cita"}, {"data": {"id": "le73", "source": "text:lauta-2017", "target": "text:posner-2004"}, "classes": "cita"}, {"data": {"id": "le74", "source": "text:lauta-2017", "target": "text:verchick-2010"}, "classes": "cita"}, {"data": {"id": "le75", "source": "text:lauta-2017", "target": "text:verchick-2012"}, "classes": "cita"}, {"data": {"id": "le76", "source": "text:lauta-2017", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le77", "source": "text:lauta-2017", "target": "concept:dysfunction"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le78", "source": "text:lauta-2017", "target": "concept:legal-exceptionalism"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le79", "source": "text:lauta-2017", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le80", "source": "text:perrow-1984", "target": "concept:normal-accidents"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le81", "source": "text:perrow-1984", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le82", "source": "text:quarantelli-2005", "target": "concept:disaster-vs-catastrophe"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le83", "source": "text:quarantelli-2005", "target": "session:s02"}, "classes": "pertence_a_sessao"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "autor"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "texto"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "conceito"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "sessão"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislação"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "julgado"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "escreveu"}, "pertence_a_sessao": {"color": "#c9a227", "label": "pertence à sessão"}, "desenvolve_conceito": {"color": "#4d8067", "label": "desenvolve conceito"}, "cita": {"color": "#9b5de5", "label": "cita"}, "relaciona_se_com": {"color": "#c1503a", "label": "relaciona-se com"}, "define_conceito": {"color": "#6d597a", "label": "define conceito"}, "instancia_conceito": {"color": "#9d0208", "label": "instancia conceito"}};</script>
+<footer>Gerado deterministicamente por <code>tools/wiki_core/render.py</code> a partir de
+<code>wiki/textos/lauta-2017.md</code>. Fonte de verdade é o markdown, editar lá.<br></footer>
+</main>
+</div>
+<script src="../vendor/cytoscape.min.js"></script>
+<script>
+(function(){
+  var saved = localStorage.getItem('dlp-wiki-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  window.toggleWikiTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark' : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('dlp-wiki-theme', next);
+  };
+})();
+</script>
+<script>
+(function(){
+  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
+  function aplicar(l){
+    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
+    // emitem nem o bloco data-lang="en" nem o botao de idioma. Sem esta linha, quem escolhia EN e
+    // seguia um wikilink ate uma delas via o TEXTO SUMIR (o bloco pt ficava hidden e nao havia
+    // bloco en para mostrar), sem botao naquela pagina para desfazer e com a escolha persistida em
+    // localStorage. Cair para 'pt' quando a pagina nao tem o idioma pedido e o comportamento certo:
+    // a preferencia global continua salva e volta a valer na proxima pagina que tenha traducao.
+    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-lang') !== alvo);
+    });
+    document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
+    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
+    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
+    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
+    // nao recebe aviso nenhum.
+    var aviso = document.getElementById('aviso-sem-traducao');
+    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
+  }
+  window.toggleLang = function(){
+    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
+    var novo = atual === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('dlp-wiki-lang', novo);
+    aplicar(novo);
+  };
+  aplicar(salvo);
+})();
+</script>
+<script>
+window.wikiBusca = {
+  MINIMO: 2,
+  esc: function(s){ return String(s).replace(/[&<>]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); },
+  filtrar: function(docs, termo){
+    termo = (termo || '').trim().toLowerCase();
+    if (termo.length < this.MINIMO) return [];
+    return (docs || []).filter(function(d){
+      return (d.t + ' ' + d.c).toLowerCase().indexOf(termo) !== -1;
+    });
+  },
+  trecho: function(d, termo, antes, depois){
+    var i = d.c.toLowerCase().indexOf((termo || '').trim().toLowerCase());
+    if (i === -1) return '';
+    return this.esc(d.c.substring(Math.max(0, i - antes), i + depois));
+  }
+};
+
+(function(){
+  var campo = document.getElementById('busca-campo');
+  var painel = document.getElementById('busca-resultados');
+  if (!campo) return;
+
+  campo.addEventListener('keydown', function(ev){
+    if (ev.key === 'Enter' && campo.value.trim()){
+      window.location.href = campo.getAttribute('data-alvo') + '?q=' + encodeURIComponent(campo.value.trim());
+    }
+    if (ev.key === 'Escape' && painel){ painel.hidden = true; }
+  });
+
+  if (!painel || typeof fetch !== 'function') return;
+
+  var docs = null, carregando = false, falhou = false;
+  var prefixo = campo.getAttribute('data-prefixo') || '';
+
+  function desenhar(){
+    var termo = campo.value.trim();
+    if (termo.length < window.wikiBusca.MINIMO){ painel.hidden = true; painel.innerHTML = ''; return; }
+    if (falhou){ painel.hidden = true; return; }   // Enter ainda funciona
+    if (!docs){ carregar(); return; }
+    var achados = window.wikiBusca.filtrar(docs, termo);
+    painel.hidden = false;
+    if (!achados.length){
+      painel.innerHTML = '<div class="bq-nada">nenhum resultado para ' +
+        window.wikiBusca.esc(termo) + '</div>';
+      return;
+    }
+    var visiveis = achados.slice(0, 12);
+    painel.innerHTML = visiveis.map(function(d){
+      return '<a href="' + prefixo + d.h + '"><span class="bq-tipo">' +
+             window.wikiBusca.esc(d.k) + '</span>' + window.wikiBusca.esc(d.t) + '</a>';
+    }).join('') + (achados.length > visiveis.length
+      ? '<div class="bq-nada">e mais ' + (achados.length - visiveis.length) +
+        ', Enter para ver todos</div>' : '');
+  }
+
+  function carregar(){
+    if (carregando) return;
+    carregando = true;
+    fetch(campo.getAttribute('data-indice'))
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ docs = j; carregando = false; desenhar(); })
+      .catch(function(){ falhou = true; carregando = false; painel.hidden = true; });
+  }
+
+  campo.addEventListener('input', desenhar);
+  document.addEventListener('click', function(ev){
+    if (painel && !painel.contains(ev.target) && ev.target !== campo){ painel.hidden = true; }
+  });
+})();
+</script>
+<script>
+(function(){
+  var d = window.__LOCAL__; if (!d || !window.cytoscape) return;
+  var NS = window.__NS__, ES = window.__ES__;
+  var cy = cytoscape({
+    container: document.getElementById('cy-local'),
+    elements: { nodes: d.nodes, edges: d.edges },
+    style: Object.keys(NS).map(function(t){
+      return { selector: 'node.' + t, style: {
+        'background-color': NS[t].color, 'width': NS[t].size * 0.75, 'height': NS[t].size * 0.75,
+        'shape': NS[t].shape, 'label': 'data(label)', 'font-size': 9, 'color': '#141413',
+        'text-valign': 'bottom', 'text-margin-y': 3, 'text-wrap': 'wrap', 'text-max-width': 88 } };
+    }).concat(Object.keys(ES).map(function(t){
+      return { selector: 'edge.' + t, style: {
+        'line-color': ES[t].color, 'target-arrow-color': ES[t].color,
+        'target-arrow-shape': 'triangle', 'curve-style': 'bezier', 'width': 1.4, 'opacity': 0.8 } };
+    })).concat([{ selector: 'node.foco', style: { 'border-width': 3, 'border-color': '#141413' } }]),
+    layout: { name: 'cose', animate: false, padding: 24 }
+  });
+  cy.on('tap', 'node', function(ev){ window.location.href = ev.target.data('href'); });
+})();
+</script>
+</body>
+</html>

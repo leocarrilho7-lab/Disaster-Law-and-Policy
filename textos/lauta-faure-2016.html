@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Disaster Risk Management (capítulo), Wiki Disaster Law and Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+:root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
+--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
+--muted:#a2a9b1;--card:#1b1f24;--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+font-size:16px;line-height:26px;}
+.layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
+nav.sidebar a:hover{text-decoration:underline;}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
+h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
+margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h2{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:24px;font-weight:400;line-height:1.3;
+margin:1.6rem 0 0.4rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h3{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;font-size:19.2px;font-weight:700;margin:1.2rem 0 0.3rem;}
+p{margin:0 0 16px;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
+a.badge{text-decoration:none;}
+.broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
+blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--border);color:var(--muted);}
+.rel-list{list-style:none;padding:0;font-size:0.94rem;}
+.rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
+.rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
+footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
+.theme-toggle{position:fixed;top:0.8rem;right:1.2rem;font-size:0.78rem;background:var(--card);border:1px solid var(--border);border-radius:2px;padding:0.3rem 0.7rem;cursor:pointer;color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
+ padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
+.selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
+.selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
+.selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
+.busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a:last-child{border-bottom:none;}
+.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
+.ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
+.ficha li{margin:0.12rem 0;}
+#cy-local{width:100%;height:340px;border:1px solid var(--border);border-radius:2px;background:var(--bg);margin-top:0.4rem;}
+table{border-collapse:collapse;width:100%;font-size:0.94rem;margin:0.6rem 0;}
+th,td{border:1px solid var(--border);padding:0.4rem 0.55rem;text-align:left;vertical-align:top;}
+th{background:var(--th);font-weight:700;}
+/* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
+   separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
+   de baixo. */
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
+.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc ul{list-style:none;padding-left:0;margin:0;}
+.toc ul ul{padding-left:0.8rem;}
+.toc li{margin:0.12rem 0;}
+nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleWikiTheme()">Claro/Escuro</button>
+
+<div class="layout">
+<nav class="sidebar"><a href="../index.html"><strong>Disaster Law and Policy, wiki</strong></a>
+<a href="../graph.html">Ver grafo de conceitos</a>
+<a href="../tags.html">Índice por tag</a>
+<input id="busca-campo" type="search" placeholder="buscar..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
+<div id="busca-resultados" class="busca-resultados" hidden></div>
+<div class="area">sessão</div>
+<a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
+<div class="area">autor</div>
+<a href="../autores/alemanno.html">Alberto Alemanno</a>
+<a href="../autores/wibisana.html">Andri G. Wibisana</a>
+<a href="../autores/van-aaken.html">Anne van Aaken</a>
+<a href="../autores/perrow.html">Charles Perrow</a>
+<a href="../autores/farber.html">Daniel A. Farber</a>
+<a href="../autores/binder.html">Denis Binder</a>
+<a href="../autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="../autores/antonovic.html">Janis Antonovic</a>
+<a href="../autores/scanlon.html">Joseph Scanlon</a>
+<a href="../autores/lauta.html">Kristian Cedervall Lauta</a>
+<a href="../autores/faure.html">Michael G. Faure</a>
+<a href="../autores/luhmann.html">Niklas Luhmann</a>
+<a href="../autores/posner.html">Richard A. Posner</a>
+<a href="../autores/verchick.html">Robert R. M. Verchick</a>
+<a href="../autores/perry.html">Ronald W. Perry</a>
+<a href="../autores/lyster.html">Rosemary Lyster</a>
+<a href="../autores/kuhn.html">Thomas S. Kuhn</a>
+<a href="../autores/beck.html">Ulrich Beck</a>
+<div class="area">texto</div>
+<a href="posner-2004.html">Catastrophe: Risk and Response</a>
+<a href="quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
+<a href="lyster-2015.html">Climate Justice and Disaster Law</a>
+<a href="scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
+<a href="verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
+<a href="lauta-2014.html">Disaster Law</a>
+<a href="farber-faure-2010.html">Disaster Law (coletanea)</a>
+<a href="farber-2010.html">Disaster Law and Policy, 2a ed.</a>
+<a href="lauta-faure-2016.html">Disaster Risk Management (capítulo)</a>
+<a href="lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="verchick-2010.html">Facing Catastrophe</a>
+<a href="alemanno-2011.html">Governing Disasters</a>
+<a href="antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
+<a href="luhmann-2004.html">Law as a Social System</a>
+<a href="perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
+<a href="beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a>
+<a href="binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
+<a href="kuhn-1970.html">The Structure of Scientific Revolutions</a>
+<a href="perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a>
+<a href="perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a>
+<div class="area">legislação</div>
+<a href="../legislacao/acordo-de-paris-2015.html">Acordo de Paris sobre mudança do clima</a>
+<a href="../legislacao/agenda-2030.html">Agenda 2030 para o Desenvolvimento Sustentável</a>
+<a href="../legislacao/adis-abeba-2015.html">Agenda de Ação de Adis Abeba</a>
+<a href="../legislacao/habitat-iii-2016.html">Habitat III, Nova Agenda Urbana</a>
+<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Gestão de riscos, princípios e diretrizes</a>
+<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Vocabulário de gestão de risco</a>
+<a href="../legislacao/marco-de-sendai-2015.html">Marco de Sendai para a Redução do Risco de Desastres 2015-2030</a>
+<a href="../legislacao/protocolo-de-montreal-1987.html">Protocolo de Montreal sobre substâncias que destroem a camada de ozônio</a>
+<div class="area">julgado</div>
+<a href="../julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a>
+<a href="../julgados/laquila-cassacao-2016.html">Caso L&#x27;Aquila, os sete cientistas</a>
+<a href="../julgados/mariana-jf-2024.html">Mariana, absolvição criminal na Justiça Federal</a>
+<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana, homologação do acordo de repactuação</a>
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana e outros v. BHP Group</a>
+<a href="../julgados/neubauer-2021.html">Neubauer e outros v. Alemanha</a>
+<a href="../julgados/itlos-parecer-2024.html">Parecer consultivo sobre mudança climática e direito do mar</a>
+<a href="../julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a>
+<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. Estado dos Países Baixos</a>
+<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz e outros v. Suíça</a>
+<div class="area">conceito</div>
+<a href="../conceitos/capacidade-institucional.html">#capacidade-institucional (nota de referência)</a>
+<a href="../conceitos/normal-accidents.html">Acidente normal (propriedade estrutural do sistema)</a>
+<a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a>
+<a href="../conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>
+<a href="../conceitos/dysfunction.html">Disfunção de processo social</a>
+<a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a>
+<a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a>
+<a href="../conceitos/s02-montagem-da-sessao.html">Montagem da sessão S02, 2026.2 (nota de projeto)</a>
+<a href="../conceitos/quarantelli-criterios-brasil.html">Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)</a>
+<a href="../conceitos/porcao-juridica.html">Porção jurídica (legal bite-sizes)</a>
+<a href="../conceitos/risk-society.html">Sociedade de risco</a></nav>
+<main>
+<h1>Disaster Risk Management (capítulo)</h1>
+<div class="meta">tipo: texto &middot; <span title="Verbete iniciado: traz a referência e os vínculos, mas ainda não a leitura completa da obra.">esboço</span><br><a class="badge" href="../tags.html#citado-por-lauta-2017">citado-por-lauta-2017</a> <a class="badge" href="../tags.html#stub">stub</a></div>
+<ul class="ficha"><li><strong>neste corpus:</strong> 3 apontam para ele, 0 saem dele</li></ul>
+<p id="aviso-sem-traducao" class="meta" hidden>This entry has not been translated yet. The Portuguese text is shown below.</p>
+<div data-lang="pt"><h1>Disaster Risk Management (capítulo) (esboço)</h1>
+<p>LAUTA, Kristian Cedervall; FAURE, Michael G. Disaster Risk Management. In: BURGESS, Adam; ALEMANNO, Alberto; ZINN, Jens O. (eds.). <em>Routledge Handbook of Risk Studies</em>. London: Routledge, 2016. p. 179.</p>
+<p>Nota 6: autocitacao. Onde o argumento sobre a insuficiencia do tratamento quantitativo do risco esta desenvolvido por extenso.</p>
+<p>Nó <code>stub</code> da rede de citações: entrou no grafo por ser citado em <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a> (nota 6, p. 3
+do espelho markdown), não por ter sido processado. Sem conceito atribuído, sem síntese própria.</p></div>
+
+
+<h2>Relações</h2><ul class="rel-list"><li><span class="rel-etype"><- cita</span> <a href="textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a></li><li><span class="rel-etype"><- escreveu</span> <a href="../autores/lauta.html">Kristian Cedervall Lauta</a></li><li><span class="rel-etype"><- escreveu</span> <a href="../autores/faure.html">Michael G. Faure</a></li></ul>
+
+<h2>Vizinhança no grafo</h2>
+<div id="cy-local"></div>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "author:faure", "label": "Michael G. Faure", "href": "../autores/faure.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:lauta", "label": "Kristian Cedervall Lauta", "href": "../autores/lauta.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster Risk (efeitos da incerteza)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Disfunção de processo social", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Excepcionalismo jurídico", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "legislation:acordo-de-paris-2015", "label": "Acordo de Paris sobre mudança do clima", "href": "../legislacao/acordo-de-paris-2015.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:adis-abeba-2015", "label": "Agenda de Ação de Adis Abeba", "href": "../legislacao/adis-abeba-2015.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:agenda-2030", "label": "Agenda 2030 para o Desenvolvimento Sustentável", "href": "../legislacao/agenda-2030.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:habitat-iii-2016", "label": "Habitat III, Nova Agenda Urbana", "href": "../legislacao/habitat-iii-2016.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:iso-31000-2009", "label": "ISO 31000:2009, Gestão de riscos, princípios e diretrizes", "href": "../legislacao/iso-31000-2009.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:marco-de-sendai-2015", "label": "Marco de Sendai para a Redução do Risco de Desastres 2015-2030", "href": "../legislacao/marco-de-sendai-2015.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "session:s02", "label": "S02: Why Study Disaster Law", "href": "../sessoes/s02.html", "foco": "0"}, "classes": "session"}, {"data": {"id": "text:alemanno-2011", "label": "Governing Disasters", "href": "../textos/alemanno-2011.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:antonovic-vanaaken-2016", "label": "Is International Law Conducive to Prevent Looming Disasters?", "href": "../textos/antonovic-vanaaken-2016.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:binder-2016", "label": "The Increasing Application of Criminal Law to Disasters and Tragedies", "href": "../textos/binder-2016.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:ejrr-laquila-2014", "label": "Simposio EJRR sobre os L'Aquila Seven", "href": "../textos/ejrr-laquila-2014.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:farber-2010", "label": "Disaster Law and Policy, 2a ed.", "href": "../textos/farber-2010.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:farber-faure-2010", "label": "Disaster Law (coletanea)", "href": "../textos/farber-faure-2010.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:faure-wibisana-2013", "label": "Regulating Disasters, Climate Change and Environmental Harm", "href": "../textos/faure-wibisana-2013.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:kuhn-1970", "label": "The Structure of Scientific Revolutions", "href": "../textos/kuhn-1970.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-2014", "label": "Disaster Law", "href": "../textos/lauta-2014.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-2017", "label": "Dysfunction and Disruption: Disaster Risks and the Law", "href": "../textos/lauta-2017.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-faure-2016", "label": "Disaster Risk Management (capítulo)", "href": "../textos/lauta-faure-2016.html", "foco": "1"}, "classes": "text foco"}, {"data": {"id": "text:luhmann-2004", "label": "Law as a Social System", "href": "../textos/luhmann-2004.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lyster-2015", "label": "Climate Justice and Disaster Law", "href": "../textos/lyster-2015.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:posner-2004", "label": "Catastrophe: Risk and Response", "href": "../textos/posner-2004.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:verchick-2010", "label": "Facing Catastrophe", "href": "../textos/verchick-2010.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:verchick-2012", "label": "Disaster Justice: The Geography of Human Capability", "href": "../textos/verchick-2012.html", "foco": "0"}, "classes": "text"}], "edges": [{"data": {"id": "le0", "source": "author:faure", "target": "text:farber-faure-2010"}, "classes": "escreveu"}, {"data": {"id": "le1", "source": "author:faure", "target": "text:faure-wibisana-2013"}, "classes": "escreveu"}, {"data": {"id": "le2", "source": "author:faure", "target": "text:lauta-faure-2016"}, "classes": "escreveu"}, {"data": {"id": "le3", "source": "author:lauta", "target": "text:lauta-2014"}, "classes": "escreveu"}, {"data": {"id": "le4", "source": "author:lauta", "target": "text:lauta-2017"}, "classes": "escreveu"}, {"data": {"id": "le5", "source": "author:lauta", "target": "text:lauta-faure-2016"}, "classes": "escreveu"}, {"data": {"id": "le6", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "legislation:iso-31000-2009", "target": "concept:disaster-risk"}, "classes": "define_conceito"}, {"data": {"id": "le15", "source": "text:lauta-2017", "target": "legislation:acordo-de-paris-2015"}, "classes": "cita"}, {"data": {"id": "le16", "source": "text:lauta-2017", "target": "legislation:adis-abeba-2015"}, "classes": "cita"}, {"data": {"id": "le17", "source": "text:lauta-2017", "target": "legislation:agenda-2030"}, "classes": "cita"}, {"data": {"id": "le18", "source": "text:lauta-2017", "target": "legislation:habitat-iii-2016"}, "classes": "cita"}, {"data": {"id": "le19", "source": "text:lauta-2017", "target": "legislation:iso-31000-2009"}, "classes": "cita"}, {"data": {"id": "le20", "source": "text:lauta-2017", "target": "legislation:marco-de-sendai-2015"}, "classes": "cita"}, {"data": {"id": "le21", "source": "text:lauta-2017", "target": "text:alemanno-2011"}, "classes": "cita"}, {"data": {"id": "le22", "source": "text:lauta-2017", "target": "text:antonovic-vanaaken-2016"}, "classes": "cita"}, {"data": {"id": "le23", "source": "text:lauta-2017", "target": "text:binder-2016"}, "classes": "cita"}, {"data": {"id": "le24", "source": "text:lauta-2017", "target": "text:ejrr-laquila-2014"}, "classes": "cita"}, {"data": {"id": "le25", "source": "text:lauta-2017", "target": "text:farber-2010"}, "classes": "cita"}, {"data": {"id": "le26", "source": "text:lauta-2017", "target": "text:farber-faure-2010"}, "classes": "cita"}, {"data": {"id": "le27", "source": "text:lauta-2017", "target": "text:faure-wibisana-2013"}, "classes": "cita"}, {"data": {"id": "le28", "source": "text:lauta-2017", "target": "text:kuhn-1970"}, "classes": "cita"}, {"data": {"id": "le29", "source": "text:lauta-2017", "target": "text:lauta-2014"}, "classes": "cita"}, {"data": {"id": "le30", "source": "text:lauta-2017", "target": "text:lauta-faure-2016"}, "classes": "cita"}, {"data": {"id": "le31", "source": "text:lauta-2017", "target": "text:luhmann-2004"}, "classes": "cita"}, {"data": {"id": "le32", "source": "text:lauta-2017", "target": "text:lyster-2015"}, "classes": "cita"}, {"data": {"id": "le33", "source": "text:lauta-2017", "target": "text:posner-2004"}, "classes": "cita"}, {"data": {"id": "le34", "source": "text:lauta-2017", "target": "text:verchick-2010"}, "classes": "cita"}, {"data": {"id": "le35", "source": "text:lauta-2017", "target": "text:verchick-2012"}, "classes": "cita"}, {"data": {"id": "le36", "source": "text:lauta-2017", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le37", "source": "text:lauta-2017", "target": "concept:dysfunction"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le38", "source": "text:lauta-2017", "target": "concept:legal-exceptionalism"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le39", "source": "text:lauta-2017", "target": "session:s02"}, "classes": "pertence_a_sessao"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "autor"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "texto"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "conceito"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "sessão"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislação"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "julgado"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "escreveu"}, "pertence_a_sessao": {"color": "#c9a227", "label": "pertence à sessão"}, "desenvolve_conceito": {"color": "#4d8067", "label": "desenvolve conceito"}, "cita": {"color": "#9b5de5", "label": "cita"}, "relaciona_se_com": {"color": "#c1503a", "label": "relaciona-se com"}, "define_conceito": {"color": "#6d597a", "label": "define conceito"}, "instancia_conceito": {"color": "#9d0208", "label": "instancia conceito"}};</script>
+<footer>Gerado deterministicamente por <code>tools/wiki_core/render.py</code> a partir de
+<code>wiki/textos/lauta-faure-2016.md</code>. Fonte de verdade é o markdown, editar lá.<br></footer>
+</main>
+</div>
+<script src="../vendor/cytoscape.min.js"></script>
+<script>
+(function(){
+  var saved = localStorage.getItem('dlp-wiki-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  window.toggleWikiTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark' : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('dlp-wiki-theme', next);
+  };
+})();
+</script>
+<script>
+(function(){
+  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
+  function aplicar(l){
+    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
+    // emitem nem o bloco data-lang="en" nem o botao de idioma. Sem esta linha, quem escolhia EN e
+    // seguia um wikilink ate uma delas via o TEXTO SUMIR (o bloco pt ficava hidden e nao havia
+    // bloco en para mostrar), sem botao naquela pagina para desfazer e com a escolha persistida em
+    // localStorage. Cair para 'pt' quando a pagina nao tem o idioma pedido e o comportamento certo:
+    // a preferencia global continua salva e volta a valer na proxima pagina que tenha traducao.
+    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-lang') !== alvo);
+    });
+    document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
+    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
+    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
+    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
+    // nao recebe aviso nenhum.
+    var aviso = document.getElementById('aviso-sem-traducao');
+    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
+  }
+  window.toggleLang = function(){
+    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
+    var novo = atual === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('dlp-wiki-lang', novo);
+    aplicar(novo);
+  };
+  aplicar(salvo);
+})();
+</script>
+<script>
+window.wikiBusca = {
+  MINIMO: 2,
+  esc: function(s){ return String(s).replace(/[&<>]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); },
+  filtrar: function(docs, termo){
+    termo = (termo || '').trim().toLowerCase();
+    if (termo.length < this.MINIMO) return [];
+    return (docs || []).filter(function(d){
+      return (d.t + ' ' + d.c).toLowerCase().indexOf(termo) !== -1;
+    });
+  },
+  trecho: function(d, termo, antes, depois){
+    var i = d.c.toLowerCase().indexOf((termo || '').trim().toLowerCase());
+    if (i === -1) return '';
+    return this.esc(d.c.substring(Math.max(0, i - antes), i + depois));
+  }
+};
+
+(function(){
+  var campo = document.getElementById('busca-campo');
+  var painel = document.getElementById('busca-resultados');
+  if (!campo) return;
+
+  campo.addEventListener('keydown', function(ev){
+    if (ev.key === 'Enter' && campo.value.trim()){
+      window.location.href = campo.getAttribute('data-alvo') + '?q=' + encodeURIComponent(campo.value.trim());
+    }
+    if (ev.key === 'Escape' && painel){ painel.hidden = true; }
+  });
+
+  if (!painel || typeof fetch !== 'function') return;
+
+  var docs = null, carregando = false, falhou = false;
+  var prefixo = campo.getAttribute('data-prefixo') || '';
+
+  function desenhar(){
+    var termo = campo.value.trim();
+    if (termo.length < window.wikiBusca.MINIMO){ painel.hidden = true; painel.innerHTML = ''; return; }
+    if (falhou){ painel.hidden = true; return; }   // Enter ainda funciona
+    if (!docs){ carregar(); return; }
+    var achados = window.wikiBusca.filtrar(docs, termo);
+    painel.hidden = false;
+    if (!achados.length){
+      painel.innerHTML = '<div class="bq-nada">nenhum resultado para ' +
+        window.wikiBusca.esc(termo) + '</div>';
+      return;
+    }
+    var visiveis = achados.slice(0, 12);
+    painel.innerHTML = visiveis.map(function(d){
+      return '<a href="' + prefixo + d.h + '"><span class="bq-tipo">' +
+             window.wikiBusca.esc(d.k) + '</span>' + window.wikiBusca.esc(d.t) + '</a>';
+    }).join('') + (achados.length > visiveis.length
+      ? '<div class="bq-nada">e mais ' + (achados.length - visiveis.length) +
+        ', Enter para ver todos</div>' : '');
+  }
+
+  function carregar(){
+    if (carregando) return;
+    carregando = true;
+    fetch(campo.getAttribute('data-indice'))
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ docs = j; carregando = false; desenhar(); })
+      .catch(function(){ falhou = true; carregando = false; painel.hidden = true; });
+  }
+
+  campo.addEventListener('input', desenhar);
+  document.addEventListener('click', function(ev){
+    if (painel && !painel.contains(ev.target) && ev.target !== campo){ painel.hidden = true; }
+  });
+})();
+</script>
+<script>
+(function(){
+  var d = window.__LOCAL__; if (!d || !window.cytoscape) return;
+  var NS = window.__NS__, ES = window.__ES__;
+  var cy = cytoscape({
+    container: document.getElementById('cy-local'),
+    elements: { nodes: d.nodes, edges: d.edges },
+    style: Object.keys(NS).map(function(t){
+      return { selector: 'node.' + t, style: {
+        'background-color': NS[t].color, 'width': NS[t].size * 0.75, 'height': NS[t].size * 0.75,
+        'shape': NS[t].shape, 'label': 'data(label)', 'font-size': 9, 'color': '#141413',
+        'text-valign': 'bottom', 'text-margin-y': 3, 'text-wrap': 'wrap', 'text-max-width': 88 } };
+    }).concat(Object.keys(ES).map(function(t){
+      return { selector: 'edge.' + t, style: {
+        'line-color': ES[t].color, 'target-arrow-color': ES[t].color,
+        'target-arrow-shape': 'triangle', 'curve-style': 'bezier', 'width': 1.4, 'opacity': 0.8 } };
+    })).concat([{ selector: 'node.foco', style: { 'border-width': 3, 'border-color': '#141413' } }]),
+    layout: { name: 'cose', animate: false, padding: 24 }
+  });
+  cy.on('tap', 'node', function(ev){ window.location.href = ev.target.data('href'); });
+})();
+</script>
+</body>
+</html>

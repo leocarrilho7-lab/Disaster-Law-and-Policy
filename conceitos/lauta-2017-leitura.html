@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Leitura de Lauta 2017 (nota literária), Wiki Disaster Law and Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+:root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
+--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
+--muted:#a2a9b1;--card:#1b1f24;--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+font-size:16px;line-height:26px;}
+.layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
+nav.sidebar a:hover{text-decoration:underline;}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
+h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
+margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h2{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:24px;font-weight:400;line-height:1.3;
+margin:1.6rem 0 0.4rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h3{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;font-size:19.2px;font-weight:700;margin:1.2rem 0 0.3rem;}
+p{margin:0 0 16px;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
+a.badge{text-decoration:none;}
+.broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
+blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--border);color:var(--muted);}
+.rel-list{list-style:none;padding:0;font-size:0.94rem;}
+.rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
+.rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
+footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
+.theme-toggle{position:fixed;top:0.8rem;right:1.2rem;font-size:0.78rem;background:var(--card);border:1px solid var(--border);border-radius:2px;padding:0.3rem 0.7rem;cursor:pointer;color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
+ padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
+.selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
+.selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
+.selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
+.busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a:last-child{border-bottom:none;}
+.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
+.ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
+.ficha li{margin:0.12rem 0;}
+#cy-local{width:100%;height:340px;border:1px solid var(--border);border-radius:2px;background:var(--bg);margin-top:0.4rem;}
+table{border-collapse:collapse;width:100%;font-size:0.94rem;margin:0.6rem 0;}
+th,td{border:1px solid var(--border);padding:0.4rem 0.55rem;text-align:left;vertical-align:top;}
+th{background:var(--th);font-weight:700;}
+/* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
+   separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
+   de baixo. */
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
+.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc ul{list-style:none;padding-left:0;margin:0;}
+.toc ul ul{padding-left:0.8rem;}
+.toc li{margin:0.12rem 0;}
+nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleWikiTheme()">Claro/Escuro</button>
+<button id="lang-toggle" class="theme-toggle" style="right:8.5rem" onclick="toggleLang()">EN / PT</button>
+<div class="layout">
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-estrutura-real">Estrutura real</a></li><li><a href="#sec-argumento-nos-cinco-elementos">Argumento nos cinco elementos</a></li><li><a href="#sec-especie-da-alegacao-e-a-evidencia-que-ela-pede">Espécie da alegação e a evidência que ela pede</a></li><li><a href="#sec-citacoes-centrais-com-papel-alcance-e-cadeia">Citações centrais, com papel, alcance e cadeia</a></li><li><a href="#sec-contexto-de-escrita">Contexto de escrita</a></li><li><a href="#sec-a-ausencia-como-achado">A ausência como achado</a></li><li><a href="#sec-divergencia-entre-fontes-exibida">Divergência entre fontes, exibida</a></li><li><a href="#sec-o-que-fica-a-confirmar">O que fica a confirmar</a></li></ul></nav><a href="../index.html"><strong>Disaster Law and Policy, wiki</strong></a>
+<a href="../graph.html">Ver grafo de conceitos</a>
+<a href="../tags.html">Índice por tag</a>
+<input id="busca-campo" type="search" placeholder="buscar..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
+<div id="busca-resultados" class="busca-resultados" hidden></div>
+<div class="area">sessão</div>
+<a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
+<div class="area">autor</div>
+<a href="../autores/alemanno.html">Alberto Alemanno</a>
+<a href="../autores/wibisana.html">Andri G. Wibisana</a>
+<a href="../autores/van-aaken.html">Anne van Aaken</a>
+<a href="../autores/perrow.html">Charles Perrow</a>
+<a href="../autores/farber.html">Daniel A. Farber</a>
+<a href="../autores/binder.html">Denis Binder</a>
+<a href="../autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="../autores/antonovic.html">Janis Antonovic</a>
+<a href="../autores/scanlon.html">Joseph Scanlon</a>
+<a href="../autores/lauta.html">Kristian Cedervall Lauta</a>
+<a href="../autores/faure.html">Michael G. Faure</a>
+<a href="../autores/luhmann.html">Niklas Luhmann</a>
+<a href="../autores/posner.html">Richard A. Posner</a>
+<a href="../autores/verchick.html">Robert R. M. Verchick</a>
+<a href="../autores/perry.html">Ronald W. Perry</a>
+<a href="../autores/lyster.html">Rosemary Lyster</a>
+<a href="../autores/kuhn.html">Thomas S. Kuhn</a>
+<a href="../autores/beck.html">Ulrich Beck</a>
+<div class="area">texto</div>
+<a href="../textos/posner-2004.html">Catastrophe: Risk and Response</a>
+<a href="../textos/quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
+<a href="../textos/lyster-2015.html">Climate Justice and Disaster Law</a>
+<a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
+<a href="../textos/verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
+<a href="../textos/lauta-2014.html">Disaster Law</a>
+<a href="../textos/farber-faure-2010.html">Disaster Law (coletanea)</a>
+<a href="../textos/farber-2010.html">Disaster Law and Policy, 2a ed.</a>
+<a href="../textos/lauta-faure-2016.html">Disaster Risk Management (capítulo)</a>
+<a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="../textos/verchick-2010.html">Facing Catastrophe</a>
+<a href="../textos/alemanno-2011.html">Governing Disasters</a>
+<a href="../textos/antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
+<a href="../textos/luhmann-2004.html">Law as a Social System</a>
+<a href="../textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="../textos/faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
+<a href="../textos/beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="../textos/ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a>
+<a href="../textos/binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
+<a href="../textos/kuhn-1970.html">The Structure of Scientific Revolutions</a>
+<a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a>
+<a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a>
+<div class="area">legislação</div>
+<a href="../legislacao/acordo-de-paris-2015.html">Acordo de Paris sobre mudança do clima</a>
+<a href="../legislacao/agenda-2030.html">Agenda 2030 para o Desenvolvimento Sustentável</a>
+<a href="../legislacao/adis-abeba-2015.html">Agenda de Ação de Adis Abeba</a>
+<a href="../legislacao/habitat-iii-2016.html">Habitat III, Nova Agenda Urbana</a>
+<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Gestão de riscos, princípios e diretrizes</a>
+<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Vocabulário de gestão de risco</a>
+<a href="../legislacao/marco-de-sendai-2015.html">Marco de Sendai para a Redução do Risco de Desastres 2015-2030</a>
+<a href="../legislacao/protocolo-de-montreal-1987.html">Protocolo de Montreal sobre substâncias que destroem a camada de ozônio</a>
+<div class="area">julgado</div>
+<a href="../julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a>
+<a href="../julgados/laquila-cassacao-2016.html">Caso L&#x27;Aquila, os sete cientistas</a>
+<a href="../julgados/mariana-jf-2024.html">Mariana, absolvição criminal na Justiça Federal</a>
+<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana, homologação do acordo de repactuação</a>
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana e outros v. BHP Group</a>
+<a href="../julgados/neubauer-2021.html">Neubauer e outros v. Alemanha</a>
+<a href="../julgados/itlos-parecer-2024.html">Parecer consultivo sobre mudança climática e direito do mar</a>
+<a href="../julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a>
+<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. Estado dos Países Baixos</a>
+<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz e outros v. Suíça</a>
+<div class="area">conceito</div>
+<a href="capacidade-institucional.html">#capacidade-institucional (nota de referência)</a>
+<a href="normal-accidents.html">Acidente normal (propriedade estrutural do sistema)</a>
+<a href="disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a>
+<a href="disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>
+<a href="dysfunction.html">Disfunção de processo social</a>
+<a href="legal-exceptionalism.html">Excepcionalismo jurídico</a>
+<a href="lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a>
+<a href="s02-montagem-da-sessao.html">Montagem da sessão S02, 2026.2 (nota de projeto)</a>
+<a href="quarantelli-criterios-brasil.html">Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)</a>
+<a href="porcao-juridica.html">Porção jurídica (legal bite-sizes)</a>
+<a href="risk-society.html">Sociedade de risco</a></nav>
+<main>
+<h1>Leitura de Lauta 2017 (nota literária)</h1>
+<div class="meta">tipo: conceito &middot; zettel 3<br></div>
+<ul class="ficha"><li><strong>neste corpus:</strong> 1 apontam para ele, 4 saem dele</li></ul>
+
+<div data-lang="pt" hidden><h1>Leitura de Lauta 2017</h1>
+<p>Nota literária no padrão de densidade da skill <code>litereview</code>: registro do que foi lido, com estatuto
+declarado em cada afirmação, distinto do registro bibliográfico da obra (<a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>) e distinto
+das notas permanentes que dela derivaram (<a href="../conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>, <a href="../conceitos/dysfunction.html">Disfunção de processo social</a>,
+<a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a>).</p>
+<p>LAUTA, Kristian Cedervall. Dysfunction and Disruption: Disaster Risks and the Law. <em>European
+Journal of Risk Regulation</em>, v. 8, n. 1, p. 83-87, 2017.</p>
+<p>Estatuto das marcas usadas abaixo: sem marca significa que está no texto lido, com página do
+espelho markdown; <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span> é inferência minha, com o dado em que se apoia declarado ao lado;
+<span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> é o que não foi verificado, com o que falta.</p>
+<h2 id="sec-estrutura-real">Estrutura real</h2>
+<p>Cinco páginas no espelho, três seções numeradas pelo autor. A primeira, sem título numerado, vai
+da abertura biográfica até a definição de risco. A segunda, "(Disaster) Risk Regulation" (p. 3),
+faz a afirmação central sobre o regime jurídico. A terceira, "Future Risk Regulation Research"
+(p. 4), enfileira instrumentos globais e projeta a agenda. Fecha voltando à abertura biográfica
+(p. 5), com a vista da janela do gabinete em Copenhague.</p>
+<h2 id="sec-argumento-nos-cinco-elementos">Argumento nos cinco elementos</h2>
+<p><strong>Tese.</strong> O direito deixou de absorver risco de desastre por excepcionalismo e passou a estar
+presente antes do evento: "This is not the case today" (p. 3), dito imediatamente após enunciar o
+regime que estaria sendo superado.</p>
+<p><strong>Razão.</strong> Porque a maior parte dos riscos de desastre relevantes hoje não é choque externo, mas
+disfunção de processo social do qual a sociedade se beneficia (p. 2).</p>
+<p><strong>Evidência.</strong> "In the course of the last 30 years, an impressive body of regulation addressing all
+phases of managing disaster risks has emerged across the globe" (p. 3), seguida da enumeração de
+pioneiros do campo nas notas 8 a 12, e dos cinco instrumentos globais adotados em menos de vinte
+meses nas notas 16 a 20.</p>
+<p><strong>Reconhecimento e resposta.</strong> Reconhece a definição rival de risco duas vezes e responde
+demarcando-se: cita Luhmann na nota 2 (risco como decisão que aceita a chance de consequência
+negativa) e registra que "for most risk (regulation) scholars, I realize, risk is defined as
+something deliberately undertaken (by law)" (p. 2), respondendo com "I am not talking about that
+kind of risk". Reconhece ainda a controvérsia da própria afirmação sobre não-quantificabilidade:
+"Obviously this is an incredibly controversial claim so early in the text, see e.g. otherwise
+Richard A Posner" (nota 5, p. 2), remetendo ao contraditório em vez de despachá-lo.</p>
+<p><strong>Garantia, nos dois elos mais frágeis.</strong> Nenhum dos dois é enunciado pelo texto; ambos foram
+reconstruídos por mim.</p>
+<p>Primeiro elo <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span>, apoiado na sequência p. 2 para p. 3: quando a fonte do dano é processo social
+do qual a sociedade se beneficia, então o tratamento jurídico não pode ser o da exceção externa. A
+garantia é aceitável se o excepcionalismo depender de o dano ser exógeno. O texto não estabelece
+essa dependência, presume-a.</p>
+<p>Segundo elo <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span>, apoiado na frase de evidência da p. 3: quando existe corpo abrangente de
+regulação sobre todas as fases do risco de desastre, então o excepcionalismo deixou de ser o modo
+dominante de absorção. É o elo mais frágil dos dois, porque coexistência de regimes é possível: a
+existência de regulação preventiva não exclui que estados de emergência sigam operando no momento
+do evento.</p>
+<h2 id="sec-especie-da-alegacao-e-a-evidencia-que-ela-pede">Espécie da alegação e a evidência que ela pede</h2>
+<p>A alegação principal ("This is not the case today") é de <strong>fato ou existência</strong>: afirma que um
+regime jurídico mudou. A evidência que essa espécie pede é levantamento normativo, comparado ou ao
+menos jurisdicional.</p>
+<p>O que o texto oferece são referências a <strong>obras que estudam o campo</strong> (notas 8 a 12: Farber e
+Faure, Faure e Wibisana, Farber e outros, <a href="../textos/lyster-2015.html">Lyster</a>, <a href="../textos/verchick-2012.html">Verchick</a>,
+<a href="../textos/alemanno-2011.html">Alemanno</a>, Antonovic e Van Aaken). Isso é evidência de que existe literatura
+consolidada sobre regulação de risco de desastre, o que é uma afirmação diferente da que a tese
+faz. <strong>Consequência para o uso:</strong> a proposição "o excepcionalismo jurídico foi superado" não pode
+ser reusada como premissa a partir deste texto; ela pode ser reusada como hipótese que o texto
+sustenta com evidência de outra natureza, e o levantamento normativo precisa vir de outro lugar.</p>
+<h2 id="sec-citacoes-centrais-com-papel-alcance-e-cadeia">Citações centrais, com papel, alcance e cadeia</h2>
+<p><strong>"For me, risk is the effects of uncertainty, and the particular risks I am studying are those
+with potentially disastrous consequences" (p. 2).</strong> Papel: tese definicional, base de todo o
+resto. Alcance: definição estipulativa e declaradamente pessoal ("for me"), não pretensão de
+definição corrente do campo. Cadeia: a definição vem da norma técnica ISO 31000 (nota 3), é posta
+contra a de Luhmann (nota 2) e contra a dos "most risk (regulation) scholars" (p. 2), e é o que
+autoriza tratar risco de desastre como não deliberadamente assumido, o que por sua vez abre o
+argumento sobre disfunção.</p>
+<p><strong>"some of the most prevalent disaster risks against modern society are dysfunctions of social
+processes that we clearly benefit from" (p. 2).</strong> Papel: razão de apoio principal. Alcance:
+quantificador não determinado ("some of the most prevalent"), sem levantamento que o sustente;
+não é "a maioria", nem "todos". Cadeia: precedida da divisão em duas categorias de risco (naturais
+e disfuncionais), ilustrada pelo exemplo único da produção de energia nos Países Baixos, e seguida
+da observação de que as duas categorias se hibridizam.</p>
+<p><strong>"have been approached through some version of legal exceptionalism: states of emergencies, acts
+of God or necessity" (p. 3).</strong> Papel: resumo da posição que o texto vai negar, não posição do
+autor. Alcance: descreve o regime tradicional; o verbo no <em>present perfect</em> marca o que valia até
+aqui. Cadeia: é a premissa que a frase seguinte ("This is not the case today") nega, e a negação é
+o que a nota 7 remete a <a href="../textos/lauta-2014.html">Lauta 2014</a> para a versão desenvolvida.</p>
+<p><strong>"the cases are severe stress tests of the sustainability of our present concepts' causality or
+fault" (p. 4).</strong> Papel: qualificação e consequência doutrinária. Alcance: restrito ao ponto de
+vista dogmático, explicitamente ("Seen from a doctrinal law point of view"), com a perspectiva
+societal tratada em frase separada. Cadeia: apoiada no levantamento de casos penais da nota 14
+(Binder 2016) e no simpósio sobre os L'Aquila Seven da nota 15, e é o ponto que Lauta situa como o
+que deve ser pressionado em sala.</p>
+<h2 id="sec-contexto-de-escrita">Contexto de escrita</h2>
+<p>O próprio texto declara sua ocasião: "On the joyful occasion of the relaunch of EJRR, I will offer
+an account of such risks' significance for law in general, and legal scholarship in particular"
+(p. 1). É ensaio de relançamento de periódico, não artigo de pesquisa com aparato empírico.
+<strong>Consequência:</strong> o critério de suficiência de evidência que se aplica a ele é o do gênero ensaio
+programático, e a lacuna registrada acima é do que ele não se propõe a fazer, não defeito de
+execução. Isso não a torna menos relevante para quem for reusar a proposição.</p>
+<p>A nota de rodapé de autoria (p. 2) registra vínculo com o projeto do programa UCPH 2016 de pesquisa
+interdisciplinar de excelência, e o autor é Associate Professor em Direito Público no Centro de
+Direito Internacional, Conflito e Crise da Universidade de Copenhague.</p>
+<h2 id="sec-a-ausencia-como-achado">A ausência como achado</h2>
+<p>O texto não define desastre, e declara a recusa: "Defining disaster is something that takes an
+entire article on its own" (nota 4, p. 2), oferecendo em lugar disso uma definição de trabalho por
+consequências ("events or processes with very serious consequences causing death and destruction").
+<strong>Consequência:</strong> a distinção entre desastre e catástrofe, que <a href="../conceitos/disaster-vs-catastrophe.html">Quarantelli</a>
+trata como central e de capacidade institucional, não tem lugar no argumento de Lauta; os dois
+textos de S02 não se contradizem, operam em planos que não se tocam.</p>
+<h2 id="sec-divergencia-entre-fontes-exibida">Divergência entre fontes, exibida</h2>
+<p>O ano de <a href="../textos/lyster-2015.html">Climate Justice and Disaster Law</a> diverge entre a citação e o exemplar, e as duas leituras ficam registradas
+em vez de arbitradas. A nota 9 de Lauta (p. 3) cita Cambridge University Press <strong>2016</strong>. O exemplar
+do corpus diz, na página de copyright, "© Rosemary Lyster 2015" e "First published 2015"
+(conferido na folha de rosto do PDF em 07/08/2026, <code>S09_Climate_Catastrophe_and_Climate_Litigation</code>).</p>
+<p><strong>Consequência para o uso:</strong> o nó permanece <code>lyster-2015</code>, porque é o que o exemplar em mãos
+sustenta. A hipótese mais provável para a divergência, não conferida, é Lauta ter citado uma
+reimpressão ou a edição em brochura, prática comum da Cambridge; <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> se isso importar
+para a referência final, o caminho é o catálogo da editora pelo ISBN 9781107107229, que consta da
+mesma página.</p>
+<h2 id="sec-o-que-fica-a-confirmar">O que fica a confirmar</h2>
+<p><span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> A afirmação de superação do excepcionalismo, contra levantamento normativo de ao
+menos uma jurisdição. Falta a fonte; o material das sessões seguintes é o lugar natural.</p></div>
+<div data-lang="en"><h1>Reading of Lauta 2017</h1>
+<p>Literary note in the density standard of the <code>litereview</code> skill: a record of what was read, with
+the status declared for each statement, distinct from the work's bibliographic record
+(<a href="../textos/lauta-2017.html">Lauta 2017</a>) and distinct from the permanent notes derived from it
+(<a href="../conceitos/disaster-risk.html">Disaster Risk</a>, <a href="../conceitos/dysfunction.html">dysfunction</a>,
+<a href="../conceitos/legal-exceptionalism.html">legal exceptionalism</a>).</p>
+<p>LAUTA, Kristian Cedervall. Dysfunction and Disruption: Disaster Risks and the Law. <em>European
+Journal of Risk Regulation</em>, v. 8, n. 1, p. 83-87, 2017.</p>
+<p>Status of the marks used below: no mark means it is in the text as read, with the page of the
+markdown mirror; <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span> is my own inference, with the data it relies on stated alongside it;
+<span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> is what has not been verified, with what is missing.</p>
+<h2>Actual structure</h2>
+<p>Five pages in the mirror, three sections numbered by the author. The first, with no numbered
+title, runs from the biographical opening to the definition of risk. The second, "(Disaster) Risk
+Regulation" (p. 3), makes the central claim about the legal regime. The third, "Future Risk
+Regulation Research" (p. 4), lines up global instruments and projects the agenda. It closes by
+returning to the biographical opening (p. 5), with the view from the office window in Copenhagen.</p>
+<h2>The argument in five elements</h2>
+<p><strong>Thesis.</strong> The law stopped absorbing disaster risk through exceptionalism and came to be present
+before the event: "This is not the case today" (p. 3), said immediately after stating the regime
+supposedly being superseded.</p>
+<p><strong>Reason.</strong> Because most of the disaster risks relevant today are not external shocks, but
+dysfunctions of social process from which society benefits (p. 2).</p>
+<p><strong>Evidence.</strong> "In the course of the last 30 years, an impressive body of regulation addressing all
+phases of managing disaster risks has emerged across the globe" (p. 3), followed by the
+enumeration of pioneers of the field in notes 8 to 12, and of the five global instruments adopted
+in under twenty months in notes 16 to 20.</p>
+<p><strong>Acknowledgment and response.</strong> He acknowledges the rival definition of risk twice and responds by
+setting himself apart: he cites Luhmann in note 2 (risk as a decision that accepts the chance of a
+negative consequence) and states that "for most risk (regulation) scholars, I realize, risk is
+defined as something deliberately undertaken (by law)" (p. 2), responding with "I am not talking
+about that kind of risk." He further acknowledges the controversy of his own claim about
+non-quantifiability: "Obviously this is an incredibly controversial claim so early in the text, see
+e.g. otherwise Richard A Posner" (note 5, p. 2), pointing to the counter-argument rather than
+dismissing it.</p>
+<p><strong>Warrant, at its two weakest links.</strong> Neither is stated by the text; both were reconstructed by
+me.</p>
+<p>First link <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span>, resting on the sequence from p. 2 to p. 3: when the source of the harm is a
+social process from which society benefits, then the legal treatment cannot be that of an external
+exception. The warrant is acceptable if exceptionalism depends on the harm being exogenous. The
+text does not establish this dependency, it presumes it.</p>
+<p>Second link <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span>, resting on the evidence sentence on p. 3: when a comprehensive body of
+regulation exists covering every phase of disaster risk, then exceptionalism has stopped being the
+dominant mode of absorption. This is the weaker of the two links, because coexistence of regimes is
+possible: the existence of preventive regulation does not exclude states of emergency continuing to
+operate at the moment of the event.</p>
+<h2>Type of claim and the evidence it calls for</h2>
+<p>The main claim ("This is not the case today") is one of <strong>fact or existence</strong>: it asserts that a
+legal regime has changed. The evidence this type calls for is a normative survey, comparative or at
+least jurisdictional.</p>
+<p>What the text offers are references to <strong>works that study the field</strong> (notes 8 to 12: Farber and
+Faure, Faure and Wibisana, Farber and others, <a href="../textos/lyster-2015.html">Lyster</a>, <a href="../textos/verchick-2012.html">Verchick</a>,
+<a href="../textos/alemanno-2011.html">Alemanno</a>, Antonovic and Van Aaken). That is evidence that a consolidated
+literature on disaster risk regulation exists, which is a different claim from the one the thesis
+makes. <strong>Consequence for use:</strong> the proposition "legal exceptionalism has been superseded" cannot
+be reused as a premise drawn from this text; it can be reused as a hypothesis that the text
+supports with evidence of a different nature, and the normative survey needs to come from
+elsewhere.</p>
+<h2>Central citations, with role, scope, and chain</h2>
+<p><strong>"For me, risk is the effects of uncertainty, and the particular risks I am studying are those
+with potentially disastrous consequences" (p. 2).</strong> Role: definitional thesis, the foundation for
+everything that follows. Scope: a stipulative and declaredly personal definition ("for me"), not a
+claim to the field's prevailing definition. Chain: the definition comes from the technical standard
+ISO 31000 (note 3), is set against Luhmann's (note 2) and against that of "most risk (regulation)
+scholars" (p. 2), and is what authorizes treating disaster risk as not deliberately undertaken,
+which in turn opens the argument about dysfunction.</p>
+<p><strong>"some of the most prevalent disaster risks against modern society are dysfunctions of social
+processes that we clearly benefit from" (p. 2).</strong> Role: main supporting reason. Scope: an
+undetermined quantifier ("some of the most prevalent"), with no survey to back it; it is not
+"most," nor "all." Chain: preceded by the division into two categories of risk (natural and
+dysfunctional), illustrated by the single example of energy production in the Netherlands, and
+followed by the observation that the two categories hybridize.</p>
+<p><strong>"have been approached through some version of legal exceptionalism: states of emergencies, acts
+of God or necessity" (p. 3).</strong> Role: summary of the position the text is going to deny, not the
+author's own position. Scope: describes the traditional regime; the verb in the <em>present perfect</em>
+marks what held true up to this point. Chain: it is the premise that the following sentence ("This
+is not the case today") denies, and for that denial note 7 points to <a href="../textos/lauta-2014.html">Lauta 2014</a> for
+the developed version.</p>
+<p><strong>"the cases are severe stress tests of the sustainability of our present concepts' causality or
+fault" (p. 4).</strong> Role: qualification and doctrinal consequence. Scope: restricted to the doctrinal
+point of view, explicitly so ("Seen from a doctrinal law point of view"), with the societal
+perspective addressed in a separate sentence. Chain: supported by the survey of criminal cases in
+note 14 (Binder 2016) and by the symposium on the L'Aquila Seven in note 15, and it is the point
+Lauta frames as the one that should be pressed in the classroom.</p>
+<h2>Context of writing</h2>
+<p>The text itself declares its occasion: "On the joyful occasion of the relaunch of EJRR, I will
+offer an account of such risks' significance for law in general, and legal scholarship in
+particular" (p. 1). It is a journal-relaunch essay, not a research article with an empirical
+apparatus. <strong>Consequence:</strong> the sufficiency-of-evidence standard that applies to it is that of the
+programmatic-essay genre, and the gap recorded above is of what it does not set out to do, not a
+defect of execution. That does not make it any less relevant for anyone who reuses the proposition.</p>
+<p>The authorship footnote (p. 2) records a link to the UCPH 2016 Excellence Programme for
+Interdisciplinary Research, and the author is Associate Professor of Public Law at the Centre for
+International Law, Conflict and Crisis at the University of Copenhagen.</p>
+<h2>The absence as a finding</h2>
+<p>The text does not define disaster, and states its refusal: "Defining disaster is something that
+takes an entire article on its own" (note 4, p. 2), offering in its place a working definition by
+consequences ("events or processes with very serious consequences causing death and destruction").
+<strong>Consequence:</strong> the distinction between disaster and catastrophe, which
+<a href="../conceitos/disaster-vs-catastrophe.html">Quarantelli</a> treats as central and a matter of institutional capacity,
+has no place in Lauta's argument; the two texts of S02 do not contradict each other, they operate
+on planes that never touch.</p>
+<h2>Divergence between sources, displayed</h2>
+<p>The year for <a href="../textos/lyster-2015.html">Lyster 2015</a> diverges between the citation and the copy in hand, and
+both readings are recorded rather than adjudicated. Lauta's note 9 (p. 3) cites Cambridge
+University Press <strong>2016</strong>. The corpus copy states, on the copyright page, "© Rosemary Lyster 2015"
+and "First published 2015" (checked on the PDF's title page on 07/08/2026,
+<code>S09_Climate_Catastrophe_and_Climate_Litigation</code>).</p>
+<p><strong>Consequence for use:</strong> the node remains <code>lyster-2015</code>, because that is what the copy in hand
+supports. The most likely hypothesis for the divergence, unverified, is that Lauta cited a reprint
+or the paperback edition, a common Cambridge practice; <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> should this matter for the
+final reference, the path is the publisher's catalog by ISBN 9781107107229, which appears on the
+same page.</p>
+<h2>What remains to be confirmed</h2>
+<p><span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> The claim that exceptionalism has been superseded, against a normative survey of at
+least one jurisdiction. The source is missing; the material from the following sessions is the
+natural place for it.</p></div>
+
+<h2>Relações</h2><ul class="rel-list"><li><span class="rel-etype">-> relaciona-se com</span> <a href="conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a></li><li><span class="rel-etype">-> relaciona-se com</span> <a href="conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a></li><li><span class="rel-etype">-> relaciona-se com</span> <a href="conceitos/dysfunction.html">Disfunção de processo social</a></li><li><span class="rel-etype">-> relaciona-se com</span> <a href="conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a></li><li><span class="rel-etype"><- relaciona-se com</span> <a href="conceitos/porcao-juridica.html">Porção jurídica (legal bite-sizes)</a></li></ul>
+
+<h2>Vizinhança no grafo</h2>
+<div id="cy-local"></div>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "concept:capacidade-institucional", "label": "#capacidade-institucional (nota de referência)", "href": "../conceitos/capacidade-institucional.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster Risk (efeitos da incerteza)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-vs-catastrophe", "label": "Desastre vs. catástrofe (capacidade institucional)", "href": "../conceitos/disaster-vs-catastrophe.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Disfunção de processo social", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Leitura de Lauta 2017 (nota literária)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "1"}, "classes": "concept foco"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Excepcionalismo jurídico", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:normal-accidents", "label": "Acidente normal (propriedade estrutural do sistema)", "href": "../conceitos/normal-accidents.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:porcao-juridica", "label": "Porção jurídica (legal bite-sizes)", "href": "../conceitos/porcao-juridica.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:quarantelli-criterios-brasil", "label": "Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)", "href": "../conceitos/quarantelli-criterios-brasil.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:risk-society", "label": "Sociedade de risco", "href": "../conceitos/risk-society.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:s02-montagem-da-sessao", "label": "Montagem da sessão S02, 2026.2 (nota de projeto)", "href": "../conceitos/s02-montagem-da-sessao.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "julgado:brumadinho-denuncia", "label": "Brumadinho, a denúncia e a contagem de vítimas", "href": "../julgados/brumadinho-denuncia.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:cij-parecer-clima-2025", "label": "Parecer consultivo sobre obrigações dos Estados quanto à mudança climática", "href": "../julgados/cij-parecer-clima-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:itlos-parecer-2024", "label": "Parecer consultivo sobre mudança climática e direito do mar", "href": "../julgados/itlos-parecer-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:klimaseniorinnen-2024", "label": "Verein KlimaSeniorinnen Schweiz e outros v. Suíça", "href": "../julgados/klimaseniorinnen-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:laquila-cassacao-2016", "label": "Caso L'Aquila, os sete cientistas", "href": "../julgados/laquila-cassacao-2016.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-ewhc-2025", "label": "Município de Mariana e outros v. BHP Group", "href": "../julgados/mariana-ewhc-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-jf-2024", "label": "Mariana, absolvição criminal na Justiça Federal", "href": "../julgados/mariana-jf-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-stf-homologacao-2024", "label": "Mariana, homologação do acordo de repactuação", "href": "../julgados/mariana-stf-homologacao-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:neubauer-2021", "label": "Neubauer e outros v. Alemanha", "href": "../julgados/neubauer-2021.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:urgenda-2019", "label": "Urgenda Foundation v. Estado dos Países Baixos", "href": "../julgados/urgenda-2019.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "legislation:iso-31000-2009", "label": "ISO 31000:2009, Gestão de riscos, princípios e diretrizes", "href": "../legislacao/iso-31000-2009.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:iso-guide-73-2009", "label": "ISO Guide 73:2009, Vocabulário de gestão de risco", "href": "../legislacao/iso-guide-73-2009.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "text:lauta-2017", "label": "Dysfunction and Disruption: Disaster Risks and the Law", "href": "../textos/lauta-2017.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:quarantelli-2005", "label": "Catastrophes Are Different from Disasters", "href": "../textos/quarantelli-2005.html", "foco": "0"}, "classes": "text"}], "edges": [{"data": {"id": "le0", "source": "concept:capacidade-institucional", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le1", "source": "concept:capacidade-institucional", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le2", "source": "concept:capacidade-institucional", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le3", "source": "concept:capacidade-institucional", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le4", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le5", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:disaster-risk", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:disaster-risk", "target": "concept:risk-society"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:disaster-vs-catastrophe", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:disaster-vs-catastrophe", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:dysfunction", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le18", "source": "concept:lauta-2017-leitura", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le19", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le20", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le21", "source": "concept:legal-exceptionalism", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le22", "source": "concept:normal-accidents", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le23", "source": "concept:porcao-juridica", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le24", "source": "concept:porcao-juridica", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le25", "source": "concept:porcao-juridica", "target": "concept:lauta-2017-leitura"}, "classes": "relaciona_se_com"}, {"data": {"id": "le26", "source": "concept:porcao-juridica", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le27", "source": "concept:quarantelli-criterios-brasil", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le28", "source": "concept:risk-society", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le29", "source": "concept:s02-montagem-da-sessao", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le30", "source": "concept:s02-montagem-da-sessao", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le31", "source": "concept:s02-montagem-da-sessao", "target": "concept:risk-society"}, "classes": "relaciona_se_com"}, {"data": {"id": "le32", "source": "julgado:brumadinho-denuncia", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le33", "source": "julgado:cij-parecer-clima-2025", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le34", "source": "julgado:cij-parecer-clima-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le35", "source": "julgado:itlos-parecer-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le36", "source": "julgado:klimaseniorinnen-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le37", "source": "julgado:laquila-cassacao-2016", "target": "concept:legal-exceptionalism"}, "classes": "instancia_conceito"}, {"data": {"id": "le38", "source": "julgado:mariana-ewhc-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le39", "source": "julgado:mariana-jf-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le40", "source": "julgado:mariana-stf-homologacao-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le41", "source": "julgado:neubauer-2021", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le42", "source": "julgado:urgenda-2019", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le43", "source": "legislation:iso-31000-2009", "target": "concept:disaster-risk"}, "classes": "define_conceito"}, {"data": {"id": "le44", "source": "legislation:iso-guide-73-2009", "target": "concept:disaster-risk"}, "classes": "define_conceito"}, {"data": {"id": "le45", "source": "text:lauta-2017", "target": "legislation:iso-31000-2009"}, "classes": "cita"}, {"data": {"id": "le46", "source": "text:lauta-2017", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le47", "source": "text:lauta-2017", "target": "concept:dysfunction"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le48", "source": "text:lauta-2017", "target": "concept:legal-exceptionalism"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le49", "source": "text:quarantelli-2005", "target": "concept:disaster-vs-catastrophe"}, "classes": "desenvolve_conceito"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "autor"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "texto"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "conceito"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "sessão"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislação"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "julgado"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "escreveu"}, "pertence_a_sessao": {"color": "#c9a227", "label": "pertence à sessão"}, "desenvolve_conceito": {"color": "#4d8067", "label": "desenvolve conceito"}, "cita": {"color": "#9b5de5", "label": "cita"}, "relaciona_se_com": {"color": "#c1503a", "label": "relaciona-se com"}, "define_conceito": {"color": "#6d597a", "label": "define conceito"}, "instancia_conceito": {"color": "#9d0208", "label": "instancia conceito"}};</script>
+<footer>Gerado deterministicamente por <code>tools/wiki_core/render.py</code> a partir de
+<code>wiki/conceitos/lauta-2017-leitura.md</code>. Fonte de verdade é o markdown, editar lá.<br></footer>
+</main>
+</div>
+<script src="../vendor/cytoscape.min.js"></script>
+<script>
+(function(){
+  var saved = localStorage.getItem('dlp-wiki-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  window.toggleWikiTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark' : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('dlp-wiki-theme', next);
+  };
+})();
+</script>
+<script>
+(function(){
+  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
+  function aplicar(l){
+    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
+    // emitem nem o bloco data-lang="en" nem o botao de idioma. Sem esta linha, quem escolhia EN e
+    // seguia um wikilink ate uma delas via o TEXTO SUMIR (o bloco pt ficava hidden e nao havia
+    // bloco en para mostrar), sem botao naquela pagina para desfazer e com a escolha persistida em
+    // localStorage. Cair para 'pt' quando a pagina nao tem o idioma pedido e o comportamento certo:
+    // a preferencia global continua salva e volta a valer na proxima pagina que tenha traducao.
+    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-lang') !== alvo);
+    });
+    document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
+    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
+    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
+    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
+    // nao recebe aviso nenhum.
+    var aviso = document.getElementById('aviso-sem-traducao');
+    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
+  }
+  window.toggleLang = function(){
+    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
+    var novo = atual === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('dlp-wiki-lang', novo);
+    aplicar(novo);
+  };
+  aplicar(salvo);
+})();
+</script>
+<script>
+window.wikiBusca = {
+  MINIMO: 2,
+  esc: function(s){ return String(s).replace(/[&<>]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); },
+  filtrar: function(docs, termo){
+    termo = (termo || '').trim().toLowerCase();
+    if (termo.length < this.MINIMO) return [];
+    return (docs || []).filter(function(d){
+      return (d.t + ' ' + d.c).toLowerCase().indexOf(termo) !== -1;
+    });
+  },
+  trecho: function(d, termo, antes, depois){
+    var i = d.c.toLowerCase().indexOf((termo || '').trim().toLowerCase());
+    if (i === -1) return '';
+    return this.esc(d.c.substring(Math.max(0, i - antes), i + depois));
+  }
+};
+
+(function(){
+  var campo = document.getElementById('busca-campo');
+  var painel = document.getElementById('busca-resultados');
+  if (!campo) return;
+
+  campo.addEventListener('keydown', function(ev){
+    if (ev.key === 'Enter' && campo.value.trim()){
+      window.location.href = campo.getAttribute('data-alvo') + '?q=' + encodeURIComponent(campo.value.trim());
+    }
+    if (ev.key === 'Escape' && painel){ painel.hidden = true; }
+  });
+
+  if (!painel || typeof fetch !== 'function') return;
+
+  var docs = null, carregando = false, falhou = false;
+  var prefixo = campo.getAttribute('data-prefixo') || '';
+
+  function desenhar(){
+    var termo = campo.value.trim();
+    if (termo.length < window.wikiBusca.MINIMO){ painel.hidden = true; painel.innerHTML = ''; return; }
+    if (falhou){ painel.hidden = true; return; }   // Enter ainda funciona
+    if (!docs){ carregar(); return; }
+    var achados = window.wikiBusca.filtrar(docs, termo);
+    painel.hidden = false;
+    if (!achados.length){
+      painel.innerHTML = '<div class="bq-nada">nenhum resultado para ' +
+        window.wikiBusca.esc(termo) + '</div>';
+      return;
+    }
+    var visiveis = achados.slice(0, 12);
+    painel.innerHTML = visiveis.map(function(d){
+      return '<a href="' + prefixo + d.h + '"><span class="bq-tipo">' +
+             window.wikiBusca.esc(d.k) + '</span>' + window.wikiBusca.esc(d.t) + '</a>';
+    }).join('') + (achados.length > visiveis.length
+      ? '<div class="bq-nada">e mais ' + (achados.length - visiveis.length) +
+        ', Enter para ver todos</div>' : '');
+  }
+
+  function carregar(){
+    if (carregando) return;
+    carregando = true;
+    fetch(campo.getAttribute('data-indice'))
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ docs = j; carregando = false; desenhar(); })
+      .catch(function(){ falhou = true; carregando = false; painel.hidden = true; });
+  }
+
+  campo.addEventListener('input', desenhar);
+  document.addEventListener('click', function(ev){
+    if (painel && !painel.contains(ev.target) && ev.target !== campo){ painel.hidden = true; }
+  });
+})();
+</script>
+<script>
+(function(){
+  var d = window.__LOCAL__; if (!d || !window.cytoscape) return;
+  var NS = window.__NS__, ES = window.__ES__;
+  var cy = cytoscape({
+    container: document.getElementById('cy-local'),
+    elements: { nodes: d.nodes, edges: d.edges },
+    style: Object.keys(NS).map(function(t){
+      return { selector: 'node.' + t, style: {
+        'background-color': NS[t].color, 'width': NS[t].size * 0.75, 'height': NS[t].size * 0.75,
+        'shape': NS[t].shape, 'label': 'data(label)', 'font-size': 9, 'color': '#141413',
+        'text-valign': 'bottom', 'text-margin-y': 3, 'text-wrap': 'wrap', 'text-max-width': 88 } };
+    }).concat(Object.keys(ES).map(function(t){
+      return { selector: 'edge.' + t, style: {
+        'line-color': ES[t].color, 'target-arrow-color': ES[t].color,
+        'target-arrow-shape': 'triangle', 'curve-style': 'bezier', 'width': 1.4, 'opacity': 0.8 } };
+    })).concat([{ selector: 'node.foco', style: { 'border-width': 3, 'border-color': '#141413' } }]),
+    layout: { name: 'cose', animate: false, padding: 24 }
+  });
+  cy.on('tap', 'node', function(ev){ window.location.href = ev.target.data('href'); });
+})();
+</script>
+</body>
+</html>

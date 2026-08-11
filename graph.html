@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Grafo de conceitos, Wiki Disaster Law and Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+:root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
+--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
+--muted:#a2a9b1;--card:#1b1f24;--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+font-size:16px;line-height:26px;}
+.layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
+nav.sidebar a:hover{text-decoration:underline;}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
+h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
+margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h2{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:24px;font-weight:400;line-height:1.3;
+margin:1.6rem 0 0.4rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h3{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;font-size:19.2px;font-weight:700;margin:1.2rem 0 0.3rem;}
+p{margin:0 0 16px;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
+a.badge{text-decoration:none;}
+.broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
+blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--border);color:var(--muted);}
+.rel-list{list-style:none;padding:0;font-size:0.94rem;}
+.rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
+.rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
+footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
+.theme-toggle{position:fixed;top:0.8rem;right:1.2rem;font-size:0.78rem;background:var(--card);border:1px solid var(--border);border-radius:2px;padding:0.3rem 0.7rem;cursor:pointer;color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
+ padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
+.selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
+.selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
+.selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
+.busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a:last-child{border-bottom:none;}
+.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
+.ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
+.ficha li{margin:0.12rem 0;}
+#cy-local{width:100%;height:340px;border:1px solid var(--border);border-radius:2px;background:var(--bg);margin-top:0.4rem;}
+table{border-collapse:collapse;width:100%;font-size:0.94rem;margin:0.6rem 0;}
+th,td{border:1px solid var(--border);padding:0.4rem 0.55rem;text-align:left;vertical-align:top;}
+th{background:var(--th);font-weight:700;}
+/* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
+   separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
+   de baixo. */
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
+.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc ul{list-style:none;padding-left:0;margin:0;}
+.toc ul ul{padding-left:0.8rem;}
+.toc li{margin:0.12rem 0;}
+nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
+
+.graph-wrap{position:relative;}
+#cy{width:100%;height:72vh;border:1px solid var(--border);border-radius:6px;background:var(--card);}
+.graph-legend{position:absolute;top:0.75rem;right:0.75rem;background:var(--card);border:1px solid var(--border);
+  border-radius:8px;padding:0.6rem 0.8rem;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:0.78rem;
+  max-width:230px;box-shadow:0 2px 8px rgba(0,0,0,0.12);}
+.graph-legend h3{margin:0 0 0.35rem 0;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+.graph-legend h3:not(:first-child){margin-top:0.6rem;}
+.legend-row{display:flex;align-items:center;gap:0.4rem;margin:0.15rem 0;}
+.legend-dot{border-radius:50%;display:inline-block;flex-shrink:0;}
+.legend-line{width:16px;height:2px;display:inline-block;flex-shrink:0;}
+.legend-count{margin-left:auto;color:var(--muted);margin-right:0.3rem;}
+.leiaute-toggle{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.82rem;
+  margin:0.3rem 0 0.6rem;cursor:pointer;color:var(--fg);}
+.eixo-y{position:absolute;left:0.3rem;top:50%;transform:translateY(-50%) rotate(-90deg);
+  transform-origin:left center;font-size:0.72rem;color:var(--muted);text-transform:uppercase;
+  letter-spacing:0.03em;white-space:nowrap;pointer-events:none;}
+.eixo-x{position:absolute;left:50%;bottom:0.3rem;transform:translateX(-50%);font-size:0.72rem;
+  color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;pointer-events:none;}
+.eixo-semdata{position:absolute;left:0.6rem;top:0.5rem;font-size:0.68rem;color:var(--muted);
+  cursor:help;border-bottom:1px dotted var(--muted);}
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleWikiTheme()">Claro/Escuro</button>
+<div class="layout">
+<nav class="sidebar"><a href="index.html"><strong>Disaster Law and Policy, wiki</strong></a>
+<a href="graph.html">Ver grafo de conceitos</a>
+<a href="tags.html">Índice por tag</a>
+<input id="busca-campo" type="search" placeholder="buscar..." data-alvo="busca.html" data-indice="busca.json" data-prefixo="" class="busca-campo">
+<div id="busca-resultados" class="busca-resultados" hidden></div>
+<div class="area">sessão</div>
+<a href="sessoes/s02.html">S02: Why Study Disaster Law</a>
+<div class="area">autor</div>
+<a href="autores/alemanno.html">Alberto Alemanno</a>
+<a href="autores/wibisana.html">Andri G. Wibisana</a>
+<a href="autores/van-aaken.html">Anne van Aaken</a>
+<a href="autores/perrow.html">Charles Perrow</a>
+<a href="autores/farber.html">Daniel A. Farber</a>
+<a href="autores/binder.html">Denis Binder</a>
+<a href="autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="autores/antonovic.html">Janis Antonovic</a>
+<a href="autores/scanlon.html">Joseph Scanlon</a>
+<a href="autores/lauta.html">Kristian Cedervall Lauta</a>
+<a href="autores/faure.html">Michael G. Faure</a>
+<a href="autores/luhmann.html">Niklas Luhmann</a>
+<a href="autores/posner.html">Richard A. Posner</a>
+<a href="autores/verchick.html">Robert R. M. Verchick</a>
+<a href="autores/perry.html">Ronald W. Perry</a>
+<a href="autores/lyster.html">Rosemary Lyster</a>
+<a href="autores/kuhn.html">Thomas S. Kuhn</a>
+<a href="autores/beck.html">Ulrich Beck</a>
+<div class="area">texto</div>
+<a href="textos/posner-2004.html">Catastrophe: Risk and Response</a>
+<a href="textos/quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
+<a href="textos/lyster-2015.html">Climate Justice and Disaster Law</a>
+<a href="textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
+<a href="textos/verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
+<a href="textos/lauta-2014.html">Disaster Law</a>
+<a href="textos/farber-faure-2010.html">Disaster Law (coletanea)</a>
+<a href="textos/farber-2010.html">Disaster Law and Policy, 2a ed.</a>
+<a href="textos/lauta-faure-2016.html">Disaster Risk Management (capítulo)</a>
+<a href="textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="textos/verchick-2010.html">Facing Catastrophe</a>
+<a href="textos/alemanno-2011.html">Governing Disasters</a>
+<a href="textos/antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
+<a href="textos/luhmann-2004.html">Law as a Social System</a>
+<a href="textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="textos/faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
+<a href="textos/beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="textos/ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a>
+<a href="textos/binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
+<a href="textos/kuhn-1970.html">The Structure of Scientific Revolutions</a>
+<a href="textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a>
+<a href="textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a>
+<div class="area">legislação</div>
+<a href="legislacao/acordo-de-paris-2015.html">Acordo de Paris sobre mudança do clima</a>
+<a href="legislacao/agenda-2030.html">Agenda 2030 para o Desenvolvimento Sustentável</a>
+<a href="legislacao/adis-abeba-2015.html">Agenda de Ação de Adis Abeba</a>
+<a href="legislacao/habitat-iii-2016.html">Habitat III, Nova Agenda Urbana</a>
+<a href="legislacao/iso-31000-2009.html">ISO 31000:2009, Gestão de riscos, princípios e diretrizes</a>
+<a href="legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Vocabulário de gestão de risco</a>
+<a href="legislacao/marco-de-sendai-2015.html">Marco de Sendai para a Redução do Risco de Desastres 2015-2030</a>
+<a href="legislacao/protocolo-de-montreal-1987.html">Protocolo de Montreal sobre substâncias que destroem a camada de ozônio</a>
+<div class="area">julgado</div>
+<a href="julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a>
+<a href="julgados/laquila-cassacao-2016.html">Caso L&#x27;Aquila, os sete cientistas</a>
+<a href="julgados/mariana-jf-2024.html">Mariana, absolvição criminal na Justiça Federal</a>
+<a href="julgados/mariana-stf-homologacao-2024.html">Mariana, homologação do acordo de repactuação</a>
+<a href="julgados/mariana-ewhc-2025.html">Município de Mariana e outros v. BHP Group</a>
+<a href="julgados/neubauer-2021.html">Neubauer e outros v. Alemanha</a>
+<a href="julgados/itlos-parecer-2024.html">Parecer consultivo sobre mudança climática e direito do mar</a>
+<a href="julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a>
+<a href="julgados/urgenda-2019.html">Urgenda Foundation v. Estado dos Países Baixos</a>
+<a href="julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz e outros v. Suíça</a>
+<div class="area">conceito</div>
+<a href="conceitos/capacidade-institucional.html">#capacidade-institucional (nota de referência)</a>
+<a href="conceitos/normal-accidents.html">Acidente normal (propriedade estrutural do sistema)</a>
+<a href="conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a>
+<a href="conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>
+<a href="conceitos/dysfunction.html">Disfunção de processo social</a>
+<a href="conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a>
+<a href="conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a>
+<a href="conceitos/s02-montagem-da-sessao.html">Montagem da sessão S02, 2026.2 (nota de projeto)</a>
+<a href="conceitos/quarantelli-criterios-brasil.html">Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)</a>
+<a href="conceitos/porcao-juridica.html">Porção jurídica (legal bite-sizes)</a>
+<a href="conceitos/risk-society.html">Sociedade de risco</a></nav>
+<main>
+<h1>Grafo de conceitos</h1>
+<div class="meta">70 nós &middot; 107 arestas.
+Cor e tamanho = tipo de nó (legenda no canto). Clique num nó pra abrir a página;
+desmarque uma camada pra ocultá-la.</div>
+<label class="leiaute-toggle"><input type="checkbox" id="leiaute" onchange="alternarLeiaute()">
+ posicionar por ano e citação</label>
+<div class="graph-wrap">
+<div id="cy"></div>
+<div id="eixos" style="display:none">
+<div class="eixo-y">mais citado neste corpus</div>
+<div class="eixo-x">publicado mais recentemente</div>
+<div class="eixo-semdata" title="Autor, conceito e sessão não têm ano; ficam nesta faixa à esquerda do eixo temporal, fora da leitura de tempo, mas ainda ordenados verticalmente pelo grau de entrada como os demais nós.">sem data (autor / conceito / sessão)</div>
+</div>
+<div class="graph-legend">
+<h3>Tipo de nó (camada)</h3>
+<div class="legend-row"><span class="legend-dot" style="width:19px;height:19px;background:#f2cc8f;"></span><span>sessão</span><span class="legend-count">1</span><input type="checkbox" checked data-class="session" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:17px;height:17px;background:#3d5a80;"></span><span>autor</span><span class="legend-count">18</span><input type="checkbox" checked data-class="author" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:20px;height:20px;background:#e07a5f;"></span><span>texto</span><span class="legend-count">22</span><input type="checkbox" checked data-class="text" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:20px;height:20px;background:#6d597a;"></span><span>legislação</span><span class="legend-count">8</span><input type="checkbox" checked data-class="legislation" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:20px;height:20px;background:#9d0208;"></span><span>julgado</span><span class="legend-count">10</span><input type="checkbox" checked data-class="julgado" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:20px;height:20px;background:#81b29a;"></span><span>conceito</span><span class="legend-count">11</span><input type="checkbox" checked data-class="concept" onchange="toggleLayer(this)"></div>
+<h3>Tipo de nota, so em concept (camada)</h3>
+<div class="legend-row"><span class="legend-dot" style="width:14px;height:14px;background:#9aa0a6;"></span><span>nota fugaz</span><span class="legend-count">1</span><input type="checkbox" checked data-class="note-fugaz" data-note-layer="1" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:14px;height:14px;background:#3d5a80;"></span><span>nota literária</span><span class="legend-count">1</span><input type="checkbox" checked data-class="note-literaria" data-note-layer="1" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:14px;height:14px;background:#81b29a;"></span><span>nota permanente</span><span class="legend-count">7</span><input type="checkbox" checked data-class="note-permanente" data-note-layer="1" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:14px;height:14px;background:#f2cc8f;"></span><span>nota de projeto</span><span class="legend-count">1</span><input type="checkbox" checked data-class="note-projeto" data-note-layer="1" onchange="toggleLayer(this)"></div><div class="legend-row"><span class="legend-dot" style="width:14px;height:14px;background:#9b5de5;"></span><span>nota de referência</span><span class="legend-count">1</span><input type="checkbox" checked data-class="note-referencia" data-note-layer="1" onchange="toggleLayer(this)"></div>
+<h3>Tipo de aresta</h3>
+<div class="legend-row"><span class="legend-line" style="background:#3d5a80"></span><span>escreveu</span></div><div class="legend-row"><span class="legend-line" style="background:#c9a227"></span><span>pertence à sessão</span></div><div class="legend-row"><span class="legend-line" style="background:#4d8067"></span><span>desenvolve conceito</span></div><div class="legend-row"><span class="legend-line" style="background:#9b5de5"></span><span>cita</span></div><div class="legend-row"><span class="legend-line" style="background:#c1503a"></span><span>relaciona-se com</span></div><div class="legend-row"><span class="legend-line" style="background:#6d597a"></span><span>define conceito</span></div><div class="legend-row"><span class="legend-line" style="background:#9d0208"></span><span>instancia conceito</span></div>
+</div>
+</div>
+<footer>Cytoscape.js vendorizado localmente (<code>vendor/cytoscape.min.js</code>, ADR-0003),
+zero rede em tempo de visualização. Nós/arestas gerados de <code>graph.json</code>,
+representação canônica do <code>DomainGraph</code>.</footer>
+</main>
+</div>
+<script src="vendor/cytoscape.min.js"></script>
+<script>
+(function(){
+  var saved = localStorage.getItem('dlp-wiki-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  window.toggleWikiTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark' : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('dlp-wiki-theme', next);
+  };
+})();
+</script>
+<script>
+window.wikiBusca = {
+  MINIMO: 2,
+  esc: function(s){ return String(s).replace(/[&<>]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); },
+  filtrar: function(docs, termo){
+    termo = (termo || '').trim().toLowerCase();
+    if (termo.length < this.MINIMO) return [];
+    return (docs || []).filter(function(d){
+      return (d.t + ' ' + d.c).toLowerCase().indexOf(termo) !== -1;
+    });
+  },
+  trecho: function(d, termo, antes, depois){
+    var i = d.c.toLowerCase().indexOf((termo || '').trim().toLowerCase());
+    if (i === -1) return '';
+    return this.esc(d.c.substring(Math.max(0, i - antes), i + depois));
+  }
+};
+
+(function(){
+  var campo = document.getElementById('busca-campo');
+  var painel = document.getElementById('busca-resultados');
+  if (!campo) return;
+
+  campo.addEventListener('keydown', function(ev){
+    if (ev.key === 'Enter' && campo.value.trim()){
+      window.location.href = campo.getAttribute('data-alvo') + '?q=' + encodeURIComponent(campo.value.trim());
+    }
+    if (ev.key === 'Escape' && painel){ painel.hidden = true; }
+  });
+
+  if (!painel || typeof fetch !== 'function') return;
+
+  var docs = null, carregando = false, falhou = false;
+  var prefixo = campo.getAttribute('data-prefixo') || '';
+
+  function desenhar(){
+    var termo = campo.value.trim();
+    if (termo.length < window.wikiBusca.MINIMO){ painel.hidden = true; painel.innerHTML = ''; return; }
+    if (falhou){ painel.hidden = true; return; }   // Enter ainda funciona
+    if (!docs){ carregar(); return; }
+    var achados = window.wikiBusca.filtrar(docs, termo);
+    painel.hidden = false;
+    if (!achados.length){
+      painel.innerHTML = '<div class="bq-nada">nenhum resultado para ' +
+        window.wikiBusca.esc(termo) + '</div>';
+      return;
+    }
+    var visiveis = achados.slice(0, 12);
+    painel.innerHTML = visiveis.map(function(d){
+      return '<a href="' + prefixo + d.h + '"><span class="bq-tipo">' +
+             window.wikiBusca.esc(d.k) + '</span>' + window.wikiBusca.esc(d.t) + '</a>';
+    }).join('') + (achados.length > visiveis.length
+      ? '<div class="bq-nada">e mais ' + (achados.length - visiveis.length) +
+        ', Enter para ver todos</div>' : '');
+  }
+
+  function carregar(){
+    if (carregando) return;
+    carregando = true;
+    fetch(campo.getAttribute('data-indice'))
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ docs = j; carregando = false; desenhar(); })
+      .catch(function(){ falhou = true; carregando = false; painel.hidden = true; });
+  }
+
+  campo.addEventListener('input', desenhar);
+  document.addEventListener('click', function(ev){
+    if (painel && !painel.contains(ev.target) && ev.target !== campo){ painel.hidden = true; }
+  });
+})();
+</script>
+<script>
+var GRAPH = {"nodes": [{"data": {"id": "author:alemanno", "label": "Alberto Alemanno", "ntype": "author", "href": "autores/alemanno.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:antonovic", "label": "Janis Antonovic", "ntype": "author", "href": "autores/antonovic.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:beck", "label": "Ulrich Beck", "ntype": "author", "href": "autores/beck.html", "status": "complete", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:binder", "label": "Denis Binder", "ntype": "author", "href": "autores/binder.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:farber", "label": "Daniel A. Farber", "ntype": "author", "href": "autores/farber.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:faure", "label": "Michael G. Faure", "ntype": "author", "href": "autores/faure.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:kuhn", "label": "Thomas S. Kuhn", "ntype": "author", "href": "autores/kuhn.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:lauta", "label": "Kristian Cedervall Lauta", "ntype": "author", "href": "autores/lauta.html", "status": "complete", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:luhmann", "label": "Niklas Luhmann", "ntype": "author", "href": "autores/luhmann.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:lyster", "label": "Rosemary Lyster", "ntype": "author", "href": "autores/lyster.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:perrow", "label": "Charles Perrow", "ntype": "author", "href": "autores/perrow.html", "status": "complete", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:perry", "label": "Ronald W. Perry", "ntype": "author", "href": "autores/perry.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:posner", "label": "Richard A. Posner", "ntype": "author", "href": "autores/posner.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:quarantelli", "label": "Enrico L. Quarantelli", "ntype": "author", "href": "autores/quarantelli.html", "status": "complete", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:scanlon", "label": "Joseph Scanlon", "ntype": "author", "href": "autores/scanlon.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:van-aaken", "label": "Anne van Aaken", "ntype": "author", "href": "autores/van-aaken.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:verchick", "label": "Robert R. M. Verchick", "ntype": "author", "href": "autores/verchick.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "author:wibisana", "label": "Andri G. Wibisana", "ntype": "author", "href": "autores/wibisana.html", "status": "stub", "ano": null, "grau_entrada": 0}, "classes": "author"}, {"data": {"id": "concept:capacidade-institucional", "label": "#capacidade-institucional (nota de referência)", "ntype": "concept", "href": "conceitos/capacidade-institucional.html", "status": "complete", "ano": null, "grau_entrada": 0, "note_type": "referencia", "zettel_id": "6"}, "classes": "concept note-referencia"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster Risk (efeitos da incerteza)", "ntype": "concept", "href": "conceitos/disaster-risk.html", "status": "complete", "ano": null, "grau_entrada": 11, "note_type": "permanente", "zettel_id": "1"}, "classes": "concept note-permanente"}, {"data": {"id": "concept:disaster-vs-catastrophe", "label": "Desastre vs. catástrofe (capacidade institucional)", "ntype": "concept", "href": "conceitos/disaster-vs-catastrophe.html", "status": "complete", "ano": null, "grau_entrada": 5, "note_type": "permanente", "zettel_id": "2"}, "classes": "concept note-permanente"}, {"data": {"id": "concept:dysfunction", "label": "Disfunção de processo social", "ntype": "concept", "href": "conceitos/dysfunction.html", "status": "complete", "ano": null, "grau_entrada": 8, "note_type": "permanente", "zettel_id": "1a"}, "classes": "concept note-permanente"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Leitura de Lauta 2017 (nota literária)", "ntype": "concept", "href": "conceitos/lauta-2017-leitura.html", "status": "complete", "ano": null, "grau_entrada": 1, "note_type": "literaria", "zettel_id": "3"}, "classes": "concept note-literaria"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Excepcionalismo jurídico", "ntype": "concept", "href": "conceitos/legal-exceptionalism.html", "status": "complete", "ano": null, "grau_entrada": 8, "note_type": "permanente", "zettel_id": "1a1"}, "classes": "concept note-permanente"}, {"data": {"id": "concept:normal-accidents", "label": "Acidente normal (propriedade estrutural do sistema)", "ntype": "concept", "href": "conceitos/normal-accidents.html", "status": "complete", "ano": null, "grau_entrada": 4, "note_type": "permanente", "zettel_id": "1a2"}, "classes": "concept note-permanente"}, {"data": {"id": "concept:porcao-juridica", "label": "Porção jurídica (legal bite-sizes)", "ntype": "concept", "href": "conceitos/porcao-juridica.html", "status": "complete", "ano": null, "grau_entrada": 11, "note_type": "permanente", "zettel_id": "1c"}, "classes": "concept note-permanente"}, {"data": {"id": "concept:quarantelli-criterios-brasil", "label": "Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)", "ntype": "concept", "href": "conceitos/quarantelli-criterios-brasil.html", "status": "complete", "ano": null, "grau_entrada": 0, "note_type": "fugaz", "zettel_id": "4"}, "classes": "concept note-fugaz"}, {"data": {"id": "concept:risk-society", "label": "Sociedade de risco", "ntype": "concept", "href": "conceitos/risk-society.html", "status": "complete", "ano": null, "grau_entrada": 3, "note_type": "permanente", "zettel_id": "1b"}, "classes": "concept note-permanente"}, {"data": {"id": "concept:s02-montagem-da-sessao", "label": "Montagem da sessão S02, 2026.2 (nota de projeto)", "ntype": "concept", "href": "conceitos/s02-montagem-da-sessao.html", "status": "complete", "ano": null, "grau_entrada": 0, "note_type": "projeto", "zettel_id": "5"}, "classes": "concept note-projeto"}, {"data": {"id": "julgado:brumadinho-denuncia", "label": "Brumadinho, a denúncia e a contagem de vítimas", "ntype": "julgado", "href": "julgados/brumadinho-denuncia.html", "status": "complete", "ano": 2020, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:cij-parecer-clima-2025", "label": "Parecer consultivo sobre obrigações dos Estados quanto à mudança climática", "ntype": "julgado", "href": "julgados/cij-parecer-clima-2025.html", "status": "complete", "ano": 2025, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:itlos-parecer-2024", "label": "Parecer consultivo sobre mudança climática e direito do mar", "ntype": "julgado", "href": "julgados/itlos-parecer-2024.html", "status": "complete", "ano": 2024, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:klimaseniorinnen-2024", "label": "Verein KlimaSeniorinnen Schweiz e outros v. Suíça", "ntype": "julgado", "href": "julgados/klimaseniorinnen-2024.html", "status": "complete", "ano": 2024, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:laquila-cassacao-2016", "label": "Caso L'Aquila, os sete cientistas", "ntype": "julgado", "href": "julgados/laquila-cassacao-2016.html", "status": "complete", "ano": 2016, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-ewhc-2025", "label": "Município de Mariana e outros v. BHP Group", "ntype": "julgado", "href": "julgados/mariana-ewhc-2025.html", "status": "complete", "ano": 2025, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-jf-2024", "label": "Mariana, absolvição criminal na Justiça Federal", "ntype": "julgado", "href": "julgados/mariana-jf-2024.html", "status": "complete", "ano": 2024, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-stf-homologacao-2024", "label": "Mariana, homologação do acordo de repactuação", "ntype": "julgado", "href": "julgados/mariana-stf-homologacao-2024.html", "status": "complete", "ano": 2024, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:neubauer-2021", "label": "Neubauer e outros v. Alemanha", "ntype": "julgado", "href": "julgados/neubauer-2021.html", "status": "complete", "ano": 2021, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "julgado:urgenda-2019", "label": "Urgenda Foundation v. Estado dos Países Baixos", "ntype": "julgado", "href": "julgados/urgenda-2019.html", "status": "complete", "ano": 2019, "grau_entrada": 0}, "classes": "julgado"}, {"data": {"id": "legislation:acordo-de-paris-2015", "label": "Acordo de Paris sobre mudança do clima", "ntype": "legislation", "href": "legislacao/acordo-de-paris-2015.html", "status": "complete", "ano": 2015, "grau_entrada": 2}, "classes": "legislation"}, {"data": {"id": "legislation:adis-abeba-2015", "label": "Agenda de Ação de Adis Abeba", "ntype": "legislation", "href": "legislacao/adis-abeba-2015.html", "status": "complete", "ano": 2015, "grau_entrada": 1}, "classes": "legislation"}, {"data": {"id": "legislation:agenda-2030", "label": "Agenda 2030 para o Desenvolvimento Sustentável", "ntype": "legislation", "href": "legislacao/agenda-2030.html", "status": "complete", "ano": 2015, "grau_entrada": 1}, "classes": "legislation"}, {"data": {"id": "legislation:habitat-iii-2016", "label": "Habitat III, Nova Agenda Urbana", "ntype": "legislation", "href": "legislacao/habitat-iii-2016.html", "status": "complete", "ano": 2016, "grau_entrada": 1}, "classes": "legislation"}, {"data": {"id": "legislation:iso-31000-2009", "label": "ISO 31000:2009, Gestão de riscos, princípios e diretrizes", "ntype": "legislation", "href": "legislacao/iso-31000-2009.html", "status": "complete", "ano": 2009, "grau_entrada": 1}, "classes": "legislation"}, {"data": {"id": "legislation:iso-guide-73-2009", "label": "ISO Guide 73:2009, Vocabulário de gestão de risco", "ntype": "legislation", "href": "legislacao/iso-guide-73-2009.html", "status": "complete", "ano": 2009, "grau_entrada": 0}, "classes": "legislation"}, {"data": {"id": "legislation:marco-de-sendai-2015", "label": "Marco de Sendai para a Redução do Risco de Desastres 2015-2030", "ntype": "legislation", "href": "legislacao/marco-de-sendai-2015.html", "status": "complete", "ano": 2015, "grau_entrada": 1}, "classes": "legislation"}, {"data": {"id": "legislation:protocolo-de-montreal-1987", "label": "Protocolo de Montreal sobre substâncias que destroem a camada de ozônio", "ntype": "legislation", "href": "legislacao/protocolo-de-montreal-1987.html", "status": "complete", "ano": 1987, "grau_entrada": 1}, "classes": "legislation"}, {"data": {"id": "session:s02", "label": "S02: Why Study Disaster Law", "ntype": "session", "href": "sessoes/s02.html", "status": "complete", "ano": null, "grau_entrada": 4}, "classes": "session"}, {"data": {"id": "text:alemanno-2011", "label": "Governing Disasters", "ntype": "text", "href": "textos/alemanno-2011.html", "status": "stub", "ano": 2011, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:antonovic-vanaaken-2016", "label": "Is International Law Conducive to Prevent Looming Disasters?", "ntype": "text", "href": "textos/antonovic-vanaaken-2016.html", "status": "stub", "ano": 2016, "grau_entrada": 3}, "classes": "text"}, {"data": {"id": "text:beck-1992", "label": "Risk Society: Towards a New Modernity", "ntype": "text", "href": "textos/beck-1992.html", "status": "complete", "ano": 1992, "grau_entrada": 1}, "classes": "text"}, {"data": {"id": "text:binder-2016", "label": "The Increasing Application of Criminal Law to Disasters and Tragedies", "ntype": "text", "href": "textos/binder-2016.html", "status": "stub", "ano": 2016, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:ejrr-laquila-2014", "label": "Simposio EJRR sobre os L'Aquila Seven", "ntype": "text", "href": "textos/ejrr-laquila-2014.html", "status": "stub", "ano": 2014, "grau_entrada": 1}, "classes": "text"}, {"data": {"id": "text:farber-2010", "label": "Disaster Law and Policy, 2a ed.", "ntype": "text", "href": "textos/farber-2010.html", "status": "stub", "ano": 2010, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:farber-faure-2010", "label": "Disaster Law (coletanea)", "ntype": "text", "href": "textos/farber-faure-2010.html", "status": "stub", "ano": 2010, "grau_entrada": 3}, "classes": "text"}, {"data": {"id": "text:faure-wibisana-2013", "label": "Regulating Disasters, Climate Change and Environmental Harm", "ntype": "text", "href": "textos/faure-wibisana-2013.html", "status": "stub", "ano": 2013, "grau_entrada": 3}, "classes": "text"}, {"data": {"id": "text:kuhn-1970", "label": "The Structure of Scientific Revolutions", "ntype": "text", "href": "textos/kuhn-1970.html", "status": "stub", "ano": 1970, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:lauta-2014", "label": "Disaster Law", "ntype": "text", "href": "textos/lauta-2014.html", "status": "stub", "ano": 2014, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:lauta-2017", "label": "Dysfunction and Disruption: Disaster Risks and the Law", "ntype": "text", "href": "textos/lauta-2017.html", "status": "complete", "ano": 2017, "grau_entrada": 1}, "classes": "text"}, {"data": {"id": "text:lauta-faure-2016", "label": "Disaster Risk Management (capítulo)", "ntype": "text", "href": "textos/lauta-faure-2016.html", "status": "stub", "ano": 2016, "grau_entrada": 3}, "classes": "text"}, {"data": {"id": "text:luhmann-2004", "label": "Law as a Social System", "ntype": "text", "href": "textos/luhmann-2004.html", "status": "stub", "ano": 2004, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:lyster-2015", "label": "Climate Justice and Disaster Law", "ntype": "text", "href": "textos/lyster-2015.html", "status": "stub", "ano": 2015, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:perrow-1984", "label": "Normal Accidents: Living with High-Risk Technologies", "ntype": "text", "href": "textos/perrow-1984.html", "status": "complete", "ano": 1984, "grau_entrada": 1}, "classes": "text"}, {"data": {"id": "text:perry-2006", "label": "What Is a Disaster? (capítulo no Handbook of Disaster Research)", "ntype": "text", "href": "textos/perry-2006.html", "status": "stub", "ano": 2006, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:perry-quarantelli-2005", "label": "What Is a Disaster? New Answers to Old Questions (orgs.)", "ntype": "text", "href": "textos/perry-quarantelli-2005.html", "status": "stub", "ano": 2005, "grau_entrada": 3}, "classes": "text"}, {"data": {"id": "text:posner-2004", "label": "Catastrophe: Risk and Response", "ntype": "text", "href": "textos/posner-2004.html", "status": "stub", "ano": 2004, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:quarantelli-2005", "label": "Catastrophes Are Different from Disasters", "ntype": "text", "href": "textos/quarantelli-2005.html", "status": "complete", "ano": 2005, "grau_entrada": 1}, "classes": "text"}, {"data": {"id": "text:scanlon-1991", "label": "Convergence Revisited: A New Perspective on a Little Studied Topic", "ntype": "text", "href": "textos/scanlon-1991.html", "status": "stub", "ano": 1991, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:verchick-2010", "label": "Facing Catastrophe", "ntype": "text", "href": "textos/verchick-2010.html", "status": "stub", "ano": 2010, "grau_entrada": 2}, "classes": "text"}, {"data": {"id": "text:verchick-2012", "label": "Disaster Justice: The Geography of Human Capability", "ntype": "text", "href": "textos/verchick-2012.html", "status": "stub", "ano": 2012, "grau_entrada": 2}, "classes": "text"}], "edges": [{"data": {"id": "e0", "source": "author:alemanno", "target": "text:alemanno-2011", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e1", "source": "author:antonovic", "target": "text:antonovic-vanaaken-2016", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e2", "source": "author:beck", "target": "text:beck-1992", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e3", "source": "author:binder", "target": "text:binder-2016", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e4", "source": "author:farber", "target": "text:farber-2010", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e5", "source": "author:farber", "target": "text:farber-faure-2010", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e6", "source": "author:faure", "target": "text:farber-faure-2010", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e7", "source": "author:faure", "target": "text:faure-wibisana-2013", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e8", "source": "author:faure", "target": "text:lauta-faure-2016", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e9", "source": "author:kuhn", "target": "text:kuhn-1970", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e10", "source": "author:lauta", "target": "text:lauta-2014", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e11", "source": "author:lauta", "target": "text:lauta-2017", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e12", "source": "author:lauta", "target": "text:lauta-faure-2016", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e13", "source": "author:luhmann", "target": "text:luhmann-2004", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e14", "source": "author:lyster", "target": "text:lyster-2015", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e15", "source": "author:perrow", "target": "text:perrow-1984", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e16", "source": "author:perry", "target": "text:perry-2006", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e17", "source": "author:perry", "target": "text:perry-quarantelli-2005", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e18", "source": "author:posner", "target": "text:posner-2004", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e19", "source": "author:quarantelli", "target": "text:perry-quarantelli-2005", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e20", "source": "author:quarantelli", "target": "text:quarantelli-2005", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e21", "source": "author:scanlon", "target": "text:scanlon-1991", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e22", "source": "author:van-aaken", "target": "text:antonovic-vanaaken-2016", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e23", "source": "author:verchick", "target": "text:verchick-2010", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e24", "source": "author:verchick", "target": "text:verchick-2012", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e25", "source": "author:wibisana", "target": "text:faure-wibisana-2013", "etype": "escreveu"}, "classes": "escreveu"}, {"data": {"id": "e26", "source": "concept:capacidade-institucional", "target": "concept:disaster-risk", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e27", "source": "concept:capacidade-institucional", "target": "concept:disaster-vs-catastrophe", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e28", "source": "concept:capacidade-institucional", "target": "concept:legal-exceptionalism", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e29", "source": "concept:capacidade-institucional", "target": "concept:normal-accidents", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e30", "source": "concept:disaster-risk", "target": "concept:dysfunction", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e31", "source": "concept:disaster-risk", "target": "concept:dysfunction", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e32", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e33", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e34", "source": "concept:disaster-risk", "target": "concept:porcao-juridica", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e35", "source": "concept:disaster-risk", "target": "concept:risk-society", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e36", "source": "concept:disaster-vs-catastrophe", "target": "concept:disaster-risk", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e37", "source": "concept:disaster-vs-catastrophe", "target": "concept:dysfunction", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e38", "source": "concept:dysfunction", "target": "concept:disaster-risk", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e39", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e40", "source": "concept:dysfunction", "target": "concept:normal-accidents", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e41", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e42", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-vs-catastrophe", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e43", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e44", "source": "concept:lauta-2017-leitura", "target": "concept:legal-exceptionalism", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e45", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e46", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e47", "source": "concept:legal-exceptionalism", "target": "concept:porcao-juridica", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e48", "source": "concept:normal-accidents", "target": "concept:dysfunction", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e49", "source": "concept:porcao-juridica", "target": "concept:disaster-risk", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e50", "source": "concept:porcao-juridica", "target": "concept:dysfunction", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e51", "source": "concept:porcao-juridica", "target": "concept:lauta-2017-leitura", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e52", "source": "concept:porcao-juridica", "target": "concept:legal-exceptionalism", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e53", "source": "concept:quarantelli-criterios-brasil", "target": "concept:disaster-vs-catastrophe", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e54", "source": "concept:risk-society", "target": "concept:disaster-risk", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e55", "source": "concept:s02-montagem-da-sessao", "target": "concept:disaster-vs-catastrophe", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e56", "source": "concept:s02-montagem-da-sessao", "target": "concept:normal-accidents", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e57", "source": "concept:s02-montagem-da-sessao", "target": "concept:risk-society", "etype": "relaciona_se_com"}, "classes": "relaciona_se_com"}, {"data": {"id": "e58", "source": "julgado:brumadinho-denuncia", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e59", "source": "julgado:cij-parecer-clima-2025", "target": "legislation:acordo-de-paris-2015", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e60", "source": "julgado:cij-parecer-clima-2025", "target": "legislation:protocolo-de-montreal-1987", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e61", "source": "julgado:cij-parecer-clima-2025", "target": "concept:disaster-risk", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e62", "source": "julgado:cij-parecer-clima-2025", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e63", "source": "julgado:itlos-parecer-2024", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e64", "source": "julgado:klimaseniorinnen-2024", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e65", "source": "julgado:laquila-cassacao-2016", "target": "concept:legal-exceptionalism", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e66", "source": "julgado:mariana-ewhc-2025", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e67", "source": "julgado:mariana-jf-2024", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e68", "source": "julgado:mariana-stf-homologacao-2024", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e69", "source": "julgado:neubauer-2021", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e70", "source": "julgado:urgenda-2019", "target": "concept:porcao-juridica", "etype": "instancia_conceito"}, "classes": "instancia_conceito"}, {"data": {"id": "e71", "source": "legislation:iso-31000-2009", "target": "concept:disaster-risk", "etype": "define_conceito"}, "classes": "define_conceito"}, {"data": {"id": "e72", "source": "legislation:iso-guide-73-2009", "target": "concept:disaster-risk", "etype": "define_conceito"}, "classes": "define_conceito"}, {"data": {"id": "e73", "source": "text:beck-1992", "target": "concept:risk-society", "etype": "desenvolve_conceito"}, "classes": "desenvolve_conceito"}, {"data": {"id": "e74", "source": "text:beck-1992", "target": "session:s02", "etype": "pertence_a_sessao"}, "classes": "pertence_a_sessao"}, {"data": {"id": "e75", "source": "text:lauta-2017", "target": "legislation:acordo-de-paris-2015", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e76", "source": "text:lauta-2017", "target": "legislation:adis-abeba-2015", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e77", "source": "text:lauta-2017", "target": "legislation:agenda-2030", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e78", "source": "text:lauta-2017", "target": "legislation:habitat-iii-2016", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e79", "source": "text:lauta-2017", "target": "legislation:iso-31000-2009", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e80", "source": "text:lauta-2017", "target": "legislation:marco-de-sendai-2015", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e81", "source": "text:lauta-2017", "target": "text:alemanno-2011", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e82", "source": "text:lauta-2017", "target": "text:antonovic-vanaaken-2016", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e83", "source": "text:lauta-2017", "target": "text:binder-2016", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e84", "source": "text:lauta-2017", "target": "text:ejrr-laquila-2014", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e85", "source": "text:lauta-2017", "target": "text:farber-2010", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e86", "source": "text:lauta-2017", "target": "text:farber-faure-2010", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e87", "source": "text:lauta-2017", "target": "text:faure-wibisana-2013", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e88", "source": "text:lauta-2017", "target": "text:kuhn-1970", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e89", "source": "text:lauta-2017", "target": "text:lauta-2014", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e90", "source": "text:lauta-2017", "target": "text:lauta-faure-2016", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e91", "source": "text:lauta-2017", "target": "text:luhmann-2004", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e92", "source": "text:lauta-2017", "target": "text:lyster-2015", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e93", "source": "text:lauta-2017", "target": "text:posner-2004", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e94", "source": "text:lauta-2017", "target": "text:verchick-2010", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e95", "source": "text:lauta-2017", "target": "text:verchick-2012", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e96", "source": "text:lauta-2017", "target": "concept:disaster-risk", "etype": "desenvolve_conceito"}, "classes": "desenvolve_conceito"}, {"data": {"id": "e97", "source": "text:lauta-2017", "target": "concept:dysfunction", "etype": "desenvolve_conceito"}, "classes": "desenvolve_conceito"}, {"data": {"id": "e98", "source": "text:lauta-2017", "target": "concept:legal-exceptionalism", "etype": "desenvolve_conceito"}, "classes": "desenvolve_conceito"}, {"data": {"id": "e99", "source": "text:lauta-2017", "target": "session:s02", "etype": "pertence_a_sessao"}, "classes": "pertence_a_sessao"}, {"data": {"id": "e100", "source": "text:perrow-1984", "target": "concept:normal-accidents", "etype": "desenvolve_conceito"}, "classes": "desenvolve_conceito"}, {"data": {"id": "e101", "source": "text:perrow-1984", "target": "session:s02", "etype": "pertence_a_sessao"}, "classes": "pertence_a_sessao"}, {"data": {"id": "e102", "source": "text:quarantelli-2005", "target": "text:perry-2006", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e103", "source": "text:quarantelli-2005", "target": "text:perry-quarantelli-2005", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e104", "source": "text:quarantelli-2005", "target": "text:scanlon-1991", "etype": "cita"}, "classes": "cita"}, {"data": {"id": "e105", "source": "text:quarantelli-2005", "target": "concept:disaster-vs-catastrophe", "etype": "desenvolve_conceito"}, "classes": "desenvolve_conceito"}, {"data": {"id": "e106", "source": "text:quarantelli-2005", "target": "session:s02", "etype": "pertence_a_sessao"}, "classes": "pertence_a_sessao"}], "node_legend": [{"cls": "session", "label": "sessão", "color": "#f2cc8f", "size": 38, "count": 1}, {"cls": "author", "label": "autor", "color": "#3d5a80", "size": 34, "count": 18}, {"cls": "text", "label": "texto", "color": "#e07a5f", "size": 46, "count": 22}, {"cls": "legislation", "label": "legislação", "color": "#6d597a", "size": 42, "count": 8}, {"cls": "julgado", "label": "julgado", "color": "#9d0208", "size": 44, "count": 10}, {"cls": "concept", "label": "conceito", "color": "#81b29a", "size": 52, "count": 11}], "note_legend": [{"cls": "note-fugaz", "label": "nota fugaz", "color": "#9aa0a6", "count": 1}, {"cls": "note-literaria", "label": "nota literária", "color": "#3d5a80", "count": 1}, {"cls": "note-permanente", "label": "nota permanente", "color": "#81b29a", "count": 7}, {"cls": "note-projeto", "label": "nota de projeto", "color": "#f2cc8f", "count": 1}, {"cls": "note-referencia", "label": "nota de referência", "color": "#9b5de5", "count": 1}], "edge_legend": [{"label": "escreveu", "color": "#3d5a80"}, {"label": "pertence à sessão", "color": "#c9a227"}, {"label": "desenvolve conceito", "color": "#4d8067"}, {"label": "cita", "color": "#9b5de5"}, {"label": "relaciona-se com", "color": "#c1503a"}, {"label": "define conceito", "color": "#6d597a"}, {"label": "instancia conceito", "color": "#9d0208"}]};
+var NODE_STYLE = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "autor"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "texto"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "conceito"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "sessão"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislação"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "julgado"}};
+var NOTE_STYLE = {"fugaz": {"color": "#9aa0a6", "label": "nota fugaz"}, "literaria": {"color": "#3d5a80", "label": "nota literária"}, "permanente": {"color": "#81b29a", "label": "nota permanente"}, "projeto": {"color": "#f2cc8f", "label": "nota de projeto"}, "referencia": {"color": "#9b5de5", "label": "nota de referência"}};
+var EDGE_STYLE = {"escreveu": {"color": "#3d5a80", "label": "escreveu"}, "pertence_a_sessao": {"color": "#c9a227", "label": "pertence à sessão"}, "desenvolve_conceito": {"color": "#4d8067", "label": "desenvolve conceito"}, "cita": {"color": "#9b5de5", "label": "cita"}, "relaciona_se_com": {"color": "#c1503a", "label": "relaciona-se com"}, "define_conceito": {"color": "#6d597a", "label": "define conceito"}, "instancia_conceito": {"color": "#9d0208", "label": "instancia conceito"}};
+var cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: { nodes: GRAPH.nodes, edges: GRAPH.edges },
+  style: Object.keys(NODE_STYLE).map(function(t){
+    return { selector: 'node.' + t, style: {
+      'background-color': NODE_STYLE[t].color, 'width': NODE_STYLE[t].size, 'height': NODE_STYLE[t].size,
+      'shape': NODE_STYLE[t].shape, 'label': 'data(label)', 'font-size': 9, 'color': '#141413',
+      'text-valign': 'bottom', 'text-margin-y': 4, 'text-wrap': 'wrap', 'text-max-width': 90
+    } };
+  }).concat(Object.keys(EDGE_STYLE).map(function(t){
+    return { selector: 'edge.' + t, style: {
+      'line-color': EDGE_STYLE[t].color, 'target-arrow-color': EDGE_STYLE[t].color,
+      'target-arrow-shape': 'triangle', 'curve-style': 'bezier', 'width': 1.5, 'opacity': 0.75
+    } };
+  })).concat(Object.keys(NOTE_STYLE).map(function(t){
+    // ADR-0008: camada ortogonal -- so muda a COR (forma/tamanho ja vem do NodeType.CONCEPT
+    // acima); array depois = vence no Cytoscape (cascata por ordem, nao por especificidade).
+    return { selector: 'node.note-' + t, style: { 'background-color': NOTE_STYLE[t].color } };
+  })).concat([
+    // Tarefa 12, correcao 1 (Minor): text/legislation/julgado SEM ano e uma anomalia (esses tres
+    // tipos sempre carregam data por construcao, ver _ano_do_no) -- diferente de autor/conceito/
+    // sessao, que nunca tem data por desenho. Marcado so no modo eixo (toggleClass em
+    // alternarLeiaute), pra nao se confundir com a faixa "sem data" esperada.
+    { selector: 'node.ano-inesperado', style: {
+      'border-width': 3, 'border-color': '#9d0208', 'border-style': 'dashed' } }
+  ]),
+  layout: { name: 'cose', animate: false, padding: 30 }
+});
+cy.on('tap', 'node', function(evt){ window.location.href = evt.target.data('href'); });
+cy.nodes().forEach(function(n){ n.style('cursor', 'pointer'); });
+// Tarefa 12: eixos semanticos (engenharia reversa do Litmaps). Padrao continua sendo o leiaute
+// de forca (cose), pra nao surpreender quem ja usa o grafo; o leiaute por eixo e so calculado no
+// cliente a partir de data('ano')/data('grau_entrada') -- nada aqui persiste no graph.json, entao
+// FF-06 (determinismo do build) nao e afetado.
+var _TIPOS_COM_ANO = { text: 1, legislation: 1, julgado: 1 };
+window.alternarLeiaute = function(){
+  var porEixo = document.getElementById('leiaute').checked;
+  document.getElementById('eixos').style.display = porEixo ? 'block' : 'none';
+  if (!porEixo){
+    cy.nodes().removeClass('ano-inesperado');
+    cy.layout({ name:'cose', animate:false, padding:30 }).run();
+    return;
+  }
+  var comAno = cy.nodes().filter(function(n){ return n.data('ano'); });
+  if (comAno.length < 2){ return; }
+  var anos = comAno.map(function(n){ return n.data('ano'); });
+  var minA = Math.min.apply(null, anos), maxA = Math.max.apply(null, anos);
+  var graus = cy.nodes().map(function(n){ return n.data('grau_entrada') || 0; });
+  var maxG = Math.max.apply(null, graus) || 1;
+  // defensivo: container muito estreito/baixo nao pode inverter R<L nem B<T
+  var L = 90, R = Math.max(L + 40, cy.width() - 60);
+  var T = 40, B = Math.max(T + 40, cy.height() - 70);
+  var pxPorAno = (R - L) / Math.max(1, maxA - minA);
+  var pxPorGrau = (B - T) / maxG;
+
+  cy.nodes().forEach(function(n){
+    n.toggleClass('ano-inesperado', !n.data('ano') && !!_TIPOS_COM_ANO[n.data('ntype')]);
+  });
+
+  // posicao bruta (sem tratar empate) de cada no, indexada por id -- precisa estar completa
+  // ANTES de resolver colisao, pra agrupar quem cai exatamente no mesmo ponto
+  var bruta = {};
+  cy.nodes().forEach(function(n){
+    var a = n.data('ano'), g = n.data('grau_entrada') || 0;
+    // no sem ano (autor, conceito, sessao) fica numa faixa propria a esquerda do eixo temporal,
+    // fora da leitura temporal -- a altura ainda usa o grau de entrada, como os demais nos
+    var x = a ? L + (R - L) * ((a - minA) / Math.max(1, maxA - minA)) : L - 40;
+    var y = B - (B - T) * (g / maxG);
+    bruta[n.id()] = { x: x, y: y, semAno: !a };
+  });
+
+  // Correcao 1 (revisao da task): no mesmo ponto bruto cai empate -- medido no graph.json real,
+  // 21 nos empilhados num unico pixel na faixa sem data (grau 0), mais 7 grupos entre datados
+  // (2004/2010/2015 x2/2016/2024/2025). Resolve agrupando por posicao bruta (nao por (ano,grau)
+  // direto, pra herdar o mesmo tratamento se outro tipo de coincidencia aparecer no futuro), com
+  // DESEMPATE deterministico por n.id() -- a mesma chave que _build_graph_json ja usa pra
+  // ordenar -- nunca por ordem de iteracao do cy.nodes() ou indice de lista (isso reprovaria
+  // FF-06, que exige 2 builds seguidos == mesma imagem).
+  var grupos = {};
+  Object.keys(bruta).forEach(function(id){
+    var p = bruta[id], chave = p.x.toFixed(3) + '|' + p.y.toFixed(3);
+    (grupos[chave] = grupos[chave] || []).push(id);
+  });
+  Object.keys(grupos).forEach(function(chave){ grupos[chave].sort(); });
+
+  // Correcao 1, 2a rodada: a 1a versao desta funcao usava uma espiral por angulo-dourado, mas
+  // com o eixo Y comprimido por Math.min ela colapsava varios indices no mesmo par (x quase 0,
+  // y no teto) sempre que o cosseno do angulo passava perto de zero -- medido no grupo real de
+  // 21 nos, a distancia minima caia a 1.13px (quase a mesma colisao de novo). Trocado por GRADE
+  // determinística (linhas x colunas): garante uma distancia minima EXATA e provavel por
+  // aritmetica (nao por sorte de espaco angular), sem depender de nenhuma propriedade estatistica
+  // de sequencia irracional.
+  var capX = pxPorAno * 0.35, capY = pxPorGrau * 0.35;
+  var COLS_SEM_DATA = 8; // colunas por linha antes de abrir nova linha; a faixa sem data e livre em X
+  cy.layout({ name: 'preset', animate: false, positions: function(n){
+    var id = n.id(), p = bruta[id];
+    var grupo = grupos[p.x.toFixed(3) + '|' + p.y.toFixed(3)];
+    var m = grupo.length;
+    if (m === 1){ return { x: p.x, y: p.y }; }
+    var i = grupo.indexOf(id);
+    if (p.semAno){
+      // "sem data" e categorico: nao ha ano ali pra uma coluna extra distorcer, entao a grade
+      // corre livre em X, sempre pra ESQUERDA (nunca cruza pro lado dos nos datados). O Y fica
+      // preso a uma fracao do espacamento de 1 grau, pra nunca ler como se o no tivesse um grau
+      // diferente do que tem de verdade.
+      var colunas = Math.min(m, COLS_SEM_DATA);
+      var linhas = Math.ceil(m / colunas);
+      var linha = Math.floor(i / colunas), coluna = i % colunas;
+      var espacoLinha = linhas > 1 ? (2 * capY) / (linhas - 1) : 0;
+      var dx = -(coluna + 1) * 14;
+      var dy = linhas > 1 ? (-capY + linha * espacoLinha) : 0;
+      return { x: p.x + dx, y: p.y + dy };
+    }
+    // no datado: X carrega o ano e Y carrega o grau, os dois sao dado real -- grade quadrada
+    // centrada no ponto bruto, cada eixo preso a uma fracao do proprio espacamento (1 ano / 1
+    // grau), pra continuar lendo como o mesmo ano e o mesmo grau, nunca um valor vizinho
+    var colunas = Math.max(1, Math.ceil(Math.sqrt(m)));
+    var linhas = Math.ceil(m / colunas);
+    var linha = Math.floor(i / colunas), coluna = i % colunas;
+    var espacoCol = colunas > 1 ? (2 * capX) / (colunas - 1) : 0;
+    var espacoLinha = linhas > 1 ? (2 * capY) / (linhas - 1) : 0;
+    var dx = colunas > 1 ? (-capX + coluna * espacoCol) : 0;
+    var dy = linhas > 1 ? (-capY + linha * espacoLinha) : 0;
+    return { x: p.x + dx, y: p.y + dy };
+  }}).run();
+};
+var hiddenClasses = {};
+window.toggleLayer = function(cb){
+  var cls = cb.getAttribute('data-class');
+  hiddenClasses[cls] = !cb.checked;
+  cy.nodes().forEach(function(n){
+    var hidden = n.classes().some(function(c){ return hiddenClasses[c]; });
+    n.style('display', hidden ? 'none' : 'element');
+  });
+  cy.edges().forEach(function(e){
+    var s = e.source(), t = e.target();
+    e.style('display', (s.style('display') === 'none' || t.style('display') === 'none') ? 'none' : 'element');
+  });
+};
+</script>
+</body>
+</html>

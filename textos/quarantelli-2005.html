@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Catastrophes Are Different from Disasters, Wiki Disaster Law and Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+:root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
+--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
+--muted:#a2a9b1;--card:#1b1f24;--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+font-size:16px;line-height:26px;}
+.layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
+nav.sidebar a:hover{text-decoration:underline;}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
+h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
+margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h2{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:24px;font-weight:400;line-height:1.3;
+margin:1.6rem 0 0.4rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h3{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;font-size:19.2px;font-weight:700;margin:1.2rem 0 0.3rem;}
+p{margin:0 0 16px;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
+a.badge{text-decoration:none;}
+.broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
+blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--border);color:var(--muted);}
+.rel-list{list-style:none;padding:0;font-size:0.94rem;}
+.rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
+.rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
+footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
+.theme-toggle{position:fixed;top:0.8rem;right:1.2rem;font-size:0.78rem;background:var(--card);border:1px solid var(--border);border-radius:2px;padding:0.3rem 0.7rem;cursor:pointer;color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
+ padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
+.selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
+.selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
+.selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
+.busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a:last-child{border-bottom:none;}
+.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
+.ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
+.ficha li{margin:0.12rem 0;}
+#cy-local{width:100%;height:340px;border:1px solid var(--border);border-radius:2px;background:var(--bg);margin-top:0.4rem;}
+table{border-collapse:collapse;width:100%;font-size:0.94rem;margin:0.6rem 0;}
+th,td{border:1px solid var(--border);padding:0.4rem 0.55rem;text-align:left;vertical-align:top;}
+th{background:var(--th);font-weight:700;}
+/* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
+   separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
+   de baixo. */
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
+.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc ul{list-style:none;padding-left:0;margin:0;}
+.toc ul ul{padding-left:0.8rem;}
+.toc li{margin:0.12rem 0;}
+nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleWikiTheme()">Claro/Escuro</button>
+<button id="lang-toggle" class="theme-toggle" style="right:8.5rem" onclick="toggleLang()">EN / PT</button>
+<div class="layout">
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto">Estrutura do texto</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-em-tres-niveis">Conceitos em três níveis</a></li><li><a href="#sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</a></li><li><a href="#sec-checagem-factual-duas-datas-erradas-na-mesma-frase">Checagem factual: duas datas erradas na mesma frase</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita">Contexto de escrita</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao-e-legado">Recepção e legado</a></li><li><a href="#sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</a></li><li><a href="#sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</a></li><li><a href="#sec-pressupostos-desta-leitura">Pressupostos desta leitura</a></li><li><a href="#sec-rubrica-final">Rubrica final</a></li><li><a href="#sec-aparato-de-citacao-adr-0009">Aparato de citação (ADR-0009)</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong>Disaster Law and Policy, wiki</strong></a>
+<a href="../graph.html">Ver grafo de conceitos</a>
+<a href="../tags.html">Índice por tag</a>
+<input id="busca-campo" type="search" placeholder="buscar..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
+<div id="busca-resultados" class="busca-resultados" hidden></div>
+<div class="area">sessão</div>
+<a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
+<div class="area">autor</div>
+<a href="../autores/alemanno.html">Alberto Alemanno</a>
+<a href="../autores/wibisana.html">Andri G. Wibisana</a>
+<a href="../autores/van-aaken.html">Anne van Aaken</a>
+<a href="../autores/perrow.html">Charles Perrow</a>
+<a href="../autores/farber.html">Daniel A. Farber</a>
+<a href="../autores/binder.html">Denis Binder</a>
+<a href="../autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="../autores/antonovic.html">Janis Antonovic</a>
+<a href="../autores/scanlon.html">Joseph Scanlon</a>
+<a href="../autores/lauta.html">Kristian Cedervall Lauta</a>
+<a href="../autores/faure.html">Michael G. Faure</a>
+<a href="../autores/luhmann.html">Niklas Luhmann</a>
+<a href="../autores/posner.html">Richard A. Posner</a>
+<a href="../autores/verchick.html">Robert R. M. Verchick</a>
+<a href="../autores/perry.html">Ronald W. Perry</a>
+<a href="../autores/lyster.html">Rosemary Lyster</a>
+<a href="../autores/kuhn.html">Thomas S. Kuhn</a>
+<a href="../autores/beck.html">Ulrich Beck</a>
+<div class="area">texto</div>
+<a href="posner-2004.html">Catastrophe: Risk and Response</a>
+<a href="quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
+<a href="lyster-2015.html">Climate Justice and Disaster Law</a>
+<a href="scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
+<a href="verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
+<a href="lauta-2014.html">Disaster Law</a>
+<a href="farber-faure-2010.html">Disaster Law (coletanea)</a>
+<a href="farber-2010.html">Disaster Law and Policy, 2a ed.</a>
+<a href="lauta-faure-2016.html">Disaster Risk Management (capítulo)</a>
+<a href="lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="verchick-2010.html">Facing Catastrophe</a>
+<a href="alemanno-2011.html">Governing Disasters</a>
+<a href="antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
+<a href="luhmann-2004.html">Law as a Social System</a>
+<a href="perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
+<a href="beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="ejrr-laquila-2014.html">Simposio EJRR sobre os L&#x27;Aquila Seven</a>
+<a href="binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
+<a href="kuhn-1970.html">The Structure of Scientific Revolutions</a>
+<a href="perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a>
+<a href="perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a>
+<div class="area">legislação</div>
+<a href="../legislacao/acordo-de-paris-2015.html">Acordo de Paris sobre mudança do clima</a>
+<a href="../legislacao/agenda-2030.html">Agenda 2030 para o Desenvolvimento Sustentável</a>
+<a href="../legislacao/adis-abeba-2015.html">Agenda de Ação de Adis Abeba</a>
+<a href="../legislacao/habitat-iii-2016.html">Habitat III, Nova Agenda Urbana</a>
+<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Gestão de riscos, princípios e diretrizes</a>
+<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Vocabulário de gestão de risco</a>
+<a href="../legislacao/marco-de-sendai-2015.html">Marco de Sendai para a Redução do Risco de Desastres 2015-2030</a>
+<a href="../legislacao/protocolo-de-montreal-1987.html">Protocolo de Montreal sobre substâncias que destroem a camada de ozônio</a>
+<div class="area">julgado</div>
+<a href="../julgados/brumadinho-denuncia.html">Brumadinho, a denúncia e a contagem de vítimas</a>
+<a href="../julgados/laquila-cassacao-2016.html">Caso L&#x27;Aquila, os sete cientistas</a>
+<a href="../julgados/mariana-jf-2024.html">Mariana, absolvição criminal na Justiça Federal</a>
+<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana, homologação do acordo de repactuação</a>
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana e outros v. BHP Group</a>
+<a href="../julgados/neubauer-2021.html">Neubauer e outros v. Alemanha</a>
+<a href="../julgados/itlos-parecer-2024.html">Parecer consultivo sobre mudança climática e direito do mar</a>
+<a href="../julgados/cij-parecer-clima-2025.html">Parecer consultivo sobre obrigações dos Estados quanto à mudança climática</a>
+<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. Estado dos Países Baixos</a>
+<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz e outros v. Suíça</a>
+<div class="area">conceito</div>
+<a href="../conceitos/capacidade-institucional.html">#capacidade-institucional (nota de referência)</a>
+<a href="../conceitos/normal-accidents.html">Acidente normal (propriedade estrutural do sistema)</a>
+<a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a>
+<a href="../conceitos/disaster-risk.html">Disaster Risk (efeitos da incerteza)</a>
+<a href="../conceitos/dysfunction.html">Disfunção de processo social</a>
+<a href="../conceitos/legal-exceptionalism.html">Excepcionalismo jurídico</a>
+<a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a>
+<a href="../conceitos/s02-montagem-da-sessao.html">Montagem da sessão S02, 2026.2 (nota de projeto)</a>
+<a href="../conceitos/quarantelli-criterios-brasil.html">Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)</a>
+<a href="../conceitos/porcao-juridica.html">Porção jurídica (legal bite-sizes)</a>
+<a href="../conceitos/risk-society.html">Sociedade de risco</a></nav>
+<main>
+<h1>Catastrophes Are Different from Disasters</h1>
+<div class="meta">tipo: texto<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#catastrophe">catastrophe</a> <a class="badge" href="../tags.html#disaster-law">disaster-law</a></div>
+<ul class="ficha"><li><strong>neste corpus:</strong> 1 apontam para ele, 5 saem dele</li></ul>
+
+<div data-lang="pt" hidden><h1>Catastrophes Are Different from Disasters</h1>
+<p>QUARANTELLI, Enrico L. Catastrophes Are Different from Disasters: Some Implications for Crisis
+Planning and Managing Drawn from Katrina. Publicação web (SSRC, Understanding Katrina), 2005,
+sem paginação impressa própria; a apostila cita este texto por critério, não por página
+("QUARANTELLI, 2005, criteria 1 to 6"). As páginas indicadas abaixo são do PDF espelhado
+(proveniência da wiki), não da paginação original da publicação.</p>
+<p><strong>Tipo de revisão.</strong> Conceitual, com elementos da revisão da tese, idêntico ao adotado em
+<a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, por decisão do pesquisador em 10/08/2026. A escolha governa o que
+esta leitura promete: os conceitos em três níveis e a semântica histórica vêm em profundidade
+máxima, e a rubrica final pesa mais a utilidade para outros casos.</p>
+<h2 id="sec-argumento">Argumento</h2>
+<p>Leitura complementar de <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>. Usando o furacão Katrina como caso quase didático, Quarantelli
+argumenta que catástrofe difere de desastre por capacidade institucional, não por magnitude, e dá
+seis critérios: a estrutura construída da comunidade é atingida em quase toda a sua extensão; as
+autoridades locais ficam incapazes de exercer seu papel usual, e isso se estende à recuperação; a
+ajuda das comunidades vizinhas não pode ser provida, porque elas também foram atingidas; as
+funções cotidianas da comunidade são interrompidas de modo agudo e simultâneo; a mídia de massa
+constrói socialmente a catástrofe ainda mais do que constrói o desastre; e, por causa das cinco
+anteriores, a arena política ganha peso maior (p. 2 a 4).</p>
+<p><strong>A distinção importa para o desenho jurídico</strong>, e é por isso que o texto está em <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>. Regras
+que pressupõem autoridade local funcionando, como ajuda mútua entre municípios ou declaração local
+como gatilho de ajuda federal, falham justamente quando mais precisariam funcionar. O critério 2 é
+o que carrega essa consequência, e ele é institucional, não físico.</p>
+<h2 id="sec-problema-e-metodo">Problema e método</h2>
+<p><strong>O problema, em duas partes.</strong> A condição é que planejamento e gestão de crise são desenhados
+sobre o desastre, e o próprio autor observa que "it is disasters and not catastrophes that are
+almost always assumed" (p. 4). A consequência indesejável é que, na catástrofe, o plano falha
+exatamente nos pontos em que foi construído para funcionar. O problema é <strong>prático</strong>, sobre o que
+se deve fazer, e não conceitual, embora o caminho para chegar a ele seja uma disputa de definição.</p>
+<p><strong>O método.</strong> Ensaio programático em primeira pessoa do plural, escrito para um fórum web,
+apoiado em comparação de casos históricos e em observação ainda não sistematizada de Katrina. O
+próprio texto declara o limite do método: "In the absence of systematic studies that will take
+months to appear, we can only have educated guesses about what happened" (p. 4). Declara também o
+limite de espaço, duas vezes, ao recortar o período coberto (p. 2) e ao encerrar sem discutir as
+respostas criativas que diz terem existido (p. 5).</p>
+<h2 id="sec-estrutura-do-texto">Estrutura do texto</h2>
+<table>
+<thead>
+<tr>
+<th>Seção</th>
+<th>Tese da seção</th>
+<th>Páginas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abertura, sem título</td>
+<td>escala é qualitativa, e desastre já se distinguiu de emergência por quatro diferenças organizacionais</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Disasters and catastrophes</td>
+<td>seis diferenças entre catástrofe e desastre, ilustradas por casos</td>
+<td>2 a 4</td>
+</tr>
+<tr>
+<td>How much different?</td>
+<td>a diferença cresce subindo a escala social, e é pequena no nível individual</td>
+<td>4 a 5</td>
+</tr>
+<tr>
+<td>Where does terrorism fit?</td>
+<td>situação de conflito fica fora do argumento, e a lacuna é declarada</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A estrutura repete duas vezes o mesmo movimento.</strong> Primeiro estabelece que desastre difere de
+emergência cotidiana, com quatro diferenças; depois estabelece que catástrofe difere de desastre,
+com seis. A primeira distinção é apresentada como vencida no campo, "Today it would be difficult to
+find any researcher who would challenge the distinction made" (p. 1); a segunda, como ainda em
+disputa. O primeiro movimento existe para emprestar forma ao segundo. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<h2 id="sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</h2>
+<p><strong>Tese.</strong> Catástrofe é salto qualitativo sobre desastre, e não desastre grande, de modo que exige
+planejamento e gestão de outra natureza (p. 1 e 2).</p>
+<p><strong>Razão.</strong> Porque as seis diferenças atingem justamente as condições de possibilidade da resposta
+planejada: quem responde, de onde responde, com que ajuda externa e sob que autoridade.</p>
+<p><strong>Evidência.</strong> Comparação de casos, com números pontuais: mais de 90% das casas destruídas ou
+gravemente danificadas em St. Croix no Hugo, contra menos de 2% do estoque residencial perdido no
+terremoto do México de 1985 e 4,9% da população relatando dano grave ao próprio prédio; 80% de
+Nova Orleans inundada no Katrina (p. 2). E o contraste de Northridge, 1994, com 12 mil pessoas indo
+ao hipódromo na tarde do terremoto (p. 3 a 4).</p>
+<p><strong>Reconhecimento e resposta.</strong> O ensaio enfrenta a objeção mais óbvia, a de que estaria exagerando
+a diferença, e o faz concedendo: "This does not mean that everything is different" (p. 4), e
+"the planning and managing principles that hold for major disasters are not necessarily invalid for
+catastrophes" (p. 5). A concessão é substantiva e limita a própria tese.</p>
+<p><strong>Primeiro elo frágil, a garantia da escala social.</strong> A passagem que sustenta quase toda a
+generalização é "It appears that the differences are more likely to appear going up the social
+scale from the individual to the societal level" (p. 4). A garantia não dita é: <strong>quando uma
+diferença se manifesta no nível organizacional e societal, então ela é qualitativa e não de grau.</strong>
+O ensaio não a enuncia, e ela não é evidente: crescimento monotônico de diferença ao subir a escala
+descreveria igualmente bem uma diferença <strong>quantitativa</strong> que só se torna visível em agregados
+maiores. O marcador epistêmico do próprio autor, "It appears", indica que ele sabe que a passagem
+não está estabelecida. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Segundo elo frágil, a inferência do caso único.</strong> Katrina é apresentada como "an almost textbook
+case of a catastrophe" (p. 2), e é dela que sai a maior parte da evidência sobre mídia, arena
+política e conflito local-externo. Mas o caso foi selecionado <strong>por já ter sido classificado</strong> como
+catástrofe, o que faz a evidência confirmar a categoria que a escolheu. O ensaio se protege em
+parte ao trazer Hugo, Andrew, Chernobyl, Filipinas e Tangshan, e a proteção é parcial: os casos
+antigos sustentam os critérios 1, 3 e 4, e quase nada dos critérios 5 e 6, que são os que dependem
+de mídia e de política nacional.</p>
+<p><strong>Espécie da alegação principal.</strong> É alegação de <strong>definição e classificação</strong>, que se sustenta por
+raciocínio sobre semelhanças e diferenças, e a evidência oferecida é da natureza correta. A alegação
+derivada, a de que catástrofes exigem planejamento de outra natureza, é de <strong>ação ou política</strong>, e
+essa se constrói sobre a primeira sem trazer evidência própria: nenhum plano é examinado no texto.</p>
+<p><strong>Ethos.</strong> O ensaio se apresenta como quem considera o problema por vários lados. Concede duas
+vezes, declara o que não sabe, nomeia o que não cobriu e fecha dizendo "The ideas in this essay are
+not the last word" (p. 5). É postura de quem convida à discordância, e não de quem despacha o
+adversário.</p>
+<h2 id="sec-conceitos-em-tres-niveis">Conceitos em três níveis</h2>
+<p><strong>Nível básico.</strong> <em>Catástrofe</em>, como salto qualitativo sobre o desastre, e não como desastre de
+maior magnitude.</p>
+<p><strong>Nível secundário.</strong> As seis dimensões do texto, cada uma com poder causal declarado sobre a
+resposta: extensão do dano à estrutura construída; incapacitação do pessoal local; indisponibilidade
+das comunidades vizinhas; interrupção simultânea das funções cotidianas; construção midiática; e
+peso da arena política. As duas últimas são de natureza distinta das quatro primeiras, porque não
+descrevem dano, e sim ambiente de resposta.</p>
+<p><strong>Nível indicador.</strong> O que se identifica no texto por observação: percentual do estoque construído
+atingido; presença ou ausência de servidores locais em posto; existência de comunidade vizinha não
+atingida capaz de convergir; funcionamento de escola, trabalho, culto e infraestrutura; duração e
+origem da cobertura de mídia; e envolvimento direto do governo nacional além da presença simbólica.</p>
+<p><strong>Estrutura de agregação: não declarada, e o texto diz quantas ao dizer "at least six".</strong> Quarantelli
+escreve "let us illustrate at least six general ways" (p. 2), o que deixa a lista aberta, e em
+momento nenhum diz se as seis são necessárias em conjunto, se bastam algumas, ou quantas. O
+critério de suficiência fica sem enunciado, e é isso que impede o conceito de operar como teste.
+Aplicando-o a um caso concreto, um analista que encontrasse quatro das seis não teria no texto como
+decidir se está diante de catástrofe. <strong>Registre-se que o autor não declarou a estrutura</strong>, que é o
+que a leitura conceitual exige registrar quando falta.</p>
+<p><strong>Polo negativo.</strong> O conceito opera numa escala de três termos, e não de dois: emergência cotidiana,
+desastre, catástrofe. O polo negativo de catástrofe é desastre, cujo próprio polo negativo é
+emergência. É por isso que a abertura do ensaio precisa reconstruir a primeira distinção antes de
+propor a segunda.</p>
+<h2 id="sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</h2>
+<p><strong>Quando o conceito nasce.</strong> O texto data a si mesmo: "Even two decades ago some researchers were
+saying that there were 'disasters' and that there were 'disasters that were beyond typical
+disasters.' The latter came to be called 'catastrophes'" (p. 1). Duas décadas antes de 2005 põe a
+origem em meados dos anos 1980. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Por que o conceito ficou parado.</strong> O ensaio dá a explicação sociológica do próprio atraso: poucos
+pesquisadores se dedicaram a descrever a catástrofe "maybe because most researchers are more
+interested in doing empirical studies rather than clarifying conceptual distinctions" (p. 1 e 2).
+A observação vale como dado sobre o campo, e não apenas como desculpa: um campo que premia estudo
+empírico deixa o trabalho conceitual sem quem o faça.</p>
+<p><strong>O deslocamento que o ensaio pretende operar.</strong> De <em>catástrofe</em> como palavra de intensidade, uso
+corrente e jornalístico, para <em>catástrofe</em> como categoria com critérios. O ensaio não reivindica a
+palavra contra outro uso técnico rival: reivindica-a contra a ausência de uso técnico.</p>
+<h2 id="sec-checagem-factual-duas-datas-erradas-na-mesma-frase">Checagem factual: duas datas erradas na mesma frase</h2>
+<p>A leitura literal submete as datas do próprio autor a fontes independentes, e a frase da p. 2 que
+lista catástrofes anteriores não sobrevive à conferência.</p>
+<p>O ensaio escreve que elas se estendem "from the earthquake that hit Messina, Italy in 1906 to the
+Tangshan earthquake in China in 1986". O terremoto de Messina foi em <strong>28 de dezembro de 1908</strong>,
+magnitude 7,1, com cerca de 120 mil mortos. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Britannica, Messina earthquake and tsunami of 1908; Nature Scientific Reports, doi 10.1038/s41598-019-42915-2. Consulta em 10/08/2026 (2026-08-10)">✓</span> O de Tangshan foi em <strong>28 de julho
+de 1976</strong>, magnitude 7,8, com 242 mil mortos no número oficial. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Britannica, Tangshan earthquake of 1976; History.com, July 28 1976. Consulta em 10/08/2026 (2026-08-10)">✓</span> São dois
+erros na mesma enumeração, de dois e de dez anos, sobre eventos canônicos do campo que o autor
+fundou.</p>
+<p><strong>A consequência não é a de pegar o autor em erro, e sim a de saber o que o gênero permite.</strong> A
+frase em que Messina aparece começa citando o terremoto de São Francisco de 1906, e a data de São
+Francisco está correta; a hipótese mais econômica é arrasto da data anterior. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span> Um ensaio de
+fórum web, escrito semanas depois do impacto de Katrina, não passou por conferência de fatos, e é
+isso que o achado mostra. Quem citar este texto <strong>cita o argumento, não a cronologia</strong>: usar a lista
+de casos como fonte de data reproduz os dois erros, e nenhuma das duas datas é acessória, porque
+Tangshan é justamente o caso que sustenta a comparação societal da p. 5.</p>
+<h2 id="sec-casos-e-aplicacoes">Casos e aplicações</h2>
+<p><strong>Casos que a obra usa (C1).</strong> Katrina, 2005, em Nova Orleans e no litoral do Mississippi, com 80%
+da cidade inundada (p. 2); Hugo, 1989, em St. Croix, com mais de 90% das casas atingidas (p. 2);
+Andrew, 1992, no sul da Flórida, com mais da metade das casas do sul do condado de Dade destruídas
+ou gravemente danificadas (p. 3 e 4); o terremoto do México, 1985, como contraste de desastre
+maior que não foi catástrofe (p. 2 e 4); Northridge, 1994 (p. 4); o tsunami da Indonésia, 2004, com
+quase todo o pessoal médico morto em algumas cidades (p. 3); Chernobyl (p. 3); tufões nas Filipinas
+(p. 3); e o incêndio industrial no Canadá com 348 organizações convergindo, via Scanlon (p. 1).</p>
+<p><strong>Os anos de Hugo e Andrew não constam do ensaio, e foram conferidos aqui.</strong> Hugo atingiu St. Croix
+em 18 de setembro de 1989, e Andrew atingiu o condado de Dade em 24 de agosto de 1992.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em NOAA National Hurricane Center, Hurricanes in History; NOAA repositorio, Hurricane Hugo September 10-22 1989; Effects of Hurricane Andrew in Florida. Consulta em 10/08/2026 (2026-08-10)">✓</span> A ausência do ano no texto não é descuido: o ensaio escreve para leitor
+que reconhece os casos pelo nome, o que é marca do fórum e do público a que se dirigia. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>O caso que o texto abre e não fecha (C3).</strong> O ensaio pergunta "Was 9/11 disaster or a
+catastrophe?" e responde que ninguém ainda conceituou que algumas situações de conflito talvez
+sejam catástrofes, embora ataque biológico ou nuclear seja pensado como catastrófico no nível
+operacional (p. 5). É a transposição que o próprio autor deixa em aberto, e a mais próxima do
+direito: situação de conflito muda o regime jurídico aplicável, e a categoria de Quarantelli, que é
+sociológica, não tem como decidir isso sozinha.</p>
+<h2 id="sec-grade-de-forca-probatoria">Grade de força probatória</h2>
+<table>
+<thead>
+<tr>
+<th>Evidência</th>
+<th>Certeza teórica</th>
+<th>Unicidade teórica</th>
+<th>Unicidade empírica</th>
+<th>Certeza empírica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percentuais de dano em Hugo, México e Katrina</td>
+<td>alta: se a tese vale, o contraste tinha de aparecer</td>
+<td>baixa: dano maior também decorre de desastre maior</td>
+<td>média: números de origem não declarada no texto</td>
+<td>média</td>
+</tr>
+<tr>
+<td>Incapacitação do pessoal local (critério 2)</td>
+<td>alta</td>
+<td><strong>alta</strong>: dificilmente decorre de aumento de magnitude sem salto de natureza</td>
+<td>média</td>
+<td>baixa</td>
+</tr>
+<tr>
+<td>Comportamento individual semelhante nos dois casos</td>
+<td>alta</td>
+<td>alta: contraria a expectativa de que tudo difere</td>
+<td>alta: é achado contra o interesse da tese</td>
+<td>média</td>
+</tr>
+<tr>
+<td>Mídia e arena política (critérios 5 e 6)</td>
+<td>média</td>
+<td>baixa: decorrem de saliência nacional, não de catástrofe</td>
+<td>baixa: Katrina é caso único e selecionado</td>
+<td>baixa</td>
+</tr>
+</tbody>
+</table>
+<p><strong>O elo mais forte é o que corre contra a tese.</strong> A observação de que, no nível individual, a
+reação é "remarkably similar and generally good" (p. 5), com ausência de pânico, evacuação por
+unidade familiar e ajuda entre vizinhos, tem alta unicidade porque não é o que a tese de salto
+qualitativo faria esperar. Evidência contra o próprio interesse é a que mais sustenta, e o ensaio a
+apresenta sem atenuá-la.</p>
+<p><strong>O elo mais fraco são os critérios 5 e 6.</strong> Ambos dependem quase inteiramente de Katrina, e Katrina
+foi selecionada por ser catástrofe. <strong>Nenhuma conclusão sobre mídia e política pode ser mais forte
+que essa base</strong>, e o próprio texto reconhece a limitação ao chamar suas leituras de "educated
+guesses" (p. 4).</p>
+<h2 id="sec-contexto-de-escrita">Contexto de escrita</h2>
+<p><strong>Por que foi escrito.</strong> Peça do fórum <em>Understanding Katrina</em>, do Social Science Research Council,
+publicado no rescaldo imediato do furacão. O texto declara a ocasião na primeira linha, ao dizer que
+Katrina "has reinforced the view of some researchers" (p. 1), e o formato aparece nas duas
+declarações de limite de espaço.</p>
+<p><strong>Contra o quê.</strong> Contra o modelo de comando e controle, nomeado duas vezes. O ensaio diz que a
+pergunta "who is in charge?" foi repetida "as if it was a meaningful question", refletindo um modelo
+"that disaster research has indicated does not work well in disasters, much less in catastrophes"
+(p. 4), e chama o sistema de comando de incidentes de "a dubious arrangement even for disasters"
+(p. 5). É posição de campo, sustentada por décadas de pesquisa do Disaster Research Center, e o
+ensaio a afirma sem reconstruí-la. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Com quem discutia.</strong> Com Perry, coorganizador do volume de 2005 e autor do capítulo de 2006, e
+com o campo que produzia estudo empírico sem clarificar distinção conceitual (p. 1 e 2). O
+interlocutor implícito, e mais importante, é o gestor de emergência, que o ensaio descreve como
+tendo levado mais tempo que o pesquisador para aceitar a primeira distinção (p. 1).</p>
+<h2 id="sec-estilo-e-metodo">Estilo e método</h2>
+<p><strong>Movimentos retóricos da abertura.</strong> O território se estabelece em duas frases, com a idade do
+campo, "about a half-century-old" (p. 1). O nicho se estabelece por <strong>lacuna</strong>, e o sinal
+linguístico é o quantificador negativo somado ao adversativo: "However, only a few scholars have
+spent time trying to describe the characteristics of catastrophes" (p. 1). O nicho se ocupa
+anunciando o caso, "we will use Hurricane Katrina and its impact... as an almost textbook case"
+(p. 2).</p>
+<p><strong>Tratamento da literatura.</strong> O aparato é enxuto ao extremo: três referências para um ensaio de seis
+páginas. Duas das três são do próprio autor ou de coautoria dele, e a terceira, Scanlon, aparece só
+na lista. A forma predominante é <strong>não integral</strong>, com a fonte entre parênteses, e o único verbo
+relator do texto é neutro. Comparado às frequências de referência do campo, em que sociologia fica
+em torno de 104 citações por artigo e 12,5 por mil palavras, o ensaio está fora de escala por baixo,
+e isso é dado sobre o <strong>gênero</strong>, não sobre o autor: fórum web não é artigo revisado por pares.
+<span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span></p>
+<p><strong>Prosa.</strong> Sujeito curto e concreto na maior parte, com ação em verbo. O texto usa a primeira pessoa
+do plural de modo consistente, e ela faz trabalho de posicionamento: "A few of us have pushed this
+distinction for several decades" (p. 2) situa o autor como parte de uma minoria persistente, o que
+é argumento de autoridade construído por narrativa, e não por citação. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<h2 id="sec-recepcao-e-legado">Recepção e legado</h2>
+<p><strong>Não medida nesta rodada.</strong> A contagem de citações em Crossref, OpenAlex, Semantic Scholar e Google
+Scholar não foi levantada, e sem ela nenhuma afirmação sobre impacto se sustenta. <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span>
+Registre-se o que o formato faz esperar e que precisa ser conferido, não afirmado: peça de fórum web
+sem DOI tende a ser subcontada nas bases que indexam por DOI, de modo que divergência grande entre
+bases é o resultado provável, e a divergência seria ela própria o achado. A conferência entra na
+fila de aquisição abaixo, como item conversor.</p>
+<h2 id="sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</h2>
+<p><strong>Bloqueantes, no máximo três.</strong> A primeira é de <strong>atribuição</strong> (L4): o ensaio não declara a
+estrutura de agregação do conceito, e sem ela a categoria não opera como teste aplicável a caso
+novo. Não se fecha com aquisição, porque depende de alguém tê-la estabelecido, e o texto sugere que
+ninguém o fez. A segunda é de <strong>dado externo</strong> (L2): a recepção não foi medida, e fecha com quatro
+consultas. A terceira é de <strong>acesso</strong> (L3): o capítulo de Perry de 2006 e o volume de 2005 sustentam
+a distinção que o ensaio pressupõe em vez de reconstruir, e nenhum dos dois foi lido em primeira
+mão.</p>
+<p><strong>Redutíveis por aquisição.</strong> Os anos de Hugo e Andrew, que o texto não dá; os números de dano de
+St. Croix e Dade, cuja origem o texto não declara; e o registro do fórum SSRC, para datar a
+publicação com precisão maior que o ano.</p>
+<p><strong>Irredutível, declarada e encerrada.</strong> Se as seis diferenças são necessárias, suficientes ou nem
+uma coisa nem outra é pergunta que o texto não responde e que nenhuma aquisição responde por ele.</p>
+<p><strong>Composição da fila.</strong> Três itens, todos em inglês, dois livros e um capítulo, um deles disponível
+e dois de acesso a confirmar. A composição inteira em uma só língua é a subcobertura típica da
+revisão jurídica brasileira, e fica declarada em vez de corrigida por conveniência: não há
+literatura nacional citada por este ensaio a adquirir.</p>
+<h2 id="sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</h2>
+<p><strong>Pressuposto de campo, e é o mais profundo aqui.</strong> O ensaio pressupõe que a unidade de análise da
+crise é a <strong>comunidade</strong>, e todas as seis diferenças são enunciadas sobre ela: a estrutura
+construída dela, as autoridades dela, as vizinhas dela, as funções cotidianas dela. É pressuposto
+partilhado por escolas rivais da sociologia de desastres, e por isso invisível dentro do campo.
+Ele decide de antemão que catástrofe é um acontecimento <strong>localizado</strong>, ainda que regional. Um risco
+cuja materialização não tem centro geográfico, como o de cadeia de suprimentos ou o climático de
+lenta manifestação, não é nem desastre nem catástrofe nesta grade: fica fora do conceito por
+construção, e não por avaliação.</p>
+<p><strong>O enigma que daí se formula.</strong> Por que a sociologia de desastres construiu suas categorias sobre
+a comunidade, apesar de o próprio campo datar de meio século em que os riscos de maior consequência
+deixaram de ser localizados? A pergunta liga este ensaio ao de <a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, que
+chega por outro caminho a uma inadequação de categoria, e é o ponto em que os dois textos de
+<a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> deixam de operar em planos que não se tocam.</p>
+<p><strong>Pressuposto de paradigma.</strong> O ensaio trata a diferença entre desastre e catástrofe como
+descoberta empírica a ser documentada, e não como decisão de recorte. A frase "Research has not yet
+fully established what are the most significant differences" (p. 4) só faz sentido se as diferenças
+existirem no mundo à espera de serem achadas. Um recorte alternativo, que as tratasse como
+convenção útil a ser justificada pelo uso, mudaria o critério de sucesso: deixaria de importar se a
+lista está completa, e passaria a importar para que decisão ela serve.</p>
+<p><strong>Teste das três respostas.</strong> O chão alternativo acima aceita parte e nega parte dos pressupostos do
+campo: aceita que a distinção é útil, e nega que ela seja achado empírico. Não é óbvio, porque o
+campo a trata como documentação; não é absurdo, porque o próprio ensaio admite que a pesquisa não
+fechou. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Trava anti-caricatura, cumprida.</strong> A exposição das seções anteriores foi escrita de modo que o
+leitor não consiga inferir se esta leitura concorda ou discorda da tese de Quarantelli. Teste do
+clichê mais próximo: a exposição <strong>não</strong> reduz o ensaio à posição canônica de que "desastres são
+socialmente construídos", que seria o clichê do campo. O autor afirma algo mais estreito e mais
+verificável, que é a incapacitação institucional como critério.</p>
+<h2 id="sec-pressupostos-desta-leitura">Pressupostos desta leitura</h2>
+<p>O repertório aplicado aqui é declarado: conceitos em três níveis com polo negativo e estrutura de
+agregação, reconstrução do argumento em cinco elementos com garantia dos elos frágeis, grade de
+força probatória em quatro campos e problematização por tipo de pressuposto. Ele é o mesmo aplicado
+a <a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, por exigência de paridade, e essa exigência é ela própria uma
+escolha: um ensaio de fórum web de seis páginas e um artigo de periódico não são o mesmo objeto, e
+aplicar-lhes a mesma grade produz, no primeiro, mais seções declarando ausência do que no segundo.
+As ausências aqui não são todas defeito do texto; parte é efeito do gênero, e onde consegui separar
+as duas coisas, separei.</p>
+<h2 id="sec-rubrica-final">Rubrica final</h2>
+<p>Os pesos seguem o tipo declarado, revisão da tese, em que a quinta pergunta pesa mais.</p>
+<p><strong>Os pressupostos são compatíveis com os fatos conhecidos?</strong> Em parte. A grade da comunidade é
+coerente com o corpus de casos do autor, e as duas datas erradas mostram que o texto não foi
+conferido nesse nível.</p>
+<p><strong>As conclusões seguem das premissas?</strong> A alegação de definição, sim. A alegação de política, que
+catástrofes exigem planejamento de outra natureza, não traz evidência própria: nenhum plano é
+examinado.</p>
+<p><strong>As implicações encontram confirmação nos dados?</strong> Parcialmente, e o próprio autor diz que a
+pesquisa não fechou.</p>
+<p><strong>Quanto o argumento é melhor que as explicações rivais?</strong> A rival principal, a de que catástrofe é
+desastre grande, é enfraquecida pelo critério 2 e pela observação do nível individual, que uma
+explicação de magnitude não prevê.</p>
+<p><strong>Quão útil é para entender outros casos?</strong> É a pergunta de maior peso aqui, e a resposta é: útil
+como lista de verificação, limitado como teste. Sem estrutura de agregação declarada, aplicá-lo a um
+caso novo exige que o analista decida por conta própria quantos critérios bastam, e essa decisão
+fica sem lastro no texto.</p>
+<h2 id="sec-aparato-de-citacao-adr-0009">Aparato de citação (ADR-0009)</h2>
+<p>Lista de referências enxuta: três obras, todas processadas. Duas são ancoradas no corpo, uma só na
+lista, e a diferença está declarada em cada nó.</p>
+<p><a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> sustenta as distinções conceituais que o ensaio pressupõe em vez de
+reconstruir (p. 2). <a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> é invocado como "forthcoming" para sustentar que a pesquisa
+ainda não fechou a questão (p. 4). <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a> aparece só na lista de referências (p. 5), sem
+atribuição no corpo.</p>
+<p><strong>O que o aparato revela:</strong> as três referências são de um único debate, o de definição do que conta
+como desastre. Quarantelli não se apoia em literatura jurídica alguma, o que confirma pela via
+bibliográfica o que a leitura de <a href="../conceitos/lauta-2017-leitura.html">Lauta</a> já indicava por outro caminho: os dois
+textos de <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> operam em planos que não se tocam, e a ponte entre eles é trabalho a fazer, não
+algo que a bibliografia já tenha feito.</p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> · <a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a> · <a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a> · <a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> ·
+<a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> · <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>.</p></div>
+<div data-lang="en"><h1>Catastrophes Are Different from Disasters</h1>
+<p>QUARANTELLI, Enrico L. Catastrophes Are Different from Disasters: Some Implications for Crisis
+Planning and Managing Drawn from Katrina. Web publication (SSRC, Understanding Katrina), 2005: with
+no print pagination of its own; the coursepack cites this text by criterion, not by page
+("QUARANTELLI, 2005, criteria 1 to 6"). The pages given below are those of the mirrored PDF (wiki
+provenance), not the publication's original pagination.</p>
+<p><strong>Type of review.</strong> Conceptual, with elements of the thesis review, identical to the one adopted for
+<a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, by the researcher's decision of 10 Aug. 2026. That choice governs what
+this reading promises: concepts at three levels and historical semantics at maximum depth, and a
+final rubric that weights usefulness for other cases most heavily.</p>
+<h2>Argument</h2>
+<p>Complementary reading for <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>. Using Hurricane Katrina as an almost textbook case, Quarantelli
+argues that a catastrophe differs from a disaster by institutional capacity rather than by
+magnitude, and offers six criteria: most or all of the community's built structure is impacted;
+local officials are unable to perform their usual roles, and this extends into recovery; help from
+nearby communities cannot be provided, because they too were hit; everyday community functions are
+sharply and concurrently interrupted; the mass media construct the catastrophe socially even more
+than they construct the disaster; and, because of the previous five, the political arena becomes
+even more important (pp. 2 to 4).</p>
+<p><strong>The distinction matters for legal design</strong>, which is why the text sits in <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>. Rules that
+presuppose a functioning local authority, such as mutual aid between municipalities or a local
+declaration as the trigger for federal assistance, fail exactly when they would be needed most.
+Criterion 2 is the one that carries this consequence, and it is institutional, not physical.</p>
+<h2>Problem and method</h2>
+<p><strong>The problem, in two parts.</strong> The condition is that crisis planning and management are designed
+around the disaster, and the author himself observes that "it is disasters and not catastrophes that
+are almost always assumed" (p. 4). The undesirable consequence is that, in a catastrophe, the plan
+fails precisely at the points it was built to serve. The problem is <strong>practical</strong>, about what should
+be done, not conceptual, even though the road to it runs through a dispute over definition.</p>
+<p><strong>The method.</strong> A programmatic essay written in the first person plural for a web forum, resting on
+a comparison of historical cases and on still unsystematised observation of Katrina. The text
+declares the limit of its own method: "In the absence of systematic studies that will take months to
+appear, we can only have educated guesses about what happened" (p. 4). It declares a limit of space
+twice as well, when narrowing the period covered (p. 2) and when closing without discussing the
+creative responses it says occurred (p. 5).</p>
+<h2>Structure of the text</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Section thesis</th>
+<th>Pages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opening, untitled</td>
+<td>scale is qualitative, and disaster has already been distinguished from emergency by four organisational differences</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Disasters and catastrophes</td>
+<td>six differences between catastrophe and disaster, illustrated by cases</td>
+<td>2 to 4</td>
+</tr>
+<tr>
+<td>How much different?</td>
+<td>the difference grows as one moves up the social scale, and is small at the individual level</td>
+<td>4 to 5</td>
+</tr>
+<tr>
+<td>Where does terrorism fit?</td>
+<td>conflict situations are left outside the argument, and the gap is declared</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The structure performs the same move twice.</strong> First it establishes that disaster differs from
+everyday emergency, with four differences; then that catastrophe differs from disaster, with six.
+The first distinction is presented as settled in the field, "Today it would be difficult to find any
+researcher who would challenge the distinction made" (p. 1); the second, as still contested. The
+first move exists to lend its form to the second. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<h2>The argument reconstructed, and its two weakest links</h2>
+<p><strong>Claim.</strong> A catastrophe is a qualitative jump over a disaster, not a large disaster, and therefore
+demands planning and management of another nature (pp. 1 and 2).</p>
+<p><strong>Reason.</strong> Because the six differences strike precisely at the conditions of possibility of a
+planned response: who responds, from where, with what outside help, and under whose authority.</p>
+<p><strong>Evidence.</strong> Comparison of cases, with pointed figures: more than 90 percent of homes destroyed or
+heavily damaged in St. Croix during Hugo, against less than two percent of the residential stock
+lost in the 1985 Mexico City earthquake and 4.9 percent of the population reporting great damage to
+their own building; 80 percent of New Orleans flooded in Katrina (p. 2). And the contrast of
+Northridge, 1994, with 12,000 people going to the horseracing track on the afternoon of the
+earthquake (pp. 3 to 4).</p>
+<p><strong>Acknowledgement and response.</strong> The essay meets the most obvious objection, that it might be
+overstating the difference, and it does so by conceding: "This does not mean that everything is
+different" (p. 4), and "the planning and managing principles that hold for major disasters are not
+necessarily invalid for catastrophes" (p. 5). The concession is substantive and limits the claim
+itself.</p>
+<p><strong>First weak link, the warrant of social scale.</strong> The passage carrying almost the whole
+generalisation is "It appears that the differences are more likely to appear going up the social
+scale from the individual to the societal level" (p. 4). The unstated warrant is: <strong>when a difference
+shows itself at the organisational and societal levels, then it is qualitative and not one of
+degree.</strong> The essay never states it, and it is not self-evident: a monotonic growth of difference as
+one moves up the scale would describe just as well a <strong>quantitative</strong> difference that only becomes
+visible in larger aggregates. The author's own hedge, "It appears", shows he knows the passage is
+not established. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Second weak link, the inference from a single case.</strong> Katrina is presented as "an almost textbook
+case of a catastrophe" (p. 2), and it supplies most of the evidence on media, the political arena
+and local-outsider friction. But the case was selected <strong>because it had already been classified</strong> as
+a catastrophe, which makes the evidence confirm the category that chose it. The essay partly guards
+against this by bringing in Hugo, Andrew, Chernobyl, the Philippines and Tangshan, and the guard is
+partial: the older cases sustain criteria 1, 3 and 4, and almost nothing of criteria 5 and 6, which
+are the ones depending on media and national politics.</p>
+<p><strong>Species of the main claim.</strong> It is a claim of <strong>definition and classification</strong>, sustained by
+reasoning over similarities and differences, and the evidence offered is of the right kind. The
+derived claim, that catastrophes demand planning of another nature, is one of <strong>action or policy</strong>,
+and it is built on the first without evidence of its own: no plan is examined in the text.</p>
+<p><strong>Ethos.</strong> The essay presents itself as one who considers the problem from several sides. It
+concedes twice, declares what it does not know, names what it did not cover, and closes by saying
+"The ideas in this essay are not the last word" (p. 5). That is the posture of someone inviting
+disagreement, not of someone dispatching an opponent.</p>
+<h2>Concepts at three levels</h2>
+<p><strong>Basic level.</strong> <em>Catastrophe</em>, as a qualitative jump over disaster, not as a disaster of greater
+magnitude.</p>
+<p><strong>Secondary level.</strong> The six dimensions of the text, each with a declared causal bearing on the
+response: extent of damage to the built structure; incapacitation of local personnel; unavailability
+of neighbouring communities; simultaneous interruption of everyday functions; media construction;
+and the weight of the political arena. The last two are of a different nature from the first four,
+because they do not describe damage but the environment of the response.</p>
+<p><strong>Indicator level.</strong> What can be identified in the text by observation: the percentage of the built
+stock affected; the presence or absence of local officials at their posts; the existence of an
+unaffected neighbouring community able to converge; the functioning of school, work, worship and
+infrastructure; the length and origin of media coverage; and direct involvement of the national
+government beyond symbolic presence.</p>
+<p><strong>Aggregation structure: not declared, and the text says as much when it says "at least six".</strong>
+Quarantelli writes "let us illustrate at least six general ways" (p. 2), which leaves the list open,
+and nowhere does he say whether the six are jointly necessary, whether some suffice, or how many.
+The criterion of sufficiency is left unstated, and that is what prevents the concept from operating
+as a test. Applied to a concrete case, an analyst who found four of the six would have nothing in
+the text with which to decide whether this is a catastrophe. <strong>Let it be recorded that the author did
+not declare the structure</strong>, which is what a conceptual reading must record when it is missing.</p>
+<p><strong>Negative pole.</strong> The concept works on a three-term scale, not a two-term one: everyday emergency,
+disaster, catastrophe. The negative pole of catastrophe is disaster, whose own negative pole is
+emergency. That is why the essay's opening must reconstruct the first distinction before proposing
+the second.</p>
+<h2>Historical semantics of the concepts</h2>
+<p><strong>When the concept is born.</strong> The text dates itself: "Even two decades ago some researchers were
+saying that there were 'disasters' and that there were 'disasters that were beyond typical
+disasters.' The latter came to be called 'catastrophes'" (p. 1). Two decades before 2005 places the
+origin in the mid-1980s. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Why the concept stalled.</strong> The essay gives the sociological explanation of its own delay: few
+researchers devoted time to describing catastrophes "maybe because most researchers are more
+interested in doing empirical studies rather than clarifying conceptual distinctions" (pp. 1 and 2).
+The observation counts as data about the field, not merely as an excuse: a field that rewards
+empirical study leaves conceptual work without anyone to do it.</p>
+<p><strong>The shift the essay intends.</strong> From <em>catastrophe</em> as a word of intensity, in ordinary and
+journalistic use, to <em>catastrophe</em> as a category with criteria. The essay does not claim the word
+against a rival technical use: it claims it against the absence of any technical use.</p>
+<h2>Factual check: two wrong dates in a single sentence</h2>
+<p>A literal reading submits the author's own dates to independent sources, and the sentence on p. 2
+listing earlier catastrophes does not survive the check.</p>
+<p>The essay writes that they range "from the earthquake that hit Messina, Italy in 1906 to the
+Tangshan earthquake in China in 1986". The Messina earthquake occurred on <strong>28 December 1908</strong>,
+magnitude 7.1, with around 120,000 dead. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Britannica, Messina earthquake and tsunami of 1908; Nature Scientific Reports, doi 10.1038/s41598-019-42915-2. Consulta em 10/08/2026 (2026-08-10)">✓</span> Tangshan occurred on <strong>28 July 1976</strong>,
+magnitude 7.8, with 242,000 dead in the official figure. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Britannica, Tangshan earthquake of 1976; History.com, July 28 1976. Consulta em 10/08/2026 (2026-08-10)">✓</span> These are two errors
+in the same enumeration, of two and of ten years, about canonical events of the field the author
+founded.</p>
+<p><strong>The consequence is not catching the author in error, but learning what the genre permits.</strong> The
+sentence in which Messina appears opens by citing the San Francisco earthquake of 1906, and the San
+Francisco date is correct; the most economical hypothesis is carry-over from the preceding date.
+<span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span> A web forum essay, written weeks after Katrina's impact, went through no fact check, and
+that is what the finding shows. Whoever cites this text <strong>cites the argument, not the chronology</strong>:
+using the list of cases as a source of dates reproduces both errors, and neither date is incidental,
+because Tangshan is precisely the case sustaining the societal comparison on p. 5.</p>
+<h2>Cases and applications</h2>
+<p><strong>Cases the work uses (C1).</strong> Katrina, 2005, in New Orleans and on the Mississippi coast, with 80
+percent of the city flooded (p. 2); Hugo in St. Croix, with more than 90 percent of homes affected
+(p. 2); Andrew in southern Florida, with more than half the homes in southern Dade County destroyed
+or heavily damaged (pp. 3 and 4); the Mexico City earthquake of 1985, as the contrasting case of a
+major disaster that was not a catastrophe (pp. 2 and 4); Northridge, 1994 (p. 4); the Indonesian
+tsunami of 2004, with practically all medical personnel killed in some towns (p. 3); Chernobyl
+(p. 3); typhoons in the Philippines (p. 3); and the Canadian industrial fire with 348 organisations
+converging, via Scanlon (p. 1).</p>
+<p><strong>The years of Hugo and Andrew are absent from the essay, and were checked here.</strong> Hugo struck St.
+Croix on 18 September 1989, and Andrew struck Dade County on 24 August 1992.
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em NOAA National Hurricane Center, Hurricanes in History; NOAA repositorio, Hurricane Hugo September 10-22 1989; Effects of Hurricane Andrew in Florida. Consulta em 10/08/2026 (2026-08-10)">✓</span> The absence of the year in the text is not carelessness: the essay writes
+for a reader who recognises the cases by name, which is a mark of the forum and of the audience it
+addressed. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>The case the text opens and does not close (C3).</strong> The essay asks "Was 9/11 disaster or a
+catastrophe?" and answers that no one has yet conceptualised that some conflict situations might be
+catastrophes, although a biological or nuclear attack is often thought of as catastrophic at the
+operational level (p. 5). It is the transposition the author himself leaves open, and the one
+closest to law: a conflict situation changes the applicable legal regime, and Quarantelli's
+category, being sociological, cannot decide that on its own.</p>
+<h2>Grid of evidentiary strength</h2>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Theoretical certitude</th>
+<th>Theoretical uniqueness</th>
+<th>Empirical uniqueness</th>
+<th>Empirical certitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Damage percentages in Hugo, Mexico and Katrina</td>
+<td>high: if the claim holds, the contrast had to appear</td>
+<td>low: greater damage also follows from a greater disaster</td>
+<td>medium: figures of undeclared origin in the text</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>Incapacitation of local personnel (criterion 2)</td>
+<td>high</td>
+<td><strong>high</strong>: hardly follows from an increase in magnitude without a jump in kind</td>
+<td>medium</td>
+<td>low</td>
+</tr>
+<tr>
+<td>Similar individual behaviour in both kinds of event</td>
+<td>high</td>
+<td>high: it runs against the expectation that everything differs</td>
+<td>high: it is a finding against the claim's own interest</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>Media and political arena (criteria 5 and 6)</td>
+<td>medium</td>
+<td>low: they follow from national salience, not from catastrophe</td>
+<td>low: Katrina is a single, selected case</td>
+<td>low</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The strongest link is the one running against the claim.</strong> The observation that, at the individual
+level, reaction is "remarkably similar and generally good" (p. 5), with an absence of panic,
+evacuation by household unit and neighbours helping one another, has high uniqueness because it is
+not what a claim of qualitative jump would lead one to expect. Evidence against one's own interest
+is what sustains most, and the essay presents it without softening.</p>
+<p><strong>The weakest link is criteria 5 and 6.</strong> Both depend almost entirely on Katrina, and Katrina was
+selected for being a catastrophe. <strong>No conclusion about media and politics can be stronger than that
+base</strong>, and the text itself acknowledges the limit by calling its readings "educated guesses" (p. 4).</p>
+<h2>Context of writing</h2>
+<p><strong>Why it was written.</strong> A piece for the Social Science Research Council's <em>Understanding Katrina</em>
+forum, published in the immediate aftermath of the hurricane. The text declares the occasion in its
+first line, saying that Katrina "has reinforced the view of some researchers" (p. 1), and the format
+shows in the two declarations of limited space.</p>
+<p><strong>Against what.</strong> Against the command and control model, named twice. The essay says the question
+"who is in charge?" was repeated "as if it was a meaningful question", reflecting a model "that
+disaster research has indicated does not work well in disasters, much less in catastrophes" (p. 4),
+and calls the incident command system "a dubious arrangement even for disasters" (p. 5). It is a
+field position, sustained by decades of Disaster Research Center work, which the essay asserts
+without reconstructing. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>With whom he was arguing.</strong> With Perry, co-editor of the 2005 volume and author of the 2006
+chapter, and with a field producing empirical study without clarifying conceptual distinctions
+(pp. 1 and 2). The implicit and more important interlocutor is the emergency manager, whom the essay
+describes as having taken longer than the researcher to accept the first distinction (p. 1).</p>
+<h2>Style and method</h2>
+<p><strong>Rhetorical moves of the opening.</strong> The territory is established in two sentences, with the age of
+the field, "about a half-century-old" (p. 1). The niche is established by <strong>gap</strong>, and the
+linguistic signal is a negative quantifier joined to an adversative: "However, only a few scholars
+have spent time trying to describe the characteristics of catastrophes" (p. 1). The niche is
+occupied by announcing the case, "we will use Hurricane Katrina and its impact... as an almost
+textbook case" (p. 2).</p>
+<p><strong>Treatment of the literature.</strong> The apparatus is spare in the extreme: three references for a
+six-page essay. Two of the three are by the author or co-authored by him, and the third, Scanlon,
+appears only in the list. The predominant form is <strong>non-integral</strong>, with the source in parentheses,
+and the single reporting verb in the text is neutral. Measured against the field's reference
+frequencies, where sociology runs at about 104 citations per article and 12.5 per thousand words,
+the essay is far below scale, and that is data about the <strong>genre</strong>, not about the author: a web
+forum is not a peer-reviewed article. <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span></p>
+<p><strong>Prose.</strong> Short, concrete subjects for the most part, with the action in the verb. The text uses
+the first person plural consistently, and it does positioning work: "A few of us have pushed this
+distinction for several decades" (p. 2) places the author within a persistent minority, which is an
+argument from authority built by narrative rather than by citation. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<h2>Reception and legacy</h2>
+<p><strong>Not measured in this round.</strong> Citation counts in Crossref, OpenAlex, Semantic Scholar and Google
+Scholar were not gathered, and without them no claim about impact stands. <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> Let it be
+recorded what the format leads one to expect, which must be checked and not asserted: a web forum
+piece without a DOI tends to be undercounted in bases indexing by DOI, so that a wide divergence
+between bases is the likely result, and the divergence would itself be the finding. The check enters
+the acquisition queue below as a converting item.</p>
+<h2>Classified gaps and acquisition queue</h2>
+<p><strong>Blocking, at most three.</strong> The first is one of <strong>attribution</strong> (L4): the essay does not declare the
+concept's aggregation structure, and without it the category does not work as a test applicable to a
+new case. It does not close by acquisition, because it depends on someone having established it, and
+the text suggests no one has. The second is one of <strong>external datum</strong> (L2): reception was not
+measured, and closes with four queries. The third is one of <strong>access</strong> (L3): Perry's 2006 chapter
+and the 2005 volume sustain the distinction the essay presupposes rather than reconstructs, and
+neither was read at first hand.</p>
+<p><strong>Reducible by acquisition.</strong> The damage figures for St. Croix and Dade, whose origin the text does
+not declare, and the SSRC forum record, to date the publication more precisely than by year.</p>
+<p><strong>Irreducible, declared and closed.</strong> Whether the six differences are necessary, sufficient, or
+neither is a question the text does not answer and that no acquisition answers for it.</p>
+<p><strong>Composition of the queue.</strong> Three items, all in English, two books and one chapter, one of them
+available and two of uncertain access. A queue entirely in one language is the typical
+under-coverage of Brazilian legal review, and it is declared rather than corrected for convenience:
+this essay cites no Brazilian literature to acquire.</p>
+<h2>Problematising the presuppositions</h2>
+<p><strong>Field presupposition, and it is the deepest one here.</strong> The essay presupposes that the unit of
+analysis of a crisis is the <strong>community</strong>, and all six differences are stated about it: its built
+structure, its officials, its neighbours, its everyday functions. It is a presupposition shared by
+rival schools of disaster sociology, and therefore invisible from within the field. It decides in
+advance that a catastrophe is a <strong>localised</strong> event, however regional. A risk whose materialisation
+has no geographic centre, such as supply-chain risk or slow-onset climate risk, is neither disaster
+nor catastrophe on this grid: it falls outside the concept by construction, not by assessment.</p>
+<p><strong>The puzzle that follows.</strong> Why did disaster sociology build its categories on the community,
+despite the field's own half-century spanning a period in which the risks of greatest consequence
+ceased to be localised? The question links this essay to <a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, who arrives
+by another route at an inadequacy of category, and it is the point at which the two <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> texts
+stop operating on planes that never meet.</p>
+<p><strong>Paradigm presupposition.</strong> The essay treats the difference between disaster and catastrophe as an
+empirical discovery to be documented, not as a decision about how to cut the object. The sentence
+"Research has not yet fully established what are the most significant differences" (p. 4) only makes
+sense if the differences exist in the world awaiting discovery. An alternative ground, treating them
+as a useful convention to be justified by use, would change the criterion of success: whether the
+list is complete would stop mattering, and what decision it serves would start to.</p>
+<p><strong>Test of the three responses.</strong> The alternative ground above accepts part and denies part of the
+field's presuppositions: it accepts that the distinction is useful, and denies that it is an
+empirical finding. It is not obvious, because the field treats it as documentation; it is not
+absurd, because the essay itself admits the research has not closed. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
+<p><strong>Anti-caricature guard, met.</strong> The exposition in the preceding sections was written so that the
+reader cannot infer whether this reading agrees or disagrees with Quarantelli's claim. Nearest-cliché
+test: the exposition does <strong>not</strong> reduce the essay to the field's canonical position that "disasters
+are socially constructed". The author asserts something narrower and more checkable, namely
+institutional incapacitation as the criterion.</p>
+<h2>Presuppositions of this reading</h2>
+<p>The repertoire applied here is declared: concepts at three levels with negative pole and aggregation
+structure, reconstruction of the argument in five elements with warrants for the weak links, a grid
+of evidentiary strength in four fields, and problematisation by type of presupposition. It is the
+same repertoire applied to <a href="../conceitos/lauta-2017-leitura.html">Lauta</a>, as parity required, and that requirement is
+itself a choice: a six-page web forum essay and a journal article are not the same object, and
+applying one grid to both produces, in the former, more sections declaring absence than in the
+latter. The absences here are not all defects of the text; part is an effect of genre, and where I
+could separate the two, I did.</p>
+<h2>Final rubric</h2>
+<p>The weights follow the declared type, thesis review, in which the fifth question weighs most.</p>
+<p><strong>Are the presuppositions compatible with known facts?</strong> In part. The community grid is coherent
+with the author's case corpus, and the two wrong dates show the text was not checked at that level.</p>
+<p><strong>Do the conclusions follow from the premises?</strong> The claim of definition, yes. The policy claim,
+that catastrophes demand planning of another nature, brings no evidence of its own: no plan is
+examined.</p>
+<p><strong>Do the implications find confirmation in the data?</strong> Partly, and the author himself says the
+research has not closed.</p>
+<p><strong>How much better is the argument than rival explanations?</strong> The main rival, that a catastrophe is a
+large disaster, is weakened by criterion 2 and by the observation at the individual level, which an
+explanation from magnitude does not predict.</p>
+<p><strong>How useful is it for understanding other cases?</strong> This is the heaviest question here, and the
+answer is: useful as a checklist, limited as a test. With no declared aggregation structure, applying
+it to a new case requires the analyst to decide alone how many criteria suffice, and that decision
+has no footing in the text.</p>
+<h2>Citation apparatus (ADR-0009)</h2>
+<p>A spare reference list: three works, all processed. Two are anchored in the body, one only in the
+list, and the difference is declared in each node.</p>
+<p><a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> sustains the conceptual distinctions the essay presupposes rather than
+reconstructs (p. 2). <a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> is invoked as "forthcoming" to sustain that research has not
+settled the question (p. 4). <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a> appears only in the reference list (p. 5), with no
+attribution in the body.</p>
+<p><strong>What the apparatus reveals:</strong> the three references belong to a single debate, that of defining
+what counts as a disaster. Quarantelli rests on no legal literature whatsoever, which confirms by
+the bibliographic route what the reading of <a href="../conceitos/lauta-2017-leitura.html">Lauta</a> already indicated by
+another: the two <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> texts operate on planes that never meet, and the bridge between them is
+work still to be done, not something the bibliography has already done.</p>
+<h2>See also</h2>
+<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> · <a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a> · <a href="../conceitos/lauta-2017-leitura.html">Leitura de Lauta 2017 (nota literária)</a> · <a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> ·
+<a href="../textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> · <a href="../textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>.</p></div>
+
+<h2>Relações</h2><ul class="rel-list"><li><span class="rel-etype">-> cita</span> <a href="textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a> (p. 5)</li><li><span class="rel-etype">-> cita</span> <a href="textos/perry-2006.html">What Is a Disaster? (capítulo no Handbook of Disaster Research)</a> (p. 4)</li><li><span class="rel-etype">-> cita</span> <a href="textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (orgs.)</a> (p. 2)</li><li><span class="rel-etype">-> desenvolve conceito</span> <a href="../conceitos/disaster-vs-catastrophe.html">Desastre vs. catástrofe (capacidade institucional)</a> (p. 1, 2, 5)</li><li><span class="rel-etype">-> pertence à sessão</span> <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> (complementar)</li><li><span class="rel-etype"><- escreveu</span> <a href="../autores/quarantelli.html">Enrico L. Quarantelli</a></li></ul>
+
+<h2>Vizinhança no grafo</h2>
+<div id="cy-local"></div>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "author:perry", "label": "Ronald W. Perry", "href": "../autores/perry.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:quarantelli", "label": "Enrico L. Quarantelli", "href": "../autores/quarantelli.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "author:scanlon", "label": "Joseph Scanlon", "href": "../autores/scanlon.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "concept:capacidade-institucional", "label": "#capacidade-institucional (nota de referência)", "href": "../conceitos/capacidade-institucional.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster Risk (efeitos da incerteza)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-vs-catastrophe", "label": "Desastre vs. catástrofe (capacidade institucional)", "href": "../conceitos/disaster-vs-catastrophe.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Disfunção de processo social", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Leitura de Lauta 2017 (nota literária)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:quarantelli-criterios-brasil", "label": "Os seis critérios de Quarantelli valem no arranjo brasileiro? (nota fugaz)", "href": "../conceitos/quarantelli-criterios-brasil.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:s02-montagem-da-sessao", "label": "Montagem da sessão S02, 2026.2 (nota de projeto)", "href": "../conceitos/s02-montagem-da-sessao.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "session:s02", "label": "S02: Why Study Disaster Law", "href": "../sessoes/s02.html", "foco": "0"}, "classes": "session"}, {"data": {"id": "text:beck-1992", "label": "Risk Society: Towards a New Modernity", "href": "../textos/beck-1992.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-2017", "label": "Dysfunction and Disruption: Disaster Risks and the Law", "href": "../textos/lauta-2017.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perrow-1984", "label": "Normal Accidents: Living with High-Risk Technologies", "href": "../textos/perrow-1984.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perry-2006", "label": "What Is a Disaster? (capítulo no Handbook of Disaster Research)", "href": "../textos/perry-2006.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perry-quarantelli-2005", "label": "What Is a Disaster? New Answers to Old Questions (orgs.)", "href": "../textos/perry-quarantelli-2005.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:quarantelli-2005", "label": "Catastrophes Are Different from Disasters", "href": "../textos/quarantelli-2005.html", "foco": "1"}, "classes": "text foco"}, {"data": {"id": "text:scanlon-1991", "label": "Convergence Revisited: A New Perspective on a Little Studied Topic", "href": "../textos/scanlon-1991.html", "foco": "0"}, "classes": "text"}], "edges": [{"data": {"id": "le0", "source": "author:perry", "target": "text:perry-2006"}, "classes": "escreveu"}, {"data": {"id": "le1", "source": "author:perry", "target": "text:perry-quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le2", "source": "author:quarantelli", "target": "text:perry-quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le3", "source": "author:quarantelli", "target": "text:quarantelli-2005"}, "classes": "escreveu"}, {"data": {"id": "le4", "source": "author:scanlon", "target": "text:scanlon-1991"}, "classes": "escreveu"}, {"data": {"id": "le5", "source": "concept:capacidade-institucional", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:capacidade-institucional", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:disaster-vs-catastrophe", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:disaster-vs-catastrophe", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:quarantelli-criterios-brasil", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:s02-montagem-da-sessao", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "text:beck-1992", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le18", "source": "text:lauta-2017", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le19", "source": "text:lauta-2017", "target": "concept:dysfunction"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le20", "source": "text:lauta-2017", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le21", "source": "text:perrow-1984", "target": "session:s02"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le22", "source": "text:quarantelli-2005", "target": "text:perry-2006"}, "classes": "cita"}, {"data": {"id": "le23", "source": "text:quarantelli-2005", "target": "text:perry-quarantelli-2005"}, "classes": "cita"}, {"data": {"id": "le24", "source": "text:quarantelli-2005", "target": "text:scanlon-1991"}, "classes": "cita"}, {"data": {"id": "le25", "source": "text:quarantelli-2005", "target": "concept:disaster-vs-catastrophe"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le26", "source": "text:quarantelli-2005", "target": "session:s02"}, "classes": "pertence_a_sessao"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "autor"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "texto"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "conceito"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "sessão"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislação"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "julgado"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "escreveu"}, "pertence_a_sessao": {"color": "#c9a227", "label": "pertence à sessão"}, "desenvolve_conceito": {"color": "#4d8067", "label": "desenvolve conceito"}, "cita": {"color": "#9b5de5", "label": "cita"}, "relaciona_se_com": {"color": "#c1503a", "label": "relaciona-se com"}, "define_conceito": {"color": "#6d597a", "label": "define conceito"}, "instancia_conceito": {"color": "#9d0208", "label": "instancia conceito"}};</script>
+<footer>Gerado deterministicamente por <code>tools/wiki_core/render.py</code> a partir de
+<code>wiki/textos/quarantelli-2005.md</code>. Fonte de verdade é o markdown, editar lá.<br></footer>
+</main>
+</div>
+<script src="../vendor/cytoscape.min.js"></script>
+<script>
+(function(){
+  var saved = localStorage.getItem('dlp-wiki-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  window.toggleWikiTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark' : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('dlp-wiki-theme', next);
+  };
+})();
+</script>
+<script>
+(function(){
+  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
+  function aplicar(l){
+    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
+    // emitem nem o bloco data-lang="en" nem o botao de idioma. Sem esta linha, quem escolhia EN e
+    // seguia um wikilink ate uma delas via o TEXTO SUMIR (o bloco pt ficava hidden e nao havia
+    // bloco en para mostrar), sem botao naquela pagina para desfazer e com a escolha persistida em
+    // localStorage. Cair para 'pt' quando a pagina nao tem o idioma pedido e o comportamento certo:
+    // a preferencia global continua salva e volta a valer na proxima pagina que tenha traducao.
+    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-lang') !== alvo);
+    });
+    document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
+    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
+    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
+    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
+    // nao recebe aviso nenhum.
+    var aviso = document.getElementById('aviso-sem-traducao');
+    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
+  }
+  window.toggleLang = function(){
+    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
+    var novo = atual === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('dlp-wiki-lang', novo);
+    aplicar(novo);
+  };
+  aplicar(salvo);
+})();
+</script>
+<script>
+window.wikiBusca = {
+  MINIMO: 2,
+  esc: function(s){ return String(s).replace(/[&<>]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); },
+  filtrar: function(docs, termo){
+    termo = (termo || '').trim().toLowerCase();
+    if (termo.length < this.MINIMO) return [];
+    return (docs || []).filter(function(d){
+      return (d.t + ' ' + d.c).toLowerCase().indexOf(termo) !== -1;
+    });
+  },
+  trecho: function(d, termo, antes, depois){
+    var i = d.c.toLowerCase().indexOf((termo || '').trim().toLowerCase());
+    if (i === -1) return '';
+    return this.esc(d.c.substring(Math.max(0, i - antes), i + depois));
+  }
+};
+
+(function(){
+  var campo = document.getElementById('busca-campo');
+  var painel = document.getElementById('busca-resultados');
+  if (!campo) return;
+
+  campo.addEventListener('keydown', function(ev){
+    if (ev.key === 'Enter' && campo.value.trim()){
+      window.location.href = campo.getAttribute('data-alvo') + '?q=' + encodeURIComponent(campo.value.trim());
+    }
+    if (ev.key === 'Escape' && painel){ painel.hidden = true; }
+  });
+
+  if (!painel || typeof fetch !== 'function') return;
+
+  var docs = null, carregando = false, falhou = false;
+  var prefixo = campo.getAttribute('data-prefixo') || '';
+
+  function desenhar(){
+    var termo = campo.value.trim();
+    if (termo.length < window.wikiBusca.MINIMO){ painel.hidden = true; painel.innerHTML = ''; return; }
+    if (falhou){ painel.hidden = true; return; }   // Enter ainda funciona
+    if (!docs){ carregar(); return; }
+    var achados = window.wikiBusca.filtrar(docs, termo);
+    painel.hidden = false;
+    if (!achados.length){
+      painel.innerHTML = '<div class="bq-nada">nenhum resultado para ' +
+        window.wikiBusca.esc(termo) + '</div>';
+      return;
+    }
+    var visiveis = achados.slice(0, 12);
+    painel.innerHTML = visiveis.map(function(d){
+      return '<a href="' + prefixo + d.h + '"><span class="bq-tipo">' +
+             window.wikiBusca.esc(d.k) + '</span>' + window.wikiBusca.esc(d.t) + '</a>';
+    }).join('') + (achados.length > visiveis.length
+      ? '<div class="bq-nada">e mais ' + (achados.length - visiveis.length) +
+        ', Enter para ver todos</div>' : '');
+  }
+
+  function carregar(){
+    if (carregando) return;
+    carregando = true;
+    fetch(campo.getAttribute('data-indice'))
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ docs = j; carregando = false; desenhar(); })
+      .catch(function(){ falhou = true; carregando = false; painel.hidden = true; });
+  }
+
+  campo.addEventListener('input', desenhar);
+  document.addEventListener('click', function(ev){
+    if (painel && !painel.contains(ev.target) && ev.target !== campo){ painel.hidden = true; }
+  });
+})();
+</script>
+<script>
+(function(){
+  var d = window.__LOCAL__; if (!d || !window.cytoscape) return;
+  var NS = window.__NS__, ES = window.__ES__;
+  var cy = cytoscape({
+    container: document.getElementById('cy-local'),
+    elements: { nodes: d.nodes, edges: d.edges },
+    style: Object.keys(NS).map(function(t){
+      return { selector: 'node.' + t, style: {
+        'background-color': NS[t].color, 'width': NS[t].size * 0.75, 'height': NS[t].size * 0.75,
+        'shape': NS[t].shape, 'label': 'data(label)', 'font-size': 9, 'color': '#141413',
+        'text-valign': 'bottom', 'text-margin-y': 3, 'text-wrap': 'wrap', 'text-max-width': 88 } };
+    }).concat(Object.keys(ES).map(function(t){
+      return { selector: 'edge.' + t, style: {
+        'line-color': ES[t].color, 'target-arrow-color': ES[t].color,
+        'target-arrow-shape': 'triangle', 'curve-style': 'bezier', 'width': 1.4, 'opacity': 0.8 } };
+    })).concat([{ selector: 'node.foco', style: { 'border-width': 3, 'border-color': '#141413' } }]),
+    layout: { name: 'cose', animate: false, padding: 24 }
+  });
+  cy.on('tap', 'node', function(ev){ window.location.href = ev.target.data('href'); });
+})();
+</script>
+</body>
+</html>
