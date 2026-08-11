@@ -1,12 +1,16 @@
 # Disaster Law and Policy
 
+## ▶ Open the wiki: **https://leocarrilho7-lab.github.io/Disaster-Law-and-Policy/**
+
+**Start there, not here.** This page lists the files that make the site; the link above is the site
+itself. From its front page every session, reading note, author, concept, legal instrument and case
+opens as an ordinary page in your browser, and each one links to the others.
+
 Course wiki for **Disaster Law and Policy: International and Comparative Perspectives**, a 30 hour
 elective taught in English at FGV Direito Rio. Instead of a linear reading list, the course
 materials are published as a small graph: each work, author, concept, legal instrument and case is
 a page, and the links between pages are typed relations, so a case you reach from one session also
 shows you the other sessions that cite it.
-
-Read it at <https://leocarrilho7-lab.github.io/Disaster-Law-and-Policy/>.
 
 ## What is in here
 
