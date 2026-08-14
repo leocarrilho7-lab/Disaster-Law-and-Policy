@@ -84,9 +84,9 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
 <div id="busca-resultados" class="busca-resultados" hidden></div>
-<div class="area">session</div>
+<div class="area"><span data-chrome-lang="en">Sessions</span><span data-chrome-lang="pt" hidden>Sessões</span></div>
 <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
-<div class="area">author</div>
+<div class="area"><span data-chrome-lang="en">Authors</span><span data-chrome-lang="pt" hidden>Autores</span></div>
 <a href="../autores/alemanno.html">Alberto Alemanno</a>
 <a href="../autores/wibisana.html">Andri G. Wibisana</a>
 <a href="../autores/van-aaken.html">Anne van Aaken</a>
@@ -105,7 +105,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../autores/lyster.html">Rosemary Lyster</a>
 <a href="../autores/kuhn.html">Thomas S. Kuhn</a>
 <a href="../autores/beck.html">Ulrich Beck</a>
-<div class="area">text</div>
+<div class="area"><span data-chrome-lang="en">Texts</span><span data-chrome-lang="pt" hidden>Textos</span></div>
 <a href="../textos/posner-2004.html">Catastrophe: Risk and Response</a>
 <a href="../textos/quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
 <a href="../textos/lyster-2015.html">Climate Justice and Disaster Law</a>
@@ -128,7 +128,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../textos/kuhn-1970.html">The Structure of Scientific Revolutions</a>
 <a href="../textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
 <a href="../textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a>
-<div class="area">legislation</div>
+<div class="area"><span data-chrome-lang="en">Legislation</span><span data-chrome-lang="pt" hidden>Legislação</span></div>
 <a href="agenda-2030.html">2030 Agenda for Sustainable Development</a>
 <a href="adis-abeba-2015.html">Addis Ababa Action Agenda</a>
 <a href="habitat-iii-2016.html">Habitat III, New Urban Agenda</a>
@@ -137,7 +137,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="protocolo-de-montreal-1987.html">Montreal Protocol on Substances that Deplete the Ozone Layer</a>
 <a href="acordo-de-paris-2015.html">Paris Agreement on climate change</a>
 <a href="marco-de-sendai-2015.html">Sendai Framework for Disaster Risk Reduction 2015-2030</a>
-<div class="area">case</div>
+<div class="area"><span data-chrome-lang="en">Cases</span><span data-chrome-lang="pt" hidden>Julgados</span></div>
 <a href="../julgados/itlos-parecer-2024.html">Advisory opinion on climate change and the law of the sea</a>
 <a href="../julgados/cij-parecer-clima-2025.html">Advisory opinion on the obligations of States in respect of climate change</a>
 <a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a>
@@ -148,7 +148,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../julgados/laquila-cassacao-2016.html">The L&#x27;Aquila case: the seven scientists</a>
 <a href="../julgados/urgenda-2019.html">Urgenda Foundation v. State of the Netherlands</a>
 <a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
-<div class="area">concept</div>
+<div class="area"><span data-chrome-lang="en">Concepts</span><span data-chrome-lang="pt" hidden>Conceitos</span></div>
 <a href="../conceitos/s02-montagem-da-sessao.html">Assembling session S02, 2026.2 (project note)</a>
 <a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a>
 <a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a>
@@ -218,6 +218,46 @@ instrument stopped being modeled as a work.</p></div>
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('dlp-wiki-theme', next);
   };
+})();
+</script>
+<script>
+(function(){
+  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
+  function aplicar(l){
+    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
+    // emitem nem o bloco data-lang="en" nem o botao de idioma. Sem esta linha, quem escolhia EN e
+    // seguia um wikilink ate uma delas via o TEXTO SUMIR (o bloco pt ficava hidden e nao havia
+    // bloco en para mostrar), sem botao naquela pagina para desfazer e com a escolha persistida em
+    // localStorage. Cair para 'pt' quando a pagina nao tem o idioma pedido e o comportamento certo:
+    // a preferencia global continua salva e volta a valer na proxima pagina que tenha traducao.
+    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-lang') !== alvo);
+    });
+    // CROMO (rotulos da navegacao) tem atributo proprio, e segue o idioma PEDIDO, e
+    // nao o alvo. A separacao nao e estetica: se os rotulos usassem data-lang, toda
+    // pagina passaria a ter um bloco 'en' e a linha do alvo acima nunca cairia para
+    // 'pt' -- o recuo morreria calado nas 35 paginas sem traducao, e o corpo sumiria,
+    // que e o defeito que esta funcao existe para evitar. Ha teste dedicado a isso.
+    document.querySelectorAll('[data-chrome-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-chrome-lang') !== l);
+    });
+    document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
+    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
+    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
+    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
+    // nao recebe aviso nenhum.
+    var aviso = document.getElementById('aviso-sem-traducao');
+    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
+  }
+  window.toggleLang = function(){
+    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
+    var novo = atual === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('dlp-wiki-lang', novo);
+    aplicar(novo);
+  };
+  aplicar(salvo);
 })();
 </script>
 <script>
