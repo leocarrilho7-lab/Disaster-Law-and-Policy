@@ -37,6 +37,14 @@ font-weight:600;cursor:pointer;}
 .controles button:hover{background:#26489a;}
 .controles button:focus-visible{outline:3px solid #ffffff;outline-offset:2px;}
 :root[data-theme="dark"] .controles button{background:#4a7fe0;border-color:#3366cc;}
+/* Visitante de primeira vez, localStorage vazio, SO do escuro: sem isto os botoes ficavam
+   azul-claro num fundo escuro ate o primeiro clique, porque o -toggle so troca de cor via
+   [data-theme], e essa marca so existe depois de JS rodar. .theme-toggle (removida em
+   12/08/2026, achado de revisao de codigo) resolvia isto de graca com var(--card)/var(--fg),
+   que ja seguem o media query da linha 198; a troca para .controles perdeu isso, e este bloco
+   devolve o mesmo comportamento pelo mesmo mecanismo. */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .controles button{
+  background:#4a7fe0;border-color:#3366cc;}}
 .badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
 a.badge{text-decoration:none;}
 .broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
@@ -45,7 +53,6 @@ blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--borde
 .rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
 .rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
 footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
-.theme-toggle{position:fixed;top:0.8rem;right:1.2rem;font-size:0.78rem;background:var(--card);border:1px solid var(--border);border-radius:2px;padding:0.3rem 0.7rem;cursor:pointer;color:var(--fg);}
 .busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
 .selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
  padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
@@ -76,9 +83,9 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 </style>
 </head>
 <body>
-<div class="controles"><button onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
+<div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
-<nav class="sidebar"><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto-e-recorte-lido">Estrutura do texto e recorte lido</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-chave">Conceitos-chave</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita">Contexto de escrita</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao">Recepção</a></li><li><a href="#sec-lacunas-classificadas">Lacunas classificadas</a></li><li><a href="#sec-problematizacao">Problematização</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
 <a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
@@ -161,42 +168,627 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../conceitos/risk-society.html">Risk society</a></nav>
 <main>
 <h1>Risk Society: Towards a New Modernity</h1>
-<div class="meta">type: text<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#disaster-law">disaster-law</a> <a class="badge" href="../tags.html#risk-society">risk-society</a> <a class="badge" href="../tags.html#sociologia">sociologia</a></div>
+<div class="meta">type: text<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#disaster-law">disaster-law</a> <a class="badge" href="../tags.html#prova-causal">prova-causal</a> <a class="badge" href="../tags.html#risk-society">risk-society</a> <a class="badge" href="../tags.html#sociologia">sociologia</a> <a class="badge" href="../tags.html#subpolitica">subpolitica</a></div>
 <ul class="ficha"><li><strong>neste corpus:</strong> 1 apontam para ele, 2 saem dele</li></ul>
 
-<div data-lang="pt" hidden><p>BECK, Ulrich. <em>Risk Society: Towards a New Modernity</em>. Londres: Sage, 1992 (tradução de Mark
-Ritter; original alemão <em>Risikogesellschaft</em>, 1986).</p>
-<h2>Argumento</h2>
-<p>Sugestão do guia de complementos para <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> ("a 'sociedade de risco' é o pano de fundo
-sociológico do argumento de Lauta sobre por que o direito virou o lugar onde a sociedade define
-desastre. Emparelha bem com a Q1", <code>GUIA_Complementos_por_Sessao.md</code>). Beck teoriza a modernidade
-tardia como uma sociedade em que a produção social de riqueza é sistematicamente acompanhada pela
-produção social de riscos: os conflitos de distribuição de uma sociedade de escassez passam a se
-sobrepor aos conflitos de produção, definição e distribuição de riscos técnico-científicos. É esse
-deslocamento sociológico (risco como produto social, não acidente externo) que dá o pano de fundo
-para o argumento jurídico de Lauta em <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>: se o risco é produzido socialmente, o
-direito que antes tratava desastre como exceção precisa se tornar o lugar onde o risco é definido
-de antemão.</p>
-<h2>Ver também</h2>
-<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> · <a href="../conceitos/risk-society.html">Risk society</a> · <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a> (a leitura obrigatória que este texto emparelha, per
-o próprio guia).</p></div>
-<div data-lang="en"><p>BECK, Ulrich. <em>Risk Society: Towards a New Modernity</em>. London: Sage, 1992 (translated by Mark
-Ritter; German original <em>Risikogesellschaft</em>, 1986).</p>
+<div data-lang="pt" hidden><p>BECK, Ulrich. <strong>Risk society</strong>: towards a new modernity. Tradução de Mark Ritter. London: Sage,
+1992. Título original: <em>Risikogesellschaft: Auf dem Weg in eine andere Moderne</em>. Frankfurt am Main:
+Suhrkamp, 1986.</p>
+<h2 id="sec-argumento">Argumento</h2>
+<p>Sugestão do guia de complementos para <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> (<code>GUIA_Complementos_por_Sessao.md</code>: "a 'sociedade de
+risco' é o pano de fundo sociológico do argumento de Lauta sobre por que o direito virou o lugar onde
+a sociedade define desastre"). Beck defende que a modernização industrial produz riscos que escapam
+ao aparato de cálculo, seguro e responsabilização herdado do século XIX, e que essa lacuna desloca o
+poder de decidir sobre o futuro coletivo do sistema político para um sistema subpolítico
+tecnocientífico que não presta contas democraticamente. <strong>A tese própria, com essas palavras</strong> (p.
+20): "that is my thesis" <span class="selo selo-fato" title="fato conferido na fonte: conferido em beck_paginado.txt, exemplar Sage 1992, tradução Mark Ritter (2026-08-11)">✓</span>, datada e localizada, a Alemanha Ocidental a partir
+do início dos anos 1970, e deliberadamente parcial: Beck registra, na mesma página, que ainda não se
+vive numa sociedade de risco plena, e também já não se vive apenas nos conflitos distributivos da
+sociedade de escassez. Ler a obra como se afirmasse uma sociedade de risco já consumada contraria o
+texto na própria página em que a tese é enunciada.</p>
+<p><strong>Risco não é a coisa perigosa, é o modo de tratá-la.</strong> A definição do próprio autor: "risk may be
+defined as a systematic way of dealing with hazards and insecurities induced and introduced by
+modernization itself" (p. 21). O perigo pré-moderno era externo e pessoal, "a note of bravery and
+adventure"; o risco de modernização é autoproduzido, depende do conhecimento que se tem dele e
+ignora fronteira geracional e territorial (pp. 21-23). Essa tríade estrutura o <a href="../conceitos/risk-society.html">risco
+de modernização</a> como categoria que só se aplica em conjunção: um dano autoproduzido mas local e
+imediatamente perceptível fica mais perto do que Beck chama risco de classe do que do risco de
+modernização pleno.</p>
+<h2 id="sec-problema-e-metodo">Problema e método</h2>
+<p>Beck não relata dado empírico novo: reconstrói o aparato conceitual necessário para que a
+experiência contemporânea do risco se torne pensável, o que a metodologia desta revisão classifica
+como método conceitual. A condição do problema geral, na p. 22: as bases normativas do cálculo de
+risco herdadas do século XIX, o conceito de acidente, o seguro privado, a precaução médica, não
+cabem nas dimensões das ameaças da modernização avançada. A consequência, na mesma página: "this
+means that the calculation of risk as it has been established so far by science and legal
+institutions collapses". É alegação de causa e consequência: a mudança de escala do dano <strong>causa</strong> o
+colapso do aparato de cálculo, não apenas coexiste com ele.</p>
+<table>
+<thead>
+<tr>
+<th>Seção</th>
+<th>Tese</th>
+<th>Tipo</th>
+<th>Página</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definição de risco</td>
+<td>Risco é maneira sistemática de lidar com perigo induzido pela modernização</td>
+<td>Conceitual, de definição</td>
+<td>21-22</td>
+</tr>
+<tr>
+<td>Classe e risco</td>
+<td>Posição de risco não é posição de classe, ainda que a riqueza compre proteção</td>
+<td>Conceitual, de avaliação</td>
+<td>35-39</td>
+</tr>
+<tr>
+<td>Negação causal</td>
+<td>Elevar o padrão de prova de causalidade multiplica o risco não reconhecido</td>
+<td>Prático, de causa e consequência</td>
+<td>62-64</td>
+</tr>
+<tr>
+<td>Valores-limite</td>
+<td>O valor-limite não previne envenenamento, autoriza uma extensão dele</td>
+<td>Prático, de avaliação</td>
+<td>64-70</td>
+</tr>
+<tr>
+<td>Estado de exceção</td>
+<td>A sociedade de risco tende ao totalitarismo legítimo de prevenção de perigo</td>
+<td>Prático, de ação ou política</td>
+<td>79-80</td>
+</tr>
+<tr>
+<td>Subpolítica</td>
+<td>O desenvolvimento tecnoeconômico ganha poder de decisão sem legitimação democrática</td>
+<td>Conceitual, de definição</td>
+<td>183-186</td>
+</tr>
+<tr>
+<td>Irresponsabilidade organizada</td>
+<td>A indústria detém o poder decisório sem responsabilidade pelo efeito colateral</td>
+<td>Prático, de causa e consequência</td>
+<td>212-214</td>
+</tr>
+<tr>
+<td>Fecho normativo</td>
+<td>A reforma cabível é jurídica, muda o ônus da prova, não recentraliza no parlamento</td>
+<td>Prático, de ação ou política</td>
+<td>229-235</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-estrutura-do-texto-e-recorte-lido">Estrutura do texto e recorte lido</h2>
+<p>Esta revisão cobre três dos oito capítulos da obra, decisão do pesquisador tomada por card antes de
+abrir o PDF: capítulo 1, "On the Logic of Wealth Distribution and Risk Distribution" (impressas 19 a
+50); capítulo 2, "The Politics of Knowledge in the Risk Society" (51 a 84); e o núcleo teórico do
+capítulo 8, "Opening up the Political" (183 a 196, 212 a 216 e 228 a 236, de um total de 183 a 236).
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em contagem própria desta revisão sobre o recorte declarado (2026-08-11)">✓</span> Os dois primeiros foram lidos por inteiro; do capítulo 8 ficaram fora os
+dois estudos de caso setoriais, medicina (197-211) e automação industrial (217-227), por decisão
+explícita, não por esgotamento de leitura. O arco dos três capítulos: o primeiro estabelece a lógica
+distributiva do risco contra a lógica distributiva da riqueza; o segundo desce ao mecanismo concreto
+de negação científico-jurídica do risco; o terceiro nomeia o deslocamento de poder resultante,
+batizando-o de subpolítica, e fecha com proposta de reforma.</p>
+<p>O exemplar consultado é digitalização 2 em 1 <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar digitalizado do acervo, conferência de folha de rosto e cabeçalhos de página (2026-08-11)">✓</span>, com camada de texto
+refeita por OCR direto para as três faixas lidas, taxa de dano residual entre 0,08% e 0,12%
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em conferência de OCR desta revisão, beck_paginado.txt (2026-08-11)">✓</span>.</p>
+<h2 id="sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</h2>
+<p>Sobre valores-limite (pp. 64-70). <strong>Tese</strong>: o valor-limite não protege, autoriza. <strong>Razão</strong>: o
+decreto regula a extensão permissível do envenenamento, não a sua prevenção: "acceptable levels in
+this sense are the retreat lines of a civilization supplying itself in surplus with pollutants and
+toxic substances" (p. 65). <strong>Garantia</strong>, no padrão "quando... então": quando uma norma regula apenas
+o quanto e não o se de uma prática potencialmente lesiva, então ela funciona socialmente como
+autorização da prática, não como proteção contra ela. O ponto frágil está no salto de "o decreto
+autoriza X" para "logo o público não está protegido": um jurista pode contestar esse passo, porque
+norma pode autorizar um resíduo de risco e ainda impor limite protetivo real, ainda que imperfeito.
+<strong>A crítica aos degraus seguintes do argumento, sinergia entre substâncias não tratada e
+extrapolação animal-humano sem ponte lógica declarada, permanece firme independentemente desse
+salto</strong>, e é por isso que a formulação mais citável do livro, "valor-limite não protege, autoriza",
+precisa ser lida como advertência retórica eficaz, não como proposição que sobrevive a teste lógico
+estrito.</p>
+<p>Sobre subpolítica e irresponsabilidade organizada (pp. 183-186 e 212-214). <strong>Tese</strong>: a indústria
+decide, e a política apenas legitima depois. <strong>Razão</strong>: a lógica de investimento é sigilosa por
+necessidade de competição, e as decisões só chegam à esfera política e ao público depois de tomadas.
+<strong>Garantia</strong>: quando o poder de iniciar mudança social de larga escala está estruturalmente separado
+do poder de legitimá-la democraticamente, então a legitimação disponível é necessariamente posterior
+ao fato, e por isso enfraquecida. O texto lido não enfrenta de modo explícito a objeção óbvia,
+"existem agências de licenciamento e regulação ambiental prévia", ausência registrada como lacuna de
+negligência abaixo. Beck escreve na Alemanha de meados dos anos 1980, antes da difusão mais forte do
+licenciamento ambiental prévio como hoje se pratica: parte do aparato que descreve como ausente
+desenvolveu-se depois, o que é, ao mesmo tempo, confirmação histórica do diagnóstico e limite
+temporal da leitura.</p>
+<h2 id="sec-conceitos-chave">Conceitos-chave</h2>
+<p><strong>Risco de modernização</strong> (p. 21, ficha ligada a <a href="../conceitos/risk-society.html">Risk society</a>). Autoprodução, dependência do
+conhecimento e escala transgeracional e transterritorial, em conjunção: as três dimensões juntas
+distinguem risco de modernização de risco de classe. Polo negativo: não é segurança em sentido
+genérico, é a necessidade material, a escassez, no par "tenho fome" contra "tenho medo" (p. 49).</p>
+<p><strong>Subpolítica</strong> (p. 186): "it becomes a third entity, acquiring the precarious hybrid status of a
+sub-politics, in which the scope of the social changes precipitated varies inversely with their
+legitimation". Poder de decisão de fato sobre mudança social de larga escala, ausência de
+legitimação democrática prévia e blindagem constitucional pela liberdade de investimento e de
+pesquisa, em conjunção: falta um dos três e não há subpolítica no sentido de Beck, há
+intervencionismo estatal direto, categoria distinta que ele também nomeia.</p>
+<p><strong>Valor-limite</strong> (p. 65, já citada acima). Regula extensão permissível em vez de proibir, é opaco à
+sinergia entre substâncias e extrapola reação animal para limite humano sem ponte lógica declarada.
+A primeira dimensão já basta para sustentar o veredito normativo central: as outras duas são
+agravantes empíricos, não condições da crítica.</p>
+<p><strong>O mecanismo sem nome, irresponsabilidade organizada.</strong> O termo "organized irresponsibility" não
+aparece no corpo dos três capítulos lidos, só numa nota remetendo a outra obra do autor, de 1988
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em beck_paginado.txt, nota 3 do capítulo 1 (2026-08-11)">✓</span>. O mecanismo, porém, está construído por inteiro duas
+vezes: "corresponding to the highly differentiated division of labor, there is a general complicity,
+and the complicity is matched by a general lack of responsibility. Everyone is cause and effect, and
+thus non-cause" (p. 33); e "the division of labor thus leaves the industries with the primary
+decision-making power but without responsibility for side effects, while politics is assigned the
+task of democratically legitimating decisions it has not taken" (p. 213). Citar irresponsabilidade
+organizada como conceito de <em>Risk Society</em> (1992) sem essa ressalva de nota é erro de atribuição de
+data e de fonte.</p>
+<h2 id="sec-casos-e-aplicacoes">Casos e aplicações</h2>
+<p>Nas pp. 63-64, Beck cita, sem nomear os processos, decisão judicial japonesa que passou a aceitar
+correlação estatística como prova de nexo causal em dano ambiental. A pesquisa desta revisão
+identifica o caso mais bem documentado do conjunto conhecido como os quatro grandes processos de
+poluição do Japão: a asma de Yokkaichi, julgada pelo Tsu District Court em 24 de julho de 1972, com
+condenação solidária de seis empresas <span class="selo selo-fato" title="fato conferido na fonte: conferido em FENG, 2021, p. 118-140; MAEDA, 2001, p. 276-280 (2026-08-11)">✓</span>. Os outros três do conjunto
+(itai-itai, Minamata de Niigata, Minamata/Chisso) têm decisão favorável às vítimas confirmada por
+fonte agregada, mas o relaxamento específico do padrão de prova fica <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> para eles.</p>
+<p>Nas pp. 43-44, Beck reproduz na íntegra duas matérias de <em>Der Spiegel</em> (1984, n. 50) sobre Vila
+Parisi, o bairro de Cubatão, e sobre Bhopal, como evidência da exportação de risco industrial ao
+Terceiro Mundo: "within two minutes a fire storm raced through the favela. Over 500 people were
+burnt to death" (p. 43). O próprio Beck já compara a exportação de risco industrial com um desastre
+brasileiro nomeado, o que situa Cubatão na tradição textual da obra, não como analogia externa trazida
+por esta revisão. As figuras factuais da matéria (700 mil litros de óleo, mais de 500 mortos) não
+foram submetidas a conferência independente por esta revisão.</p>
+<p><strong>Transposição.</strong> O rompimento das barragens de Mariana (5 nov. 2015) e Brumadinho (25 jan. 2019),
+Minas Gerais, ilumina o argumento por contraste: o mecanismo de irresponsabilidade organizada
+sobrevive mesmo onde, quarenta anos antes e num continente distinto, tribunais já haviam relaxado o
+padrão de prova causal para dano estruturalmente semelhante. Em Mariana, Samarco, Vale e BHP foram
+absolvidas na esfera criminal por ausência de prova de responsabilidade individual
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em reportagem jornalística, não cruzada com segunda fonte nesta rodada (2026-08-11)">✓</span>, decisão que não anula o acordo cível. Em Brumadinho, o acordo de
+reparação coletiva somou R$ 37,68 bilhões <span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura jornalística do acordo de reparação (2026-08-11)">✓</span>, mas a individualização do
+dano por vítima permaneceu gargalo prático distinto. Onde Yokkaichi, em 1972, aceitou a correlação
+estatística como ponte entre poluição difusa e dano individual, o padrão em Mariana e Brumadinho,
+quatro décadas depois, ainda tropeça na exigência de prova individualizada que Beck já identifica como
+estruturalmente inadequada ao risco moderno (p. 22). Se essa leitura se sustenta como tendência, e
+não como impressão de dois casos, excede o escopo desta revisão.</p>
+<h2 id="sec-grade-de-forca-probatoria">Grade de força probatória</h2>
+<p>O uso que Beck faz dos processos japoneses como evidência de que o padrão de prova causal pode
+mudar diante de risco de modernização: certeza teórica moderada, Yokkaichi entrega o caso esperado;
+unicidade teórica baixa, ativismo judicial doméstico explicaria a mesma evidência sem exigir o
+aparato conceitual de sociedade de risco. Rótulo combinado: <strong>aro</strong>, teste necessário mas pouco
+discriminante.</p>
+<p>O uso de Vila Parisi e Bhopal como evidência da exportação de risco ao Terceiro Mundo: unicidade
+empírica moderada a baixa, a fonte é jornalismo de qualidade e não acadêmica, sem cruzamento com
+segunda fonte; unicidade teórica baixa, teoria da dependência explicaria a mesma evidência.</p>
+<p>Uma conclusão desta própria revisão: a leitura de que Mariana e Brumadinho ilustram a persistência da
+irresponsabilidade organizada. Certeza teórica baixa, a tese de Beck não prevê que tipo específico de
+obstáculo probatório apareceria quatro décadas depois; unicidade teórica também baixa, dificuldade de
+prova em dano difuso de massa é fenômeno amplamente discutido em processo civil coletivo, sem
+depender da teoria de Beck. Rótulo: <strong>palha ao vento</strong>; a transposição é sugestiva e ilustrativa, não
+confirmatória.</p>
+<h2 id="sec-contexto-de-escrita">Contexto de escrita</h2>
+<p>O capítulo 1 abre, na primeira frase impressa do recorte lido, com generalização de campo inteiro:
+"in advanced modernity the social production of wealth is systematically accompanied by the social
+production of risks" (p. 19). O paradigma que desloca é nomeado com precisão bibliográfica incomum
+para diagnóstico de época: "the concepts of 'industrial' or 'class society', in the broadest sense of
+Marx or Weber..." (p. 19), e o verbo de sobreposição, "this overlaps with the new paradigm of risk
+society", não <em>supersedes</em> nem <em>replaces</em>: a obra acrescenta um eixo distributivo ao lado do de
+classe, não o substitui, o que é exatamente a tensão que o elo frágil de classe e risco, abaixo,
+examina.</p>
+<p><strong>Não é resposta a Chernobyl, ao menos não no corpo lido nem no prefácio do exemplar consultado.</strong> O
+prefácio (pp. 9-16), consultado pontualmente só para testar essa associação corrente, não menciona
+Chernobyl; cita, como exemplo de acidente nuclear, Three Mile Island (1979). O corpo teórico da obra
+já estava pronto antes de Chernobyl; pouco antes de ir para o prelo, Beck acrescentou à primeira
+edição alemã um segundo prefácio situando o livro ao fim de uma sequência histórica que cita
+Chernobyl <span class="selo selo-fato" title="fato conferido na fonte: conferido em METZLER, Gabriele. Demokratisierung des Risikos? Ulrich Becks &#x27;Risikogesellschaft&#x27;, 2010, p. 323-326 (2026-08-11)">✓</span>. A afirmação corrente de que o livro nasceu como resposta
+a Chernobyl é imprecisa para o corpo teórico e para esta tradução, e precisa apenas para um paratexto
+da primeira edição alemã ausente do exemplar aqui consultado.</p>
+<p>Com quem discutia: Giddens, a quem o próprio Beck credita, com Lash, o desenvolvimento subsequente da
+modernização reflexiva; Luhmann, citado pela ideia de sistema autorreferencial da economia, "one
+could say along with Luhmann..." (p. 23), em tom de sugestão, não de tese assertiva; Habermas, citado
+duas vezes no capítulo 8; Offe, citado e criticado na p. 189.</p>
+<h2 id="sec-estilo-e-metodo">Estilo e método</h2>
+<p>O movimento de nicho da introdução não segue o padrão mais comum do gênero, a lacuna ("pouco se sabe
+sobre..."): estabelece o nicho por continuação qualificada, o par <em>wealth distribution</em> e <em>risk
+distribution</em> coexistindo como dois eixos, não competindo pelo mesmo espaço. Essa escolha retórica
+antecipa textualmente a tensão entre classe e risco identificada abaixo: se o novo paradigma apenas
+<em>overlaps</em> o antigo, a pergunta sobre qual domina em cada caso concreto fica sem resposta estrutural.</p>
+<p>O autor não desaparece atrás de terceiros nas seções de argumento próprio: sujeito gramatical
+predominante é o próprio Beck, primeira pessoa ("that is my thesis") ou construção impessoal que
+sustenta asserção própria ("risk may be defined as..."). A forma integral, autor como sujeito, se
+reserva aos interlocutores vivos com quem constrói argumento (Luhmann); a forma não integral, autor e
+ano entre parênteses, ao que funciona como dado a processar (o relatório do Conselho de Peritos
+Ambientais). A densidade de nomes próprios com obra e ano nos capítulos 1 e 2 não é excesso: é o
+padrão esperado de teoria social com pretensão filosófica.</p>
+<h2 id="sec-recepcao">Recepção</h2>
+<p>O achado central não é um número, é a impossibilidade de um número único, e essa impossibilidade é
+ela própria informativa sobre como a obra circula. A monografia não é indexada como tal no Crossref,
+que só devolve resenhas contemporâneas. O OpenAlex e o Semantic Scholar mostram registros distintos
+para edição alemã e inglesa, com contagens que variam por uma ordem de grandeza conforme o registro
+(ver o bloco <code>reception</code> no frontmatter). O Google Acadêmico, consultado separadamente por edição,
+revela o achado mais importante: a edição inglesa (cluster de 8 versões) mostra 61.965 citações; a
+edição alemã original (cluster de 11 versões) mostra 26.198. Os dois números não são o mesmo dado sob
+rótulos diferentes, um cluster fundido mistura citações à tradução com citações a obras que discutem
+a tradução, e a recepção internacional em inglês e a recepção de língua alemã não são a mesma massa
+de dados.</p>
+<p>O citante mais citado da edição alemã é o próprio Beck, em coautoria posterior com Beck-Gernsheim: a
+obra alimenta diretamente o programa de individualização que o autor desenvolveria nos quinze anos
+seguintes, o que a qualifica menos como ponto de chegada de uma década e mais como abertura de um
+programa de pesquisa. Um registro do Google Acadêmico exibindo "citado por 9.363", assinado a "J. P.
+Wyse (2015)", não resistiu à conferência de autoria: a contagem pertence a Boaventura de Sousa Santos,
+<em>Epistemologies of the South</em> <span class="selo selo-pendente" title="não verificado: divergente">✗</span>.</p>
+<p>Korstanje descreve a obra como um dos projetos pioneiros de Beck sobre percepção de risco
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em KORSTANJE, 2009 (2026-08-11)">✓</span>. Jong, trinta anos depois, aceita o arcabouço como ponto de partida
+válido, mas argumenta incompatibilidade entre as dimensões ontológica e epistemológica da teoria,
+propondo integrar Bourdieu <span class="selo selo-fato" title="fato conferido na fonte: conferido em JONG, 2022 (2026-08-11)">✓</span>: debate ativo sobre os limites da
+teoria, não sobre a paternidade do conceito, que não aparece contestada em nenhuma fonte consultada.</p>
+<h2 id="sec-lacunas-classificadas">Lacunas classificadas</h2>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>O que falta</th>
+<th>Estatuto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confusão</td>
+<td>A tensão entre classe e risco: Beck afirma simultaneamente que risco segue em parte o padrão de classe e que posição de risco não é posição de classe (pp. 35-39); a conciliação que oferece é temporal, não estrutural, e não resolve a contradição que ele mesmo declara</td>
+<td>a literatura de justiça ambiental oferece evidência contraditória</td>
+</tr>
+<tr>
+<td>Negligência</td>
+<td>Ausência de enfrentamento explícito da objeção óbvia sobre agências de licenciamento e regulação ambiental prévia, no segundo elo do argumento</td>
+<td>o texto não a menciona onde poderia</td>
+</tr>
+<tr>
+<td>Aplicação</td>
+<td>A obra não conhece Mariana e Brumadinho nem o direito ambiental comparado desde 1986; estender a irresponsabilidade organizada a esses casos é aplicação legítima, não desenvolvida pela própria obra</td>
+<td>desenvolvida acima, com o cuidado de não superestimar a força da transposição</td>
+</tr>
+</tbody>
+</table>
+<p>Convertidas em enigma. Por que a obra sustenta que posições de risco não são posições de classe,
+apesar de reconhecer, na mesma seção, que a pobreza atrai abundância de riscos? Por que o argumento
+da irresponsabilidade organizada ignora o contra-argumento institucional mais óbvio, o licenciamento
+prévio, apesar de o resto da obra revelar familiaridade com o aparato regulatório ambiental alemão da
+época?</p>
+<h2 id="sec-problematizacao">Problematização</h2>
+<p><strong>Pressuposto de paradigma, o mais profundo dos cinco tipos.</strong> A obra pressupõe unidade societária
+suficiente para que faça sentido falar de "a" transição da sociedade industrial para a sociedade de
+risco, datável e relativamente sincronizada para a Alemanha Ocidental e, por extensão, a sociedade
+industrial avançada. <strong>O chão alternativo</strong>: a exposição ao risco e a consciência do risco são
+desigualmente distribuídas, por classe, região e história colonial, a ponto de não haver um único
+momento de transição coerente, e sim regimes de risco múltiplos e dessincronizados coexistindo sob o
+mesmo rótulo nacional. A própria obra já registra o material dessa alternativa, na tensão entre
+classe e risco, mas resolve pelo tempo, a escapatória privada encolhendo conforme o risco se
+intensifica, em vez de pela estrutura; o chão alternativo sustenta que essa resolução pelo tempo já
+faz trabalho ideológico, pressupondo uma convergência entre posições de risco desiguais que talvez
+não ocorra em nenhum horizonte de política pública relevante. Não é "óbvio", porque a obra registra e
+discute a própria tensão; não é "absurdo", porque aceita boa parte do argumento de Beck, o efeito
+bumerangue existe, o risco de fato se espalha; é "interessante", porque nega apenas que o
+espalhamento implique convergência de posição em prazo relevante para a política pública.</p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> para a sessão · <a href="../conceitos/risk-society.html">Risk society</a> para o conceito · <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a> para o argumento jurídico
+que usa este pano de fundo sociológico, e para o par <a href="../textos/luhmann-2004.html">Luhmann</a> que a mesma leitura de
+<a href="../textos/lauta-2017.html">Lauta</a> mobiliza pela distinção risco e perigo, que Beck, segundo comentador, não
+distingue com a mesma clareza conceitual.</p></div>
+<div data-lang="en"><p>BECK, Ulrich. <strong>Risk society</strong>: towards a new modernity. Translated by Mark Ritter. London: Sage,
+1992. Original title: <em>Risikogesellschaft: Auf dem Weg in eine andere Moderne</em>. Frankfurt am Main:
+Suhrkamp, 1986.</p>
 <h2>Argument</h2>
-<p>Suggested as a supplementary reading by the guide for <a href="../sessoes/s02.html">S02</a> ("the 'risk society' is the
-sociological backdrop for Lauta's argument about why the law became the place where society defines
-disaster. Pairs well with Q1," <code>GUIA_Complementos_por_Sessao.md</code>). Beck theorizes late modernity as
-a society in which the social production of wealth is systematically accompanied by the social
-production of risks: the distributional conflicts of a society of scarcity come to overlap with the
-conflicts over the production, definition, and distribution of techno-scientific risks. It is this
-sociological shift (risk as a social product, not an external accident) that gives the backdrop for
-Lauta's legal argument in <a href="../textos/lauta-2017.html">Lauta 2017</a>: if risk is socially produced, the law that used
-to treat disaster as an exception needs to become the place where risk is defined beforehand.</p>
+<p>Suggested as a supplementary reading by the guide for <a href="../sessoes/s02.html">S02</a> (<code>GUIA_Complementos_por_Sessao.md</code>:
+"the 'risk society' is the sociological backdrop for Lauta's argument about why the law became the
+place where society defines disaster"). Beck argues that industrial modernization produces risks
+that escape the calculation, insurance, and liability apparatus inherited from the nineteenth
+century, and that this gap shifts the power to decide the collective future from the political
+system to a technoscientific sub-political system that is not democratically accountable. <strong>His own
+thesis, in these words</strong> (p. 20): "that is my thesis" <span class="selo selo-fato" title="fato conferido na fonte: conferido em beck_paginado.txt, exemplar Sage 1992, tradução Mark Ritter (2026-08-11)">✓</span>, dated and located, West Germany from the early
+1970s onward, and deliberately partial: on the same page Beck registers that we do not yet live in a
+risk society, and also no longer live only within the distribution conflicts of scarcity societies.
+Reading the book as claiming an already-consummated risk society contradicts the text on the very
+page where the thesis is stated.</p>
+<p><strong>Risk is not the dangerous thing, it is the way of handling it.</strong> The author's own definition: "risk
+may be defined as a systematic way of dealing with hazards and insecurities induced and introduced by
+modernization itself" (p. 21). Pre-modern hazard was external and personal, "a note of bravery and
+adventure"; the risk of modernization is self-produced, depends from the outset on the knowledge one
+has of it, and ignores generational and territorial boundaries (pp. 21-23). This triad structures
+<a href="../conceitos/risk-society.html">the risk of modernization</a> as a category that only applies in conjunction: harm that
+is self-produced but local and immediately perceptible sits closer to what Beck calls class risk than
+to risk of modernization proper.</p>
+<h2>Problem and method</h2>
+<p>Beck reports no new empirical data: he reconstructs the conceptual apparatus needed to make the
+contemporary experience of risk thinkable, which this review's methodology classifies as conceptual
+method. The condition of the general problem, on p. 22: the normative bases of risk calculation
+inherited from the nineteenth century, the concept of accident, private insurance, medical
+precaution, do not fit the dimensions of advanced modernization's threats. The consequence, on the
+same page: "this means that the calculation of risk as it has been established so far by science and
+legal institutions collapses". This is a claim of cause and consequence: the change of scale in harm
+<strong>causes</strong> the collapse of the inherited calculation apparatus, it does not merely coexist with it.</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Thesis</th>
+<th>Type</th>
+<th>Page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition of risk</td>
+<td>Risk is a systematic way of dealing with hazard induced by modernization</td>
+<td>Conceptual, definitional</td>
+<td>21-22</td>
+</tr>
+<tr>
+<td>Class and risk</td>
+<td>Risk position is not class position, though wealth buys some protection</td>
+<td>Conceptual, evaluative</td>
+<td>35-39</td>
+</tr>
+<tr>
+<td>Causal denial</td>
+<td>Raising the standard of causal proof multiplies unrecognized risk</td>
+<td>Practical, causal</td>
+<td>62-64</td>
+</tr>
+<tr>
+<td>Acceptable levels</td>
+<td>The acceptable level does not prevent poisoning, it authorizes an extension of it</td>
+<td>Practical, evaluative</td>
+<td>64-70</td>
+</tr>
+<tr>
+<td>State of emergency</td>
+<td>Risk society tends toward a legitimate totalitarianism of hazard prevention</td>
+<td>Practical, political</td>
+<td>79-80</td>
+</tr>
+<tr>
+<td>Sub-politics</td>
+<td>Techno-economic development gains decision-making power without democratic legitimation</td>
+<td>Conceptual, definitional</td>
+<td>183-186</td>
+</tr>
+<tr>
+<td>Organized irresponsibility</td>
+<td>Industry holds decision-making power without responsibility for side effects</td>
+<td>Practical, causal</td>
+<td>212-214</td>
+</tr>
+<tr>
+<td>Normative close</td>
+<td>The fitting reform is legal, shifting the burden of proof, not recentralizing in parliament</td>
+<td>Practical, political</td>
+<td>229-235</td>
+</tr>
+</tbody>
+</table>
+<h2>Structure of the text and the excerpt read</h2>
+<p>This review covers three of the book's eight chapters, a decision the researcher made by card before
+opening the PDF: chapter 1, "On the Logic of Wealth Distribution and Risk Distribution" (printed pp.
+19 to 50); chapter 2, "The Politics of Knowledge in the Risk Society" (51 to 84); and the theoretical
+core of chapter 8, "Opening up the Political" (183 to 196, 212 to 216, and 228 to 236, out of a total
+of 183 to 236). <span class="selo selo-fato" title="fato conferido na fonte: conferido em contagem própria desta revisão sobre o recorte declarado (2026-08-11)">✓</span> The first two were read in full; from chapter 8, the two sectoral case studies,
+medicine (197-211) and industrial automation (217-227), were left out by explicit decision, not
+exhaustion of reading. The arc of the three chapters: the first establishes the distributive logic of
+risk against the distributive logic of wealth; the second descends to the concrete mechanism of
+scientific-legal denial of risk; the third names the resulting shift of power, coining it
+sub-politics, and closes with a reform proposal.</p>
+<p>The consulted copy is a 2-in-1 scan <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar digitalizado do acervo, conferência de folha de rosto e cabeçalhos de página (2026-08-11)">✓</span>, with its text layer redone by
+direct OCR for the three ranges read, residual damage rate between 0.08% and 0.12%
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em conferência de OCR desta revisão, beck_paginado.txt (2026-08-11)">✓</span>.</p>
+<h2>The reconstructed argument, and its two weakest links</h2>
+<p>On acceptable levels (pp. 64-70). <strong>Thesis</strong>: the acceptable level does not protect, it authorizes.
+<strong>Reason</strong>: the decree regulates the permissible extent of poisoning, not its prevention: "acceptable
+levels in this sense are the retreat lines of a civilization supplying itself in surplus with
+pollutants and toxic substances" (p. 65). <strong>Warrant</strong>, in the "when... then" pattern: when a norm
+regulates only how much, and not whether, a potentially harmful practice occurs, then it functions
+socially as authorization of the practice, not as protection against it. The weak point sits in the
+jump from "the decree authorizes X" to "therefore the public is not protected": a lawyer could
+contest that step, since a norm can authorize a residue of risk while still imposing a real, if
+imperfect, protective limit. <strong>The criticism of the argument's later steps, untreated synergy between
+substances and an unjustified animal-to-human extrapolation, remains firm regardless of that jump</strong>,
+which is why the book's most quotable formulation, "the acceptable level does not protect, it
+authorizes", needs to be read as effective rhetorical warning rather than as a proposition that
+survives strict logical testing.</p>
+<p>On sub-politics and organized irresponsibility (pp. 183-186 and 212-214). <strong>Thesis</strong>: industry
+decides, and politics only legitimates afterward. <strong>Reason</strong>: investment logic is secretive out of
+competitive necessity, and decisions only reach the political sphere and the public after having
+been made. <strong>Warrant</strong>: when the power to initiate large-scale social change is structurally
+separated from the power to democratically legitimate it, then the legitimation available is
+necessarily after the fact, and therefore weakened. The text read does not explicitly address the
+obvious objection, "there are licensing agencies and prior environmental regulation", an absence
+registered below as a gap of negligence. Beck writes in the West Germany of the mid-1980s, before the
+stronger diffusion of prior environmental licensing as practiced today: part of the apparatus he
+describes as absent developed afterward, which is at once historical confirmation of the diagnosis
+and a temporal limit on the reading.</p>
+<h2>Key concepts</h2>
+<p><strong>Risk of modernization</strong> (p. 21, evidence tied to <a href="../conceitos/risk-society.html">Risk society</a>). Self-production, knowledge
+dependence, and transgenerational, transterritorial scale, in conjunction: the three dimensions
+together distinguish risk of modernization from class risk. Negative pole: not safety in a generic
+sense, but material need, scarcity, in the pairing "I am hungry" against "I am afraid" (p. 49).</p>
+<p><strong>Sub-politics</strong> (p. 186): "it becomes a third entity, acquiring the precarious hybrid status of a
+sub-politics, in which the scope of the social changes precipitated varies inversely with their
+legitimation." De facto decision-making power over large-scale social change, absence of prior
+democratic legitimation, and constitutional shielding through freedom of investment and freedom of
+research, in conjunction: missing one of the three and there is no sub-politics in Beck's sense,
+there is direct state intervention, a distinct category he also names.</p>
+<p><strong>Acceptable level</strong> (p. 65, already quoted above). Regulates permissible extent rather than
+prohibiting, is opaque to synergy between substances, and extrapolates animal reaction to human limit
+without a declared logical bridge. The first dimension alone already suffices to sustain the central
+normative verdict: the other two are empirical aggravating factors, not conditions of the critique.</p>
+<p><strong>The unnamed mechanism, organized irresponsibility.</strong> The term "organized irresponsibility" does not
+appear in the body of the three chapters read; it appears once, in a footnote referring to another
+book by the author, from 1988 <span class="selo selo-fato" title="fato conferido na fonte: conferido em beck_paginado.txt, nota 3 do capítulo 1 (2026-08-11)">✓</span>. The mechanism, however, is built out in full twice: "corresponding to
+the highly differentiated division of labor, there is a general complicity, and the complicity is
+matched by a general lack of responsibility. Everyone is cause and effect, and thus non-cause" (p.
+33); and "the division of labor thus leaves the industries with the primary decision-making power but
+without responsibility for side effects, while politics is assigned the task of democratically
+legitimating decisions it has not taken" (p. 213). Citing organized irresponsibility as a concept of
+<em>Risk Society</em> (1992) without that footnote caveat is a misattribution of date and source.</p>
+<h2>Cases and applications</h2>
+<p>On pp. 63-64, Beck cites, without naming the proceedings, a Japanese judicial decision that came to
+accept statistical correlation as proof of causal link in environmental harm. This review's research
+identifies the best-documented case of the set known as Japan's four great pollution lawsuits: the
+Yokkaichi asthma case, decided by the Tsu District Court on 24 July 1972, with six companies held
+jointly liable <span class="selo selo-fato" title="fato conferido na fonte: conferido em FENG, 2021, p. 118-140; MAEDA, 2001, p. 276-280 (2026-08-11)">✓</span>. The other three in the set (itai-itai, Niigata Minamata, Minamata/Chisso) have a
+favorable outcome for the victims confirmed by aggregate sources, but the specific relaxation of the
+proof standard remains <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> for them.</p>
+<p>On pp. 43-44, Beck reproduces in full two <em>Der Spiegel</em> pieces (1984, n. 50) on Vila Parisi, the
+Cubatão neighborhood, and on Bhopal, as evidence of the export of industrial risk to the Third World:
+"within two minutes a fire storm raced through the favela. Over 500 people were burnt to death" (p.
+43). Beck himself already compares the export of industrial risk with a named Brazilian disaster,
+placing Cubatão within the book's own textual tradition rather than as an external analogy brought in
+by this review. The factual figures in the piece (700,000 liters of oil, over 500 dead) were not
+submitted to independent verification by this review.</p>
+<p><strong>Transposition.</strong> The collapse of the Mariana (5 Nov. 2015) and Brumadinho (25 Jan. 2019) tailings
+dams, Minas Gerais, illuminates the argument by contrast: the mechanism of organized irresponsibility
+survives even where, forty years earlier and on a different continent, courts had already relaxed the
+causal proof standard for structurally similar harm. In Mariana, Samarco, Vale, and BHP were
+criminally acquitted for lack of proof of each defendant's individual responsibility
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em reportagem jornalística, não cruzada com segunda fonte nesta rodada (2026-08-11)">✓</span>, a decision that
+does not annul the civil settlement. In Brumadinho, the collective reparation settlement totaled R$
+37.68 billion <span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura jornalística do acordo de reparação (2026-08-11)">✓</span>, but individualizing the harm per victim remained a distinct practical bottleneck. Where
+Yokkaichi, in 1972, accepted statistical correlation as a bridge between diffuse pollution and
+individual harm, the pattern in Mariana and Brumadinho, four decades later, still trips on the same
+individualized-proof requirement that Beck already identifies as structurally inadequate to modern
+risk (p. 22). Whether this reading holds as a trend, rather than an impression from two cases, exceeds
+the scope of this review.</p>
+<h2>Evidentiary grade</h2>
+<p>Beck's use of the Japanese lawsuits as evidence that the causal proof standard can shift in the face
+of modernization risk: moderate theoretical certainty, Yokkaichi delivers the expected case; low
+theoretical uniqueness, domestic judicial activism would explain the same evidence without requiring
+risk society's conceptual apparatus. Combined label: <strong>hoop test</strong>, necessary but not very
+discriminating.</p>
+<p>The use of Vila Parisi and Bhopal as evidence of risk export to the Third World: moderate-to-low
+empirical uniqueness, the source is quality journalism, not academic, uncross-checked against a
+second source; low theoretical uniqueness, dependency theory would explain the same evidence.</p>
+<p>A conclusion of this review's own: the reading that Mariana and Brumadinho illustrate the persistence
+of organized irresponsibility. Low theoretical certainty, Beck's thesis does not predict what specific
+kind of evidentiary obstacle would appear four decades later; also low theoretical uniqueness,
+difficulty of proof in mass diffuse harm is widely discussed in collective civil procedure without
+depending on Beck's theory. Label: <strong>straw in the wind</strong>; the transposition is suggestive and
+illustrative, not confirmatory.</p>
+<h2>Context of writing</h2>
+<p>Chapter 1 opens, in the first printed sentence of the excerpt read, with a field-wide generalization:
+"in advanced modernity the social production of wealth is systematically accompanied by the social
+production of risks" (p. 19). The paradigm it displaces is named with unusual bibliographic precision
+for a diagnosis of the age: "the concepts of 'industrial' or 'class society', in the broadest sense of
+Marx or Weber..." (p. 19), and the overlap verb, "this overlaps with the new paradigm of risk
+society", is neither <em>supersedes</em> nor <em>replaces</em>: the book adds a distributive axis alongside the
+class axis, it does not replace it, which is exactly the tension the class-and-risk weak link,
+above, examines.</p>
+<p><strong>It is not a response to Chernobyl, at least not in the body read nor in the preface of the copy
+consulted.</strong> The preface (pp. 9-16), consulted only to test that common association, does not mention
+Chernobyl; it cites Three Mile Island (1979) as its example of a nuclear accident. The book's
+theoretical body was already finished before Chernobyl; shortly before going to press, Beck added a
+second preface to the first German edition, placing the book at the end of a historical sequence that
+does cite Chernobyl <span class="selo selo-fato" title="fato conferido na fonte: conferido em METZLER, Gabriele. Demokratisierung des Risikos? Ulrich Becks &#x27;Risikogesellschaft&#x27;, 2010, p. 323-326 (2026-08-11)">✓</span>. The common claim that the book was born as a response to Chernobyl is imprecise
+for the theoretical body and for this translation, and accurate only for a paratext of the first
+German edition absent from the copy consulted here.</p>
+<p>Interlocutors: Giddens, to whom Beck himself credits, along with Lash, the subsequent development of
+reflexive modernization; Luhmann, cited for the idea of the economy's self-referential system, "one
+could say along with Luhmann..." (p. 23), in a suggestive tone, not an assertive thesis; Habermas,
+cited twice in chapter 8; Offe, cited and criticized on p. 189.</p>
+<h2>Style and method</h2>
+<p>The introduction's niche move does not follow the genre's most common pattern, the gap ("little is
+known about..."): it establishes the niche through qualified continuation, the pair <em>wealth
+distribution</em> and <em>risk distribution</em> coexisting as two axes rather than competing for the same
+space. This rhetorical choice textually anticipates the class-and-risk tension identified below: if
+the new paradigm merely <em>overlaps</em> the old one, the question of which dominates in any given concrete
+case is left without a structural answer.</p>
+<p>The author does not disappear behind third parties in the sections of his own argument: the
+predominant grammatical subject is Beck himself, first person ("that is my thesis") or an impersonal
+construction sustaining his own assertion ("risk may be defined as..."). Integral form, author as
+subject, is reserved for the living interlocutors with whom he builds argument (Luhmann); non-integral
+form, author and year in parentheses, is reserved for what functions as data to be processed (the
+report of the Council of Environmental Experts). The density of proper names with work and year in
+chapters 1 and 2 is not excess: it is the expected pattern for social theory with philosophical
+ambition.</p>
+<h2>Reception</h2>
+<p>The central finding is not a number, it is the impossibility of a single number, and that
+impossibility is itself informative about how the book circulates. The monograph is not indexed as
+such in Crossref, which only returns contemporary reviews. OpenAlex and Semantic Scholar show
+distinct records for the German and English editions, with counts that vary by an order of magnitude
+depending on the record (see the <code>reception</code> block in the frontmatter). Google Scholar, consulted
+separately by edition, reveals the most important finding: the English edition (an 8-version cluster)
+shows 61,965 citations; the original German edition (an 11-version cluster) shows 26,198. The two
+numbers are not the same data under different labels: a merged cluster, like the English edition's,
+mixes citations to Ritter's translation with citations to works discussing the translation, and the
+international English-language reception and the German-language reception are not the same mass of
+data.</p>
+<p>The most-cited citing work for the German edition is Beck himself, in later co-authorship with
+Beck-Gernsheim: the book feeds directly into the individualization program the author would develop
+over the following fifteen years, which qualifies <em>Risk Society</em> less as the endpoint of a decade and
+more as the opening of a research program. A Google Scholar record showing "cited by 9,363", credited
+to "J. P. Wyse (2015)", did not survive an authorship check: the count belongs to a work by Boaventura
+de Sousa Santos, <em>Epistemologies of the South</em> <span class="selo selo-pendente" title="não verificado: divergente">✗</span>.</p>
+<p>Korstanje describes the book as one of Beck's pioneering projects on risk perception
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em KORSTANJE, 2009 (2026-08-11)">✓</span>. Jong, thirty
+years later, accepts Beck's framework as a valid starting point but argues there is an incompatibility
+between the theory's ontological and epistemological dimensions, proposing to integrate Bourdieu to
+address it <span class="selo selo-fato" title="fato conferido na fonte: conferido em JONG, 2022 (2026-08-11)">✓</span>: active debate about the theory's limits, not about the concept's paternity, which appears
+uncontested in every source consulted.</p>
+<h2>Classified gaps</h2>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What is missing</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confusion</td>
+<td>The class-and-risk tension: Beck simultaneously claims that risk partly follows the class pattern and that risk position is not class position (pp. 35-39); the reconciliation he offers is temporal, not structural, and does not resolve the contradiction he himself states</td>
+<td>environmental justice literature offers contradicting evidence</td>
+</tr>
+<tr>
+<td>Negligence</td>
+<td>Absence of explicit engagement with the obvious objection about licensing agencies and prior environmental regulation, in the argument's second link</td>
+<td>the text does not mention it where it could</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>The book cannot know Mariana and Brumadinho, nor the development of comparative environmental law since 1986; extending organized irresponsibility to these cases is legitimate application, not developed by the book itself</td>
+<td>developed above, careful not to overstate the transposition's force</td>
+</tr>
+</tbody>
+</table>
+<p>Converted into puzzles. Why does the book maintain that risk positions are not class positions,
+despite recognizing, in the same section, that poverty attracts an abundance of risks? Why does the
+organized-irresponsibility argument ignore the most obvious institutional counter-argument, prior
+licensing, despite the rest of the book showing familiarity with the German environmental regulatory
+apparatus of the time?</p>
+<h2>Problematization</h2>
+<p><strong>A paradigm-level assumption, the deepest of the five types.</strong> The book presupposes enough societal
+unity for it to make sense to speak of "the" transition from industrial society to risk society,
+datable and relatively synchronized for West Germany and, by extension, advanced industrial society.
+<strong>The alternative ground</strong>: exposure to risk and awareness of risk are unequally distributed, by
+class, region, and colonial history, to the point that there is no single coherent moment of
+transition, but rather multiple, desynchronized risk regimes coexisting under the same national
+label. The book itself already registers the material for this alternative, in the class-and-risk
+tension, but resolves it through time, the private escape route shrinking as risk intensifies, rather
+than through structure; the alternative ground holds that this resolution through time already does
+ideological work, presupposing a convergence between unequal risk positions that may not occur within
+any policy-relevant horizon. It is not "obvious", because the book registers and discusses the
+tension itself; it is not "absurd", because it accepts much of Beck's argument, the boomerang effect
+does exist, risk does spread; it is "interesting", because it denies only that spreading implies
+convergence of position within a policy-relevant timeframe.</p>
 <h2>See also</h2>
-<p><a href="../sessoes/s02.html">S02</a> · <a href="../conceitos/risk-society.html">risk society</a> · <a href="../textos/lauta-2017.html">Lauta 2017</a> (the required reading this
-text pairs with, per the guide itself).</p></div>
+<p><a href="../sessoes/s02.html">S02</a> for the session · <a href="../conceitos/risk-society.html">risk society</a> for the concept · <a href="../textos/lauta-2017.html">Lauta
+2017</a> for the legal argument that uses this sociological backdrop, and for the <a href="../textos/luhmann-2004.html">
+Luhmann</a> pairing that the same reading of <a href="../textos/lauta-2017.html">Lauta</a> mobilizes through the risk/danger
+distinction, which Beck, according to a commentator, does not draw with the same conceptual clarity.</p></div>
 
-<h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/risk-society.html">Risk society</a> (p. 11)</li><li><span class="rel-etype">-> belongs to session</span> <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> (sugestao_guia)</li><li><span class="rel-etype"><- wrote</span> <a href="../autores/beck.html">Ulrich Beck</a></li></ul>
+<h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/risk-society.html">Risk society</a> (p. 186, 21, 22, 33, 65)</li><li><span class="rel-etype">-> belongs to session</span> <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> (sugestao_guia)</li><li><span class="rel-etype"><- wrote</span> <a href="../autores/beck.html">Ulrich Beck</a></li></ul>
 
 <h2>Neighbourhood in the graph</h2>
 <div id="cy-local"></div>
@@ -222,13 +814,15 @@ text pairs with, per the guide itself).</p></div>
   var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
   function aplicar(l){
     // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
-    // emitem nem o bloco data-lang="en" nem o botao de idioma. Sem esta linha, quem escolhia EN e
-    // seguia um wikilink ate uma delas via o TEXTO SUMIR (o bloco pt ficava hidden e nao havia
-    // bloco en para mostrar), sem botao naquela pagina para desfazer e com a escolha persistida em
-    // localStorage. Cair para 'pt' quando a pagina nao tem o idioma pedido e o comportamento certo:
-    // a preferencia global continua salva e volta a valer na proxima pagina que tenha traducao.
+    // emitem o bloco data-lang="en" (o botao continua aparecendo mesmo assim, ver _render_page,
+    // 12/08/2026). Sem esta linha, quem escolhia EN e seguia um wikilink ate uma delas via o TEXTO
+    // SUMIR (o bloco pt ficava hidden e nao havia bloco en para mostrar), com a escolha persistida
+    // em localStorage e sem indicacao do porque. Cair para 'pt' quando a pagina nao tem o idioma
+    // pedido e o comportamento certo: a preferencia global continua salva e volta a valer na
+    // proxima pagina que tenha traducao.
+    var blocosLang = document.querySelectorAll('[data-lang]');
     var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
-    document.querySelectorAll('[data-lang]').forEach(function(el){
+    blocosLang.forEach(function(el){
       el.hidden = (el.getAttribute('data-lang') !== alvo);
     });
     // CROMO (rotulos da navegacao) tem atributo proprio, e segue o idioma PEDIDO, e
@@ -239,7 +833,14 @@ text pairs with, per the guide itself).</p></div>
     document.querySelectorAll('[data-chrome-lang]').forEach(function(el){
       el.hidden = (el.getAttribute('data-chrome-lang') !== l);
     });
-    document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    // So paginas com bloco data-lang tem corpo bilingue de verdade: busca, tags e o
+    // grafo nao tem nenhum, so cromo, e sempre caindo em 'pt' aqui (achado em revisao
+    // de codigo, 12/08/2026) mentia pro leitor de tela e pro tradutor do navegador,
+    // <html lang="pt-BR"> numa pagina cujo corpo continua em ingles. Sem bloco
+    // data-lang, o lang do documento fica no que o HTML ja declarou estaticamente.
+    if (blocosLang.length) {
+      document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    }
     // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
     // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
     // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
