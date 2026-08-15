@@ -76,8 +76,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 </style>
 </head>
 <body>
-<button class="theme-toggle" onclick="toggleWikiTheme()">Light/Dark</button>
-<button id="lang-toggle" class="theme-toggle" style="right:8.5rem" onclick="toggleLang()">EN / PT</button>
+<div class="controles"><button onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
 <nav class="sidebar"><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
@@ -165,12 +164,11 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <div class="meta">type: author &middot; <span title="Entry only started: it carries the reference and the links, but not yet the full reading of the work.">draft</span><br></div>
 <ul class="ficha"><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
 
-<div data-lang="pt" hidden><p>Nó de autoria criado pela rede de citações de <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a> (estilo Litmap): identidade declarada
-para as arestas <code>escreveu</code> resolverem. <code>stub</code>: sem síntese própria, o corpus não processou obra
-deste autor.</p></div>
-<div data-lang="en"><p>Authorship node created by the citation network of <a href="../textos/lauta-2017.html">Lauta 2017</a> (Litmap style): a
-declared identity so that the <code>escreveu</code> edges can resolve. <code>stub</code>: no synthesis of its own, since
-the corpus has not processed any work by this author.</p></div>
+<div data-lang="pt" hidden><p>Autor citado por <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>. Este é um esboço (<code>stub</code>): a referência existe porque aparece
+nessa citação, mas o acervo ainda não leu nem sintetizou obra própria deste autor.</p></div>
+<div data-lang="en"><p>Author cited by <a href="../textos/lauta-2017.html">Lauta 2017</a>. This is a draft entry (<code>stub</code>): the reference exists
+because it appears in that citation, but the collection has not yet read or synthesized this
+author's own work.</p></div>
 
 <h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> wrote</span> <a href="../textos/luhmann-2004.html">Law as a Social System</a></li></ul>
 
