@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA, Disaster Law and Policy wiki</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;
+/* A BARRA LATERAL TEM DOIS TAMANHOS, e nao oito (16/08/2026). Antes conviviam 14px na
+   barra e sete valores em `rem` nos filhos, e `rem` se mede pela RAIZ de 16px, e nao pela
+   barra: davam de 10,9 a 14px sem criterio visivel. Agora a barra declara a base aqui e
+   todo filho mede em `em`, isto e, em relacao a ela, de modo que mexer nestas duas linhas
+   move o conjunto inteiro. `--barra-rotulo` e o unico tamanho menor, e vale so para
+   caixa alta: AUTORES, CONCEITOS, TEXTOS, o titulo do indice e o tipo do resultado. */
+--barra-texto:16px;--barra-rotulo:0.8em;}
+:root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
+--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
+--muted:#a2a9b1;--card:#1b1f24;--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+font-size:16px;line-height:26px;}
+.layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);
+font-size:var(--barra-texto);line-height:1.5;}
+nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
+nav.sidebar a:hover{text-decoration:underline;}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
+h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
+margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h2{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:24px;font-weight:400;line-height:1.3;
+margin:1.6rem 0 0.4rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h3{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;font-size:19.2px;font-weight:700;margin:1.2rem 0 0.3rem;}
+p{margin:0 0 16px;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.futura{color:var(--muted);}
+.controles{position:fixed;top:0.8rem;right:1.2rem;display:flex;gap:0.5rem;z-index:10;}
+.controles button{font-size:0.95rem;min-height:44px;padding:0.55rem 1.1rem;
+background:#3366cc;color:#ffffff;border:1px solid #26489a;border-radius:4px;
+font-weight:600;cursor:pointer;}
+.controles button:hover{background:#26489a;}
+.controles button:focus-visible{outline:3px solid #ffffff;outline-offset:2px;}
+:root[data-theme="dark"] .controles button{background:#4a7fe0;border-color:#3366cc;}
+/* Visitante de primeira vez, localStorage vazio, SO do escuro: sem isto os botoes ficavam
+   azul-claro num fundo escuro ate o primeiro clique, porque o -toggle so troca de cor via
+   [data-theme], e essa marca so existe depois de JS rodar. .theme-toggle (removida em
+   12/08/2026, achado de revisao de codigo) resolvia isto de graca com var(--card)/var(--fg),
+   que ja seguem o media query da linha 198; a troca para .controles perdeu isso, e este bloco
+   devolve o mesmo comportamento pelo mesmo mecanismo. */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .controles button{
+  background:#4a7fe0;border-color:#3366cc;}}
+.badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
+a.badge{text-decoration:none;}
+.broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
+blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--border);color:var(--muted);}
+.rel-list{list-style:none;padding:0;font-size:0.94rem;}
+.rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
+.rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
+footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:1em;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
+ padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
+.selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
+.selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
+.selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
+.busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:1em;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a:last-child{border-bottom:none;}
+.busca-resultados .bq-tipo{display:block;font-size:var(--barra-rotulo);opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:1em;opacity:0.75;}
+.mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
+.ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
+.ficha li{margin:0.12rem 0;}
+#cy-local{width:100%;height:340px;border:1px solid var(--border);border-radius:2px;background:var(--bg);margin-top:0.4rem;}
+table{border-collapse:collapse;width:100%;font-size:0.94rem;margin:0.6rem 0;}
+th,td{border:1px solid var(--border);padding:0.4rem 0.55rem;text-align:left;vertical-align:top;}
+th{background:var(--th);font-weight:700;}
+/* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
+   separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
+   de baixo. */
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:1em;}
+.toc-titulo{font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc ul{list-style:none;padding-left:0;margin:0;}
+.toc ul ul{padding-left:0.8rem;}
+.toc li{margin:0.12rem 0;}
+nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
+</style>
+</head>
+<body>
+<div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
+<div class="layout">
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-o-que-a-obra-traz-para-esta-sessao">O que a obra traz para esta sessão</a></li><li><a href="#sec-as-duas-qualificacoes-que-a-leitura-corrente-perde">As duas qualificações que a leitura corrente perde</a></li><li><a href="#sec-o-argumento-reconstruido-e-o-seu-elo-fragil">O argumento reconstruído, e o seu elo frágil</a></li><li><a href="#sec-conceitos-chave">Conceitos-chave</a></li><li><a href="#sec-o-que-rende-em-direito-e-sao-tres-passagens">O que rende em direito, e são três passagens</a></li><li><a href="#sec-a-pergunta-que-devolve-a-teoria-da-dissuasao">A pergunta que devolve à teoria da dissuasão</a></li><li><a href="#sec-recepcao">Recepção</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-problematizacao">Problematização</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
+<a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
+<input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
+<div id="busca-resultados" class="busca-resultados" hidden></div>
+<div class="area"><span data-chrome-lang="en">Sessions</span><span data-chrome-lang="pt" hidden>Sessões</span></div>
+<a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
+<a href="../sessoes/s03.html">S03: Risk, Uncertainty, Vulnerability and Resilience</a>
+<div class="area"><span data-chrome-lang="en">Authors</span><span data-chrome-lang="pt" hidden>Autores</span></div>
+<a href="../autores/alemanno.html">Alberto Alemanno</a>
+<a href="../autores/tversky.html">Amos Tversky</a>
+<a href="../autores/wibisana.html">Andri G. Wibisana</a>
+<a href="../autores/van-aaken.html">Anne van Aaken</a>
+<a href="../autores/wisner.html">Ben Wisner</a>
+<a href="../autores/perrow.html">Charles Perrow</a>
+<a href="../autores/farber.html">Daniel A. Farber</a>
+<a href="../autores/kahneman.html">Daniel Kahneman</a>
+<a href="../autores/binder.html">Denis Binder</a>
+<a href="../autores/vaughan.html">Diane Vaughan</a>
+<a href="../autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="../autores/knight.html">Frank H. Knight</a>
+<a href="../autores/davis.html">Ian Davis</a>
+<a href="../autores/antonovic.html">Janis Antonovic</a>
+<a href="../autores/scanlon.html">Joseph Scanlon</a>
+<a href="../autores/lauta.html">Kristian Cedervall Lauta</a>
+<a href="../autores/faure.html">Michael G. Faure</a>
+<a href="../autores/taleb.html">Nassim Nicholas Taleb</a>
+<a href="../autores/luhmann.html">Niklas Luhmann</a>
+<a href="../autores/slovic.html">Paul Slovic</a>
+<a href="../autores/blaikie.html">Piers Blaikie</a>
+<a href="../autores/posner.html">Richard A. Posner</a>
+<a href="../autores/verchick.html">Robert R. M. Verchick</a>
+<a href="../autores/perry.html">Ronald W. Perry</a>
+<a href="../autores/lyster.html">Rosemary Lyster</a>
+<a href="../autores/cannon.html">Terry Cannon</a>
+<a href="../autores/kuhn.html">Thomas S. Kuhn</a>
+<a href="../autores/beck.html">Ulrich Beck</a>
+<div class="area"><span data-chrome-lang="en">Texts</span><span data-chrome-lang="pt" hidden>Textos</span></div>
+<a href="wisner-2004.html">At Risk: Natural Hazards, People&#x27;s Vulnerability and Disasters</a>
+<a href="posner-2004.html">Catastrophe: Risk and Response</a>
+<a href="quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
+<a href="lyster-2015.html">Climate Justice and Disaster Law</a>
+<a href="scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
+<a href="verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
+<a href="lauta-2014.html">Disaster Law</a>
+<a href="farber-faure-2010.html">Disaster Law (edited collection)</a>
+<a href="farber-2010.html">Disaster Law and Policy, 2nd ed.</a>
+<a href="lauta-faure-2016.html">Disaster Risk Management (chapter)</a>
+<a href="lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="ejrr-laquila-2014.html">EJRR symposium on the L&#x27;Aquila Seven</a>
+<a href="verchick-2010.html">Facing Catastrophe</a>
+<a href="alemanno-2011.html">Governing Disasters</a>
+<a href="antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
+<a href="luhmann-2004.html">Law as a Social System</a>
+<a href="perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="slovic-1987.html">Perception of Risk</a>
+<a href="kahneman-tversky-1979.html">Prospect Theory: An Analysis of Decision under Risk</a>
+<a href="faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
+<a href="beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="knight-1921.html">Risk, Uncertainty and Profit</a>
+<a href="taleb-2007.html">The Black Swan: The Impact of the Highly Improbable</a>
+<a href="vaughan-1996.html">The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</a>
+<a href="binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
+<a href="kuhn-1970.html">The Structure of Scientific Revolutions</a>
+<a href="perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
+<a href="perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a>
+<div class="area"><span data-chrome-lang="en">Legislation</span><span data-chrome-lang="pt" hidden>Legislação</span></div>
+<a href="../legislacao/agenda-2030.html">2030 Agenda for Sustainable Development</a>
+<a href="../legislacao/adis-abeba-2015.html">Addis Ababa Action Agenda</a>
+<a href="../legislacao/habitat-iii-2016.html">Habitat III, New Urban Agenda</a>
+<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Risk management, principles and guidelines</a>
+<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Risk management vocabulary</a>
+<a href="../legislacao/protocolo-de-montreal-1987.html">Montreal Protocol on Substances that Deplete the Ozone Layer</a>
+<a href="../legislacao/acordo-de-paris-2015.html">Paris Agreement on climate change</a>
+<a href="../legislacao/marco-de-sendai-2015.html">Sendai Framework for Disaster Risk Reduction 2015-2030</a>
+<div class="area"><span data-chrome-lang="en">Cases</span><span data-chrome-lang="pt" hidden>Julgados</span></div>
+<a href="../julgados/itlos-parecer-2024.html">Advisory opinion on climate change and the law of the sea</a>
+<a href="../julgados/cij-parecer-clima-2025.html">Advisory opinion on the obligations of States in respect of climate change</a>
+<a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a>
+<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a>
+<a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a>
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a>
+<a href="../julgados/neubauer-2021.html">Neubauer and Others v. Germany</a>
+<a href="../julgados/laquila-cassacao-2016.html">The L&#x27;Aquila case: the seven scientists</a>
+<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. State of the Netherlands</a>
+<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
+<div class="area"><span data-chrome-lang="en">Concepts</span><span data-chrome-lang="pt" hidden>Conceitos</span></div>
+<a href="../conceitos/s02-montagem-da-sessao.html">Assembling session S02, 2026.2 (project note)</a>
+<a href="../conceitos/cisne-negro.html">Cisne negro</a>
+<a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a>
+<a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a>
+<a href="../conceitos/quarantelli-criterios-brasil.html">Do Quarantelli&#x27;s six criteria hold in the Brazilian arrangement? (fleeting note)</a>
+<a href="../conceitos/dysfunction.html">Dysfunction of a social process</a>
+<a href="../conceitos/incerteza-knightiana.html">Incerteza knightiana</a>
+<a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a>
+<a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a>
+<a href="../conceitos/legal-exceptionalism.html">Legal exceptionalism</a>
+<a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a>
+<a href="../conceitos/normalizacao-do-desvio.html">Normalização do desvio</a>
+<a href="../conceitos/percepcao-de-risco.html">Percepção de risco</a>
+<a href="../conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a>
+<a href="../conceitos/risk-society.html">Risk society</a>
+<a href="../conceitos/segredo-estrutural.html">Segredo estrutural</a>
+<a href="../conceitos/teoria-do-prospecto.html">Teoria do prospecto</a>
+<a href="../conceitos/vulnerabilidade.html">Vulnerabilidade</a></nav>
+<main>
+<h1>The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</h1>
+<div class="meta">type: text<br><a class="badge" href="../tags.html#S03">S03</a> <a class="badge" href="../tags.html#disaster-law">disaster-law</a> <a class="badge" href="../tags.html#imputacao">imputacao</a> <a class="badge" href="../tags.html#normalizacao-do-desvio">normalizacao-do-desvio</a> <a class="badge" href="../tags.html#regulacao">regulacao</a> <a class="badge" href="../tags.html#segredo-estrutural">segredo-estrutural</a></div>
+<ul class="ficha"><li><strong>neste corpus:</strong> 1 apontam para ele, 5 saem dele</li></ul>
+
+<div data-lang="pt" hidden><p>VAUGHAN, Diane. <strong>The Challenger Launch Decision</strong>: risky technology, culture, and deviance at NASA.
+Chicago: University of Chicago Press, 1996.</p>
+<h2 id="sec-argumento">Argumento</h2>
+<p><strong>A tese cabe numa frase, e ela é de causa e consequência.</strong> O desastre não decorreu de gerentes
+violando regras sob pressão, e sim de um processo cultural em que o desempenho desviante da junta foi
+convertido, passo a passo e conforme as regras, em risco aceitável oficialmente certificado.</p>
+<p>A formulação canônica está na página 335: em vez de violações de regra, o que se encontra é decisão
+<strong>baseada</strong> em regra, com os gerentes cumprindo todas as normas internas de avaliação de prontidão de
+voo. E o fecho, na 386: não foram gerentes calculando amoralmente e violando regras os responsáveis,
+foi a conformidade.</p>
+<h2 id="sec-o-que-a-obra-traz-para-esta-sessao">O que a obra traz para esta sessão</h2>
+<p>É a única das seis que <strong>não trata de probabilidade</strong>. As demais discutem se o evento se deixa medir,
+como ele é percebido ou quem está exposto. Esta discute como uma organização decide o que conta por
+aceitável, e é a única que põe o <strong>regulador</strong> dentro do problema.</p>
+<h2 id="sec-as-duas-qualificacoes-que-a-leitura-corrente-perde">As duas qualificações que a leitura corrente perde</h2>
+<p><strong>A obra não nega pressão de produção</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar do acervo, páginas impressas 116 e 118 (2026-08-15)">✓</span>. A página 116 afirma a
+institucionalização dessas pressões, e a 118 registra que custo, cronograma e segurança foram pesados e
+que compromissos foram feitos. O que a página 118 nega é coisa mais estreita: cálculo <strong>amoral</strong> e má
+conduta organizacional. A 114 afirma que aquelas decisões foram, com toda a certeza, tomada calculada de
+risco.</p>
+<p><strong>E a obra não absolve ninguém</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar do acervo, páginas impressas 389 e 410 (2026-08-15)">✓</span>. A página 410 diz que não se encontra alívio
+algum na narrativa contada, e a 389 afirma que a explicação corrente obscureceu o fato de que a
+responsabilidade individual atravessava os níveis hierárquicos. A tese <strong>amplia</strong> o círculo de
+responsáveis, e alcança quem a explicação oficial deixou de fora.</p>
+<h2 id="sec-o-argumento-reconstruido-e-o-seu-elo-fragil">O argumento reconstruído, e o seu elo frágil</h2>
+<p>O método é a etnografia histórica: reconstrução do entendimento dos participantes no momento em que
+decidiram, a partir de documentos contemporâneos aos fatos. A força da obra está na trilha de papel, e é
+por isso que a refutação da tese do ocultamento, na página 242, se apoia em relatório do comitê da
+Câmara e em transcrições de arquivo.</p>
+<p><strong>A garantia não dita é o achado da reconstrução.</strong> O elo que vai de os participantes seguirem as regras
+até a explicação ser estrutural repousa numa premissa que a obra não enuncia: a de que o entendimento
+declarado, reconstruído dos documentos, seja o entendimento que de fato governou a decisão.</p>
+<p>A própria obra fornece o instrumento para ver a tensão. Se o segredo estrutural distorce
+sistematicamente o que a organização registra sobre si mesma, então a trilha de papel que a autora usa
+está sujeita ao mesmo filtro que ela descreve. A página 418 antecipa isso para as investigações
+oficiais, e não estende ao próprio trabalho.</p>
+<h2 id="sec-conceitos-chave">Conceitos-chave</h2>
+<p><a href="../conceitos/normalizacao-do-desvio.html">Normalização do desvio</a> e <a href="../conceitos/segredo-estrutural.html">Segredo estrutural</a> têm verbetes próprios, e são as duas cunhagens da
+obra. <a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a> entra pelo capítulo 10, que é a parte de rendimento jurídico. E
+<a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a> aparece por posicionamento declarado: a página 415 diz que o desastre pode
+justificadamente ser classificado como acidente normal.</p>
+<h2 id="sec-o-que-rende-em-direito-e-sao-tres-passagens">O que rende em direito, e são três passagens</h2>
+<p><strong>A imputação segue a posição, e não a causa</strong> (p. 409). Acusações de dolo ou negligência encontram
+pouso pronto nos gerentes médios em razão da posição e do papel deles na organização, e o caso seguiu o
+padrão clássico do ilícito organizacional, com administradores mais poderosos, alguns de fora da NASA,
+que agiram anos antes, não sendo alcançados.</p>
+<p><strong>Aplicar punição é sinal de que o sistema regulatório falhou</strong> (p. 266), no contexto da estratégia de
+conformidade adotada pelos três órgãos. A frase inverte a intuição corrente de que a punição seja o
+remédio.</p>
+<p><strong>A investigação posterior é ela própria contaminada</strong> (p. 418). O aprendizado organizacional após a
+tragédia é, na melhor hipótese, parcial, porque tanto as investigações internas quanto as externas são
+afetadas pelo segredo estrutural. É o ponto mais incômodo e o mais ignorado.</p>
+<h2 id="sec-a-pergunta-que-devolve-a-teoria-da-dissuasao">A pergunta que devolve à teoria da dissuasão</h2>
+<p>Na página 408: quanta influência podem ter os efeitos dissuasórios de punição e de custo quando
+contingências ambientais, crenças culturais e estruturas organizacionais moldam entendimentos de tal
+modo que os atores não veem o próprio comportamento como antiético, desviante ou danoso.</p>
+<h2 id="sec-recepcao">Recepção</h2>
+<p><strong>As bases divergem por uma ordem de grandeza</strong>, e a divergência é exibida sem arbitragem: 482 e 41 no
+Crossref, 553 e 342 no OpenAlex, 2.081 no Semantic Scholar e 6.198 no Google Acadêmico, que funde as
+duas edições num agrupamento só.</p>
+<p><strong>A atribuição dos agrupamentos a cada edição NÃO foi feita</strong>, porque as datas de metadado do editor são
+1995 e 1997, que não correspondem a edição real nenhuma. Arbitrar seria inventar o que a fonte não
+afirma.</p>
+<p><strong>A crítica nomeada não foi localizada</strong> <span class="selo selo-pendente" title="não verificado: divergente">✗</span>, e o registro é honesto:
+as objeções de absolvição e de não falsificabilidade são deste verbete e da revisão que o originou, e
+não recepção documentada.</p>
+<h2 id="sec-casos-e-aplicacoes">Casos e aplicações</h2>
+<p>O conceito circula de modo robusto em ciência da segurança, em aviação e em segurança do paciente,
+inclusive em português. <strong>Não se localizou mobilização jurídica dele</strong>
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em levantamento de 16/08/2026, com leitura direta do artigo comparativo (2026-08-16)">✓</span>, nem em doutrina de responsabilidade empresarial, nem
+nos processos de Mariana e de Brumadinho: o artigo que compara as decisões jurídicas dos dois casos foi
+lido e mobiliza outra categoria.</p>
+<p>Trazer o conceito para a discussão brasileira de responsabilidade por desastre industrial seria, por
+isso, movimento pouco explorado, e é a ponte mais direta desta obra com as sessões <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a> e seguintes.</p>
+<h2 id="sec-problematizacao">Problematização</h2>
+<p><strong>Pressuposto de campo, e é o mais interessante.</strong> A obra partilha com a explicação oficial que combate
+o pressuposto de que exista uma causa do desastre a ser encontrada, e a disputa é sobre onde ela está,
+no indivíduo ou na estrutura. Uma terceira posição, a de que a pergunta pela causa seja ela própria um
+artefato da necessidade jurídica de imputar, fica fora do debate. A página 392 chega a tocá-la, ao
+descrever a política da culpa, e não desenvolve.</p>
+<p><strong>O enigma.</strong> Por que o direito continua a organizar a responsabilidade por desastre em torno da
+violação de regra, apesar de o estudo mais detalhado de um desastre organizacional ter mostrado que o
+dano ocorreu com todas as regras cumpridas?</p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../conceitos/normalizacao-do-desvio.html">Normalização do desvio</a> · <a href="../conceitos/segredo-estrutural.html">Segredo estrutural</a> · <a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a> · <a href="../textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a> ·
+<a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a></p></div>
+<div data-lang="en"><p>VAUGHAN, Diane. <strong>The Challenger Launch Decision</strong>: risky technology, culture, and deviance at NASA.
+Chicago: University of Chicago Press, 1996.</p>
+<h2>Argument</h2>
+<p><strong>The thesis fits in one sentence, and it is one of cause and consequence.</strong> The disaster did not follow
+from managers breaking rules under pressure, but from a cultural process in which the deviant
+performance of the joint was converted, step by step and in conformity with the rules, into officially
+certified acceptable risk.</p>
+<p>The canonical formulation is on p. 335: instead of rule violations, what is found is rule <strong>based</strong>
+decision making, with managers abiding by all internal norms for flight readiness assessment. And the
+closing, on p. 386: it was not amorally calculating managers violating rules that were responsible, it
+was conformity.</p>
+<h2>What the work brings to this session</h2>
+<p>It is the only one of the six that <strong>does not deal with probability</strong>. The others discuss whether the
+event can be measured, how it is perceived, or who is exposed. This one discusses how an organisation
+decides what counts as acceptable, and it is the only one that places the <strong>regulator</strong> inside the
+problem.</p>
+<h2>The two qualifications the common reading loses</h2>
+<p><strong>The work does not deny production pressure</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar do acervo, páginas impressas 116 e 118 (2026-08-15)">✓</span>. Page 116 asserts
+the institutionalisation of those pressures, and p. 118 records that cost, schedule and safety were
+weighed and that compromises were made. What p. 118 denies is narrower: <strong>amoral</strong> calculation and
+organisational misconduct. Page 114 states that those decisions were, most certainly, calculated risk
+taking.</p>
+<p><strong>And the work absolves no one</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar do acervo, páginas impressas 389 e 410 (2026-08-15)">✓</span>. Page 410 says no relief is to be found in
+the tale told, and p. 389 states that the accepted explanation obscured the fact that individual
+responsibility ran across the hierarchical levels. The thesis <strong>widens</strong> the circle of the responsible,
+and reaches those the official explanation left out.</p>
+<h2>The argument reconstructed, and its fragile link</h2>
+<p>The method is historical ethnography: reconstructing the participants' understanding at the moment they
+decided, from documents contemporary to the events. The strength of the work lies in the paper trail,
+which is why the refutation of the concealment thesis, on p. 242, rests on the House Committee report
+and on archive transcripts.</p>
+<p><strong>The unstated warrant is the finding of this reconstruction.</strong> The link running from participants
+following the rules to the explanation being structural rests on a premise the work never states: that
+the declared understanding, reconstructed from documents, is the understanding that in fact governed the
+decision.</p>
+<p>The work itself supplies the instrument for seeing the tension. If structural secrecy systematically
+distorts what an organisation records about itself, then the paper trail the author uses is subject to
+the same filter she describes. Page 418 anticipates this for the official investigations, and does not
+extend it to her own work.</p>
+<h2>Key concepts</h2>
+<p><a href="../conceitos/normalizacao-do-desvio.html">Normalization of deviance</a> and <a href="../conceitos/segredo-estrutural.html">structural secrecy</a> have
+their own notes, and are the two coinages of the work. <a href="../conceitos/capacidade-institucional.html">Institutional
+capacity</a> enters through chapter 10, which is the part with legal yield. And
+<a href="../conceitos/normal-accidents.html">normal accidents</a> appears by declared positioning: p. 415 says the disaster can
+justifiably be classed as a normal accident.</p>
+<h2>What yields in law, and it is three passages</h2>
+<p><strong>Imputation follows position rather than cause</strong> (p. 409). Charges of intent or negligence find a ready
+resting place on middle managers because of their position and role in the organisation, and the case
+followed the classic pattern of organisational wrongdoing, with more powerful administrators, some
+outside NASA, who acted years earlier, going unreached.</p>
+<p><strong>Applying a punishment is a sign that the regulatory system has failed</strong> (p. 266), in the context of
+the compliance strategy adopted by the three bodies. The sentence inverts the current intuition that
+punishment is the remedy.</p>
+<p><strong>The subsequent investigation is itself contaminated</strong> (p. 418). Organisational learning after tragedy
+is at best partial, because both internal and external investigations are affected by structural
+secrecy. It is the most uncomfortable point and the most ignored.</p>
+<h2>The question it returns to deterrence theory</h2>
+<p>On p. 408: how much influence can the deterrent effects of punishment and cost have when environmental
+contingencies, cultural beliefs and organisational structures shape understandings so that actors do not
+see their own behaviour as unethical, deviant or harmful.</p>
+<h2>Reception</h2>
+<p><strong>The databases diverge by an order of magnitude</strong>, and the divergence is displayed without arbitration:
+482 and 41 in Crossref, 553 and 342 in OpenAlex, 2,081 in Semantic Scholar and 6,198 in Google Scholar,
+which fuses the two editions into a single cluster.</p>
+<p><strong>Assigning the clusters to each edition was NOT done</strong>, because the publisher metadata dates are 1995
+and 1997, which correspond to no real edition. Arbitrating would invent what the source does not assert.</p>
+<p><strong>The named criticism was not located</strong> <span class="selo selo-pendente" title="não verificado: divergente">✗</span>, and the record is
+honest: the objections of absolution and of unfalsifiability belong to this entry and to the review that
+originated it, and are not documented reception.</p>
+<h2>Cases and applications</h2>
+<p>The concept circulates robustly in safety science, in aviation and in patient safety, including in
+Portuguese. <strong>No legal mobilisation of it was located</strong>
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em levantamento de 16/08/2026, com leitura direta do artigo comparativo (2026-08-16)">✓</span>, neither in corporate liability scholarship nor in the
+Mariana and Brumadinho proceedings: the article comparing the legal decisions of the two cases was read
+and mobilises a different category.</p>
+<p>Bringing the concept into the Brazilian discussion of liability for industrial disaster would therefore
+be a little explored move, and it is this work's most direct bridge to session <a href="../sessoes/s02.html">S02</a> and beyond.</p>
+<h2>Problematisation</h2>
+<p><strong>Field assumption, and it is the most interesting.</strong> The work shares with the official explanation it
+combats the assumption that there is a cause of the disaster to be found, and the dispute is over where
+it lies, in the individual or in the structure. A third position, that the question of cause is itself
+an artefact of the legal need to impute, stays out of the debate. Page 392 comes close to touching it,
+in describing the politics of blame, and does not develop it.</p>
+<p><strong>The puzzle.</strong> Why does the law continue to organise liability for disaster around rule violation,
+despite the most detailed study of an organisational disaster having shown that the harm occurred with
+every rule complied with?</p>
+<h2>See also</h2>
+<p><a href="../conceitos/normalizacao-do-desvio.html">normalization of deviance</a> · <a href="../conceitos/segredo-estrutural.html">structural secrecy</a> ·
+<a href="../conceitos/normal-accidents.html">normal accidents</a> · <a href="../textos/perrow-1984.html">Perrow 1984</a> ·
+<a href="../conceitos/capacidade-institucional.html">institutional capacity</a></p></div>
+
+<h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a> (p. 265, 267, 416, 417, 418)</li><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a> (p. 415)</li><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/normalizacao-do-desvio.html">Normalização do desvio</a> (p. 106, 111, 118, 335, 386, 81)</li><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/segredo-estrutural.html">Segredo estrutural</a> (p. 238, 242, 397)</li><li><span class="rel-etype">-> belongs to session</span> <a href="../sessoes/s03.html">S03: Risk, Uncertainty, Vulnerability and Resilience</a> (complementar)</li><li><span class="rel-etype"><- wrote</span> <a href="../autores/vaughan.html">Diane Vaughan</a></li></ul>
+
+<h2>Neighbourhood in the graph</h2>
+<div id="cy-local"></div>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "author:vaughan", "label": "Diane Vaughan", "href": "../autores/vaughan.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "concept:capacidade-institucional", "label": "Institutional capacity (reference note)", "href": "../conceitos/capacidade-institucional.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:cisne-negro", "label": "Cisne negro", "href": "../conceitos/cisne-negro.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster risk (effects of uncertainty)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-vs-catastrophe", "label": "Disaster vs. catastrophe (institutional capacity)", "href": "../conceitos/disaster-vs-catastrophe.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Dysfunction of a social process", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Legal exceptionalism", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:normal-accidents", "label": "Normal accident (a structural property of the system)", "href": "../conceitos/normal-accidents.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:normalizacao-do-desvio", "label": "Normalização do desvio", "href": "../conceitos/normalizacao-do-desvio.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:s02-montagem-da-sessao", "label": "Assembling session S02, 2026.2 (project note)", "href": "../conceitos/s02-montagem-da-sessao.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:segredo-estrutural", "label": "Segredo estrutural", "href": "../conceitos/segredo-estrutural.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "session:s03", "label": "S03: Risk, Uncertainty, Vulnerability and Resilience", "href": "../sessoes/s03.html", "foco": "0"}, "classes": "session"}, {"data": {"id": "text:kahneman-tversky-1979", "label": "Prospect Theory: An Analysis of Decision under Risk", "href": "../textos/kahneman-tversky-1979.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:knight-1921", "label": "Risk, Uncertainty and Profit", "href": "../textos/knight-1921.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:perrow-1984", "label": "Normal Accidents: Living with High-Risk Technologies", "href": "../textos/perrow-1984.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:slovic-1987", "label": "Perception of Risk", "href": "../textos/slovic-1987.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:taleb-2007", "label": "The Black Swan: The Impact of the Highly Improbable", "href": "../textos/taleb-2007.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:vaughan-1996", "label": "The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA", "href": "../textos/vaughan-1996.html", "foco": "1"}, "classes": "text foco"}, {"data": {"id": "text:wisner-2004", "label": "At Risk: Natural Hazards, People's Vulnerability and Disasters", "href": "../textos/wisner-2004.html", "foco": "0"}, "classes": "text"}], "edges": [{"data": {"id": "le0", "source": "author:vaughan", "target": "text:vaughan-1996"}, "classes": "escreveu"}, {"data": {"id": "le1", "source": "concept:capacidade-institucional", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le2", "source": "concept:capacidade-institucional", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le3", "source": "concept:capacidade-institucional", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le4", "source": "concept:capacidade-institucional", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le5", "source": "concept:cisne-negro", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:cisne-negro", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:disaster-vs-catastrophe", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:disaster-vs-catastrophe", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:dysfunction", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le18", "source": "concept:normal-accidents", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le19", "source": "concept:normalizacao-do-desvio", "target": "concept:capacidade-institucional"}, "classes": "relaciona_se_com"}, {"data": {"id": "le20", "source": "concept:normalizacao-do-desvio", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le21", "source": "concept:normalizacao-do-desvio", "target": "concept:segredo-estrutural"}, "classes": "relaciona_se_com"}, {"data": {"id": "le22", "source": "concept:s02-montagem-da-sessao", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le23", "source": "concept:s02-montagem-da-sessao", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le24", "source": "concept:segredo-estrutural", "target": "concept:capacidade-institucional"}, "classes": "relaciona_se_com"}, {"data": {"id": "le25", "source": "concept:segredo-estrutural", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le26", "source": "concept:segredo-estrutural", "target": "concept:normalizacao-do-desvio"}, "classes": "relaciona_se_com"}, {"data": {"id": "le27", "source": "text:kahneman-tversky-1979", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le28", "source": "text:kahneman-tversky-1979", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le29", "source": "text:knight-1921", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le30", "source": "text:knight-1921", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le31", "source": "text:perrow-1984", "target": "concept:capacidade-institucional"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le32", "source": "text:perrow-1984", "target": "concept:legal-exceptionalism"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le33", "source": "text:perrow-1984", "target": "concept:normal-accidents"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le34", "source": "text:slovic-1987", "target": "concept:capacidade-institucional"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le35", "source": "text:slovic-1987", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le36", "source": "text:taleb-2007", "target": "concept:cisne-negro"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le37", "source": "text:taleb-2007", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le38", "source": "text:taleb-2007", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le39", "source": "text:vaughan-1996", "target": "concept:capacidade-institucional"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le40", "source": "text:vaughan-1996", "target": "concept:normal-accidents"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le41", "source": "text:vaughan-1996", "target": "concept:normalizacao-do-desvio"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le42", "source": "text:vaughan-1996", "target": "concept:segredo-estrutural"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le43", "source": "text:vaughan-1996", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le44", "source": "text:wisner-2004", "target": "concept:capacidade-institucional"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le45", "source": "text:wisner-2004", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le46", "source": "text:wisner-2004", "target": "session:s03"}, "classes": "pertence_a_sessao"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "author"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "text"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "concept"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "session"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislation"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "case"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "wrote"}, "pertence_a_sessao": {"color": "#c9a227", "label": "belongs to session"}, "desenvolve_conceito": {"color": "#4d8067", "label": "develops concept"}, "cita": {"color": "#9b5de5", "label": "cites"}, "relaciona_se_com": {"color": "#c1503a", "label": "relates to"}, "define_conceito": {"color": "#6d597a", "label": "defines concept"}, "instancia_conceito": {"color": "#9d0208", "label": "instantiates concept"}};</script>
+<footer>Generated from the wiki source. This page is built, not written by hand.<br></footer>
+</main>
+</div>
+<script src="../vendor/cytoscape.min.js"></script>
+<script>
+(function(){
+  var saved = localStorage.getItem('dlp-wiki-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  window.toggleWikiTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark' : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('dlp-wiki-theme', next);
+  };
+})();
+</script>
+<script>
+(function(){
+  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
+  function aplicar(l){
+    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
+    // emitem o bloco data-lang="en" (o botao continua aparecendo mesmo assim, ver _render_page,
+    // 12/08/2026). Sem esta linha, quem escolhia EN e seguia um wikilink ate uma delas via o TEXTO
+    // SUMIR (o bloco pt ficava hidden e nao havia bloco en para mostrar), com a escolha persistida
+    // em localStorage e sem indicacao do porque. Cair para 'pt' quando a pagina nao tem o idioma
+    // pedido e o comportamento certo: a preferencia global continua salva e volta a valer na
+    // proxima pagina que tenha traducao.
+    var blocosLang = document.querySelectorAll('[data-lang]');
+    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
+    blocosLang.forEach(function(el){
+      el.hidden = (el.getAttribute('data-lang') !== alvo);
+    });
+    // CROMO (rotulos da navegacao) tem atributo proprio, e segue o idioma PEDIDO, e
+    // nao o alvo. A separacao nao e estetica: se os rotulos usassem data-lang, toda
+    // pagina passaria a ter um bloco 'en' e a linha do alvo acima nunca cairia para
+    // 'pt' -- o recuo morreria calado nas 35 paginas sem traducao, e o corpo sumiria,
+    // que e o defeito que esta funcao existe para evitar. Ha teste dedicado a isso.
+    document.querySelectorAll('[data-chrome-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-chrome-lang') !== l);
+    });
+    // So paginas com bloco data-lang tem corpo bilingue de verdade: busca, tags e o
+    // grafo nao tem nenhum, so cromo, e sempre caindo em 'pt' aqui (achado em revisao
+    // de codigo, 12/08/2026) mentia pro leitor de tela e pro tradutor do navegador,
+    // <html lang="pt-BR"> numa pagina cujo corpo continua em ingles. Sem bloco
+    // data-lang, o lang do documento fica no que o HTML ja declarou estaticamente.
+    if (blocosLang.length) {
+      document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    }
+    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
+    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
+    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
+    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
+    // nao recebe aviso nenhum.
+    var aviso = document.getElementById('aviso-sem-traducao');
+    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
+  }
+  window.toggleLang = function(){
+    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
+    var novo = atual === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('dlp-wiki-lang', novo);
+    aplicar(novo);
+  };
+  aplicar(salvo);
+})();
+</script>
+<script>
+window.wikiBusca = {
+  MINIMO: 2,
+  esc: function(s){ return String(s).replace(/[&<>]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); },
+  filtrar: function(docs, termo){
+    termo = (termo || '').trim().toLowerCase();
+    if (termo.length < this.MINIMO) return [];
+    return (docs || []).filter(function(d){
+      return (d.t + ' ' + d.c).toLowerCase().indexOf(termo) !== -1;
+    });
+  },
+  trecho: function(d, termo, antes, depois){
+    var i = d.c.toLowerCase().indexOf((termo || '').trim().toLowerCase());
+    if (i === -1) return '';
+    return this.esc(d.c.substring(Math.max(0, i - antes), i + depois));
+  }
+};
+
+(function(){
+  var campo = document.getElementById('busca-campo');
+  var painel = document.getElementById('busca-resultados');
+  if (!campo) return;
+
+  campo.addEventListener('keydown', function(ev){
+    if (ev.key === 'Enter' && campo.value.trim()){
+      window.location.href = campo.getAttribute('data-alvo') + '?q=' + encodeURIComponent(campo.value.trim());
+    }
+    if (ev.key === 'Escape' && painel){ painel.hidden = true; }
+  });
+
+  if (!painel || typeof fetch !== 'function') return;
+
+  var docs = null, carregando = false, falhou = false;
+  var prefixo = campo.getAttribute('data-prefixo') || '';
+
+  function desenhar(){
+    var termo = campo.value.trim();
+    if (termo.length < window.wikiBusca.MINIMO){ painel.hidden = true; painel.innerHTML = ''; return; }
+    if (falhou){ painel.hidden = true; return; }   // Enter ainda funciona
+    if (!docs){ carregar(); return; }
+    var achados = window.wikiBusca.filtrar(docs, termo);
+    painel.hidden = false;
+    if (!achados.length){
+      painel.innerHTML = '<div class="bq-nada">nenhum resultado para ' +
+        window.wikiBusca.esc(termo) + '</div>';
+      return;
+    }
+    var visiveis = achados.slice(0, 12);
+    painel.innerHTML = visiveis.map(function(d){
+      return '<a href="' + prefixo + d.h + '"><span class="bq-tipo">' +
+             window.wikiBusca.esc(d.k) + '</span>' + window.wikiBusca.esc(d.t) + '</a>';
+    }).join('') + (achados.length > visiveis.length
+      ? '<div class="bq-nada">e mais ' + (achados.length - visiveis.length) +
+        ', Enter para ver todos</div>' : '');
+  }
+
+  function carregar(){
+    if (carregando) return;
+    carregando = true;
+    fetch(campo.getAttribute('data-indice'))
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ docs = j; carregando = false; desenhar(); })
+      .catch(function(){ falhou = true; carregando = false; painel.hidden = true; });
+  }
+
+  campo.addEventListener('input', desenhar);
+  document.addEventListener('click', function(ev){
+    if (painel && !painel.contains(ev.target) && ev.target !== campo){ painel.hidden = true; }
+  });
+})();
+</script>
+<script>
+(function(){
+  var d = window.__LOCAL__; if (!d || !window.cytoscape) return;
+  var NS = window.__NS__, ES = window.__ES__;
+  var cy = cytoscape({
+    container: document.getElementById('cy-local'),
+    elements: { nodes: d.nodes, edges: d.edges },
+    style: Object.keys(NS).map(function(t){
+      return { selector: 'node.' + t, style: {
+        'background-color': NS[t].color, 'width': NS[t].size * 0.75, 'height': NS[t].size * 0.75,
+        'shape': NS[t].shape, 'label': 'data(label)', 'font-size': 9, 'color': '#141413',
+        'text-valign': 'bottom', 'text-margin-y': 3, 'text-wrap': 'wrap', 'text-max-width': 88 } };
+    }).concat(Object.keys(ES).map(function(t){
+      return { selector: 'edge.' + t, style: {
+        'line-color': ES[t].color, 'target-arrow-color': ES[t].color,
+        'target-arrow-shape': 'triangle', 'curve-style': 'bezier', 'width': 1.4, 'opacity': 0.8 } };
+    })).concat([{ selector: 'node.foco', style: { 'border-width': 3, 'border-color': '#141413' } }]),
+    layout: { name: 'cose', animate: false, padding: 24 }
+  });
+  cy.on('tap', 'node', function(ev){ window.location.href = ev.target.data('href'); });
+})();
+</script>
+</body>
+</html>

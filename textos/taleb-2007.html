@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Black Swan: The Impact of the Highly Improbable, Disaster Law and Policy wiki</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;
+/* A BARRA LATERAL TEM DOIS TAMANHOS, e nao oito (16/08/2026). Antes conviviam 14px na
+   barra e sete valores em `rem` nos filhos, e `rem` se mede pela RAIZ de 16px, e nao pela
+   barra: davam de 10,9 a 14px sem criterio visivel. Agora a barra declara a base aqui e
+   todo filho mede em `em`, isto e, em relacao a ela, de modo que mexer nestas duas linhas
+   move o conjunto inteiro. `--barra-rotulo` e o unico tamanho menor, e vale so para
+   caixa alta: AUTORES, CONCEITOS, TEXTOS, o titulo do indice e o tipo do resultado. */
+--barra-texto:16px;--barra-rotulo:0.8em;}
+:root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
+--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
+--muted:#a2a9b1;--card:#1b1f24;--border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+font-size:16px;line-height:26px;}
+.layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);
+font-size:var(--barra-texto);line-height:1.5;}
+nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
+nav.sidebar a:hover{text-decoration:underline;}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
+h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
+margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h2{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:24px;font-weight:400;line-height:1.3;
+margin:1.6rem 0 0.4rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
+h3{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;font-size:19.2px;font-weight:700;margin:1.2rem 0 0.3rem;}
+p{margin:0 0 16px;}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.meta{color:var(--muted);font-size:0.85rem;margin-bottom:1.1rem;}
+.futura{color:var(--muted);}
+.controles{position:fixed;top:0.8rem;right:1.2rem;display:flex;gap:0.5rem;z-index:10;}
+.controles button{font-size:0.95rem;min-height:44px;padding:0.55rem 1.1rem;
+background:#3366cc;color:#ffffff;border:1px solid #26489a;border-radius:4px;
+font-weight:600;cursor:pointer;}
+.controles button:hover{background:#26489a;}
+.controles button:focus-visible{outline:3px solid #ffffff;outline-offset:2px;}
+:root[data-theme="dark"] .controles button{background:#4a7fe0;border-color:#3366cc;}
+/* Visitante de primeira vez, localStorage vazio, SO do escuro: sem isto os botoes ficavam
+   azul-claro num fundo escuro ate o primeiro clique, porque o -toggle so troca de cor via
+   [data-theme], e essa marca so existe depois de JS rodar. .theme-toggle (removida em
+   12/08/2026, achado de revisao de codigo) resolvia isto de graca com var(--card)/var(--fg),
+   que ja seguem o media query da linha 198; a troca para .controles perdeu isso, e este bloco
+   devolve o mesmo comportamento pelo mesmo mecanismo. */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .controles button{
+  background:#4a7fe0;border-color:#3366cc;}}
+.badge{display:inline-block;background:var(--th);border:1px solid var(--border);border-radius:2px;padding:0.05rem 0.4rem;margin-right:0.3rem;font-size:0.76rem;color:var(--fg);}
+a.badge{text-decoration:none;}
+.broken-link{color:var(--link-quebrado);border-bottom:1px dotted var(--link-quebrado);cursor:help;}
+blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--border);color:var(--muted);}
+.rel-list{list-style:none;padding:0;font-size:0.94rem;}
+.rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
+.rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
+footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:1em;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
+ padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
+.selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
+.selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
+.selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
+.busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:1em;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a:last-child{border-bottom:none;}
+.busca-resultados .bq-tipo{display:block;font-size:var(--barra-rotulo);opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:1em;opacity:0.75;}
+.mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
+.ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
+.ficha li{margin:0.12rem 0;}
+#cy-local{width:100%;height:340px;border:1px solid var(--border);border-radius:2px;background:var(--bg);margin-top:0.4rem;}
+table{border-collapse:collapse;width:100%;font-size:0.94rem;margin:0.6rem 0;}
+th,td{border:1px solid var(--border);padding:0.4rem 0.55rem;text-align:left;vertical-align:top;}
+th{background:var(--th);font-weight:700;}
+/* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
+   separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
+   de baixo. */
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:1em;}
+.toc-titulo{font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc ul{list-style:none;padding-left:0;margin:0;}
+.toc ul ul{padding-left:0.8rem;}
+.toc li{margin:0.12rem 0;}
+nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
+</style>
+</head>
+<body>
+<div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
+<div class="layout">
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-as-tres-qualificacoes-que-a-leitura-corrente-perde">As três qualificações que a leitura corrente perde</a></li><li><a href="#sec-o-quarto-quadrante-e-e-o-motivo-de-a-obra-estar-nesta-sessao">O Quarto Quadrante, e é o motivo de a obra estar nesta sessão</a></li><li><a href="#sec-o-elo-fragil">O elo frágil</a></li><li><a href="#sec-o-que-a-obra-concede-sobre-a-estatistica">O que a obra concede sobre a estatística</a></li><li><a href="#sec-a-relacao-com-knight-e-ela-e-de-recusa">A relação com Knight, e ela é de recusa</a></li><li><a href="#sec-contexto-de-escrita-e-a-cadeia-da-metafora">Contexto de escrita, e a cadeia da metáfora</a></li><li><a href="#sec-recepcao">Recepção</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-problematizacao">Problematização</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
+<a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
+<input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
+<div id="busca-resultados" class="busca-resultados" hidden></div>
+<div class="area"><span data-chrome-lang="en">Sessions</span><span data-chrome-lang="pt" hidden>Sessões</span></div>
+<a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
+<a href="../sessoes/s03.html">S03: Risk, Uncertainty, Vulnerability and Resilience</a>
+<div class="area"><span data-chrome-lang="en">Authors</span><span data-chrome-lang="pt" hidden>Autores</span></div>
+<a href="../autores/alemanno.html">Alberto Alemanno</a>
+<a href="../autores/tversky.html">Amos Tversky</a>
+<a href="../autores/wibisana.html">Andri G. Wibisana</a>
+<a href="../autores/van-aaken.html">Anne van Aaken</a>
+<a href="../autores/wisner.html">Ben Wisner</a>
+<a href="../autores/perrow.html">Charles Perrow</a>
+<a href="../autores/farber.html">Daniel A. Farber</a>
+<a href="../autores/kahneman.html">Daniel Kahneman</a>
+<a href="../autores/binder.html">Denis Binder</a>
+<a href="../autores/vaughan.html">Diane Vaughan</a>
+<a href="../autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="../autores/knight.html">Frank H. Knight</a>
+<a href="../autores/davis.html">Ian Davis</a>
+<a href="../autores/antonovic.html">Janis Antonovic</a>
+<a href="../autores/scanlon.html">Joseph Scanlon</a>
+<a href="../autores/lauta.html">Kristian Cedervall Lauta</a>
+<a href="../autores/faure.html">Michael G. Faure</a>
+<a href="../autores/taleb.html">Nassim Nicholas Taleb</a>
+<a href="../autores/luhmann.html">Niklas Luhmann</a>
+<a href="../autores/slovic.html">Paul Slovic</a>
+<a href="../autores/blaikie.html">Piers Blaikie</a>
+<a href="../autores/posner.html">Richard A. Posner</a>
+<a href="../autores/verchick.html">Robert R. M. Verchick</a>
+<a href="../autores/perry.html">Ronald W. Perry</a>
+<a href="../autores/lyster.html">Rosemary Lyster</a>
+<a href="../autores/cannon.html">Terry Cannon</a>
+<a href="../autores/kuhn.html">Thomas S. Kuhn</a>
+<a href="../autores/beck.html">Ulrich Beck</a>
+<div class="area"><span data-chrome-lang="en">Texts</span><span data-chrome-lang="pt" hidden>Textos</span></div>
+<a href="wisner-2004.html">At Risk: Natural Hazards, People&#x27;s Vulnerability and Disasters</a>
+<a href="posner-2004.html">Catastrophe: Risk and Response</a>
+<a href="quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
+<a href="lyster-2015.html">Climate Justice and Disaster Law</a>
+<a href="scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
+<a href="verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
+<a href="lauta-2014.html">Disaster Law</a>
+<a href="farber-faure-2010.html">Disaster Law (edited collection)</a>
+<a href="farber-2010.html">Disaster Law and Policy, 2nd ed.</a>
+<a href="lauta-faure-2016.html">Disaster Risk Management (chapter)</a>
+<a href="lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="ejrr-laquila-2014.html">EJRR symposium on the L&#x27;Aquila Seven</a>
+<a href="verchick-2010.html">Facing Catastrophe</a>
+<a href="alemanno-2011.html">Governing Disasters</a>
+<a href="antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
+<a href="luhmann-2004.html">Law as a Social System</a>
+<a href="perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="slovic-1987.html">Perception of Risk</a>
+<a href="kahneman-tversky-1979.html">Prospect Theory: An Analysis of Decision under Risk</a>
+<a href="faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
+<a href="beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="knight-1921.html">Risk, Uncertainty and Profit</a>
+<a href="taleb-2007.html">The Black Swan: The Impact of the Highly Improbable</a>
+<a href="vaughan-1996.html">The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</a>
+<a href="binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
+<a href="kuhn-1970.html">The Structure of Scientific Revolutions</a>
+<a href="perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
+<a href="perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a>
+<div class="area"><span data-chrome-lang="en">Legislation</span><span data-chrome-lang="pt" hidden>Legislação</span></div>
+<a href="../legislacao/agenda-2030.html">2030 Agenda for Sustainable Development</a>
+<a href="../legislacao/adis-abeba-2015.html">Addis Ababa Action Agenda</a>
+<a href="../legislacao/habitat-iii-2016.html">Habitat III, New Urban Agenda</a>
+<a href="../legislacao/iso-31000-2009.html">ISO 31000:2009, Risk management, principles and guidelines</a>
+<a href="../legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Risk management vocabulary</a>
+<a href="../legislacao/protocolo-de-montreal-1987.html">Montreal Protocol on Substances that Deplete the Ozone Layer</a>
+<a href="../legislacao/acordo-de-paris-2015.html">Paris Agreement on climate change</a>
+<a href="../legislacao/marco-de-sendai-2015.html">Sendai Framework for Disaster Risk Reduction 2015-2030</a>
+<div class="area"><span data-chrome-lang="en">Cases</span><span data-chrome-lang="pt" hidden>Julgados</span></div>
+<a href="../julgados/itlos-parecer-2024.html">Advisory opinion on climate change and the law of the sea</a>
+<a href="../julgados/cij-parecer-clima-2025.html">Advisory opinion on the obligations of States in respect of climate change</a>
+<a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a>
+<a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a>
+<a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a>
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a>
+<a href="../julgados/neubauer-2021.html">Neubauer and Others v. Germany</a>
+<a href="../julgados/laquila-cassacao-2016.html">The L&#x27;Aquila case: the seven scientists</a>
+<a href="../julgados/urgenda-2019.html">Urgenda Foundation v. State of the Netherlands</a>
+<a href="../julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
+<div class="area"><span data-chrome-lang="en">Concepts</span><span data-chrome-lang="pt" hidden>Conceitos</span></div>
+<a href="../conceitos/s02-montagem-da-sessao.html">Assembling session S02, 2026.2 (project note)</a>
+<a href="../conceitos/cisne-negro.html">Cisne negro</a>
+<a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a>
+<a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a>
+<a href="../conceitos/quarantelli-criterios-brasil.html">Do Quarantelli&#x27;s six criteria hold in the Brazilian arrangement? (fleeting note)</a>
+<a href="../conceitos/dysfunction.html">Dysfunction of a social process</a>
+<a href="../conceitos/incerteza-knightiana.html">Incerteza knightiana</a>
+<a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a>
+<a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a>
+<a href="../conceitos/legal-exceptionalism.html">Legal exceptionalism</a>
+<a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a>
+<a href="../conceitos/normalizacao-do-desvio.html">Normalização do desvio</a>
+<a href="../conceitos/percepcao-de-risco.html">Percepção de risco</a>
+<a href="../conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a>
+<a href="../conceitos/risk-society.html">Risk society</a>
+<a href="../conceitos/segredo-estrutural.html">Segredo estrutural</a>
+<a href="../conceitos/teoria-do-prospecto.html">Teoria do prospecto</a>
+<a href="../conceitos/vulnerabilidade.html">Vulnerabilidade</a></nav>
+<main>
+<h1>The Black Swan: The Impact of the Highly Improbable</h1>
+<div class="meta">type: text<br><a class="badge" href="../tags.html#S03">S03</a> <a class="badge" href="../tags.html#cauda-grossa">cauda-grossa</a> <a class="badge" href="../tags.html#cisne-negro">cisne-negro</a> <a class="badge" href="../tags.html#disaster-law">disaster-law</a> <a class="badge" href="../tags.html#extremistao">extremistao</a> <a class="badge" href="../tags.html#quarto-quadrante">quarto-quadrante</a></div>
+<ul class="ficha"><li><strong>neste corpus:</strong> 1 apontam para ele, 4 saem dele</li></ul>
+
+<div data-lang="pt" hidden><p>TALEB, Nassim Nicholas. <strong>The Black Swan</strong>: the impact of the highly improbable. 2. ed. Nova York:
+Random House Trade Paperbacks, 2010. Com a seção nova <em>On Robustness and Fragility</em>. Primeira edição
+publicada em capa dura, e em forma ligeiramente diferente, por Random House, 2007.</p>
+<h2 id="sec-argumento">Argumento</h2>
+<p><strong>A tese cabe numa frase, e ela é de definição com consequência prática.</strong> Há duas províncias de
+aleatoriedade, e o erro que produz catástrofe é aplicar à segunda os instrumentos calibrados na
+primeira, porque nela uma única observação pode dominar o agregado.</p>
+<p>A lei do Mediocristão está na página 32 e a do Extremistão na 33. O que separa as duas é a
+escalabilidade da grandeza medida, e a consequência epistêmica está na 34: no primeiro o conhecimento
+cresce rápido com o dado, no segundo cresce devagar e erraticamente.</p>
+<h2 id="sec-as-tres-qualificacoes-que-a-leitura-corrente-perde">As três qualificações que a leitura corrente perde</h2>
+<p>O Extremistão <strong>não implica sempre</strong> cisnes negros (p. 37). O cisne negro é <strong>relativo ao observador</strong>,
+porque para o açougueiro não há surpresa (p. 44). E o autor <strong>nega</strong> que a crise de 2008 tenha sido um,
+chamando-a de resultado da fragilidade de sistemas construídos sobre a ignorância (p. 321).</p>
+<p>Somadas, as três impedem usar a obra para converter falha previsível em fatalidade, que é o uso mais
+comum do rótulo.</p>
+<h2 id="sec-o-quarto-quadrante-e-e-o-motivo-de-a-obra-estar-nesta-sessao">O Quarto Quadrante, e é o motivo de a obra estar nesta sessão</h2>
+<p>Na página 365 a obra cruza dois eixos, o tipo de retorno e a província, e nomeia expressamente, no
+quadrante em que afirma que modelo nenhum serve: <strong>epidemias, efeitos climáticos, dano de guerra e
+catástrofes naturais medidas por número de vítimas</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar do acervo, página impressa 365 (2026-08-15)">✓</span>.</p>
+<p>É o próprio autor colocando o objeto do curso no quadrante da inaplicabilidade. A recomendação da
+página 366 é mudar de quadrante mexendo na <strong>exposição</strong>, que está sob controle, já que a distribuição
+não está. Em vocabulário jurídico, é o deslocamento da regulação de probabilidade para a regulação de
+consequência.</p>
+<h2 id="sec-o-elo-fragil">O elo frágil</h2>
+<p>Da pertinência ao Extremistão a obra conclui que modelo nenhum serve, e isso pressupõe que a província
+possa ser decidida <strong>antes</strong> do evento. O critério oferecido é a escalabilidade, claro em renda e vendas
+de livro; em risco de desastre, saber se a cauda é fina ou grossa costuma exigir justamente a série que
+o evento raro ainda não produziu.</p>
+<h2 id="sec-o-que-a-obra-concede-sobre-a-estatistica">O que a obra concede sobre a estatística</h2>
+<p>Duas vezes, e as concessões impedem lê-la como recusa da estatística. Pode-se fazer bom uso da
+abordagem gaussiana em variáveis para as quais há razão racional para que a maior não fique longe demais
+da média (p. 236). E Galton a aplicou a genética e hereditariedade, onde o uso era justificado (p. 244).</p>
+<p>Ambas chegam logo depois de uma sequência polêmica, e é por isso que a leitura corrente da obra é mais
+radical que a obra.</p>
+<h2 id="sec-a-relacao-com-knight-e-ela-e-de-recusa">A relação com Knight, e ela é de recusa</h2>
+<p>Na página 128 a obra chama de <strong>artificial</strong> a distinção entre risco e incerteza knightianos. O sujeito
+gramatical da frase são os <strong>economistas</strong> que a usam, e não Knight, a quem o texto credita ter
+redescoberto a noção. A crítica recai sobre o uso, e o qualificador que sustenta o argumento é
+<em>largely</em>: os riscos computáveis estão largamente ausentes da vida real, e não ausentes.</p>
+<p><a href="../textos/knight-1921.html">Risk, Uncertainty and Profit</a> e esta obra respondem à mesma pergunta com critérios incompatíveis, e é por isso que
+lê-las juntas rende: a sessão ganha um debate, e não uma sequência.</p>
+<h2 id="sec-contexto-de-escrita-e-a-cadeia-da-metafora">Contexto de escrita, e a cadeia da metáfora</h2>
+<p><strong>A genealogia corrente não sobreviveu à conferência.</strong> O elo de Juvenal confere. O de Hume não foi
+localizado em passagem alguma. E o de Popper foi resolvido na fonte primária, contra as duas versões
+que circulavam <span class="selo selo-pendente" title="não verificado: divergente">✗</span>: a obra credita a Popper a promoção da assimetria, registra
+que <strong>Peirce</strong> chegou antes, e em nota nega a primazia dos dois, nomeando <strong>Victor Brochard, em 1878</strong>.</p>
+<p>O que a obra credita a Popper é outra coisa, e é maior: a percepção da imprevisibilidade fundamental,
+severa e incurável do mundo (p. 57).</p>
+<h2 id="sec-recepcao">Recepção</h2>
+<p><strong>A obra não tem identificador digital</strong>, por ser de editora comercial, e por isso cada base a conta por
+aproximação. O Semantic Scholar dá 4.516 num registro limpo; o OpenAlex dá 3.505 num registro cujo
+metadado é de uma resenha; o Crossref não tem grandeza aplicável.</p>
+<p><strong>O Google Acadêmico fragmenta o original e agrupa a tradução</strong>, e a assimetria é o dado: não há
+agrupamento dominante em inglês, e a tradução brasileira aparece em dois registros, o de 2015 com 230
+citações e o da Best Seller de 2008 com 63.</p>
+<p><strong>O contraconceito tem nome.</strong> Michele Wucker cunha o rinoceronte cinzento em 2016: as crises tratadas
+como cisnes negros imprevisíveis seriam ameaças visíveis e prováveis, ignoradas apesar de sinais
+abundantes.</p>
+<h2 id="sec-casos-e-aplicacoes">Casos e aplicações</h2>
+<p>Os dois eventos que o público mais rotulou de cisne negro depois de 2010 foram Fukushima e a covid-19,
+e em ambos há autor nomeado sustentando que o rótulo estava errado. Shrader-Frechette trata o
+enquadramento de Fukushima como epistemologicamente falho, em 2011. E, no caso da pandemia, <strong>quem nega
+é o próprio autor</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em NORMAN; BAR-YAM; TALEB, New England Complex Systems Institute, 26 jan. 2020 (2026-08-16)">✓</span>.</p>
+<p><strong>O uso jurídico separa-se por língua</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em levantamento de 16/08/2026 (2026-08-16)">✓</span>. Em inglês há uso
+conceitual, em Noam Kolt, sobre risco sistêmico em inteligência artificial. Em português o uso é
+retórico: a doutrina de locação na pandemia abre com a expressão e migra de imediato para a teoria da
+imprevisão e para força maior, institutos anteriores a Taleb e independentes dele.</p>
+<h2 id="sec-problematizacao">Problematização</h2>
+<p><strong>Pressuposto de metáfora-raiz.</strong> A metáfora é geográfica, com duas províncias e uma fronteira, e traz
+consigo a suposição de que o pertencimento é propriedade estável do domínio, e não do estado de
+conhecimento de quem mede. A própria obra fornece o contraexemplo na página 44 e não harmoniza as duas
+coisas.</p>
+<p><strong>O enigma.</strong> Por que a regulação de catástrofe continua a exigir quantificação de probabilidade,
+apesar de a obra mais citada sobre eventos extremos nomear expressamente catástrofes naturais como o
+domínio em que a quantificação não se sustenta?</p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../conceitos/cisne-negro.html">Cisne negro</a> · <a href="../conceitos/incerteza-knightiana.html">Incerteza knightiana</a> · <a href="../textos/knight-1921.html">Risk, Uncertainty and Profit</a> · <a href="../textos/vaughan-1996.html">The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</a> · <a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a></p></div>
+<div data-lang="en"><p>TALEB, Nassim Nicholas. <strong>The Black Swan</strong>: the impact of the highly improbable. 2nd ed. New York:
+Random House Trade Paperbacks, 2010. With the new section <em>On Robustness and Fragility</em>. First edition
+published in hardcover, and in slightly different form, by Random House, 2007.</p>
+<h2>Argument</h2>
+<p><strong>The thesis fits in one sentence, and it is one of definition with a practical consequence.</strong> There are
+two provinces of randomness, and the error that produces catastrophe is applying to the second the
+instruments calibrated on the first, because there a single observation can dominate the aggregate.</p>
+<p>The law of Mediocristan is on p. 32 and that of Extremistan on p. 33. What separates them is the
+scalability of the quantity measured, and the epistemic consequence is on p. 34: in the first knowledge
+grows fast with data, in the second slowly and erratically.</p>
+<h2>The three qualifications the common reading loses</h2>
+<p>Extremistan does <strong>not always imply</strong> black swans (p. 37). The black swan is <strong>relative to the
+observer</strong>, because for the butcher there is no surprise (p. 44). And the author <strong>denies</strong> that the
+2008 crisis was one, calling it the result of fragility in systems built upon ignorance (p. 321).</p>
+<p>Taken together, the three prevent using the work to convert predictable failure into fate, which is the
+most common use of the label.</p>
+<h2>The Fourth Quadrant, and it is why the work sits in this session</h2>
+<p>On p. 365 the work crosses two axes, the type of payoff and the province, and names expressly, in the
+quadrant where it holds that no model serves: <strong>epidemics, climatic effects, war damage and natural
+catastrophes measured by number of victims</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar do acervo, página impressa 365 (2026-08-15)">✓</span>.</p>
+<p>It is the author himself placing the object of the course in the quadrant of inapplicability. The
+recommendation on p. 366 is to change quadrant by acting on <strong>exposure</strong>, which is under control, since
+the distribution is not. In legal vocabulary, it is the shift from regulating probability to regulating
+consequence.</p>
+<h2>The fragile link</h2>
+<p>From belonging to Extremistan the work concludes that no model serves, and that presupposes the province
+can be decided <strong>before</strong> the event. The criterion offered is scalability, clear in income and book
+sales; in disaster risk, knowing whether the tail is thin or fat usually requires the very series the
+rare event has not yet produced.</p>
+<h2>What the work concedes about statistics</h2>
+<p>Twice, and the concessions prevent reading it as a rejection of statistics. Good use can be made of the
+Gaussian approach in variables for which there is a rational reason for the largest not to be too far
+from the average (p. 236). And Galton applied it to genetics and heredity, where its use was justified
+(p. 244).</p>
+<p>Both arrive right after a polemical stretch, which is why the common reading of the work is more radical
+than the work.</p>
+<h2>The relation to Knight, and it is one of refusal</h2>
+<p>On p. 128 the work calls the distinction between Knightian risk and uncertainty <strong>artificial</strong>. The
+grammatical subject of the sentence is the <strong>economists</strong> who use it, not Knight, whom the text credits
+with rediscovering the notion. The criticism falls on the use, and the qualifier carrying the argument
+is <em>largely</em>: computable risks are largely absent from real life, not absent.</p>
+<p><a href="../textos/knight-1921.html">Knight 1921</a> and this work answer the same question with incompatible criteria, and that
+is why reading them together pays: the session gains a debate rather than a sequence.</p>
+<h2>Context of writing, and the chain of the metaphor</h2>
+<p><strong>The current genealogy did not survive verification.</strong> The Juvenal link holds. The Hume link was not
+located in any passage. And the Popper link was resolved at the primary source, against both circulating
+versions <span class="selo selo-pendente" title="não verificado: divergente">✗</span>: the work credits Popper with promoting the asymmetry, records
+that <strong>Peirce</strong> got there earlier, and in a footnote denies the primacy of either, naming <strong>Victor
+Brochard, in 1878</strong>.</p>
+<p>What the work does credit to Popper is something else, and larger: the insight concerning the
+fundamental, severe and incurable unpredictability of the world (p. 57).</p>
+<h2>Reception</h2>
+<p><strong>The work has no digital identifier</strong>, being from a trade publisher, and so each database counts it by
+approximation. Semantic Scholar gives 4,516 in a clean record; OpenAlex gives 3,505 in a record whose
+metadata belongs to a review; Crossref has no applicable magnitude.</p>
+<p><strong>Google Scholar fragments the original and clusters the translation</strong>, and the asymmetry is the datum:
+there is no dominant cluster in English, and the Brazilian translation appears in two records, the 2015
+one with 230 citations and the Best Seller 2008 one with 63.</p>
+<p><strong>The counter concept has a name.</strong> Michele Wucker coins the gray rhino in 2016: crises treated as
+unpredictable black swans would be visible and probable threats, ignored despite abundant signals.</p>
+<h2>Cases and applications</h2>
+<p>The two events the public most labelled black swans after 2010 were Fukushima and covid-19, and in both
+there is a named author holding that the label was wrong. Shrader-Frechette treats the framing of
+Fukushima as epistemologically flawed, in 2011. And in the case of the pandemic, <strong>it is the author
+himself who denies it</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em NORMAN; BAR-YAM; TALEB, New England Complex Systems Institute, 26 jan. 2020 (2026-08-16)">✓</span>.</p>
+<p><strong>Legal use divides by language</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em levantamento de 16/08/2026 (2026-08-16)">✓</span>. In English there is
+conceptual use, in Noam Kolt, on systemic risk in artificial intelligence. In Portuguese the use is
+rhetorical: pandemic tenancy scholarship opens with the phrase and moves at once to the doctrine of
+unforeseeability and to force majeure, institutions older than Taleb and independent of him.</p>
+<h2>Problematisation</h2>
+<p><strong>Root metaphor assumption.</strong> The metaphor is geographical, with two provinces and a border, and carries
+the assumption that membership is a stable property of the domain rather than of the state of knowledge
+of whoever measures. The work itself supplies the counterexample on p. 44 and never reconciles the two.</p>
+<p><strong>The puzzle.</strong> Why does catastrophe regulation continue to require quantification of probability,
+despite the most cited work on extreme events naming natural catastrophes expressly as the domain where
+quantification does not hold?</p>
+<h2>See also</h2>
+<p><a href="../conceitos/cisne-negro.html">black swan</a> · <a href="../conceitos/incerteza-knightiana.html">Knightian uncertainty</a> · <a href="../textos/knight-1921.html">Knight 1921</a>
+· <a href="../textos/vaughan-1996.html">Vaughan 1996</a> · <a href="../conceitos/disaster-risk.html">disaster risk</a></p></div>
+
+<h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/cisne-negro.html">Cisne negro</a> (p. 32, 321, 33, 34, 37, 44)</li><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a> (p. 231, 236, 236, 244)</li><li><span class="rel-etype">-> develops concept</span> <a href="../conceitos/incerteza-knightiana.html">Incerteza knightiana</a> (p. 125, 128, 128)</li><li><span class="rel-etype">-> belongs to session</span> <a href="../sessoes/s03.html">S03: Risk, Uncertainty, Vulnerability and Resilience</a> (complementar)</li><li><span class="rel-etype"><- wrote</span> <a href="../autores/taleb.html">Nassim Nicholas Taleb</a></li></ul>
+
+<h2>Neighbourhood in the graph</h2>
+<div id="cy-local"></div>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "author:taleb", "label": "Nassim Nicholas Taleb", "href": "../autores/taleb.html", "foco": "0"}, "classes": "author"}, {"data": {"id": "concept:capacidade-institucional", "label": "Institutional capacity (reference note)", "href": "../conceitos/capacidade-institucional.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:cisne-negro", "label": "Cisne negro", "href": "../conceitos/cisne-negro.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-risk", "label": "Disaster risk (effects of uncertainty)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:disaster-vs-catastrophe", "label": "Disaster vs. catastrophe (institutional capacity)", "href": "../conceitos/disaster-vs-catastrophe.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Dysfunction of a social process", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:incerteza-knightiana", "label": "Incerteza knightiana", "href": "../conceitos/incerteza-knightiana.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Reading of Lauta 2017 (literature note)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Legal exceptionalism", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:normal-accidents", "label": "Normal accident (a structural property of the system)", "href": "../conceitos/normal-accidents.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:percepcao-de-risco", "label": "Percepção de risco", "href": "../conceitos/percepcao-de-risco.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:porcao-juridica", "label": "Legal bite-sizes (the juridical portion)", "href": "../conceitos/porcao-juridica.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:risk-society", "label": "Risk society", "href": "../conceitos/risk-society.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:teoria-do-prospecto", "label": "Teoria do prospecto", "href": "../conceitos/teoria-do-prospecto.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:vulnerabilidade", "label": "Vulnerabilidade", "href": "../conceitos/vulnerabilidade.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "julgado:cij-parecer-clima-2025", "label": "Advisory opinion on the obligations of States in respect of climate change", "href": "../julgados/cij-parecer-clima-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:itlos-parecer-2024", "label": "Advisory opinion on climate change and the law of the sea", "href": "../julgados/itlos-parecer-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "legislation:iso-31000-2009", "label": "ISO 31000:2009, Risk management, principles and guidelines", "href": "../legislacao/iso-31000-2009.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "legislation:iso-guide-73-2009", "label": "ISO Guide 73:2009, Risk management vocabulary", "href": "../legislacao/iso-guide-73-2009.html", "foco": "0"}, "classes": "legislation"}, {"data": {"id": "session:s03", "label": "S03: Risk, Uncertainty, Vulnerability and Resilience", "href": "../sessoes/s03.html", "foco": "0"}, "classes": "session"}, {"data": {"id": "text:kahneman-tversky-1979", "label": "Prospect Theory: An Analysis of Decision under Risk", "href": "../textos/kahneman-tversky-1979.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:knight-1921", "label": "Risk, Uncertainty and Profit", "href": "../textos/knight-1921.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:lauta-2017", "label": "Dysfunction and Disruption: Disaster Risks and the Law", "href": "../textos/lauta-2017.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:slovic-1987", "label": "Perception of Risk", "href": "../textos/slovic-1987.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:taleb-2007", "label": "The Black Swan: The Impact of the Highly Improbable", "href": "../textos/taleb-2007.html", "foco": "1"}, "classes": "text foco"}, {"data": {"id": "text:vaughan-1996", "label": "The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA", "href": "../textos/vaughan-1996.html", "foco": "0"}, "classes": "text"}, {"data": {"id": "text:wisner-2004", "label": "At Risk: Natural Hazards, People's Vulnerability and Disasters", "href": "../textos/wisner-2004.html", "foco": "0"}, "classes": "text"}], "edges": [{"data": {"id": "le0", "source": "author:taleb", "target": "text:taleb-2007"}, "classes": "escreveu"}, {"data": {"id": "le1", "source": "concept:capacidade-institucional", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le2", "source": "concept:capacidade-institucional", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le3", "source": "concept:capacidade-institucional", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le4", "source": "concept:capacidade-institucional", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le5", "source": "concept:cisne-negro", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:cisne-negro", "target": "concept:incerteza-knightiana"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:cisne-negro", "target": "concept:incerteza-knightiana"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:cisne-negro", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:disaster-risk", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:disaster-risk", "target": "concept:risk-society"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:disaster-vs-catastrophe", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:disaster-vs-catastrophe", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le18", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le19", "source": "concept:dysfunction", "target": "concept:normal-accidents"}, "classes": "relaciona_se_com"}, {"data": {"id": "le20", "source": "concept:incerteza-knightiana", "target": "concept:cisne-negro"}, "classes": "relaciona_se_com"}, {"data": {"id": "le21", "source": "concept:incerteza-knightiana", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le22", "source": "concept:incerteza-knightiana", "target": "concept:risk-society"}, "classes": "relaciona_se_com"}, {"data": {"id": "le23", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le24", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-vs-catastrophe"}, "classes": "relaciona_se_com"}, {"data": {"id": "le25", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le26", "source": "concept:lauta-2017-leitura", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le27", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le28", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le29", "source": "concept:legal-exceptionalism", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le30", "source": "concept:normal-accidents", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le31", "source": "concept:percepcao-de-risco", "target": "concept:incerteza-knightiana"}, "classes": "relaciona_se_com"}, {"data": {"id": "le32", "source": "concept:percepcao-de-risco", "target": "concept:risk-society"}, "classes": "relaciona_se_com"}, {"data": {"id": "le33", "source": "concept:percepcao-de-risco", "target": "concept:teoria-do-prospecto"}, "classes": "relaciona_se_com"}, {"data": {"id": "le34", "source": "concept:porcao-juridica", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le35", "source": "concept:porcao-juridica", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le36", "source": "concept:porcao-juridica", "target": "concept:lauta-2017-leitura"}, "classes": "relaciona_se_com"}, {"data": {"id": "le37", "source": "concept:porcao-juridica", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le38", "source": "concept:risk-society", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le39", "source": "concept:teoria-do-prospecto", "target": "concept:incerteza-knightiana"}, "classes": "relaciona_se_com"}, {"data": {"id": "le40", "source": "concept:teoria-do-prospecto", "target": "concept:percepcao-de-risco"}, "classes": "relaciona_se_com"}, {"data": {"id": "le41", "source": "concept:vulnerabilidade", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le42", "source": "concept:vulnerabilidade", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le43", "source": "concept:vulnerabilidade", "target": "concept:risk-society"}, "classes": "relaciona_se_com"}, {"data": {"id": "le44", "source": "julgado:cij-parecer-clima-2025", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le45", "source": "julgado:cij-parecer-clima-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le46", "source": "julgado:itlos-parecer-2024", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le47", "source": "julgado:itlos-parecer-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le48", "source": "legislation:iso-31000-2009", "target": "concept:disaster-risk"}, "classes": "define_conceito"}, {"data": {"id": "le49", "source": "legislation:iso-guide-73-2009", "target": "concept:disaster-risk"}, "classes": "define_conceito"}, {"data": {"id": "le50", "source": "text:kahneman-tversky-1979", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le51", "source": "text:kahneman-tversky-1979", "target": "concept:incerteza-knightiana"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le52", "source": "text:kahneman-tversky-1979", "target": "concept:teoria-do-prospecto"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le53", "source": "text:kahneman-tversky-1979", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le54", "source": "text:knight-1921", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le55", "source": "text:knight-1921", "target": "concept:incerteza-knightiana"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le56", "source": "text:knight-1921", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le57", "source": "text:lauta-2017", "target": "legislation:iso-31000-2009"}, "classes": "cita"}, {"data": {"id": "le58", "source": "text:lauta-2017", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le59", "source": "text:lauta-2017", "target": "concept:dysfunction"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le60", "source": "text:lauta-2017", "target": "concept:legal-exceptionalism"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le61", "source": "text:slovic-1987", "target": "concept:capacidade-institucional"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le62", "source": "text:slovic-1987", "target": "concept:percepcao-de-risco"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le63", "source": "text:slovic-1987", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le64", "source": "text:taleb-2007", "target": "concept:cisne-negro"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le65", "source": "text:taleb-2007", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le66", "source": "text:taleb-2007", "target": "concept:incerteza-knightiana"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le67", "source": "text:taleb-2007", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le68", "source": "text:vaughan-1996", "target": "concept:capacidade-institucional"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le69", "source": "text:vaughan-1996", "target": "concept:normal-accidents"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le70", "source": "text:vaughan-1996", "target": "session:s03"}, "classes": "pertence_a_sessao"}, {"data": {"id": "le71", "source": "text:wisner-2004", "target": "concept:capacidade-institucional"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le72", "source": "text:wisner-2004", "target": "concept:disaster-risk"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le73", "source": "text:wisner-2004", "target": "concept:vulnerabilidade"}, "classes": "desenvolve_conceito"}, {"data": {"id": "le74", "source": "text:wisner-2004", "target": "session:s03"}, "classes": "pertence_a_sessao"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "author"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "text"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "concept"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "session"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislation"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "case"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "wrote"}, "pertence_a_sessao": {"color": "#c9a227", "label": "belongs to session"}, "desenvolve_conceito": {"color": "#4d8067", "label": "develops concept"}, "cita": {"color": "#9b5de5", "label": "cites"}, "relaciona_se_com": {"color": "#c1503a", "label": "relates to"}, "define_conceito": {"color": "#6d597a", "label": "defines concept"}, "instancia_conceito": {"color": "#9d0208", "label": "instantiates concept"}};</script>
+<footer>Generated from the wiki source. This page is built, not written by hand.<br></footer>
+</main>
+</div>
+<script src="../vendor/cytoscape.min.js"></script>
+<script>
+(function(){
+  var saved = localStorage.getItem('dlp-wiki-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  window.toggleWikiTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark' : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('dlp-wiki-theme', next);
+  };
+})();
+</script>
+<script>
+(function(){
+  var salvo = localStorage.getItem('dlp-wiki-lang') || 'en';
+  function aplicar(l){
+    // So 38 das 73 paginas tem sidecar .en.md: as 35 com status stub nao tem traducao, entao nao
+    // emitem o bloco data-lang="en" (o botao continua aparecendo mesmo assim, ver _render_page,
+    // 12/08/2026). Sem esta linha, quem escolhia EN e seguia um wikilink ate uma delas via o TEXTO
+    // SUMIR (o bloco pt ficava hidden e nao havia bloco en para mostrar), com a escolha persistida
+    // em localStorage e sem indicacao do porque. Cair para 'pt' quando a pagina nao tem o idioma
+    // pedido e o comportamento certo: a preferencia global continua salva e volta a valer na
+    // proxima pagina que tenha traducao.
+    var blocosLang = document.querySelectorAll('[data-lang]');
+    var alvo = document.querySelector('[data-lang="' + l + '"]') ? l : 'pt';
+    blocosLang.forEach(function(el){
+      el.hidden = (el.getAttribute('data-lang') !== alvo);
+    });
+    // CROMO (rotulos da navegacao) tem atributo proprio, e segue o idioma PEDIDO, e
+    // nao o alvo. A separacao nao e estetica: se os rotulos usassem data-lang, toda
+    // pagina passaria a ter um bloco 'en' e a linha do alvo acima nunca cairia para
+    // 'pt' -- o recuo morreria calado nas 35 paginas sem traducao, e o corpo sumiria,
+    // que e o defeito que esta funcao existe para evitar. Ha teste dedicado a isso.
+    document.querySelectorAll('[data-chrome-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-chrome-lang') !== l);
+    });
+    // So paginas com bloco data-lang tem corpo bilingue de verdade: busca, tags e o
+    // grafo nao tem nenhum, so cromo, e sempre caindo em 'pt' aqui (achado em revisao
+    // de codigo, 12/08/2026) mentia pro leitor de tela e pro tradutor do navegador,
+    // <html lang="pt-BR"> numa pagina cujo corpo continua em ingles. Sem bloco
+    // data-lang, o lang do documento fica no que o HTML ja declarou estaticamente.
+    if (blocosLang.length) {
+      document.documentElement.lang = (alvo === 'en' ? 'en' : 'pt-BR');
+    }
+    // O aviso e a diferenca entre cair calado e cair explicando. Com 'pt' como padrao, quem via
+    // portugues num tampao tinha pedido portugues; com 'en' como padrao, quem chega pela primeira
+    // vez PEDIU ingles sem saber que pediu, e sem o aviso leria a queda como site quebrado. Acende
+    // so quando o leitor pediu 'en' E a pagina nao tem: quem esta em portugues por escolha propria
+    // nao recebe aviso nenhum.
+    var aviso = document.getElementById('aviso-sem-traducao');
+    if (aviso) { aviso.hidden = !(l === 'en' && alvo !== 'en'); }
+  }
+  window.toggleLang = function(){
+    var atual = localStorage.getItem('dlp-wiki-lang') || 'en';
+    var novo = atual === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('dlp-wiki-lang', novo);
+    aplicar(novo);
+  };
+  aplicar(salvo);
+})();
+</script>
+<script>
+window.wikiBusca = {
+  MINIMO: 2,
+  esc: function(s){ return String(s).replace(/[&<>]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); },
+  filtrar: function(docs, termo){
+    termo = (termo || '').trim().toLowerCase();
+    if (termo.length < this.MINIMO) return [];
+    return (docs || []).filter(function(d){
+      return (d.t + ' ' + d.c).toLowerCase().indexOf(termo) !== -1;
+    });
+  },
+  trecho: function(d, termo, antes, depois){
+    var i = d.c.toLowerCase().indexOf((termo || '').trim().toLowerCase());
+    if (i === -1) return '';
+    return this.esc(d.c.substring(Math.max(0, i - antes), i + depois));
+  }
+};
+
+(function(){
+  var campo = document.getElementById('busca-campo');
+  var painel = document.getElementById('busca-resultados');
+  if (!campo) return;
+
+  campo.addEventListener('keydown', function(ev){
+    if (ev.key === 'Enter' && campo.value.trim()){
+      window.location.href = campo.getAttribute('data-alvo') + '?q=' + encodeURIComponent(campo.value.trim());
+    }
+    if (ev.key === 'Escape' && painel){ painel.hidden = true; }
+  });
+
+  if (!painel || typeof fetch !== 'function') return;
+
+  var docs = null, carregando = false, falhou = false;
+  var prefixo = campo.getAttribute('data-prefixo') || '';
+
+  function desenhar(){
+    var termo = campo.value.trim();
+    if (termo.length < window.wikiBusca.MINIMO){ painel.hidden = true; painel.innerHTML = ''; return; }
+    if (falhou){ painel.hidden = true; return; }   // Enter ainda funciona
+    if (!docs){ carregar(); return; }
+    var achados = window.wikiBusca.filtrar(docs, termo);
+    painel.hidden = false;
+    if (!achados.length){
+      painel.innerHTML = '<div class="bq-nada">nenhum resultado para ' +
+        window.wikiBusca.esc(termo) + '</div>';
+      return;
+    }
+    var visiveis = achados.slice(0, 12);
+    painel.innerHTML = visiveis.map(function(d){
+      return '<a href="' + prefixo + d.h + '"><span class="bq-tipo">' +
+             window.wikiBusca.esc(d.k) + '</span>' + window.wikiBusca.esc(d.t) + '</a>';
+    }).join('') + (achados.length > visiveis.length
+      ? '<div class="bq-nada">e mais ' + (achados.length - visiveis.length) +
+        ', Enter para ver todos</div>' : '');
+  }
+
+  function carregar(){
+    if (carregando) return;
+    carregando = true;
+    fetch(campo.getAttribute('data-indice'))
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ docs = j; carregando = false; desenhar(); })
+      .catch(function(){ falhou = true; carregando = false; painel.hidden = true; });
+  }
+
+  campo.addEventListener('input', desenhar);
+  document.addEventListener('click', function(ev){
+    if (painel && !painel.contains(ev.target) && ev.target !== campo){ painel.hidden = true; }
+  });
+})();
+</script>
+<script>
+(function(){
+  var d = window.__LOCAL__; if (!d || !window.cytoscape) return;
+  var NS = window.__NS__, ES = window.__ES__;
+  var cy = cytoscape({
+    container: document.getElementById('cy-local'),
+    elements: { nodes: d.nodes, edges: d.edges },
+    style: Object.keys(NS).map(function(t){
+      return { selector: 'node.' + t, style: {
+        'background-color': NS[t].color, 'width': NS[t].size * 0.75, 'height': NS[t].size * 0.75,
+        'shape': NS[t].shape, 'label': 'data(label)', 'font-size': 9, 'color': '#141413',
+        'text-valign': 'bottom', 'text-margin-y': 3, 'text-wrap': 'wrap', 'text-max-width': 88 } };
+    }).concat(Object.keys(ES).map(function(t){
+      return { selector: 'edge.' + t, style: {
+        'line-color': ES[t].color, 'target-arrow-color': ES[t].color,
+        'target-arrow-shape': 'triangle', 'curve-style': 'bezier', 'width': 1.4, 'opacity': 0.8 } };
+    })).concat([{ selector: 'node.foco', style: { 'border-width': 3, 'border-color': '#141413' } }]),
+    layout: { name: 'cose', animate: false, padding: 24 }
+  });
+  cy.on('tap', 'node', function(ev){ window.location.href = ev.target.data('href'); });
+})();
+</script>
+</body>
+</html>

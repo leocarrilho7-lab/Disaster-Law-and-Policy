@@ -93,33 +93,45 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <body>
 <div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
-<nav class="sidebar"><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-o-que-o-acordo-faz-e-o-que-ele-deliberadamente-nao-faz">O que o acordo faz, e o que ele deliberadamente não faz</a></li><li><a href="#sec-reparacao-sem-imputacao">Reparação sem imputação</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
 <a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
 <div id="busca-resultados" class="busca-resultados" hidden></div>
 <div class="area"><span data-chrome-lang="en">Sessions</span><span data-chrome-lang="pt" hidden>Sessões</span></div>
 <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
+<a href="../sessoes/s03.html">S03: Risk, Uncertainty, Vulnerability and Resilience</a>
 <div class="area"><span data-chrome-lang="en">Authors</span><span data-chrome-lang="pt" hidden>Autores</span></div>
 <a href="../autores/alemanno.html">Alberto Alemanno</a>
+<a href="../autores/tversky.html">Amos Tversky</a>
 <a href="../autores/wibisana.html">Andri G. Wibisana</a>
 <a href="../autores/van-aaken.html">Anne van Aaken</a>
+<a href="../autores/wisner.html">Ben Wisner</a>
 <a href="../autores/perrow.html">Charles Perrow</a>
 <a href="../autores/farber.html">Daniel A. Farber</a>
+<a href="../autores/kahneman.html">Daniel Kahneman</a>
 <a href="../autores/binder.html">Denis Binder</a>
+<a href="../autores/vaughan.html">Diane Vaughan</a>
 <a href="../autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="../autores/knight.html">Frank H. Knight</a>
+<a href="../autores/davis.html">Ian Davis</a>
 <a href="../autores/antonovic.html">Janis Antonovic</a>
 <a href="../autores/scanlon.html">Joseph Scanlon</a>
 <a href="../autores/lauta.html">Kristian Cedervall Lauta</a>
 <a href="../autores/faure.html">Michael G. Faure</a>
+<a href="../autores/taleb.html">Nassim Nicholas Taleb</a>
 <a href="../autores/luhmann.html">Niklas Luhmann</a>
+<a href="../autores/slovic.html">Paul Slovic</a>
+<a href="../autores/blaikie.html">Piers Blaikie</a>
 <a href="../autores/posner.html">Richard A. Posner</a>
 <a href="../autores/verchick.html">Robert R. M. Verchick</a>
 <a href="../autores/perry.html">Ronald W. Perry</a>
 <a href="../autores/lyster.html">Rosemary Lyster</a>
+<a href="../autores/cannon.html">Terry Cannon</a>
 <a href="../autores/kuhn.html">Thomas S. Kuhn</a>
 <a href="../autores/beck.html">Ulrich Beck</a>
 <div class="area"><span data-chrome-lang="en">Texts</span><span data-chrome-lang="pt" hidden>Textos</span></div>
+<a href="../textos/wisner-2004.html">At Risk: Natural Hazards, People&#x27;s Vulnerability and Disasters</a>
 <a href="../textos/posner-2004.html">Catastrophe: Risk and Response</a>
 <a href="../textos/quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
 <a href="../textos/lyster-2015.html">Climate Justice and Disaster Law</a>
@@ -136,8 +148,13 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../textos/antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
 <a href="../textos/luhmann-2004.html">Law as a Social System</a>
 <a href="../textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="../textos/slovic-1987.html">Perception of Risk</a>
+<a href="../textos/kahneman-tversky-1979.html">Prospect Theory: An Analysis of Decision under Risk</a>
 <a href="../textos/faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
 <a href="../textos/beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="../textos/knight-1921.html">Risk, Uncertainty and Profit</a>
+<a href="../textos/taleb-2007.html">The Black Swan: The Impact of the Highly Improbable</a>
+<a href="../textos/vaughan-1996.html">The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</a>
 <a href="../textos/binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
 <a href="../textos/kuhn-1970.html">The Structure of Scientific Revolutions</a>
 <a href="../textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
@@ -164,41 +181,90 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
 <div class="area"><span data-chrome-lang="en">Concepts</span><span data-chrome-lang="pt" hidden>Conceitos</span></div>
 <a href="../conceitos/s02-montagem-da-sessao.html">Assembling session S02, 2026.2 (project note)</a>
+<a href="../conceitos/cisne-negro.html">Cisne negro</a>
 <a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a>
 <a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a>
 <a href="../conceitos/quarantelli-criterios-brasil.html">Do Quarantelli&#x27;s six criteria hold in the Brazilian arrangement? (fleeting note)</a>
 <a href="../conceitos/dysfunction.html">Dysfunction of a social process</a>
+<a href="../conceitos/incerteza-knightiana.html">Incerteza knightiana</a>
 <a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a>
 <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a>
 <a href="../conceitos/legal-exceptionalism.html">Legal exceptionalism</a>
 <a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a>
+<a href="../conceitos/normalizacao-do-desvio.html">Normalização do desvio</a>
+<a href="../conceitos/percepcao-de-risco.html">Percepção de risco</a>
 <a href="../conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a>
-<a href="../conceitos/risk-society.html">Risk society</a></nav>
+<a href="../conceitos/risk-society.html">Risk society</a>
+<a href="../conceitos/segredo-estrutural.html">Segredo estrutural</a>
+<a href="../conceitos/teoria-do-prospecto.html">Teoria do prospecto</a>
+<a href="../conceitos/vulnerabilidade.html">Vulnerabilidade</a></nav>
 <main>
 <h1>Mariana: approval of the renegotiated settlement</h1>
-<div class="meta">type: case<br><a class="badge" href="../tags.html#julgado">julgado</a></div>
-<ul class="ficha"><li><strong>tribunal:</strong> Supremo Tribunal Federal (Brasil)</li><li><strong>julgamento:</strong> 2024-11-06</li><li><strong>jurisdição:</strong> Brasil</li><li><strong>resultado:</strong> acordo de R$ 170 bilhões homologado</li><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
+<div class="meta">type: case<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#acordo">acordo</a> <a class="badge" href="../tags.html#julgado">julgado</a> <a class="badge" href="../tags.html#mariana">mariana</a> <a class="badge" href="../tags.html#reparacao">reparacao</a></div>
+<ul class="ficha"><li><strong>tribunal:</strong> Supremo Tribunal Federal (Brasil)</li><li><strong>julgamento:</strong> 2024-11-06</li><li><strong>jurisdição:</strong> Brasil</li><li><strong>partes:</strong> União, Minas Gerais, Espírito Santo, municípios; Samarco, Vale e BHP</li><li><strong>resultado:</strong> acordo de R$ 170 bilhões homologado, com adesão voluntária</li><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
 
 <div data-lang="pt" hidden><p>O acordo de repactuação de <strong>R$ 170 bilhões</strong> foi assinado em 25 de outubro de 2024 e homologado
-pelo STF em <strong>6 de novembro de 2024</strong>. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do STF e Palacio do Planalto (gov.br), novembro de 2024: acordo de R$ 170 bilhoes homologado em 06/11/2024, assinado no mes anterior, homologacao pelo presidente do STF e referendada pelo Plenario (2026-08-10)">✓</span></p>
-<p>Segunda porta de entrada do mesmo fato, e a que produz reparação sem imputação: oito dias depois, a
-<a href="../julgados/mariana-jf-2024.html">Justiça Federal absolveria</a> os mesmos réus por falta de nexo causal.</p>
-<h2>Ver também</h2>
-<p><a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a> · <a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a> · <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a></p></div>
-<div data-lang="en"><p>The <strong>R$ 170 billion</strong> renegotiated settlement was signed on October 25, 2024, and homologated by
-the STF on <strong>November 6, 2024</strong>. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do STF e Palacio do Planalto (gov.br), novembro de 2024: acordo de R$ 170 bilhoes homologado em 06/11/2024, assinado no mes anterior, homologacao pelo presidente do STF e referendada pelo Plenario (2026-08-10)">✓</span></p>
-<p>The second point of entry for the same fact, and the one that produces reparation without
-attribution of fault: eight days later, <a href="../julgados/mariana-jf-2024.html">the federal court would acquit</a> the same
-defendants for lack of a causal link.</p>
+pelo presidente do Supremo Tribunal Federal, com referendo do Plenário em <strong>6 de novembro de 2024</strong>
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal de notícias do Supremo Tribunal Federal e cobertura especializada: homologação assinada pelo presidente da Corte e referendada pelo Plenário na sessão de 06/11/2024 (2026-08-16)">✓</span>.</p>
+<h2 id="sec-o-que-o-acordo-faz-e-o-que-ele-deliberadamente-nao-faz">O que o acordo faz, e o que ele deliberadamente não faz</h2>
+<p>Cerca de R$ 100 bilhões vão a entes públicos, e cerca de R$ 32 bilhões correspondem a obrigações a
+cargo da Samarco, entre recuperação de áreas degradadas, remoção de sedimentos, reassentamento e
+indenizações <span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do Supremo Tribunal Federal e cobertura especializada sobre a composição do acordo homologado em 06/11/2024 (2026-08-16)">✓</span>. A indenização individual foi fixada em R$ 35 mil
+como regra geral, e em R$ 95 mil para pescadores e agricultores
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura especializada sobre o acordo homologado em 06/11/2024 (2026-08-16)">✓</span>.</p>
+<p><strong>A adesão é voluntária.</strong> Municípios, pessoas atingidas, povos indígenas, quilombolas e comunidades
+tradicionais preservam o direito de prosseguir com as próprias demandas
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do Supremo Tribunal Federal e cobertura especializada: a adesão é facultativa e não extingue as pretensões de quem não aderir (2026-08-16)">✓</span>. Essa cláusula é o que impede o acordo de funcionar como
+quitação geral, e é a explicação jurídica de por que a ação inglesa contra a controladora seguiu
+correndo depois dele: quem não aderiu não transacionou.</p>
+<h2 id="sec-reparacao-sem-imputacao">Reparação sem imputação</h2>
+<p>Este é o segundo dos três nós do mesmo fato, e o que produz reparação <strong>sem atribuição de culpa</strong>.
+Oito dias depois da homologação, a <a href="../julgados/mariana-jf-2024.html">Justiça Federal absolveria</a> os mesmos grupos
+empresariais na esfera criminal. A sequência é a demonstração mais limpa disponível do argumento de
+<a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>: no intervalo de uma semana, o mesmo fato produziu a maior reparação civil da história
+do país e uma absolvição penal, sem que nenhuma das duas decisões precisasse contradizer a outra,
+porque cada uma respondeu a uma pergunta diferente.</p>
+<p>Vale registrar o que a cifra não significa. R$ 170 bilhões é valor global de um programa de
+obrigações ao longo de vinte anos, e não um cheque. Tratá-lo como indenização paga seria erro de
+leitura, e o número que interessa a quem foi atingido é o da indenização individual, três ordens de
+grandeza abaixo.</p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a> · <a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a> · <a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a> · <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a> ·
+<a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a></p></div>
+<div data-lang="en"><p>The <strong>R$ 170 billion</strong> renegotiated settlement was signed on 25 October 2024 and approved by the
+President of the Supreme Federal Court, endorsed by the full bench on <strong>6 November 2024</strong>
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal de notícias do Supremo Tribunal Federal e cobertura especializada: homologação assinada pelo presidente da Corte e referendada pelo Plenário na sessão de 06/11/2024 (2026-08-16)">✓</span>.</p>
+<h2>What the settlement does, and what it deliberately does not do</h2>
+<p>Around R$ 100 billion goes to public entities, and around R$ 32 billion corresponds to obligations
+borne by Samarco, covering restoration of degraded areas, sediment removal, resettlement and
+compensation <span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do Supremo Tribunal Federal e cobertura especializada sobre a composição do acordo homologado em 06/11/2024 (2026-08-16)">✓</span>. Individual compensation was set at R$ 35,000 as a
+general rule, and R$ 95,000 for fishermen and farmers <span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura especializada sobre o acordo homologado em 06/11/2024 (2026-08-16)">✓</span>.</p>
+<p><strong>Adhesion is voluntary.</strong> Municipalities, affected people, indigenous peoples, quilombolas and
+traditional communities retain the right to pursue their own claims
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do Supremo Tribunal Federal e cobertura especializada: a adesão é facultativa e não extingue as pretensões de quem não aderir (2026-08-16)">✓</span>. That clause is what stops the settlement from operating as
+a general release, and it is the legal explanation for why the English action against the parent
+company kept running after it: those who did not join did not settle.</p>
+<h2>Reparation without imputation</h2>
+<p>This is the second of the three nodes on the same fact, and the one that produces reparation
+<strong>without any attribution of fault</strong>. Eight days after the approval, the <a href="../julgados/mariana-jf-2024.html">federal
+court would acquit</a> the same corporate groups in the criminal sphere. The sequence is the cleanest
+available demonstration of the argument in <a href="../textos/lauta-2017.html">Lauta 2017</a>: within one week the same fact
+produced the largest civil reparation in the country's history and a criminal acquittal, without
+either decision having to contradict the other, because each answered a different question.</p>
+<p>It is worth recording what the figure does not mean. R$ 170 billion is the global value of a
+programme of obligations spread over twenty years, not a cheque. Treating it as compensation paid
+would be a reading error, and the number that matters to those affected is the individual
+compensation, three orders of magnitude below.</p>
 <h2>See also</h2>
-<p><a href="../julgados/mariana-jf-2024.html">the Mariana criminal acquittal</a> · <a href="../julgados/mariana-ewhc-2025.html">the Mariana EWHC
-decision</a> · <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a></p></div>
+<p><a href="../julgados/mariana-jf-2024.html">the Mariana criminal acquittal</a> · <a href="../julgados/mariana-ewhc-2025.html">the Mariana EWHC decision</a>
+· <a href="../julgados/brumadinho-denuncia.html">the Brumadinho charge</a> · <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a> ·
+<a href="../textos/lauta-2017.html">Lauta 2017</a></p></div>
 
 <h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> instantiates concept</span> <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a></li></ul>
 
 <h2>Neighbourhood in the graph</h2>
 <div id="cy-local"></div>
-<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "concept:disaster-risk", "label": "Disaster risk (effects of uncertainty)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Dysfunction of a social process", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Reading of Lauta 2017 (literature note)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Legal exceptionalism", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:porcao-juridica", "label": "Legal bite-sizes (the juridical portion)", "href": "../conceitos/porcao-juridica.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "julgado:brumadinho-denuncia", "label": "Brumadinho: the criminal charge and the victim count", "href": "../julgados/brumadinho-denuncia.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:cij-parecer-clima-2025", "label": "Advisory opinion on the obligations of States in respect of climate change", "href": "../julgados/cij-parecer-clima-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:itlos-parecer-2024", "label": "Advisory opinion on climate change and the law of the sea", "href": "../julgados/itlos-parecer-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:klimaseniorinnen-2024", "label": "Verein KlimaSeniorinnen Schweiz and Others v. Switzerland", "href": "../julgados/klimaseniorinnen-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-ewhc-2025", "label": "Município de Mariana and Others v. BHP Group", "href": "../julgados/mariana-ewhc-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-jf-2024", "label": "Mariana: criminal acquittal in the Federal Court", "href": "../julgados/mariana-jf-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-stf-homologacao-2024", "label": "Mariana: approval of the renegotiated settlement", "href": "../julgados/mariana-stf-homologacao-2024.html", "foco": "1"}, "classes": "julgado foco"}, {"data": {"id": "julgado:neubauer-2021", "label": "Neubauer and Others v. Germany", "href": "../julgados/neubauer-2021.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:urgenda-2019", "label": "Urgenda Foundation v. State of the Netherlands", "href": "../julgados/urgenda-2019.html", "foco": "0"}, "classes": "julgado"}], "edges": [{"data": {"id": "le0", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le1", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le2", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le3", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le4", "source": "concept:disaster-risk", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le5", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:lauta-2017-leitura", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:legal-exceptionalism", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:porcao-juridica", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:porcao-juridica", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:porcao-juridica", "target": "concept:lauta-2017-leitura"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:porcao-juridica", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "julgado:brumadinho-denuncia", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le18", "source": "julgado:cij-parecer-clima-2025", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le19", "source": "julgado:cij-parecer-clima-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le20", "source": "julgado:itlos-parecer-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le21", "source": "julgado:klimaseniorinnen-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le22", "source": "julgado:mariana-ewhc-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le23", "source": "julgado:mariana-jf-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le24", "source": "julgado:mariana-stf-homologacao-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le25", "source": "julgado:neubauer-2021", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le26", "source": "julgado:urgenda-2019", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "author"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "text"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "concept"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "session"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislation"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "case"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "wrote"}, "pertence_a_sessao": {"color": "#c9a227", "label": "belongs to session"}, "desenvolve_conceito": {"color": "#4d8067", "label": "develops concept"}, "cita": {"color": "#9b5de5", "label": "cites"}, "relaciona_se_com": {"color": "#c1503a", "label": "relates to"}, "define_conceito": {"color": "#6d597a", "label": "defines concept"}, "instancia_conceito": {"color": "#9d0208", "label": "instantiates concept"}};</script>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "concept:disaster-risk", "label": "Disaster risk (effects of uncertainty)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Dysfunction of a social process", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Reading of Lauta 2017 (literature note)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Legal exceptionalism", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:porcao-juridica", "label": "Legal bite-sizes (the juridical portion)", "href": "../conceitos/porcao-juridica.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "julgado:brumadinho-denuncia", "label": "Brumadinho: the criminal charge and the victim count", "href": "../julgados/brumadinho-denuncia.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:cij-parecer-clima-2025", "label": "Advisory opinion on the obligations of States in respect of climate change", "href": "../julgados/cij-parecer-clima-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:itlos-parecer-2024", "label": "Advisory opinion on climate change and the law of the sea", "href": "../julgados/itlos-parecer-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:klimaseniorinnen-2024", "label": "Verein KlimaSeniorinnen Schweiz and Others v. Switzerland", "href": "../julgados/klimaseniorinnen-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-ewhc-2025", "label": "Município de Mariana and Others v. BHP Group", "href": "../julgados/mariana-ewhc-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-jf-2024", "label": "Mariana: criminal acquittal in the Federal Court", "href": "../julgados/mariana-jf-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-stf-homologacao-2024", "label": "Mariana: approval of the renegotiated settlement", "href": "../julgados/mariana-stf-homologacao-2024.html", "foco": "1"}, "classes": "julgado foco"}, {"data": {"id": "julgado:neubauer-2021", "label": "Neubauer and Others v. Germany", "href": "../julgados/neubauer-2021.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:urgenda-2019", "label": "Urgenda Foundation v. State of the Netherlands", "href": "../julgados/urgenda-2019.html", "foco": "0"}, "classes": "julgado"}], "edges": [{"data": {"id": "le0", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le1", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le2", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le3", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le4", "source": "concept:disaster-risk", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le5", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:lauta-2017-leitura", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:legal-exceptionalism", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:porcao-juridica", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:porcao-juridica", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:porcao-juridica", "target": "concept:lauta-2017-leitura"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:porcao-juridica", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "julgado:brumadinho-denuncia", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le18", "source": "julgado:cij-parecer-clima-2025", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le19", "source": "julgado:cij-parecer-clima-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le20", "source": "julgado:itlos-parecer-2024", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le21", "source": "julgado:itlos-parecer-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le22", "source": "julgado:klimaseniorinnen-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le23", "source": "julgado:mariana-ewhc-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le24", "source": "julgado:mariana-jf-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le25", "source": "julgado:mariana-stf-homologacao-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le26", "source": "julgado:neubauer-2021", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le27", "source": "julgado:urgenda-2019", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "author"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "text"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "concept"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "session"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislation"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "case"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "wrote"}, "pertence_a_sessao": {"color": "#c9a227", "label": "belongs to session"}, "desenvolve_conceito": {"color": "#4d8067", "label": "develops concept"}, "cita": {"color": "#9b5de5", "label": "cites"}, "relaciona_se_com": {"color": "#c1503a", "label": "relates to"}, "define_conceito": {"color": "#6d597a", "label": "defines concept"}, "instancia_conceito": {"color": "#9d0208", "label": "instantiates concept"}};</script>
 <footer>Generated from the wiki source. This page is built, not written by hand.<br></footer>
 </main>
 </div>

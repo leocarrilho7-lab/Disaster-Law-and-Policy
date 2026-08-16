@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S03: Risk, Uncertainty, Vulnerability and Resilience</title>
+<style>
+/* CLARA, e a declaracao tem de dizer isso. Enquanto aqui se lia `light dark`, a folha PROMETIA
+   modo escuro e entregava so estilo claro: `<button>` nao herda `color`, usa a cor de SISTEMA, e
+   num aparelho em modo escuro ela vira quase branca. Como a regra de botao forca `background:
+   #fff` e nao declara tinta, o rotulo saia branco sobre branco em 60 dos 62 botoes. O aluno chega
+   por QR code, no celular, e esta pagina nao lhe oferece troca de tema para contornar.
+   Relatado em 16/08/2026 como "o texto nao aparece legivel". */
+   `only light` e nao so `light`: o Auto Dark Theme do Chrome no Android escurece a forca pagina
+   que declara apenas `light`, e `only` e o opt-out documentado. Ele inverte fundo e texto juntos,
+   entao nao era o mecanismo do defeito acima; entra como reforco, porque o publico desta pagina
+   chega por QR code e e majoritariamente Android. */
+:root { color-scheme: only light; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.45 Georgia, 'Times New Roman', serif;
+       background: #fbfaf7; color: #1b1b1b; }
+h1, h2, h3 { font-family: 'Segoe UI', system-ui, sans-serif; }
+.rotulo { font: 600 10px/1 'Segoe UI', system-ui, sans-serif; letter-spacing: .14em;
+          text-transform: uppercase; }
+
+.etapa { animation: entra .18s ease-out; }
+@keyframes entra { from { opacity: 0; transform: translateY(6px); } }
+.relogio { font: 600 13px/1 "Segoe UI", system-ui, sans-serif; letter-spacing: .1em;
+           color: #6b6b6b; margin: 0 0 10px; }
+.relogio.estourado { color: #9b2226; }
+.global { position: sticky; top: 0; z-index: 5; margin: 0 0 12px; padding: 8px 12px;
+          background: #1b1b1b; color: #fbfaf7; border-radius: 0 0 6px 6px;
+          font: 600 13px/1 'Segoe UI', system-ui, sans-serif; letter-spacing: .1em; }
+.global.apertado { background: #9b2226; }
+#placar ul { padding-left: 20px; } #placar ul li { margin: 4px 0; }
+.mural { list-style: none; padding: 0; margin: 12px 0; }
+.mural li { display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+            border-radius: 6px; margin: 0 0 6px; background: #fff;
+            border: 1px solid #e6e1d8; }
+.mural li.meu { border-color: #1b1b1b; border-width: 2px; }
+.medalha { width: 22px; text-align: center; font: 700 15px/1 "Segoe UI", sans-serif; }
+.mural li:nth-child(1) .medalha::before { content: "F947"; }
+.mural li:nth-child(2) .medalha::before { content: "F948"; }
+.mural li:nth-child(3) .medalha::before { content: "F949"; }
+.simbolo { font-size: 22px; }
+.quem { flex: 1 1 auto; font-size: 14px; }
+.quem em { display: block; font-size: 11px; color: #8a8377; font-style: normal; }
+.mural .barra { flex: 0 0 78px; height: 10px; background: #eee7dc;
+                border-radius: 5px; overflow: hidden; }
+.mural .barra i { display: block; height: 100%; background: #e07a5f; }
+.numeros { flex: 0 0 auto; font: 600 11px/1 "Segoe UI", sans-serif; color: #4a4a4a; }
+.regras { padding-left: 20px; }
+.regras li { margin: 8px 0; }
+.folha { max-width: 560px; margin: 0 auto; padding: 20px 16px 64px; }
+fieldset { border: 1px solid #d8d3c8; border-radius: 6px; margin: 0 0 20px; padding: 14px; }
+legend { padding: 0 6px; }
+/* `font: inherit` NAO traz a cor junto: o atalho `font` nao inclui `color`, e controle de
+   formulario nao herda cor do pai. Quem pinta o fundo pinta a tinta, sempre no mesmo lugar,
+   senao a metade que falta vem do sistema operacional do aluno. */
+button, .op { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 12px 14px;
+              font: inherit; color: #1b1b1b; border: 1px solid #cfc9bd; border-radius: 6px;
+              background: #fff; cursor: pointer; }
+button:hover { border-color: #1b1b1b; }
+/* O botao de prosseguir era branco, alinhado a esquerda e com a mesma moldura das OPCOES de
+   resposta: lido na barra do fim da tela, nao parecia botao e o texto sumia no fundo. Azul cheio,
+   centrado e com peso, ele deixa de competir com as opcoes e passa a ser o unico chamado da tela.
+   Contraste do par #1d4ed8 sobre #fff bem acima do minimo da WCAG AA para texto grande. */
+.op.primario { background: #1d4ed8; border-color: #1d4ed8; color: #fff;
+               font-weight: 600; text-align: center; }
+.op.primario:hover { background: #1740b0; border-color: #1740b0; }
+textarea { width: 100%; min-height: 140px; font: inherit; padding: 10px;
+           border: 1px solid #cfc9bd; border-radius: 6px; }
+.escala { display: flex; gap: 6px; }
+.escala button { text-align: center; }
+.enviado { padding: 14px; border-radius: 6px; background: #e7efe9; }
+input { width: 100%; font: inherit; padding: 10px; border: 1px solid #cfc9bd; border-radius: 6px; }
+.icones { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.icone { width: auto; flex: 0 0 auto; font-size: 24px; padding: 6px 10px; margin: 0; }
+.icone.sel { border-color: #1b1b1b; border-width: 2px; }
+.icone.tomado { opacity: .28; cursor: not-allowed; text-decoration: line-through; }
+.likert { margin: 0 0 16px; }
+.likert p { margin: 0 0 6px; }
+.nota { flex: 1; text-align: center; padding: 12px 0; font: inherit;
+        border: 1px solid #cfc9bd; border-radius: 6px; background: #fff;
+        cursor: pointer; }
+.nota.sel { border-color: #1b1b1b; border-width: 2px; font-weight: 700; }
+.aberta { display: block; margin: 0 0 14px; }
+.aberta span { display: block; margin-bottom: 6px; }
+.aviso { font-size: 13px; color: #9b2226; }
+.chave { margin-top: 10px; padding: 12px; border-left: 4px solid #e07a5f; background: #fff; }
+.placar li { margin: 4px 0; }
+.fator { display: block; margin: 6px 0; }
+.fator.sorteado { color: #9b2226; }
+.casotexto { border: 1px solid #cfc9bd; border-radius: 6px; padding: 14px; margin: 0 0 20px;
+             background: #fff; }
+.casotexto h2 { margin-top: 0; font-size: 19px; }
+.sinal { border-left: 4px solid #9b2226; padding: 10px 14px; margin: 0 0 12px; background: #fff; }
+.sinal h3 { margin: 4px 0; }
+</style>
+</head>
+<body>
+<div class="folha">
+<h1>S03: Risk, Uncertainty, Vulnerability and Resilience</h1>
+<p id="global" class="global"></p>
+<section id="portada" data-minutos="2"><p class="relogio"></p><h2>How this works</h2><ol class="regras"><li>You play in a GROUP of up to three. Pick one nickname and one symbol; once a group takes a symbol, it is gone.</li><li>The system deals your case. You do not choose it, and two groups may end up with the same one.</li><li>The case gives real facts up to the moment a decision had to be taken. You are never told what happened next.</li><li>Your job is to name the REGIME OF UNCERTAINTY the decision sits in, and then the rule that regime commands.</li><li>Then new information arrives. You judge whether it makes your decision more or less defensible, and decide whether to move.</li><li>Every step has a clock, and the activity has one too. When the activity clock runs out the game closes and shows your board, finished or not.</li><li>There is no speed score and no individual ranking. What counts is whether the group moves when the evidence says move.</li></ol><button type="button" class="op primario" id="li-as-regras">I got it! Let's move on!</button></section>
+<fieldset id="entrada" hidden><legend class="rotulo">Join</legend><p>Pick a nickname for your GROUP and an icon. The score is by group, never by person.</p><p class="aviso">Do not use anyone's real name: whatever you type here is what gets recorded.</p><input id="apelido" maxlength="40" placeholder="group nickname"><p class="rotulo">one symbol per group: once a group takes it, it is gone</p><div class="icones"><button type="button" class="icone" data-i="volcano" title="volcano"><span class="emoji" role="img" aria-label="volcano">🌋</span></button><button type="button" class="icone" data-i="meteor" title="meteor"><span class="emoji" role="img" aria-label="meteor">☄️</span></button><button type="button" class="icone" data-i="nuclear" title="nuclear"><span class="emoji" role="img" aria-label="nuclear">☢️</span></button><button type="button" class="icone" data-i="pathogen" title="pathogen"><span class="emoji" role="img" aria-label="pathogen">🦠</span></button><button type="button" class="icone" data-i="tsunami" title="tsunami"><span class="emoji" role="img" aria-label="tsunami">🌊</span></button><button type="button" class="icone" data-i="wildfire" title="wildfire"><span class="emoji" role="img" aria-label="wildfire">🔥</span></button><button type="button" class="icone" data-i="storm" title="storm"><span class="emoji" role="img" aria-label="storm">🌪️</span></button><button type="button" class="icone" data-i="tailings-dam" title="tailings dam"><span class="emoji" role="img" aria-label="tailings dam">⛏️</span></button><button type="button" class="icone" data-i="oil-spill" title="oil spill"><span class="emoji" role="img" aria-label="oil spill">🛢️</span></button><button type="button" class="icone" data-i="financial-crash" title="financial crash"><span class="emoji" role="img" aria-label="financial crash">📉</span></button><button type="button" class="icone" data-i="structural-collapse" title="structural collapse"><span class="emoji" role="img" aria-label="structural collapse">🏚️</span></button><button type="button" class="icone" data-i="heatwave" title="heatwave"><span class="emoji" role="img" aria-label="heatwave">🌡️</span></button><button type="button" class="icone" data-i="drought" title="drought"><span class="emoji" role="img" aria-label="drought">🏜️</span></button><button type="button" class="icone" data-i="flood" title="flood"><span class="emoji" role="img" aria-label="flood">🌧️</span></button><button type="button" class="icone" data-i="blackout" title="blackout"><span class="emoji" role="img" aria-label="blackout">🔌</span></button><button type="button" class="icone" data-i="chemical" title="chemical release"><span class="emoji" role="img" aria-label="chemical release">🧪</span></button></div><p id="aviso-entrada" class="aviso"></p><button type="button" class="op" id="entrar">Register the group</button></fieldset>
+<div id="depois" hidden>
+<section class="etapa" data-etapa="caso" hidden data-minutos="1"><p class="relogio"></p><fieldset id="escolhacaso"><legend class="rotulo">Your case</legend><p id="aviso-caso">Dealing...</p></fieldset><div class="casotexto" data-caso="case-fundao" hidden><h2>The drainage that was changed</h2><p>An iron ore tailings dam has been raised eight times by the upstream method. A design change moved the drainage system, and piezometers now read saturation above the level the original project assumed. The operator applies to renew the operating licence. The agency has three technical staff for four hundred dams in the state.</p><p class="rotulo">Name the one fact that, if false, would change your layer.</p></div><div class="casotexto" data-caso="case-seawall" hidden><h2>The study that stayed internal</h2><p>A coastal nuclear plant is licensed against a design-basis tsunami of 5.7 metres, derived from the instrumental record. An internal study, using paleotsunami deposits rather than instruments, suggests waves of up to 15.7 metres are possible. The study is not peer reviewed. Raising the seawall would take four years and halt one reactor.</p><p class="rotulo">Does a non-peer-reviewed study change the regime, or only the parameter?</p></div><div class="casotexto" data-caso="case-tremors" hidden><h2>Six months of small tremors</h2><p>A medieval town has felt minor earthquakes for six months. Seismologists agree on the number: the swarm raises the probability of a destructive event in the next week from about 1 in 200,000 to about 1 in 10,000. Nobody disputes the estimate. A public official must decide whether to tell the town, and in what words. Evacuation costs money and credibility; silence has, elsewhere, ended in prosecutions.</p><p class="rotulo">If the number is agreed, name exactly what is still uncertain.</p></div><div class="casotexto" data-caso="case-barrier" hidden><h2>The barrier and the century</h2><p>A tidal barrier protects a capital city and was designed for a sea level rise that current projections have already overtaken at the upper bound. Replacement takes twenty-five years and one budget cycle cannot fund it. Projections for 2100 differ by a factor of three depending on ice-sheet assumptions that no observation can yet settle.</p><p class="rotulo">Draw the decision you would take in year 1 and the one you would keep open for year 15.</p></div><div class="casotexto" data-caso="case-pressure-test" hidden><h2>The test that read wrong</h2><p>On a deepwater well, a negative pressure test gives an anomalous reading. One crew reads it as a failed barrier; another reads it as an artefact of the line. Displacement is scheduled to begin in two hours, and the rig is forty-three days behind schedule at high daily cost.</p><p class="rotulo">What would you require before proceeding, and what does requiring it cost?</p></div><div class="casotexto" data-caso="case-novel-pathogen" hidden><h2>Week three</h2><p>A respiratory pathogen with no prior human circulation has been reported in one country. The case fatality rate is estimated from hospitalised patients only. Whether it transmits before symptoms appear is unknown and will remain unknown for at least a month. Border and school measures must be decided this week or not at all.</p><p class="rotulo">Which of your unknowns will resolve on its own, and which only resolve if you act?</p></div><button type="button" class="op primario avancar">Read it. Next.</button></section>
+<section class="etapa" hidden data-rodada="s03-r0-brainstorm" data-tipo="brainstorm" data-minutos="4"><p class="relogio"></p><fieldset><legend class="rotulo">Round 0: what makes this hard?</legend><p>Read your Case card. In two minutes and in silence, write the things that make this decision hard. Three words each, as many as you have. Then, as a group, send the three your group keeps.</p>
+<textarea data-v="texto" placeholder="three words, comma, three words, comma..."></textarea><button type="button" class="op enviar">Send</button>
+</fieldset><button type="button" class="op avancar" hidden>Next</button></section>
+<section class="etapa" hidden data-rodada="s03-r1-commit" data-tipo="escolha" data-minutos="7"><p class="relogio"></p><fieldset><legend class="rotulo">Round 1: name the regime</legend><p>Read your Case card. Place it on ONE layer of the mat and write the decision that layer commands. Then write the strongest argument AGAINST your own choice. Commit before the signal.</p>
+<button type="button" class="op" data-v="A0">A0 &middot; Aleatory variability</button>
+<button type="button" class="op" data-v="L0">L0 &middot; Calculable risk</button>
+<button type="button" class="op" data-v="L1">L1 &middot; Parametric uncertainty</button>
+<button type="button" class="op" data-v="L2">L2 &middot; Model uncertainty</button>
+<button type="button" class="op" data-v="L3">L3 &middot; Deep uncertainty</button>
+<button type="button" class="op" data-v="L4">L4 &middot; Radical uncertainty, catastrophic loss</button>
+<button type="button" class="op" data-v="L5">L5 &middot; Catastrophic and irreversible</button>
+</fieldset><button type="button" class="op avancar" hidden>Next</button></section>
+<section class="etapa" hidden data-rodada="s03-r2-signal" data-tipo="sct" data-minutos="7"><p class="relogio"></p><fieldset><legend class="rotulo">Round 2: the signal arrives</legend><p>Turn over the Signal card. Independently, and before your group speaks: does this information make your Round 1 decision more or less defensible?</p>
+<div id="sinal" class="sinal"></div><div class="escala">
+<button type="button" class="op" data-v="-2">-2</button>
+<button type="button" class="op" data-v="-1">-1</button>
+<button type="button" class="op" data-v="0">+0</button>
+<button type="button" class="op" data-v="1">+1</button>
+<button type="button" class="op" data-v="2">+2</button>
+</div><p class="rotulo">Much less defensible &rarr; Much more defensible</p>
+</fieldset><button type="button" class="op avancar" hidden>Next</button></section>
+<section class="etapa" hidden data-rodada="s03-r4-feedback" data-tipo="feedback" data-minutos="9"><p class="relogio"></p><fieldset><legend class="rotulo">Round 3: how did this go?</legend><p>One answer per group. This is the part that decides whether the next session is run like this one, so be blunt: a polite form teaches nothing.</p>
+<div class="likert" data-item="fb-jogabilidade"><p>The game was easy to follow: we always knew what to do next.</p><div class="escala">
+<button type="button" class="nota" data-v="1">1</button>
+<button type="button" class="nota" data-v="2">2</button>
+<button type="button" class="nota" data-v="3">3</button>
+<button type="button" class="nota" data-v="4">4</button>
+<button type="button" class="nota" data-v="5">5</button>
+</div><p class="rotulo">not at all &rarr; completely</p></div>
+<div class="likert" data-item="fb-confianca"><p>We are more confident naming a regime of uncertainty than we were an hour ago.</p><div class="escala">
+<button type="button" class="nota" data-v="1">1</button>
+<button type="button" class="nota" data-v="2">2</button>
+<button type="button" class="nota" data-v="3">3</button>
+<button type="button" class="nota" data-v="4">4</button>
+<button type="button" class="nota" data-v="5">5</button>
+</div><p class="rotulo">not at all &rarr; completely</p></div>
+<div class="likert" data-item="fb-aplicacao"><p>The case made the concepts usable, and not only memorable.</p><div class="escala">
+<button type="button" class="nota" data-v="1">1</button>
+<button type="button" class="nota" data-v="2">2</button>
+<button type="button" class="nota" data-v="3">3</button>
+<button type="button" class="nota" data-v="4">4</button>
+<button type="button" class="nota" data-v="5">5</button>
+</div><p class="rotulo">not at all &rarr; completely</p></div>
+<div class="likert" data-item="fb-tempo"><p>The time on each step was enough for the work it asked for.</p><div class="escala">
+<button type="button" class="nota" data-v="1">1</button>
+<button type="button" class="nota" data-v="2">2</button>
+<button type="button" class="nota" data-v="3">3</button>
+<button type="button" class="nota" data-v="4">4</button>
+<button type="button" class="nota" data-v="5">5</button>
+</div><p class="rotulo">not at all &rarr; completely</p></div>
+<div class="likert" data-item="fb-repetir"><p>We would want another session run like this one.</p><div class="escala">
+<button type="button" class="nota" data-v="1">1</button>
+<button type="button" class="nota" data-v="2">2</button>
+<button type="button" class="nota" data-v="3">3</button>
+<button type="button" class="nota" data-v="4">4</button>
+<button type="button" class="nota" data-v="5">5</button>
+</div><p class="rotulo">not at all &rarr; completely</p></div>
+<label class="aberta" data-item="fb-gostou"><span class="rotulo">What worked. Name the moment, not the feeling.</span><textarea rows="3"></textarea></label>
+<label class="aberta" data-item="fb-melhorar"><span class="rotulo">What to change. Name the moment, not the feeling.</span><textarea rows="3"></textarea></label>
+<button type="button" class="op enviar">Send</button>
+</fieldset><button type="button" class="op avancar" hidden>Next</button></section>
+<section class="etapa" data-etapa="fim" hidden><h2>Time</h2><div id="placar"></div><p class="rotulo">what the room decided, and why the key says what it says, comes next, with the instructor</p>
+</section></div>
+<script>const ARTE = {"volcano": "🌋", "meteor": "☄️", "nuclear": "☢️", "pathogen": "🦠", "tsunami": "🌊", "wildfire": "🔥", "storm": "🌪️", "tailings-dam": "⛏️", "oil-spill": "🛢️", "financial-crash": "📉", "structural-collapse": "🏚️", "heatwave": "🌡️", "drought": "🏜️", "flood": "🌧️", "blackout": "🔌", "chemical": "🧪"};</script>
+<script>const SETUP = {"case-fundao": {"titulo": "The instrument was offline", "texto": "The monitoring device that would have detected this failure mode has been out of service for sixty days. Nobody reported it because the reporting duty sits with the contractor.", "fatores": [{"id": "F1", "nome": "Independent monitoring, not the operator's own", "origem": "decisao"}, {"id": "F2", "nome": "Drainage re-derived after the design change", "origem": "decisao"}, {"id": "F3", "nome": "Self-rescue zone drilled in the last twelve months", "origem": "decisao"}, {"id": "F4", "nome": "Licence renewed on the existing studies", "origem": "decisao"}, {"id": "F5", "nome": "Rainfall above the historical maximum this season", "origem": "sorteio"}, {"id": "F6", "nome": "The one engineer who knew the drainage leaves the company", "origem": "sorteio"}]}, "case-seawall": {"titulo": "The disagreement is structural", "texto": "Two expert groups disagree. Pressed, they agree on every input value and disagree about which equation governs.", "fatores": []}, "case-tremors": {"titulo": "The population cannot leave", "texto": "The people exposed cannot relocate, did not choose the exposure, and were not consulted. The benefit accrues elsewhere.", "fatores": []}, "case-barrier": {"titulo": "A reversible option exists", "texto": "There is a cheaper measure that keeps the decision open for five years and costs a fifth of the permanent one. It protects less.", "fatores": []}, "case-pressure-test": {"titulo": "The safeguard depends on the same failure", "texto": "The backup system shares a power supply, a wall, or a supplier with the system it backs up.", "fatores": []}, "case-novel-pathogen": {"titulo": "Waiting buys information", "texto": "A study already funded will resolve the central question in eighteen months. Deferral costs real money and forecloses nothing.", "fatores": []}};</script>
+<script>const ORCAMENTO_MIN = 30; const RODADAS = [{"id": "s03-r0-brainstorm", "titulo": "Round 0: what makes this hard?"}, {"id": "s03-r1-commit", "titulo": "Round 1: name the regime"}, {"id": "s03-r2-signal", "titulo": "Round 2: the signal arrives"}, {"id": "s03-r4-feedback", "titulo": "Round 3: how did this go?"}];</script>
+<script>const REFLEXAO = {"case-fundao": "Name the one fact that, if false, would change your layer.", "case-seawall": "Does a non-peer-reviewed study change the regime, or only the parameter?", "case-tremors": "If the number is agreed, name exactly what is still uncertain.", "case-barrier": "Draw the decision you would take in year 1 and the one you would keep open for year 15.", "case-pressure-test": "What would you require before proceeding, and what does requiring it cost?", "case-novel-pathogen": "Which of your unknowns will resolve on its own, and which only resolve if you act?"};</script>
+
+<script>
+function aplicarCaso(caso) {
+  document.querySelectorAll('.casotexto').forEach(d => { d.hidden = d.dataset.caso !== caso; });
+  const s = SETUP[caso], alvo = document.getElementById('sinal');
+  if (s && alvo) alvo.innerHTML = '<p class="rotulo">signal</p><h3>' + s.titulo + '</h3><p>'
+    + s.texto + '</p>';
+  const cx = document.getElementById('fatores');
+  if (s && cx) cx.innerHTML = s.fatores.map(f => f.origem === 'decisao'
+      ? '<label class="fator"><input type="checkbox" data-f="' + f.id + '"> ' + f.nome + '</label>'
+      : '<p class="fator sorteado"><span class="rotulo">drawn, not yours</span> ' + f.nome + '</p>'
+    ).join('');
+  const anuncio = document.getElementById('aviso-caso');
+  if (anuncio) anuncio.innerHTML = 'Your case was dealt to you. Read it: the whole round hangs on '
+    + 'these facts.';
+}
+</script>
+<script>const SLOT_ESTADO = "jogo-s03-971cc5d4";</script>
+
+<script>
+const estado = JSON.parse(localStorage.getItem(SLOT_ESTADO) || '{}');
+let MODO = 'solo';               // vira 'sala' se o servidor responder
+let relogio = null;
+
+function salvar() { localStorage.setItem(SLOT_ESTADO, JSON.stringify(estado)); }
+
+const etapas = () => [...document.querySelectorAll('.etapa')];
+function mostrar(i) {
+  etapas().forEach((e, k) => { e.hidden = k !== i; });
+  estado.etapa = i; salvar();
+  iniciarRelogio(etapas()[i]);
+}
+function avancar() {
+  const atual = etapas().findIndex(e => !e.hidden);
+  // Chegar ao fim pela ultima rodada tambem monta o placar: o fecho e o mesmo, mude
+  // o motivo (terminou ou estourou o tempo).
+  if (atual === etapas().length - 2) { if (relogioGlobal) clearInterval(relogioGlobal);
+    estado.encerrado = 'done'; salvar(); montarPlacar(); mostrar(etapas().length - 1); return; }
+  if (atual < etapas().length - 1) mostrar(atual + 1);
+}
+
+// O relogio e informativo: quando zera, avisa e a etapa CONTINUA aceitando resposta.
+function iniciarRelogio(etapa) {
+  if (relogio) { clearInterval(relogio); relogio = null; }
+  const alvo = etapa && etapa.querySelector('.relogio');
+  if (!alvo) return;
+  let resta = parseInt(etapa.dataset.minutos || '0', 10) * 60;
+  const desenhar = () => {
+    const m = Math.floor(Math.abs(resta) / 60), s = Math.abs(resta) % 60;
+    alvo.textContent = (resta < 0 ? 'time is up  +' : '') + m + ':' + String(s).padStart(2, '0');
+    alvo.classList.toggle('estourado', resta < 0);
+  };
+  desenhar();
+  relogio = setInterval(() => { resta -= 1; desenhar(); }, 1000);
+}
+
+let icone = null;
+let relogioGlobal = null;
+const aviso = document.getElementById('aviso-entrada');
+
+// RELOGIO GLOBAL da atividade. Quando ele zera, o jogo vai para o fecho MESMO com etapas por
+// terminar: decisao do professor em 15/08/2026, "com ou sem a realizacao de todas as etapas".
+//
+// Antes de saltar, ele ENVIA o que estiver preenchido na etapa corrente. Terminar no horario nao
+// pode custar o trabalho de um grupo, e a alternativa (descartar) transformaria o cronometro em
+// punicao em vez de ritmo.
+function iniciarRelogioGlobal() {
+  const barra = document.getElementById('global');
+  let resta = ORCAMENTO_MIN * 60;
+  const desenhar = () => {
+    const m = Math.floor(Math.max(resta, 0) / 60), s = Math.max(resta, 0) % 60;
+    barra.textContent = 'activity ' + m + ':' + String(s).padStart(2, '0');
+    barra.classList.toggle('apertado', resta <= 300);
+  };
+  desenhar();
+  relogioGlobal = setInterval(() => {
+    resta -= 1; desenhar();
+    if (resta <= 0) { clearInterval(relogioGlobal); encerrar('time'); }
+  }, 1000);
+}
+
+function encerrar(motivo) {
+  const atual = etapas().find(e => !e.hidden && e.dataset.rodada);
+  if (atual) { const b = atual.querySelector('.enviar'); if (b) b.click(); }
+  estado.encerrado = motivo; estado.fim = Date.now(); salvar();
+  montarPlacar();
+  mostrar(etapas().length - 1);
+}
+
+// O placar do grupo: o que ele escolheu, quanto tempo levou, e o que ficou por responder. E o
+// "nao escolhido" que ensina, porque e onde o grupo ve o que deixou de lado sob pressao.
+function montarPlacar() {
+  const alvo = document.getElementById('placar');
+  const feitas = RODADAS.filter(r => estado[r.id] !== undefined);
+  const faltando = RODADAS.filter(r => estado[r.id] === undefined);
+  const minutos = estado.inicio ? Math.round((Date.now() - estado.inicio) / 60000) : null;
+  let h = '<p class="rotulo">' + (estado.encerrado === 'time' ? 'time ran out' : 'finished') + '</p>';
+  h += '<p><strong>' + (estado.apelido || '') + '</strong> &middot; case ' + (estado.caso || '') +
+       (minutos !== null ? ' &middot; ' + minutos + ' min' : '') + '</p>';
+  h += '<h3>What you answered</h3><ul>';
+  feitas.forEach(r => {
+    let v = estado[r.id];
+    if (typeof v === 'string' && v.length > 90) v = v.slice(0, 90) + '...';
+    h += '<li>' + r.titulo + ': <strong>' + v + '</strong></li>';
+  });
+  h += '</ul>';
+  if (faltando.length) {
+    h += '<h3>What you did not get to</h3><ul>';
+    faltando.forEach(r => { h += '<li>' + r.titulo + '</li>'; });
+    h += '</ul>';
+  }
+  alvo.innerHTML = h;
+  if (MODO !== 'sala') return;
+
+  // O MURAL DA TURMA, ordenado por etapas concluidas. Foi a escolha do professor em 15/08/2026,
+  // depois de eu apontar que sem a chave o unico criterio disponivel e velocidade com outro nome.
+  fetch('/placar').then(r => r.json()).then(d => {
+    const eu = estado.apelido;
+    let m = '<h3>The room</h3><ol class="mural">';
+    (d.placar || []).forEach((g, i) => {
+      const medalha = ['1', '2', '3'][i] || '';
+      const largura = g.de ? Math.round(100 * g.etapas / g.de) : 0;
+      m += '<li class="' + (g.apelido === eu ? 'meu' : '') + '">'
+        + (medalha ? '<span class="medalha">' + medalha + '</span>' : '<span class="medalha"></span>')
+        + '<span class="simbolo">' + (ARTE[g.icone] || '') + '</span>'
+        + '<span class="quem">' + g.apelido + '<em>' + g.caso + '</em></span>'
+        + '<span class="barra"><i style="width:' + largura + '%"></i></span>'
+        + '<span class="numeros">' + g.etapas + '/' + g.de
+        + (g.minutos != null ? ' &middot; ' + g.minutos + ' min' : '') + '</span></li>';
+    });
+    m += '</ol>';
+    alvo.insertAdjacentHTML('beforeend', m);
+    if (!d.liberado) {
+      alvo.insertAdjacentHTML('beforeend',
+        '<p class="rotulo">the key opens when every round is closed</p>');
+      return;
+    }
+    // A chave, liberada. So a do CASO do grupo: despejar as seis seria dar as respostas das outras
+    // equipes antes do debrief.
+    fetch('/gabarito').then(r => r.json()).then(k => {
+      if (!k.ok) return;
+      const meu = (k.chave || []).find(x => x.caso === estado.caso);
+      const camada = (k.camadas || []).find(x => x.caso === estado.caso);
+      let g = '<h3>The key, for your case</h3>';
+      if (camada) g += '<div class="chave"><p><strong>Layer: ' + camada.modal
+        + '</strong> (also defensible: ' + (camada.aceitaveis || []).join(', ') + ')</p><p>'
+        + camada.porque + '</p></div>';
+      if (meu) g += '<div class="chave"><p><strong>The signal moved it by '
+        + (meu.mediana > 0 ? '+' : '') + meu.mediana + '</strong></p><p>' + meu.porque + '</p></div>';
+      alvo.insertAdjacentHTML('beforeend', g);
+    }).catch(() => {});
+  }).catch(() => {});
+}
+
+document.querySelectorAll('.icone').forEach(b => b.addEventListener('click', () => {
+  if (b.disabled) return;
+  icone = b.dataset.i;
+  document.querySelectorAll('.icone').forEach(o => o.classList.remove('sel'));
+  b.classList.add('sel');
+  aviso.textContent = '';
+}));
+
+// Simbolo tomado sai da mesa: fica apagado, com o dono no tooltip. Se o grupo tinha selecionado
+// justamente aquele e outro chegou antes, a selecao cai, para ninguem apertar Register achando que
+// ainda tem.
+function pintarTomados(tomados) {
+  document.querySelectorAll('.icone').forEach(b => {
+    const dono = tomados[b.dataset.i];
+    b.disabled = !!dono;
+    b.title = dono ? 'taken by ' + dono : b.title;
+    b.classList.toggle('tomado', !!dono);
+    if (dono && icone === b.dataset.i) { icone = null; b.classList.remove('sel'); }
+  });
+}
+
+// A SONDA E UMA LEITURA, e acontece ANTES de o grupo digitar. Se `/icones` responde, ha servidor
+// de aula; se falha, e o modo solo do aluno em casa, onde nao ha com quem colidir. Sondar com o
+// cadastro, como era ate 15/08/2026, deixava a entrada falhar com estado pela metade.
+function sondar() {
+  return fetch('/icones').then(r => r.json())
+    .then(d => { MODO = 'sala'; pintarTomados(d.tomados || {}); })
+    .catch(() => { MODO = 'solo'; });
+}
+sondar();
+const pulso = setInterval(() => {
+  const ent = document.getElementById('entrada');
+  if (ent && !ent.hidden && MODO === 'sala') sondar();
+}, 4000);
+
+document.getElementById('entrar').addEventListener('click', () => {
+  const apelido = document.getElementById('apelido').value.trim();
+  if (!apelido) { aviso.textContent = 'Pick a nickname for the group.'; return; }
+  if (!icone) { aviso.textContent = 'Pick a symbol.'; return; }
+  const seguir = () => {
+    clearInterval(pulso);
+    // Modo solo nao tem servidor para distribuir, entao o proprio aparelho tira um caso. O grupo
+    // continua sem escolher, que e o ponto.
+    if (!estado.caso) {
+      const ids = Object.keys(SETUP);
+      estado.caso = ids[Math.floor(Math.random() * ids.length)];
+    }
+    estado.apelido = apelido; estado.icone = icone;
+    if (!estado.inicio) estado.inicio = Date.now();
+    salvar();
+    aplicarCaso(estado.caso);
+    document.getElementById('entrada').hidden = true;
+    document.getElementById('depois').hidden = false;
+    iniciarRelogioGlobal();
+    mostrar(0);
+  };
+  fetch('/grupo', {method: 'POST', headers: {'Content-Type': 'application/json'},
+                   body: JSON.stringify({apelido: apelido, icone: icone})})
+    .then(r => r.json())
+    .then(d => {
+      // O caso vem DISTRIBUIDO pelo servidor, do monte embaralhado: o grupo nao escolhe.
+      if (d.ok) { MODO = 'sala'; estado.token = d.token; estado.caso = d.caso; seguir(); }
+      // Recusa NAO avanca: o grupo continua na tela, le o motivo, e a lista se atualiza sozinha.
+      else { aviso.textContent = d.msg; sondar(); }
+    })
+    .catch(() => { MODO = 'solo'; seguir(); });
+});
+
+document.querySelectorAll('.caso').forEach(b => b.addEventListener('click', () => {
+  estado.caso = b.dataset.caso; salvar(); aplicarCaso(estado.caso); avancar();
+}));
+
+document.querySelectorAll('.etapa[data-rodada]').forEach(etapa => {
+  const id = etapa.dataset.rodada;
+  const responder = valor => {
+    estado[id] = valor; salvar();
+    if (MODO === 'sala') {
+      fetch('/voto', {method: 'POST', headers: {'Content-Type': 'application/json'},
+                      body: JSON.stringify({token: estado.token, rodada: id, valor: valor})})
+        .catch(() => {});   // resposta ja esta salva localmente; a rede nao pode apagar isso
+    }
+    const r = (etapa.dataset.tipo === 'sct') ? REFLEXAO[estado.caso] : null;
+    const alvo = etapa.querySelector('fieldset');
+    alvo.innerHTML = r
+      ? '<div class="chave"><p><strong>Now answer this to yourself.</strong></p><p>' + r
+        + '</p><p class="rotulo">the instructor key is discussed in class, not here</p></div>'
+      : '<p class="enviado">Recorded.</p>';
+    etapa.querySelector('.avancar').hidden = false;
+  };
+  // Likert: marcar uma nota apaga as irmas da mesma afirmacao.
+  etapa.querySelectorAll('.likert').forEach(bloco => {
+    bloco.querySelectorAll('.nota').forEach(b => b.addEventListener('click', () => {
+      bloco.querySelectorAll('.nota').forEach(o => o.classList.remove('sel'));
+      b.classList.add('sel');
+    }));
+  });
+  etapa.querySelectorAll('.op').forEach(b => b.addEventListener('click', () => {
+    if (b.classList.contains('avancar')) return;
+    if (etapa.dataset.tipo === 'feedback') {
+      // Uma resposta so, com tudo dentro: as notas por afirmacao e as duas abertas.
+      const r = {};
+      etapa.querySelectorAll('.likert').forEach(bl => {
+        const m = bl.querySelector('.nota.sel');
+        r[bl.dataset.item] = m ? parseInt(m.dataset.v, 10) : null;
+      });
+      etapa.querySelectorAll('.aberta').forEach(a => {
+        r[a.dataset.item] = a.querySelector('textarea').value.trim();
+      });
+      responder(JSON.stringify(r));
+      return;
+    }
+    const ta = etapa.querySelector('textarea');
+    responder(b.classList.contains('enviar') && ta ? ta.value : b.dataset.v);
+  }));
+});
+
+document.querySelectorAll('.avancar').forEach(b => b.addEventListener('click', avancar));
+
+// A PORTADA e a primeira tela e nao e etapa: ela so descobre a entrada. O relogio dela e iniciado
+// aqui a mao, porque `mostrar()` nunca a visita.
+const portada = document.getElementById('portada');
+const entrada = document.getElementById('entrada');
+document.getElementById('li-as-regras').addEventListener('click', () => {
+  portada.hidden = true;
+  entrada.hidden = false;
+});
+if (estado.apelido) {
+  // Retomada: quem ja registrou o grupo nao volta para a portada nem para a entrada. Sem esta
+  // linha a portada reapareceria por cima do jogo em andamento, porque ela nasce visivel.
+  portada.hidden = true;
+  entrada.hidden = true;
+  document.getElementById('depois').hidden = false;
+  if (estado.caso) aplicarCaso(estado.caso);
+  // LIMITADO ao tamanho da lista, em segunda camada. A assinatura na chave ja descarta estado de
+  // outro layout, mas reordenar telas SEM mudar a quantidade mantem a chave e move o significado
+  // do indice do mesmo jeito. `mostrar()` fora da faixa esconde TODAS as etapas e a pagina fica
+  // em branco, que e falha sem sintoma legivel para quem esta com o celular na mao.
+  mostrar(Math.min(estado.etapa || 0, etapas().length - 1));
+} else {
+  iniciarRelogio(portada);
+}
+</script>
+</div>
+</body>
+</html>

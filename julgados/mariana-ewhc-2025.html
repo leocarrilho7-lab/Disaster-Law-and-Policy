@@ -93,33 +93,45 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <body>
 <div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
-<nav class="sidebar"><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-o-que-torna-esta-decisao-estranha-e-por-que-ela-e-o-melhor-caso-do-curso">O que torna esta decisão estranha, e por que ela é o melhor caso do curso</a></li><li><a href="#sec-por-que-as-tres-decisoes-de-mariana-estao-em-nos-separados">Por que as três decisões de Mariana estão em nós separados</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
 <a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
 <div id="busca-resultados" class="busca-resultados" hidden></div>
 <div class="area"><span data-chrome-lang="en">Sessions</span><span data-chrome-lang="pt" hidden>Sessões</span></div>
 <a href="../sessoes/s02.html">S02: Why Study Disaster Law</a>
+<a href="../sessoes/s03.html">S03: Risk, Uncertainty, Vulnerability and Resilience</a>
 <div class="area"><span data-chrome-lang="en">Authors</span><span data-chrome-lang="pt" hidden>Autores</span></div>
 <a href="../autores/alemanno.html">Alberto Alemanno</a>
+<a href="../autores/tversky.html">Amos Tversky</a>
 <a href="../autores/wibisana.html">Andri G. Wibisana</a>
 <a href="../autores/van-aaken.html">Anne van Aaken</a>
+<a href="../autores/wisner.html">Ben Wisner</a>
 <a href="../autores/perrow.html">Charles Perrow</a>
 <a href="../autores/farber.html">Daniel A. Farber</a>
+<a href="../autores/kahneman.html">Daniel Kahneman</a>
 <a href="../autores/binder.html">Denis Binder</a>
+<a href="../autores/vaughan.html">Diane Vaughan</a>
 <a href="../autores/quarantelli.html">Enrico L. Quarantelli</a>
+<a href="../autores/knight.html">Frank H. Knight</a>
+<a href="../autores/davis.html">Ian Davis</a>
 <a href="../autores/antonovic.html">Janis Antonovic</a>
 <a href="../autores/scanlon.html">Joseph Scanlon</a>
 <a href="../autores/lauta.html">Kristian Cedervall Lauta</a>
 <a href="../autores/faure.html">Michael G. Faure</a>
+<a href="../autores/taleb.html">Nassim Nicholas Taleb</a>
 <a href="../autores/luhmann.html">Niklas Luhmann</a>
+<a href="../autores/slovic.html">Paul Slovic</a>
+<a href="../autores/blaikie.html">Piers Blaikie</a>
 <a href="../autores/posner.html">Richard A. Posner</a>
 <a href="../autores/verchick.html">Robert R. M. Verchick</a>
 <a href="../autores/perry.html">Ronald W. Perry</a>
 <a href="../autores/lyster.html">Rosemary Lyster</a>
+<a href="../autores/cannon.html">Terry Cannon</a>
 <a href="../autores/kuhn.html">Thomas S. Kuhn</a>
 <a href="../autores/beck.html">Ulrich Beck</a>
 <div class="area"><span data-chrome-lang="en">Texts</span><span data-chrome-lang="pt" hidden>Textos</span></div>
+<a href="../textos/wisner-2004.html">At Risk: Natural Hazards, People&#x27;s Vulnerability and Disasters</a>
 <a href="../textos/posner-2004.html">Catastrophe: Risk and Response</a>
 <a href="../textos/quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
 <a href="../textos/lyster-2015.html">Climate Justice and Disaster Law</a>
@@ -136,8 +148,13 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../textos/antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
 <a href="../textos/luhmann-2004.html">Law as a Social System</a>
 <a href="../textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="../textos/slovic-1987.html">Perception of Risk</a>
+<a href="../textos/kahneman-tversky-1979.html">Prospect Theory: An Analysis of Decision under Risk</a>
 <a href="../textos/faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
 <a href="../textos/beck-1992.html">Risk Society: Towards a New Modernity</a>
+<a href="../textos/knight-1921.html">Risk, Uncertainty and Profit</a>
+<a href="../textos/taleb-2007.html">The Black Swan: The Impact of the Highly Improbable</a>
+<a href="../textos/vaughan-1996.html">The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</a>
 <a href="../textos/binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
 <a href="../textos/kuhn-1970.html">The Structure of Scientific Revolutions</a>
 <a href="../textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
@@ -164,54 +181,94 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
 <div class="area"><span data-chrome-lang="en">Concepts</span><span data-chrome-lang="pt" hidden>Conceitos</span></div>
 <a href="../conceitos/s02-montagem-da-sessao.html">Assembling session S02, 2026.2 (project note)</a>
+<a href="../conceitos/cisne-negro.html">Cisne negro</a>
 <a href="../conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a>
 <a href="../conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a>
 <a href="../conceitos/quarantelli-criterios-brasil.html">Do Quarantelli&#x27;s six criteria hold in the Brazilian arrangement? (fleeting note)</a>
 <a href="../conceitos/dysfunction.html">Dysfunction of a social process</a>
+<a href="../conceitos/incerteza-knightiana.html">Incerteza knightiana</a>
 <a href="../conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a>
 <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a>
 <a href="../conceitos/legal-exceptionalism.html">Legal exceptionalism</a>
 <a href="../conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a>
+<a href="../conceitos/normalizacao-do-desvio.html">Normalização do desvio</a>
+<a href="../conceitos/percepcao-de-risco.html">Percepção de risco</a>
 <a href="../conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a>
-<a href="../conceitos/risk-society.html">Risk society</a></nav>
+<a href="../conceitos/risk-society.html">Risk society</a>
+<a href="../conceitos/segredo-estrutural.html">Segredo estrutural</a>
+<a href="../conceitos/teoria-do-prospecto.html">Teoria do prospecto</a>
+<a href="../conceitos/vulnerabilidade.html">Vulnerabilidade</a></nav>
 <main>
 <h1>Município de Mariana and Others v. BHP Group</h1>
-<div class="meta">type: case<br><a class="badge" href="../tags.html#julgado">julgado</a></div>
-<ul class="ficha"><li><strong>tribunal:</strong> High Court of Justice (Inglaterra e País de Gales)</li><li><strong>julgamento:</strong> 2025-11-14</li><li><strong>número:</strong> [2025] EWHC 3001 (TCC)</li><li><strong>jurisdição:</strong> Reino Unido</li><li><strong>partes:</strong> Município de Mariana e outros v. BHP Group</li><li><strong>resultado:</strong> responsabilidade da controladora reconhecida</li><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
+<div class="meta">type: case<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#controladora">controladora</a> <a class="badge" href="../tags.html#direito-estrangeiro">direito-estrangeiro</a> <a class="badge" href="../tags.html#julgado">julgado</a> <a class="badge" href="../tags.html#mariana">mariana</a></div>
+<ul class="ficha"><li><strong>tribunal:</strong> High Court of Justice (Inglaterra e País de Gales)</li><li><strong>julgamento:</strong> 2025-11-14</li><li><strong>número:</strong> [2025] EWHC 3001 (TCC)</li><li><strong>jurisdição:</strong> Reino Unido</li><li><strong>partes:</strong> Município de Mariana e outros v. BHP Group</li><li><strong>resultado:</strong> responsabilidade da controladora reconhecida, na etapa 1</li><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
 
 <div data-lang="pt" hidden><p>Em <strong>14 de novembro de 2025</strong>, a High Court of Justice inglesa decidiu pela <strong>responsabilidade da
-controladora</strong>, com mais de 600 mil demandantes. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Courts and Tribunals Judiciary (judiciary.uk), Municipio de Mariana v BHP Group: citacao neutra [2025] EWHC 3001 (TCC), julgamento proferido em 14/11/2025 pela Mrs Justice O&#x27;Farrell na Technology and Construction Court; mais de 600 mil demandantes; BHP, controladora ultima da operadora da barragem, responsabilizada como poluidora na lei ambiental brasileira e por culpa no Codigo Civil brasileiro (2026-08-10)">✓</span></p>
-<h2>Por que as três decisões de Mariana estão em nós separados</h2>
-<p>Porque é o ponto. O relatório registra que o mesmo fato produziu <strong>três resultados incompatíveis</strong>:
-absolvição criminal no Brasil, acordo bilionário homologado no STF, e responsabilidade da
-controladora reconhecida na Inglaterra, esta última exatamente <strong>um ano depois</strong> da absolvição, ao
-dia.</p>
+controladora</strong>, em ação com mais de 600 mil demandantes
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Courts and Tribunals Judiciary (judiciary.uk), Município de Mariana v BHP Group: citação neutra [2025] EWHC 3001 (TCC), julgamento proferido em 14/11/2025 pela Mrs Justice O&#x27;Farrell na Technology and Construction Court; mais de 600 mil demandantes; BHP, controladora última da operadora da barragem, responsabilizada como poluidora na lei ambiental brasileira e por culpa no Código Civil brasileiro (2026-08-10)">✓</span>.</p>
+<h2 id="sec-o-que-torna-esta-decisao-estranha-e-por-que-ela-e-o-melhor-caso-do-curso">O que torna esta decisão estranha, e por que ela é o melhor caso do curso</h2>
+<p>O juízo inglês <strong>aplicou direito brasileiro</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em mesma fonte do registro anterior, Courts and Tribunals Judiciary: a controladora foi responsabilizada como poluidora na lei ambiental brasileira e por culpa no Código Civil brasileiro (2026-08-10)">✓</span>. A BHP foi
+responsabilizada como poluidora na forma da lei ambiental brasileira e por culpa na forma do Código
+Civil brasileiro. Não se trata, portanto, de um direito mais severo alcançando o que o brasileiro
+não alcançou: trata-se do <strong>mesmo direito material</strong> produzindo resultado oposto porque foi aplicado
+por outro foro, com outro regime de prova, outro desenho processual e outro réu escolhido.</p>
+<p>Esse é o achado que desmonta a explicação fácil. Quem atribui a divergência entre Mariana no Brasil
+e Mariana na Inglaterra a uma diferença entre ordenamentos precisa explicar por que a corte inglesa
+chegou lá pela lei brasileira. A variável que resta não é a norma: é o foro, o ônus e a escolha do
+réu. O juízo brasileiro processou pessoas físicas na esfera penal e não teve por provado o nexo; o
+juízo inglês processou a controladora na esfera civil e o reconheceu.</p>
+<p><strong>A ação sobreviveu ao acordo brasileiro</strong> porque a adesão a ele é voluntária, e quem não aderiu não
+transacionou (ver <a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a>).</p>
+<p><strong>É julgamento de etapa 1, só de responsabilidade</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em mesma fonte: julgamento de etapa 1, com o quantum remetido a audiência posterior e sujeição a recurso (2026-08-10)">✓</span>. O valor ficou para
+audiência posterior e a decisão está sujeita a recurso. Chamar o caso de encerrado seria erro.</p>
+<h2 id="sec-por-que-as-tres-decisoes-de-mariana-estao-em-nos-separados">Por que as três decisões de Mariana estão em nós separados</h2>
+<p>Porque é o ponto. O mesmo fato produziu <strong>três resultados incompatíveis</strong>: absolvição criminal no
+Brasil, acordo bilionário homologado no Supremo, e responsabilidade da controladora reconhecida na
+Inglaterra, esta última exatamente <strong>um ano depois</strong> da absolvição, ao dia.</p>
 <p>É a demonstração empírica mais forte disponível da tese de <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>: o risco de desastre não
 vem em <a href="../conceitos/porcao-juridica.html">porções jurídicas</a>, e cada porção aplicada produz resultado incompatível
 com as outras. Fundir as três num nó só apagaria justamente o que elas mostram.</p>
-<h2>Ver também</h2>
-<p><a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a> · <a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a> · <a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a> · <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a></p></div>
-<div data-lang="en"><p>On <strong>November 14, 2025</strong>, the English High Court of Justice ruled in favor of <strong>parent company
-liability</strong>, with more than 600,000 claimants. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Courts and Tribunals Judiciary (judiciary.uk), Municipio de Mariana v BHP Group: citacao neutra [2025] EWHC 3001 (TCC), julgamento proferido em 14/11/2025 pela Mrs Justice O&#x27;Farrell na Technology and Construction Court; mais de 600 mil demandantes; BHP, controladora ultima da operadora da barragem, responsabilizada como poluidora na lei ambiental brasileira e por culpa no Codigo Civil brasileiro (2026-08-10)">✓</span></p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a> · <a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a> · <a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a> ·
+<a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a> · <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a></p></div>
+<div data-lang="en"><p>On <strong>14 November 2025</strong>, the English High Court of Justice ruled for <strong>parent company liability</strong>, in
+an action with more than 600,000 claimants <span class="selo selo-fato" title="fato conferido na fonte: conferido em Courts and Tribunals Judiciary (judiciary.uk), Município de Mariana v BHP Group: citação neutra [2025] EWHC 3001 (TCC), julgamento proferido em 14/11/2025 pela Mrs Justice O&#x27;Farrell na Technology and Construction Court; mais de 600 mil demandantes; BHP, controladora última da operadora da barragem, responsabilizada como poluidora na lei ambiental brasileira e por culpa no Código Civil brasileiro (2026-08-10)">✓</span>.</p>
+<h2>What makes this decision strange, and why it is the course's best case</h2>
+<p>The English court <strong>applied Brazilian law</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em mesma fonte do registro anterior, Courts and Tribunals Judiciary: a controladora foi responsabilizada como poluidora na lei ambiental brasileira e por culpa no Código Civil brasileiro (2026-08-10)">✓</span>. BHP was held liable
+as a polluter under Brazilian environmental law and for fault under the Brazilian Civil Code. This is
+therefore not a stricter legal system reaching what the Brazilian one could not: it is the <strong>same
+substantive law</strong> producing the opposite outcome because it was applied by another forum, with
+another evidentiary regime, another procedural design and another chosen defendant.</p>
+<p>That is the finding that dismantles the easy explanation. Anyone attributing the divergence between
+Mariana in Brazil and Mariana in England to a difference between legal systems has to explain why the
+English court got there through Brazilian law. The remaining variable is not the norm: it is the
+forum, the burden and the choice of defendant. The Brazilian court prosecuted individuals in the
+criminal sphere and did not find the causal link proven; the English court sued the parent company in
+the civil sphere and recognised it.</p>
+<p><strong>The action survived the Brazilian settlement</strong> because adhesion to it is voluntary, and those who
+did not join did not settle (see <a href="../julgados/mariana-stf-homologacao-2024.html">the settlement approval</a>).</p>
+<p><strong>This is a stage 1 judgment, on liability only</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em mesma fonte: julgamento de etapa 1, com o quantum remetido a audiência posterior e sujeição a recurso (2026-08-10)">✓</span>. Quantum was left to a
+later hearing and the decision is subject to appeal. Calling the case closed would be an error.</p>
 <h2>Why the three Mariana decisions are in separate nodes</h2>
-<p>Because that is the point. The report records that the same fact produced <strong>three incompatible
-outcomes</strong>: a criminal acquittal in Brazil, a multi-billion-dollar settlement homologated by the
-STF, and parent company liability recognized in England, the last of these exactly <strong>one year
-after</strong> the acquittal, to the day.</p>
+<p>Because that is the point. The same fact produced <strong>three incompatible outcomes</strong>: a criminal
+acquittal in Brazil, a multi-billion settlement approved by the Supreme Federal Court, and parent
+company liability recognised in England, the last of these exactly <strong>one year after</strong> the acquittal,
+to the day.</p>
 <p>It is the strongest empirical demonstration available of the thesis of <a href="../textos/lauta-2017.html">Lauta 2017</a>:
 disaster risk does not come in <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a>, and each bite-size applied
 produces an outcome incompatible with the others. Merging the three into a single node would erase
 exactly what they show.</p>
 <h2>See also</h2>
 <p><a href="../julgados/mariana-jf-2024.html">the Mariana criminal acquittal</a> ·
-<a href="../julgados/mariana-stf-homologacao-2024.html">the Mariana STF settlement homologation</a> ·
-<a href="../julgados/brumadinho-denuncia.html">the Brumadinho indictment</a> · <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a></p></div>
+<a href="../julgados/mariana-stf-homologacao-2024.html">the settlement approval</a> ·
+<a href="../julgados/brumadinho-denuncia.html">the Brumadinho charge</a> · <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a> ·
+<a href="../textos/lauta-2017.html">Lauta 2017</a></p></div>
 
 <h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> instantiates concept</span> <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a></li></ul>
 
 <h2>Neighbourhood in the graph</h2>
 <div id="cy-local"></div>
-<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "concept:disaster-risk", "label": "Disaster risk (effects of uncertainty)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Dysfunction of a social process", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Reading of Lauta 2017 (literature note)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Legal exceptionalism", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:porcao-juridica", "label": "Legal bite-sizes (the juridical portion)", "href": "../conceitos/porcao-juridica.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "julgado:brumadinho-denuncia", "label": "Brumadinho: the criminal charge and the victim count", "href": "../julgados/brumadinho-denuncia.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:cij-parecer-clima-2025", "label": "Advisory opinion on the obligations of States in respect of climate change", "href": "../julgados/cij-parecer-clima-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:itlos-parecer-2024", "label": "Advisory opinion on climate change and the law of the sea", "href": "../julgados/itlos-parecer-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:klimaseniorinnen-2024", "label": "Verein KlimaSeniorinnen Schweiz and Others v. Switzerland", "href": "../julgados/klimaseniorinnen-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-ewhc-2025", "label": "Município de Mariana and Others v. BHP Group", "href": "../julgados/mariana-ewhc-2025.html", "foco": "1"}, "classes": "julgado foco"}, {"data": {"id": "julgado:mariana-jf-2024", "label": "Mariana: criminal acquittal in the Federal Court", "href": "../julgados/mariana-jf-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-stf-homologacao-2024", "label": "Mariana: approval of the renegotiated settlement", "href": "../julgados/mariana-stf-homologacao-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:neubauer-2021", "label": "Neubauer and Others v. Germany", "href": "../julgados/neubauer-2021.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:urgenda-2019", "label": "Urgenda Foundation v. State of the Netherlands", "href": "../julgados/urgenda-2019.html", "foco": "0"}, "classes": "julgado"}], "edges": [{"data": {"id": "le0", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le1", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le2", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le3", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le4", "source": "concept:disaster-risk", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le5", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:lauta-2017-leitura", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:legal-exceptionalism", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:porcao-juridica", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:porcao-juridica", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:porcao-juridica", "target": "concept:lauta-2017-leitura"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:porcao-juridica", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "julgado:brumadinho-denuncia", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le18", "source": "julgado:cij-parecer-clima-2025", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le19", "source": "julgado:cij-parecer-clima-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le20", "source": "julgado:itlos-parecer-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le21", "source": "julgado:klimaseniorinnen-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le22", "source": "julgado:mariana-ewhc-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le23", "source": "julgado:mariana-jf-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le24", "source": "julgado:mariana-stf-homologacao-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le25", "source": "julgado:neubauer-2021", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le26", "source": "julgado:urgenda-2019", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "author"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "text"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "concept"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "session"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislation"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "case"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "wrote"}, "pertence_a_sessao": {"color": "#c9a227", "label": "belongs to session"}, "desenvolve_conceito": {"color": "#4d8067", "label": "develops concept"}, "cita": {"color": "#9b5de5", "label": "cites"}, "relaciona_se_com": {"color": "#c1503a", "label": "relates to"}, "define_conceito": {"color": "#6d597a", "label": "defines concept"}, "instancia_conceito": {"color": "#9d0208", "label": "instantiates concept"}};</script>
+<script>window.__LOCAL__ = {"nodes": [{"data": {"id": "concept:disaster-risk", "label": "Disaster risk (effects of uncertainty)", "href": "../conceitos/disaster-risk.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:dysfunction", "label": "Dysfunction of a social process", "href": "../conceitos/dysfunction.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:lauta-2017-leitura", "label": "Reading of Lauta 2017 (literature note)", "href": "../conceitos/lauta-2017-leitura.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:legal-exceptionalism", "label": "Legal exceptionalism", "href": "../conceitos/legal-exceptionalism.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "concept:porcao-juridica", "label": "Legal bite-sizes (the juridical portion)", "href": "../conceitos/porcao-juridica.html", "foco": "0"}, "classes": "concept"}, {"data": {"id": "julgado:brumadinho-denuncia", "label": "Brumadinho: the criminal charge and the victim count", "href": "../julgados/brumadinho-denuncia.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:cij-parecer-clima-2025", "label": "Advisory opinion on the obligations of States in respect of climate change", "href": "../julgados/cij-parecer-clima-2025.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:itlos-parecer-2024", "label": "Advisory opinion on climate change and the law of the sea", "href": "../julgados/itlos-parecer-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:klimaseniorinnen-2024", "label": "Verein KlimaSeniorinnen Schweiz and Others v. Switzerland", "href": "../julgados/klimaseniorinnen-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-ewhc-2025", "label": "Município de Mariana and Others v. BHP Group", "href": "../julgados/mariana-ewhc-2025.html", "foco": "1"}, "classes": "julgado foco"}, {"data": {"id": "julgado:mariana-jf-2024", "label": "Mariana: criminal acquittal in the Federal Court", "href": "../julgados/mariana-jf-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:mariana-stf-homologacao-2024", "label": "Mariana: approval of the renegotiated settlement", "href": "../julgados/mariana-stf-homologacao-2024.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:neubauer-2021", "label": "Neubauer and Others v. Germany", "href": "../julgados/neubauer-2021.html", "foco": "0"}, "classes": "julgado"}, {"data": {"id": "julgado:urgenda-2019", "label": "Urgenda Foundation v. State of the Netherlands", "href": "../julgados/urgenda-2019.html", "foco": "0"}, "classes": "julgado"}], "edges": [{"data": {"id": "le0", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le1", "source": "concept:disaster-risk", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le2", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le3", "source": "concept:disaster-risk", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le4", "source": "concept:disaster-risk", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le5", "source": "concept:dysfunction", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le6", "source": "concept:dysfunction", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le7", "source": "concept:lauta-2017-leitura", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le8", "source": "concept:lauta-2017-leitura", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le9", "source": "concept:lauta-2017-leitura", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le10", "source": "concept:legal-exceptionalism", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le11", "source": "concept:legal-exceptionalism", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le12", "source": "concept:legal-exceptionalism", "target": "concept:porcao-juridica"}, "classes": "relaciona_se_com"}, {"data": {"id": "le13", "source": "concept:porcao-juridica", "target": "concept:disaster-risk"}, "classes": "relaciona_se_com"}, {"data": {"id": "le14", "source": "concept:porcao-juridica", "target": "concept:dysfunction"}, "classes": "relaciona_se_com"}, {"data": {"id": "le15", "source": "concept:porcao-juridica", "target": "concept:lauta-2017-leitura"}, "classes": "relaciona_se_com"}, {"data": {"id": "le16", "source": "concept:porcao-juridica", "target": "concept:legal-exceptionalism"}, "classes": "relaciona_se_com"}, {"data": {"id": "le17", "source": "julgado:brumadinho-denuncia", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le18", "source": "julgado:cij-parecer-clima-2025", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le19", "source": "julgado:cij-parecer-clima-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le20", "source": "julgado:itlos-parecer-2024", "target": "concept:disaster-risk"}, "classes": "instancia_conceito"}, {"data": {"id": "le21", "source": "julgado:itlos-parecer-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le22", "source": "julgado:klimaseniorinnen-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le23", "source": "julgado:mariana-ewhc-2025", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le24", "source": "julgado:mariana-jf-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le25", "source": "julgado:mariana-stf-homologacao-2024", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le26", "source": "julgado:neubauer-2021", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}, {"data": {"id": "le27", "source": "julgado:urgenda-2019", "target": "concept:porcao-juridica"}, "classes": "instancia_conceito"}]}; window.__NS__ = {"author": {"color": "#3d5a80", "size": 34, "shape": "ellipse", "dir": "autores", "label": "author"}, "text": {"color": "#e07a5f", "size": 46, "shape": "round-rectangle", "dir": "textos", "label": "text"}, "concept": {"color": "#81b29a", "size": 52, "shape": "hexagon", "dir": "conceitos", "label": "concept"}, "session": {"color": "#f2cc8f", "size": 38, "shape": "diamond", "dir": "sessoes", "label": "session"}, "legislation": {"color": "#6d597a", "size": 42, "shape": "tag", "dir": "legislacao", "label": "legislation"}, "julgado": {"color": "#9d0208", "size": 44, "shape": "octagon", "dir": "julgados", "label": "case"}}; window.__ES__ = {"escreveu": {"color": "#3d5a80", "label": "wrote"}, "pertence_a_sessao": {"color": "#c9a227", "label": "belongs to session"}, "desenvolve_conceito": {"color": "#4d8067", "label": "develops concept"}, "cita": {"color": "#9b5de5", "label": "cites"}, "relaciona_se_com": {"color": "#c1503a", "label": "relates to"}, "define_conceito": {"color": "#6d597a", "label": "defines concept"}, "instancia_conceito": {"color": "#9d0208", "label": "instantiates concept"}};</script>
 <footer>Generated from the wiki source. This page is built, not written by hand.<br></footer>
 </main>
 </div>
