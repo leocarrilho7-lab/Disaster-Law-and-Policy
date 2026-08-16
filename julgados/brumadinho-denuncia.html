@@ -6,7 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
---link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;
+/* A BARRA LATERAL TEM DOIS TAMANHOS, e nao oito (16/08/2026). Antes conviviam 14px na
+   barra e sete valores em `rem` nos filhos, e `rem` se mede pela RAIZ de 16px, e nao pela
+   barra: davam de 10,9 a 14px sem criterio visivel. Agora a barra declara a base aqui e
+   todo filho mede em `em`, isto e, em relacao a ela, de modo que mexer nestas duas linhas
+   move o conjunto inteiro. `--barra-rotulo` e o unico tamanho menor, e vale so para
+   caixa alta: AUTORES, CONCEITOS, TEXTOS, o titulo do indice e o tipo do resultado. */
+--barra-texto:16px;--barra-rotulo:0.8em;}
 :root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
 --border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
@@ -15,10 +22,11 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 font-size:16px;line-height:26px;}
 .layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
-nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);
+font-size:var(--barra-texto);line-height:1.5;}
 nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
 nav.sidebar a:hover{text-decoration:underline;}
-nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
 main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
 h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
 margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
@@ -53,17 +61,17 @@ blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--borde
 .rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
 .rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
 footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
-.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:1em;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
 .selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
  padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
 .selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
 .selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
 .selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
 .busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
-.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:1em;line-height:1.3;border-bottom:1px solid var(--border);}
 .busca-resultados a:last-child{border-bottom:none;}
-.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
-.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.busca-resultados .bq-tipo{display:block;font-size:var(--barra-rotulo);opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:1em;opacity:0.75;}
 .mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
 .ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
 .ficha li{margin:0.12rem 0;}
@@ -74,8 +82,8 @@ th{background:var(--th);font-weight:700;}
 /* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
    separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
    de baixo. */
-.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
-.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:1em;}
+.toc-titulo{font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
 .toc ul{list-style:none;padding-left:0;margin:0;}
 .toc ul ul{padding-left:0.8rem;}
 .toc li{margin:0.12rem 0;}
@@ -85,7 +93,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <body>
 <div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
-<nav class="sidebar"><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-o-caso-em-estado-puro">O caso em estado puro</a></li><li><a href="#sec-o-que-a-denuncia-nao-e">O que a denúncia não é</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
 <a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
@@ -168,33 +176,96 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../conceitos/risk-society.html">Risk society</a></nav>
 <main>
 <h1>Brumadinho: the criminal charge and the victim count</h1>
-<div class="meta">type: case<br><a class="badge" href="../tags.html#julgado">julgado</a></div>
-<ul class="ficha"><li><strong>tribunal:</strong> Ministério Público de Minas Gerais / Justiça Estadual</li><li><strong>julgamento:</strong> 2020-01-21</li><li><strong>jurisdição:</strong> Brasil</li><li><strong>resultado:</strong> denúncia por 270 homicídios qualificados</li><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
+<div class="meta">type: case<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#brumadinho">brumadinho</a> <a class="badge" href="../tags.html#julgado">julgado</a> <a class="badge" href="../tags.html#nexo-causal">nexo-causal</a> <a class="badge" href="../tags.html#tipicidade">tipicidade</a></div>
+<ul class="ficha"><li><strong>tribunal:</strong> Ministério Público de Minas Gerais / Justiça Estadual</li><li><strong>julgamento:</strong> 2020-01-21</li><li><strong>número:</strong> denúncia de 21/01/2020, 16 pessoas físicas e 2 pessoas jurídicas</li><li><strong>jurisdição:</strong> Brasil</li><li><strong>partes:</strong> Ministério Público de Minas Gerais; Vale S.A., Tüv Süd e 16 pessoas físicas</li><li><strong>resultado:</strong> denúncia por 270 homicídios dolosos duplamente qualificados</li><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
 
-<div data-lang="pt" hidden><p>A denúncia imputa <strong>270 homicídios qualificados</strong>, porque o art. 121 do Código Penal pressupõe
-pessoa nascida com vida. <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> O Ministério Público de Minas Gerais, por sua vez, conta <strong>272
-vítimas</strong>, incluindo os dois nascituros de gestantes atingidas. <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span></p>
-<h2>O caso em estado puro</h2>
-<p>A divergência <strong>não é erro de imprensa nem imprecisão de contagem: é diferença de categoria
-jurídica</strong>. A diferença de duas vidas é produzida pela categoria, e não pelo fato.</p>
-<p>Nenhuma passagem de <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a> chega a essa formulação, e ela é o melhor exemplo brasileiro do
-que ele quis dizer com <a href="../conceitos/porcao-juridica.html">porção jurídica</a>. O ensaio é de 2017 e o caso é de 2019:
-o conceito precede o exemplo que melhor o demonstra.</p>
-<h2>Ver também</h2>
-<p><a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a> · <a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a> · <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a></p></div>
-<div data-lang="en"><p>The indictment (denúncia) charges <strong>270 counts of aggravated homicide (homicídio qualificado)</strong>,
-because art. 121 of the Criminal Code presupposes a person born alive. <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span> The Minas Gerais
-Public Prosecutor's Office, in turn, counts <strong>272 victims</strong>, including the two unborn children of
-pregnant women who were struck. <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span></p>
+<div data-lang="pt" hidden><p>Em 21 de janeiro de 2020 o Ministério Público de Minas Gerais denunciou 16 pessoas físicas e duas
+pessoas jurídicas pelo rompimento da barragem I da mina Córrego do Feijão. A imputação às pessoas
+físicas foi de <strong>homicídio doloso duplamente qualificado, por 270 vezes</strong>, na forma do art. 121,
+§ 2º, incisos III e IV, do Código Penal, além de crimes ambientais <span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do Ministério Público de Minas Gerais, notícia sobre a conclusão das investigações do rompimento: denúncia apresentada em 21/01/2020, 16 denunciados por homicídio doloso duplamente qualificado (art. 121, § 2º, III e IV, do Código Penal) por 270 vezes, mais Vale S.A. e Tüv Süd pelos crimes ambientais (2026-08-16)">✓</span>.</p>
+<p><strong>A AVABRUM</strong>, associação dos familiares das vítimas, <strong>conta 272 vidas</strong>
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Sítio institucional da AVABRUM (avabrum.org.br), que declara 272 vidas, cifra repetida em mais de um ponto da página (2026-08-16)">✓</span>. A diferença de duas corresponde a dois nascituros, gestados por
+mulheres que morreram no rompimento, chamados Lorenzo e Maria Elisa
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura jornalística sobre a contagem da associação de familiares; a página inicial da AVABRUM declara as 272 vidas mas não nomeia os nascituros (2026-08-16)">✓</span>.</p>
+<h2 id="sec-o-caso-em-estado-puro">O caso em estado puro</h2>
+<p>A divergência não é erro de imprensa nem imprecisão de contagem: <strong>é diferença de categoria
+jurídica</strong>. O art. 121 do Código Penal tipifica matar alguém, e a doutrina penal brasileira lê esse
+alguém como pessoa nascida com vida, de modo que a supressão da vida intrauterina é tipificada em
+outro lugar. A denúncia não podia imputar 272 homicídios sem forçar o tipo; a associação não podia
+contar 270 vidas sem apagar dois filhos esperados. <strong>A diferença de duas vidas é produzida pela
+categoria, e não pelo fato.</strong></p>
+<p>É por isso que este nó vale mais como exemplo do que muitos julgados inteiros: mostra a
+<a href="../conceitos/porcao-juridica.html">porção jurídica</a> em estado puro. O direito penal não recebe o desastre; recebe a
+parte do desastre que cabe no tipo, e o resto fica de fora não por descuido, mas por definição.
+Nenhuma passagem de <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a> chega a essa formulação, e ela é o melhor exemplo brasileiro do
+que o ensaio quis dizer. O ensaio é de 2017 e o caso é de 2019: o conceito precede o exemplo que
+melhor o demonstra.</p>
+<p><strong>A correção que este verbete carrega.</strong> Até esta revisão, o texto atribuía a contagem de 272 ao
+próprio Ministério Público, cuja notícia da denúncia não usa esse número em passagem alguma
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do Ministério Público de Minas Gerais, mesma notícia da denúncia: a contagem é 270 em todas as passagens, e não há referência a 272 nem a nascituros (2026-08-16)">✓</span>. A atribuição errada não só era falsa
+como enfraquecia o argumento: sugeria um órgão em contradição consigo mesmo, quando o que há é
+divergência entre a imputação penal e a contagem de quem enterrou os mortos. Corrigida, a tensão
+fica mais nítida, porque passa a opor duas racionalidades legítimas em vez de expor um lapso.</p>
+<h2 id="sec-o-que-a-denuncia-nao-e">O que a denúncia não é</h2>
+<p>Não é condenação. Denúncia é peça acusatória: fixa a imputação e abre o processo, e a modalidade
+imputada é o dolo eventual, e não a culpa, o que é a escolha mais contestada da peça.</p>
+<p>A competência para julgar foi objeto de disputa entre a Justiça Estadual de Minas Gerais e a Justiça
+Federal, com decisões em sentidos opostos no Superior Tribunal de Justiça e no Supremo Tribunal
+Federal, e a ação foi desmembrada <span class="selo selo-pendente" title="não verificado: nao-encontrado">✗</span>. <strong>Esta revisão não
+afirma qual juízo prevaleceu</strong>: as fontes consultadas nesta rodada divergem entre si sobre o
+desfecho, e afirmar um deles com tier alto seria o defeito que este acervo combate. Quem for usar o
+caso em aula deve conferir o estado processual na data da aula.</p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a> para o conceito · <a href="../julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a>, <a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a> e
+<a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a> para o mesmo fato entrando por três portas jurídicas distintas ·
+<a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a> para o argumento que este caso demonstra · <a href="../textos/beck-1992.html">Risk Society: Towards a New Modernity</a> e <a href="../textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a> para o
+pano de fundo sociológico e organizacional do rompimento de barragem de rejeito.</p></div>
+<div data-lang="en"><p>On 21 January 2020 the Minas Gerais Public Prosecutor's Office charged 16 individuals and two
+companies over the collapse of dam I at the Córrego do Feijão mine. The charge against the
+individuals was <strong>intentional homicide, doubly aggravated, on 270 counts</strong>, under art. 121, § 2,
+items III and IV, of the Brazilian Criminal Code, alongside environmental crimes
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do Ministério Público de Minas Gerais, notícia sobre a conclusão das investigações do rompimento: denúncia apresentada em 21/01/2020, 16 denunciados por homicídio doloso duplamente qualificado (art. 121, § 2º, III e IV, do Código Penal) por 270 vezes, mais Vale S.A. e Tüv Süd pelos crimes ambientais (2026-08-16)">✓</span>.</p>
+<p><strong>AVABRUM</strong>, the association of the victims' families, <strong>counts 272 lives</strong>
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Sítio institucional da AVABRUM (avabrum.org.br), que declara 272 vidas, cifra repetida em mais de um ponto da página (2026-08-16)">✓</span>. The difference of two corresponds to two unborn children,
+carried by women who died in the collapse, named Lorenzo and Maria Elisa
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura jornalística sobre a contagem da associação de familiares; a página inicial da AVABRUM declara as 272 vidas mas não nomeia os nascituros (2026-08-16)">✓</span>.</p>
 <h2>The case in its purest form</h2>
-<p>The divergence <strong>is not a press error nor an imprecise count: it is a difference in legal
-category</strong>. The difference of two lives is produced by the category, not by the fact.</p>
-<p>No passage in <a href="../textos/lauta-2017.html">Lauta 2017</a> reaches this formulation, and it is the best Brazilian
-example of what he meant by <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a>. The essay is from 2017 and the
-case is from 2019: the concept precedes the example that best demonstrates it.</p>
+<p>The divergence is not a press error nor an imprecise count: <strong>it is a difference in legal category</strong>.
+Art. 121 of the Criminal Code criminalises killing "someone", and Brazilian criminal doctrine reads
+that "someone" as a person born alive, so that the destruction of intrauterine life is criminalised
+elsewhere. The prosecution could not charge 272 counts of homicide without straining the offence
+definition; the association could not count 270 lives without erasing two awaited children. <strong>The
+difference of two lives is produced by the category, not by the fact.</strong></p>
+<p>That is why this node is worth more as an example than many full judgments: it shows the
+<a href="../conceitos/porcao-juridica.html">legal bite-size</a> in its purest form. Criminal law does not receive the disaster;
+it receives the part of the disaster that fits the offence definition, and the rest stays out not by
+oversight but by definition. No passage in <a href="../textos/lauta-2017.html">Lauta 2017</a> reaches this formulation, and it
+is the best Brazilian example of what the essay meant. The essay is from 2017 and the case is from
+2019: the concept precedes the example that best demonstrates it.</p>
+<p><strong>The correction this entry carries.</strong> Until this revision, the text attributed the count of 272 to
+the Public Prosecutor's Office itself, whose news release on the charge uses that number in no
+passage at all <span class="selo selo-fato" title="fato conferido na fonte: conferido em Portal do Ministério Público de Minas Gerais, mesma notícia da denúncia: a contagem é 270 em todas as passagens, e não há referência a 272 nem a nascituros (2026-08-16)">✓</span>. The wrong attribution was
+not only false but weakened the argument: it suggested a body contradicting itself, when what exists
+is a divergence between the criminal charge and the count kept by those who buried the dead.
+Corrected, the tension becomes sharper, because it now sets two legitimate rationalities against each
+other rather than exposing a slip.</p>
+<h2>What the charge is not</h2>
+<p>It is not a conviction. A <em>denúncia</em> is an accusatory pleading: it fixes the charge and opens the
+proceeding, and the mental element charged is <em>dolo eventual</em>, recklessness amounting to intent,
+rather than negligence, which is the most contested choice in the pleading.</p>
+<p>Jurisdiction over the criminal action was disputed between the Minas Gerais state courts and the
+federal courts, with decisions pointing in opposite directions at the Superior Court of Justice and
+at the Supreme Federal Court, and the action was split
+<span class="selo selo-pendente" title="não verificado: nao-encontrado">✗</span>. <strong>This revision does not state which court prevailed</strong>:
+the sources consulted in this pass disagree with each other on the outcome, and asserting one of them
+at a high tier would be the very defect this collection works against. Anyone using the case in class
+should check the procedural status on the day of the class.</p>
 <h2>See also</h2>
-<p><a href="../conceitos/porcao-juridica.html">legal bite-sizes</a> · <a href="../julgados/mariana-ewhc-2025.html">the Mariana EWHC decision</a> ·
-<a href="../textos/lauta-2017.html">Lauta 2017</a></p></div>
+<p><a href="../conceitos/porcao-juridica.html">legal bite-sizes</a> for the concept · <a href="../julgados/mariana-jf-2024.html">the Mariana acquittal</a>,
+<a href="../julgados/mariana-stf-homologacao-2024.html">the settlement approval</a> and <a href="../julgados/mariana-ewhc-2025.html">the Mariana EWHC
+decision</a> for the same fact entering through three distinct legal doors · <a href="../textos/lauta-2017.html">Lauta 2017</a>
+for the argument this case demonstrates · <a href="../textos/beck-1992.html">Beck 1992</a> and <a href="../textos/perrow-1984.html">Perrow 1984</a> for
+the sociological and organisational backdrop of tailings dam failure.</p></div>
 
 <h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> instantiates concept</span> <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a></li></ul>
 

@@ -6,7 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
---link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;
+/* A BARRA LATERAL TEM DOIS TAMANHOS, e nao oito (16/08/2026). Antes conviviam 14px na
+   barra e sete valores em `rem` nos filhos, e `rem` se mede pela RAIZ de 16px, e nao pela
+   barra: davam de 10,9 a 14px sem criterio visivel. Agora a barra declara a base aqui e
+   todo filho mede em `em`, isto e, em relacao a ela, de modo que mexer nestas duas linhas
+   move o conjunto inteiro. `--barra-rotulo` e o unico tamanho menor, e vale so para
+   caixa alta: AUTORES, CONCEITOS, TEXTOS, o titulo do indice e o tipo do resultado. */
+--barra-texto:16px;--barra-rotulo:0.8em;}
 :root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
 --border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
@@ -15,10 +22,11 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 font-size:16px;line-height:26px;}
 .layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
-nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);
+font-size:var(--barra-texto);line-height:1.5;}
 nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
 nav.sidebar a:hover{text-decoration:underline;}
-nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
 main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
 h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
 margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
@@ -53,17 +61,17 @@ blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--borde
 .rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
 .rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
 footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
-.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:1em;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
 .selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
  padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
 .selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
 .selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
 .selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
 .busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
-.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:1em;line-height:1.3;border-bottom:1px solid var(--border);}
 .busca-resultados a:last-child{border-bottom:none;}
-.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
-.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.busca-resultados .bq-tipo{display:block;font-size:var(--barra-rotulo);opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:1em;opacity:0.75;}
 .mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
 .ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
 .ficha li{margin:0.12rem 0;}
@@ -74,8 +82,8 @@ th{background:var(--th);font-weight:700;}
 /* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
    separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
    de baixo. */
-.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
-.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:1em;}
+.toc-titulo{font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
 .toc ul{list-style:none;padding-left:0;margin:0;}
 .toc ul ul{padding-left:0.8rem;}
 .toc li{margin:0.12rem 0;}
@@ -585,13 +593,37 @@ como "comic relief", e a leveza convive mal com as sete ações judiciais e a mi
 recusa o jargão de modo programático, e a promessa é feita ao leitor por escrito (p. 11): é um livro
 sobre organizações, "but painlessly, without the jargon and the sacred texts".</p>
 <h2 id="sec-recepcao">Recepção</h2>
-<p><strong>Não medida nesta revisão</strong> <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span>. Ao contrário do que se fez para <a href="../textos/beck-1992.html">Beck</a>, onde
-a divergência entre bases foi ela própria o achado, nenhuma consulta bibliométrica foi realizada para
-esta obra nesta passagem, e por isso nenhum número aparece aqui nem no bloco <code>reception</code> do
-frontmatter. Registrar a ausência é preferível a preencher com contagem lembrada. O que se pode
-afirmar a partir do próprio exemplar é apenas o programa que o autor deixou aberto: o teste da
-classificação por sistemas não incluídos e por medida mais rigorosa das duas variáveis (nota das
-pp. 97-98), que ele especifica e não executa.</p>
+<p>O achado repete o de <a href="../textos/beck-1992.html">Beck</a>, e a repetição é ela própria informativa sobre como monografia
+circula nas bases: <strong>não há um número único, e os registros mais citados não são o livro</strong>. No
+OpenAlex, os dois primeiros resultados para o título são resenhas assinadas por outros autores, com
+5.010 e 2.903 citações, enquanto os registros de autoria do próprio Perrow marcam 426 (edição
+Princeton 2000) e 206 (reimpressão de 1999 com posfácio) <span class="selo selo-fato" title="fato conferido na fonte: conferido em OpenAlex, consulta por título e por DOI (2026-08-16)">✓</span>.
+Quem tomar o primeiro resultado de busca como contagem da obra atribui a Perrow a circulação de uma
+resenha de Grimes.</p>
+<p>O Crossref se comporta melhor aqui do que se comportou com Beck, cuja monografia não era indexada como
+tal, mas introduz outro modo de errar: <strong>a mesma obra carrega dois DOIs de monografia</strong>, o da Princeton
+de 2000 com 411 citações e o da edição atualizada de 2011 com 275
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Crossref, consulta bibliográfica e por DOI (2026-08-16)">✓</span>. Somar os dois não é obviamente correto, porque parte das citações
+pode referir-se à mesma passagem por edições diferentes; tomar um só é obviamente incorreto. O bloco
+<code>reception</code> do frontmatter guarda as sete contagens separadas, com base e data, em vez de um total que
+esconderia a decisão.</p>
+<p><strong>Duas bases ficaram de fora, e isso está declarado</strong> <span class="selo selo-pendente" title="não verificado: nao-encontrado">✗</span>: a API do
+Semantic Scholar devolveu limite de requisições em três tentativas, e o Google Acadêmico não expõe
+API e bloqueia raspagem. A ausência do segundo pesa mais do que pareceria, porque foi justamente no
+Google Acadêmico que o verbete de Beck encontrou o achado mais forte, a divergência entre os clusters
+das edições inglesa e alemã. A lacuna é redutível por consulta manual.</p>
+<p>Quanto ao debate substantivo, o item mais direto é a reavaliação de trinta anos feita por Le Coze,
+cujo título já enuncia a tese: <em>Was Charles Perrow Right for the Wrong Reasons?</em> Ele registra que o
+determinismo tecnológico da obra foi criticado por simplificar demais as dimensões sociais, e sustenta
+que há uma segunda mensagem subjacente no livro que seria a sua contribuição mais valiosa
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em LE COZE, Jean-Christophe. 1984-2014. Normal Accidents. Was Charles Perrow Right for the Wrong Reasons? Journal of Contingencies and Crisis Management, v. 23, n. 4, p. 275-286, 2015. DOI 10.1111/1468-5973.12090 (2026-08-16)">✓</span>. <strong>Vale registrar que a problematização escrita abaixo, nesta
+revisão, foi derivada do próprio texto antes desta consulta, e converge com a crítica que Le Coze
+resume</strong> <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span>: a de que complexidade e acoplamento são resultado de arranjo institucional e não
+propriedade da técnica. A convergência aumenta a confiança na leitura e reduz a sua originalidade, e
+as duas coisas precisam ser ditas juntas.</p>
+<p>O programa que o autor deixou aberto continua aberto: o teste da classificação por sistemas não
+incluídos e por medida mais rigorosa das duas variáveis (nota das pp. 97-98), que ele especifica e não
+executa.</p>
 <p>Há, porém, um elemento de recepção que o próprio livro permite avaliar sem base externa: <strong>a previsão
 datada</strong>. No fecho (p. 348), publicado em 1984, o autor escreve esperar em dez anos "a worse accident
 than TMI [...] one that will kill and contaminate" <span class="selo selo-fato" title="fato conferido na fonte: conferido em exemplar Basic Books 1984, p. 348 (2026-08-16)">✓</span>. Tchernobil ocorreu
@@ -1088,13 +1120,36 @@ a lost mine. The prose refuses jargon programmatically, and the promise is made 
 writing (p. 11): this is a book about organizations, "but painlessly, without the jargon and the
 sacred texts".</p>
 <h2>Reception</h2>
-<p><strong>Not measured in this review</strong> <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span>. Unlike what was done for <a href="../textos/beck-1992.html">Beck</a>, where
-divergence between databases was itself the finding, no bibliometric query was run for this work in
-this pass, and therefore no figure appears here or in the <code>reception</code> block of the frontmatter.
-Recording the absence is preferable to filling it with a remembered count. What can be asserted from
-the copy itself is only the programme the author left open: the test of the classification against
-systems not included and by more rigorous measurement of the two variables (footnote, pp. 97-98),
-which he specifies and does not carry out.</p>
+<p>The finding repeats the one for <a href="../textos/beck-1992.html">Beck</a>, and the repetition is itself informative about how
+monographs circulate in the databases: <strong>there is no single number, and the most cited records are not
+the book</strong>. In OpenAlex, the top two results for the title are reviews signed by other authors, with
+5,010 and 2,903 citations, while the records authored by Perrow himself show 426 (Princeton 2000
+edition) and 206 (1999 reprint with afterword) <span class="selo selo-fato" title="fato conferido na fonte: conferido em OpenAlex, consulta por título e por DOI (2026-08-16)">✓</span>. Whoever takes
+the first search result as the work's count credits Perrow with the circulation of a review by Grimes.</p>
+<p>Crossref behaves better here than it did with Beck, whose monograph was not indexed as such, but it
+introduces another way of going wrong: <strong>the same work carries two monograph DOIs</strong>, the Princeton
+2000 one with 411 citations and the 2011 updated edition with 275
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em Crossref, consulta bibliográfica e por DOI (2026-08-16)">✓</span>. Adding the two is not obviously right, since part of the citations
+may refer to the same passage through different editions; taking only one is obviously wrong. The
+<code>reception</code> block in the frontmatter keeps the seven counts separate, with base and date, rather than
+a total that would hide the decision.</p>
+<p><strong>Two databases were left out, and that is declared</strong> <span class="selo selo-pendente" title="não verificado: nao-encontrado">✗</span>: the
+Semantic Scholar API returned rate limiting on three attempts, and Google Scholar exposes no API and
+blocks scraping. The absence of the second weighs more than it might seem, because it was precisely in
+Google Scholar that the Beck entry found its strongest result, the divergence between the English and
+German edition clusters. The gap is reducible by manual query.</p>
+<p>As to substantive debate, the most direct item is Le Coze's thirty-year reassessment, whose title
+states the thesis: <em>Was Charles Perrow Right for the Wrong Reasons?</em> He records that the work's
+technological determinism has been criticised for oversimplifying the social dimensions, and argues
+that there is a second underlying message in the book that would be its most valuable contribution
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em LE COZE, Jean-Christophe. 1984-2014. Normal Accidents. Was Charles Perrow Right for the Wrong Reasons? Journal of Contingencies and Crisis Management, v. 23, n. 4, p. 275-286, 2015. DOI 10.1111/1468-5973.12090 (2026-08-16)">✓</span>. <strong>It is worth recording that the problematization written
+below, in this review, was derived from the text itself before that query, and converges with the
+criticism Le Coze summarises</strong> <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span>: that complexity and coupling are the outcome of institutional
+arrangement rather than a property of the technique. The convergence raises confidence in the reading
+and lowers its originality, and both things need saying together.</p>
+<p>The programme the author left open remains open: the test of the classification against systems not
+included and by more rigorous measurement of the two variables (footnote, pp. 97-98), which he
+specifies and does not carry out.</p>
 <p>There is, however, one element of reception the book itself allows one to assess without external
 sources: <strong>the dated prediction</strong>. In the closing (p. 348), published in 1984, the author writes that
 he expects within ten years "a worse accident than TMI [...] one that will kill and contaminate"

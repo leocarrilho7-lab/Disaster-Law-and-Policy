@@ -6,7 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
---link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;
+/* A BARRA LATERAL TEM DOIS TAMANHOS, e nao oito (16/08/2026). Antes conviviam 14px na
+   barra e sete valores em `rem` nos filhos, e `rem` se mede pela RAIZ de 16px, e nao pela
+   barra: davam de 10,9 a 14px sem criterio visivel. Agora a barra declara a base aqui e
+   todo filho mede em `em`, isto e, em relacao a ela, de modo que mexer nestas duas linhas
+   move o conjunto inteiro. `--barra-rotulo` e o unico tamanho menor, e vale so para
+   caixa alta: AUTORES, CONCEITOS, TEXTOS, o titulo do indice e o tipo do resultado. */
+--barra-texto:16px;--barra-rotulo:0.8em;}
 :root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
 --border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
@@ -15,10 +22,11 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 font-size:16px;line-height:26px;}
 .layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
-nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);
+font-size:var(--barra-texto);line-height:1.5;}
 nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
 nav.sidebar a:hover{text-decoration:underline;}
-nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
 main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
 h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
 margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
@@ -53,17 +61,17 @@ blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--borde
 .rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
 .rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
 footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
-.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:1em;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
 .selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
  padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
 .selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
 .selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
 .selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
 .busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
-.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:1em;line-height:1.3;border-bottom:1px solid var(--border);}
 .busca-resultados a:last-child{border-bottom:none;}
-.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
-.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.busca-resultados .bq-tipo{display:block;font-size:var(--barra-rotulo);opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:1em;opacity:0.75;}
 .mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
 .ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
 .ficha li{margin:0.12rem 0;}
@@ -74,8 +82,8 @@ th{background:var(--th);font-weight:700;}
 /* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
    separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
    de baixo. */
-.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
-.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:1em;}
+.toc-titulo{font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
 .toc ul{list-style:none;padding-left:0;margin:0;}
 .toc ul ul{padding-left:0.8rem;}
 .toc li{margin:0.12rem 0;}
@@ -85,7 +93,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <body>
 <div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
-<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto">Estrutura do texto</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-em-tres-niveis">Conceitos em três níveis</a></li><li><a href="#sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</a></li><li><a href="#sec-checagem-factual-duas-datas-erradas-na-mesma-frase">Checagem factual: duas datas erradas na mesma frase</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita">Contexto de escrita</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao-e-legado">Recepção e legado</a></li><li><a href="#sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</a></li><li><a href="#sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</a></li><li><a href="#sec-rubrica-final">Rubrica final</a></li><li><a href="#sec-aparato-de-citacao">Aparato de citação</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto">Estrutura do texto</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-em-tres-niveis">Conceitos em três níveis</a></li><li><a href="#sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</a></li><li><a href="#sec-checagem-factual-duas-datas-erradas-na-mesma-frase">Checagem factual: duas datas erradas na mesma frase</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita">Contexto de escrita</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao-e-legado">Recepção e legado</a></li><li><a href="#sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</a></li><li><a href="#sec-rubrica-final">Rubrica final</a></li><li><a href="#sec-aparato-de-citacao">Aparato de citação</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
 <a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
@@ -456,27 +464,6 @@ mostra que a divergência é do regime de indexação, e não deste texto.</p>
 <p><strong>O que a medição não estabelece.</strong> Somar os 25 registros pressupõe que nenhum trabalho citante
 apareça em dois deles, e o Google Acadêmico não expõe as listas que permitiriam conferir. O total de
 568 é teto, e o piso conferido é 446. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
-<h2 id="sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</h2>
-<p><strong>Bloqueantes, no máximo três.</strong> A primeira é de <strong>atribuição</strong> (L4): o ensaio não declara a
-estrutura de agregação do conceito, e sem ela a categoria não opera como teste aplicável a caso
-novo. Não se fecha com aquisição, porque depende de alguém tê-la estabelecido, e o texto sugere que
-ninguém o fez. A segunda era de <strong>dado externo</strong> (L2), a recepção não medida, e <strong>fechou em
-10/08/2026</strong> com as quatro consultas: está na seção acima, e o que sobrou dela não é lacuna de dado
-e sim limite de método, porque o Google Acadêmico não expõe as listas que permitiriam descontar
-duplicidade entre os 25 registros. A terceira é de <strong>acesso</strong> (L3): o capítulo de Perry de 2006 e o volume de 2005 sustentam
-a distinção que o ensaio pressupõe em vez de reconstruir, e nenhum dos dois foi lido em primeira
-mão.</p>
-<p><strong>Redutíveis por aquisição.</strong> Os anos de Hugo e Andrew, que o texto não dá, e os números de dano de
-St. Croix e Dade, cuja origem o texto não declara. O terceiro item desta lista, o registro do fórum
-SSRC para datar a publicação com precisão maior que o ano, <strong>fechou em 10/08/2026</strong>: a própria
-página assina 11 de junho de 2006, e a data derrubou o ano de 2005 que o acervo registrava.
-<span class="selo selo-fato" title="fato conferido na fonte: conferido em items.ssrc.org, Understanding Katrina, assinatura da propria pagina: BY E.L. QUARANTELLI | JUNE 11, 2006. Consulta em 10/08/2026 (2026-08-10)">✓</span></p>
-<p><strong>Irredutível, declarada e encerrada.</strong> Se as seis diferenças são necessárias, suficientes ou nem
-uma coisa nem outra é pergunta que o texto não responde e que nenhuma aquisição responde por ele.</p>
-<p><strong>Composição da fila.</strong> Três itens, todos em inglês, dois livros e um capítulo, um deles disponível
-e dois de acesso a confirmar. A composição inteira em uma só língua é a subcobertura típica da
-revisão jurídica brasileira, e fica declarada em vez de corrigida por conveniência: não há
-literatura nacional citada por este ensaio a adquirir.</p>
 <h2 id="sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</h2>
 <p><strong>Pressuposto de campo, e é o mais profundo aqui.</strong> O ensaio pressupõe que a unidade de análise da
 crise é a <strong>comunidade</strong>, e todas as seis diferenças são enunciadas sobre ela: a estrutura
@@ -821,27 +808,6 @@ the same work, shows the divergence belongs to the indexing regime and not to th
 <p><strong>What the measurement does not establish.</strong> Summing the 25 records presupposes that no citing work
 appears in two of them, and Google Scholar does not expose the lists that would allow checking. The
 total of 568 is a ceiling, and the checked floor is 446. <span class="selo selo-inferencia" title="inferência, conclusão própria e não fato">?</span></p>
-<h2>Classified gaps and acquisition queue</h2>
-<p><strong>Blocking, at most three.</strong> The first is one of <strong>attribution</strong> (L4): the essay does not declare the
-concept's aggregation structure, and without it the category does not work as a test applicable to a
-new case. It does not close by acquisition, because it depends on someone having established it, and
-the text suggests no one has. The second was one of <strong>external datum</strong> (L2), reception unmeasured,
-and it <strong>closed on 10 Aug. 2026</strong> with the four queries: it is in the section above, and what
-remains of it is not a gap in data but a limit of method, because Google Scholar does not expose the
-lists that would allow discounting duplication across the 25 records. The third is one of <strong>access</strong>
-(L3): Perry's 2006 chapter
-and the 2005 volume sustain the distinction the essay presupposes rather than reconstructs, and
-neither was read at first hand.</p>
-<p><strong>Reducible by acquisition.</strong> The damage figures for St. Croix and Dade, whose origin the text does
-not declare. The other item on this list, the SSRC forum record to date the publication more
-precisely than by year, <strong>closed on 10 Aug. 2026</strong>: the page itself is signed 11 June 2006, and the
-date brought down the year 2005 the library had recorded. <span class="selo selo-fato" title="fato conferido na fonte: conferido em items.ssrc.org, Understanding Katrina, assinatura da propria pagina: BY E.L. QUARANTELLI | JUNE 11, 2006. Consulta em 10/08/2026 (2026-08-10)">✓</span></p>
-<p><strong>Irreducible, declared and closed.</strong> Whether the six differences are necessary, sufficient, or
-neither is a question the text does not answer and that no acquisition answers for it.</p>
-<p><strong>Composition of the queue.</strong> Three items, all in English, two books and one chapter, one of them
-available and two of uncertain access. A queue entirely in one language is the typical
-under-coverage of Brazilian legal review, and it is declared rather than corrected for convenience:
-this essay cites no Brazilian literature to acquire.</p>
 <h2>Problematising the presuppositions</h2>
 <p><strong>Field presupposition, and it is the deepest one here.</strong> The essay presupposes that the unit of
 analysis of a crisis is the <strong>community</strong>, and all six differences are stated about it: its built

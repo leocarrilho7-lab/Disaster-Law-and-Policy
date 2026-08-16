@@ -6,7 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
---link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;
+/* A BARRA LATERAL TEM DOIS TAMANHOS, e nao oito (16/08/2026). Antes conviviam 14px na
+   barra e sete valores em `rem` nos filhos, e `rem` se mede pela RAIZ de 16px, e nao pela
+   barra: davam de 10,9 a 14px sem criterio visivel. Agora a barra declara a base aqui e
+   todo filho mede em `em`, isto e, em relacao a ela, de modo que mexer nestas duas linhas
+   move o conjunto inteiro. `--barra-rotulo` e o unico tamanho menor, e vale so para
+   caixa alta: AUTORES, CONCEITOS, TEXTOS, o titulo do indice e o tipo do resultado. */
+--barra-texto:16px;--barra-rotulo:0.8em;}
 :root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
 --border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
@@ -15,10 +22,11 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 font-size:16px;line-height:26px;}
 .layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
-nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);
+font-size:var(--barra-texto);line-height:1.5;}
 nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
 nav.sidebar a:hover{text-decoration:underline;}
-nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
 main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
 h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
 margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
@@ -53,17 +61,17 @@ blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--borde
 .rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
 .rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
 footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
-.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:1em;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
 .selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
  padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
 .selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
 .selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
 .selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
 .busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
-.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:1em;line-height:1.3;border-bottom:1px solid var(--border);}
 .busca-resultados a:last-child{border-bottom:none;}
-.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
-.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.busca-resultados .bq-tipo{display:block;font-size:var(--barra-rotulo);opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:1em;opacity:0.75;}
 .mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
 .ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
 .ficha li{margin:0.12rem 0;}
@@ -74,8 +82,8 @@ th{background:var(--th);font-weight:700;}
 /* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
    separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
    de baixo. */
-.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
-.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:1em;}
+.toc-titulo{font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
 .toc ul{list-style:none;padding-left:0;margin:0;}
 .toc ul ul{padding-left:0.8rem;}
 .toc li{margin:0.12rem 0;}
@@ -85,7 +93,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <body>
 <div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
-<nav class="sidebar"><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-o-que-a-decisao-de-fato-diz-e-por-que-a-formulacao-curta-engana">O que a decisão de fato diz, e por que a formulação curta engana</a></li><li><a href="#sec-o-contraste-que-o-curso-pode-montar">O contraste que o curso pode montar</a></li><li><a href="#sec-a-porta-que-produziu-o-resultado-mais-distante">A porta que produziu o resultado mais distante</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
 <a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
@@ -168,22 +176,89 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <a href="../conceitos/risk-society.html">Risk society</a></nav>
 <main>
 <h1>Mariana: criminal acquittal in the Federal Court</h1>
-<div class="meta">type: case<br><a class="badge" href="../tags.html#julgado">julgado</a></div>
-<ul class="ficha"><li><strong>tribunal:</strong> Justiça Federal (Brasil)</li><li><strong>julgamento:</strong> 2024-11-14</li><li><strong>jurisdição:</strong> Brasil</li><li><strong>partes:</strong> Samarco, Vale, BHP e pessoas físicas</li><li><strong>resultado:</strong> absolvição por ausência de prova do nexo causal</li><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
+<div class="meta">type: case<br><a class="badge" href="../tags.html#S02">S02</a> <a class="badge" href="../tags.html#julgado">julgado</a> <a class="badge" href="../tags.html#mariana">mariana</a> <a class="badge" href="../tags.html#nexo-causal">nexo-causal</a> <a class="badge" href="../tags.html#prova">prova</a></div>
+<ul class="ficha"><li><strong>tribunal:</strong> Justiça Federal (Brasil)</li><li><strong>julgamento:</strong> 2024-11-14</li><li><strong>jurisdição:</strong> Brasil</li><li><strong>partes:</strong> Samarco, Vale, BHP Billiton, VogBR e pessoas físicas</li><li><strong>resultado:</strong> absolvição por insuficiência de prova da responsabilidade penal</li><li><strong>neste corpus:</strong> 0 apontam para ele, 1 saem dele</li></ul>
 
-<div data-lang="pt" hidden><p>A Justiça Federal absolveu Samarco, Vale e BHP e as pessoas físicas, por <strong>ausência de prova do nexo
-causal</strong>. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Sentenca de primeiro grau publicada em 14/11/2024, da juiza Patricia Alencar Teixeira de Carvalho, no ambito do TRF da 6a Regiao: prova insuficiente para atribuir responsabilidade penal individualizada e nao comprovado que atos ou omissoes tenham levado ao rompimento (2026-08-10)">✓</span></p>
+<div data-lang="pt" hidden><p>Em 14 de novembro de 2024 a Justiça Federal <strong>absolveu</strong> as empresas e as pessoas físicas rés na
+ação penal do rompimento da barragem de Fundão, por <strong>insuficiência de prova para estabelecer a
+responsabilidade penal</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em Decisão de 14/11/2024 da juíza Patrícia Alencar Teixeira, divulgada pelo Tribunal Regional Federal da 6ª Região: ausência de prova suficiente para estabelecer a responsabilidade penal dos réus (2026-08-16)">✓</span>. O rompimento, de 5 de novembro de 2015,
+matou 19 pessoas e liberou mais de 40 milhões de metros cúbicos de rejeito
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura consolidada da decisão de 14/11/2024, que retoma os números do rompimento (2026-08-16)">✓</span>.</p>
+<h2 id="sec-o-que-a-decisao-de-fato-diz-e-por-que-a-formulacao-curta-engana">O que a decisão de fato diz, e por que a formulação curta engana</h2>
+<p>A leitura corrente resume a sentença a "faltou nexo causal", e a versão anterior deste verbete fazia
+o mesmo. A formulação perde o que há de mais desconfortável na decisão: <strong>ela reconheceu omissões</strong>
+de empregados e da empresa, e ainda assim absolveu, porque não se provou que aquelas omissões
+tivessem causado o rompimento <span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura da decisão de 14/11/2024: houve reconhecimento de omissões, mas a falta de prova quanto ao nexo entre elas e a tragédia levou à absolvição das pessoas físicas e, por consequência, das empresas (2026-08-16)">✓</span>.</p>
+<p>A diferença importa. "Não houve falha" e "houve falha, mas não se provou que ela causou o resultado"
+são proposições distintas, e só a segunda foi afirmada. O que a sentença declara não é a inocência
+do sistema: é o limite da prova penal diante de um dano produzido por uma cadeia longa de decisões,
+cada uma insuficiente sozinha para o resultado. É a mesma estrutura que <a href="../textos/perrow-1984.html">Perrow</a>
+descreve ao dizer que o acidente está no sistema e não nos componentes, e a mesma que
+<a href="../textos/beck-1992.html">Beck</a> chama de irresponsabilidade organizada, em que todos são causa e efeito, e
+portanto não-causa.</p>
+<p><strong>A decisão não é definitiva</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em manifestação do Ministério Público Federal na cobertura de 14/11/2024, informando que recorreria da sentença (2026-08-16)">✓</span>. Usá-la em aula como palavra final
+seria erro de estado processual.</p>
+<h2 id="sec-o-contraste-que-o-curso-pode-montar">O contraste que o curso pode montar</h2>
+<p><a href="../textos/perrow-1984.html">Perrow</a> registra a mesma pergunta com dados de outra jurisdição: depois do rompimento
+da barragem de Teton, com onze mortos, ninguém perdeu o emprego e ninguém foi processado nos Estados
+Unidos; na França, o engenheiro-chefe de Malpasset respondeu por negligência e homicídio, e na
+Itália, depois de Vaiont, quatorze engenheiros foram processados por homicídio culposo. Mariana cai
+do lado americano do contraste, e a pergunta que o par devolve à sala é se isso decorre do padrão de
+prova, do desenho societário da mineradora, ou da mesma reação corporativa que Perrow observou em
+1963.</p>
+<h2 id="sec-a-porta-que-produziu-o-resultado-mais-distante">A porta que produziu o resultado mais distante</h2>
 <p>É a primeira das três portas pelas quais o mesmo fato entrou, e a que produziu o resultado mais
-distante das outras duas. Ver <a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a> e <a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a>.</p>
-<h2>Ver também</h2>
-<p><a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a> · <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a></p></div>
-<div data-lang="en"><p>The federal court acquitted Samarco, Vale, and BHP and the individual defendants, for <strong>lack of
-proof of the causal link</strong>. <span class="selo selo-fato" title="fato conferido na fonte: conferido em Sentenca de primeiro grau publicada em 14/11/2024, da juiza Patricia Alencar Teixeira de Carvalho, no ambito do TRF da 6a Regiao: prova insuficiente para atribuir responsabilidade penal individualizada e nao comprovado que atos ou omissoes tenham levado ao rompimento (2026-08-10)">✓</span></p>
+distante das outras duas. Oito dias antes, o Supremo homologava um acordo de reparação bilionário
+(ver <a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a>); um ano depois, ao dia, a High Court inglesa reconhecia a
+responsabilidade da controladora (ver <a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a>). Reparação sem imputação de um lado,
+imputação sem quantum fixado do outro, e no meio uma absolvição penal. É a demonstração empírica da
+tese de <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>: o risco de desastre não vem em <a href="../conceitos/porcao-juridica.html">porções jurídicas</a>, e cada
+porção aplicada produz resultado incompatível com as outras.</p>
+<h2 id="sec-ver-tambem">Ver também</h2>
+<p><a href="../julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a> · <a href="../julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a> · <a href="../julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a> ·
+<a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a> · <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a> · <a href="../textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a> · <a href="../textos/beck-1992.html">Risk Society: Towards a New Modernity</a></p></div>
+<div data-lang="en"><p>On 14 November 2024 the federal court <strong>acquitted</strong> the companies and the individual defendants in
+the criminal action over the Fundão dam collapse, for <strong>insufficient evidence to establish criminal
+responsibility</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em Decisão de 14/11/2024 da juíza Patrícia Alencar Teixeira, divulgada pelo Tribunal Regional Federal da 6ª Região: ausência de prova suficiente para estabelecer a responsabilidade penal dos réus (2026-08-16)">✓</span>. The collapse, on 5 November 2015, killed 19 people
+and released more than 40 million cubic metres of tailings
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura consolidada da decisão de 14/11/2024, que retoma os números do rompimento (2026-08-16)">✓</span>.</p>
+<h2>What the decision actually says, and why the short version misleads</h2>
+<p>The received reading condenses the judgment into "the causal link was not proven", and the previous
+version of this entry did the same. That formulation loses what is most uncomfortable about the
+decision: <strong>it acknowledged omissions</strong> by employees and by the company, and acquitted anyway,
+because it was not proven that those omissions had caused the collapse
+<span class="selo selo-fato" title="fato conferido na fonte: conferido em cobertura da decisão de 14/11/2024: houve reconhecimento de omissões, mas a falta de prova quanto ao nexo entre elas e a tragédia levou à absolvição das pessoas físicas e, por consequência, das empresas (2026-08-16)">✓</span>.</p>
+<p>The difference matters. "There was no failure" and "there was a failure, but it was not proven to
+have caused the outcome" are distinct propositions, and only the second was asserted. What the
+judgment declares is not the innocence of the system: it is the limit of criminal proof faced with
+harm produced by a long chain of decisions, each insufficient on its own to bring about the result.
+It is the same structure <a href="../textos/perrow-1984.html">Perrow</a> describes when he says the accident lies in the
+system and not in the components, and the same one <a href="../textos/beck-1992.html">Beck</a> calls organized
+irresponsibility, in which everyone is cause and effect, and thus non-cause.</p>
+<p><strong>The decision is not final</strong> <span class="selo selo-fato" title="fato conferido na fonte: conferido em manifestação do Ministério Público Federal na cobertura de 14/11/2024, informando que recorreria da sentença (2026-08-16)">✓</span>. Using it in class as the last word
+would be an error about procedural status.</p>
+<h2>The contrast the course can build</h2>
+<p><a href="../textos/perrow-1984.html">Perrow</a> records the same question with data from another jurisdiction: after the
+Teton dam collapse, with eleven dead, nobody lost a job and nobody was sued in the United States; in
+France the chief engineer of Malpasset was charged with negligence and homicide, and in Italy, after
+Vaiont, fourteen engineers were prosecuted for manslaughter. Mariana falls on the American side of
+the contrast, and the question the pair returns to the classroom is whether that follows from the
+standard of proof, from the corporate structure of the mining company, or from the same professional
+reaction Perrow observed in 1963.</p>
+<h2>The door that produced the most distant outcome</h2>
 <p>It is the first of the three doors through which the same fact entered, and the one that produced
-the outcome furthest from the other two. See <a href="../julgados/mariana-stf-homologacao-2024.html">the Mariana STF
-settlement homologation</a> and <a href="../julgados/mariana-ewhc-2025.html">the Mariana EWHC decision</a>.</p>
+the outcome furthest from the other two. Eight days earlier the Supreme Federal Court had approved a
+multi-billion settlement (see <a href="../julgados/mariana-stf-homologacao-2024.html">the settlement approval</a>); one year
+later, to the day, the English High Court recognised the parent company's liability (see
+<a href="../julgados/mariana-ewhc-2025.html">the Mariana EWHC decision</a>). Reparation without imputation on one side,
+imputation without a fixed quantum on the other, and a criminal acquittal in between. It is the
+empirical demonstration of the thesis in <a href="../textos/lauta-2017.html">Lauta 2017</a>: disaster risk does not come in
+<a href="../conceitos/porcao-juridica.html">legal bite-sizes</a>, and each bite applied produces an outcome incompatible with the
+others.</p>
 <h2>See also</h2>
-<p><a href="../conceitos/porcao-juridica.html">legal bite-sizes</a> · <a href="../textos/lauta-2017.html">Lauta 2017</a></p></div>
+<p><a href="../julgados/mariana-stf-homologacao-2024.html">the settlement approval</a> · <a href="../julgados/mariana-ewhc-2025.html">the Mariana EWHC
+decision</a> · <a href="../julgados/brumadinho-denuncia.html">the Brumadinho charge</a> · <a href="../conceitos/porcao-juridica.html">legal bite-sizes</a> ·
+<a href="../textos/lauta-2017.html">Lauta 2017</a> · <a href="../textos/perrow-1984.html">Perrow 1984</a> · <a href="../textos/beck-1992.html">Beck 1992</a></p></div>
 
 <h2>Relations</h2><ul class="rel-list"><li><span class="rel-etype">-> instantiates concept</span> <a href="../conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a></li></ul>
 

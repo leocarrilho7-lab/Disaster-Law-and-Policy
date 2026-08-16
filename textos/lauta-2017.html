@@ -6,7 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
---link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;}
+--link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;
+/* A BARRA LATERAL TEM DOIS TAMANHOS, e nao oito (16/08/2026). Antes conviviam 14px na
+   barra e sete valores em `rem` nos filhos, e `rem` se mede pela RAIZ de 16px, e nao pela
+   barra: davam de 10,9 a 14px sem criterio visivel. Agora a barra declara a base aqui e
+   todo filho mede em `em`, isto e, em relacao a ela, de modo que mexer nestas duas linhas
+   move o conjunto inteiro. `--barra-rotulo` e o unico tamanho menor, e vale so para
+   caixa alta: AUTORES, CONCEITOS, TEXTOS, o titulo do indice e o tipo do resultado. */
+--barra-texto:16px;--barra-rotulo:0.8em;}
 :root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
 --border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
@@ -15,10 +22,11 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 font-size:16px;line-height:26px;}
 .layout{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
-nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);font-size:14px;line-height:1.5;}
+nav.sidebar{width:230px;flex-shrink:0;padding:1.4rem 1rem;border-right:1px solid var(--border);
+font-size:var(--barra-texto);line-height:1.5;}
 nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
 nav.sidebar a:hover{text-decoration:underline;}
-nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
 main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
 h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
 margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
@@ -53,17 +61,17 @@ blockquote{margin:0.8rem 0;padding:0.4rem 1rem;border-left:3px solid var(--borde
 .rel-list li{margin-bottom:0.3rem;padding:0.35rem 0.55rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;}
 .rel-etype{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;}
 footer{font-size:0.78rem;color:var(--muted);margin-top:2.5rem;padding-top:0.8rem;border-top:1px solid var(--border);}
-.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:0.8rem;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
+.busca-campo{width:100%;margin:0.5rem 0 0.2rem;padding:0.3rem 0.45rem;font-size:1em;border:1px solid var(--border);border-radius:2px;background:var(--card);color:var(--fg);}
 .selo{display:inline-block;min-width:1.15em;text-align:center;font-size:0.82em;line-height:1.2;
  padding:0 0.22em;border-radius:3px;vertical-align:baseline;cursor:help;border:1px solid transparent;}
 .selo-fato{color:#14866d;border-color:#bfe3d9;background:rgba(20,134,109,0.07);}
 .selo-inferencia{color:#8a6d1f;border-color:#e6d7a8;background:rgba(138,109,31,0.07);}
 .selo-pendente{color:#9a3b3b;border-color:#e7c3c3;background:rgba(154,59,59,0.07);}
 .busca-resultados{margin:0 0 0.5rem;max-height:40vh;overflow-y:auto;border:1px solid var(--border);border-radius:2px;background:var(--card);}
-.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:0.78rem;line-height:1.3;border-bottom:1px solid var(--border);}
+.busca-resultados a{display:block;padding:0.3rem 0.45rem;font-size:1em;line-height:1.3;border-bottom:1px solid var(--border);}
 .busca-resultados a:last-child{border-bottom:none;}
-.busca-resultados .bq-tipo{display:block;font-size:0.68rem;opacity:0.7;}
-.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:0.75rem;opacity:0.75;}
+.busca-resultados .bq-tipo{display:block;font-size:var(--barra-rotulo);opacity:0.7;}
+.busca-resultados .bq-nada{padding:0.35rem 0.45rem;font-size:1em;opacity:0.75;}
 .mencao-trecho{font-size:0.84rem;color:var(--muted);margin-top:0.2rem;}
 .ficha{list-style:none;padding:0.6rem 0.9rem;margin:0 0 1.1rem;background:var(--bg);border:1px solid var(--border);border-radius:2px;font-size:0.86rem;}
 .ficha li{margin:0.12rem 0;}
@@ -74,8 +82,8 @@ th{background:var(--th);font-weight:700;}
 /* o indice vem ANTES da navegacao no <nav> (ver _render_page), como na Wikipedia -- por isso o
    separador fica embaixo dele, e nao em cima: quem separa o indice da lista de verbetes e a borda
    de baixo. */
-.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:0.82rem;}
-.toc-titulo{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
+.toc{margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);font-size:1em;}
+.toc-titulo{font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
 .toc ul{list-style:none;padding-left:0;margin:0;}
 .toc ul ul{padding-left:0.8rem;}
 .toc li{margin:0.12rem 0;}
@@ -85,7 +93,7 @@ nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflo
 <body>
 <div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
-<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto">Estrutura do texto</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-em-tres-niveis">Conceitos em três níveis</a></li><li><a href="#sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</a></li><li><a href="#sec-checagem-factual-a-unica-evidencia-empirica-propria-e-falsa">Checagem factual: a única evidência empírica própria é falsa</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita-por-que-este-texto-tem-esta-forma">Contexto de escrita: por que este texto tem esta forma</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao-zero-citacoes-e-o-que-isso-significa">Recepção: zero citações, e o que isso significa</a></li><li><a href="#sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</a></li><li><a href="#sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<nav class="sidebar"><nav class="toc"><div class="toc-titulo">Conteúdo</div><ul><li><a href="#sec-argumento">Argumento</a></li><li><a href="#sec-problema-e-metodo">Problema e método</a></li><li><a href="#sec-estrutura-do-texto">Estrutura do texto</a></li><li><a href="#sec-o-argumento-reconstruido-e-seus-dois-elos-frageis">O argumento reconstruído, e seus dois elos frágeis</a></li><li><a href="#sec-conceitos-em-tres-niveis">Conceitos em três níveis</a></li><li><a href="#sec-semantica-historica-dos-conceitos">Semântica histórica dos conceitos</a></li><li><a href="#sec-checagem-factual-a-unica-evidencia-empirica-propria-e-falsa">Checagem factual: a única evidência empírica própria é falsa</a></li><li><a href="#sec-casos-e-aplicacoes">Casos e aplicações</a></li><li><a href="#sec-grade-de-forca-probatoria">Grade de força probatória</a></li><li><a href="#sec-contexto-de-escrita-por-que-este-texto-tem-esta-forma">Contexto de escrita: por que este texto tem esta forma</a></li><li><a href="#sec-estilo-e-metodo">Estilo e método</a></li><li><a href="#sec-recepcao-zero-citacoes-e-o-que-isso-significa">Recepção: zero citações, e o que isso significa</a></li><li><a href="#sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</a></li><li><a href="#sec-ver-tambem">Ver também</a></li></ul></nav><a href="../index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="../graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
 <a href="../tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
 <input id="busca-campo" type="search" placeholder="search..." data-alvo="../busca.html" data-indice="../busca.json" data-prefixo="../" class="busca-campo">
@@ -601,52 +609,6 @@ do mesmo texto. <span class="selo selo-fato" title="fato conferido na fonte: con
 editora.</p>
 <p><strong>Consequência para o uso:</strong> a peça serve como enunciado conciso e citável de uma tese conceitual,
 <strong>não como fonte de autoridade</strong>. Para autoridade, o caminho é <em>Disaster Law</em>, de 2014, que circula.</p>
-<h2 id="sec-lacunas-classificadas-e-fila-de-aquisicao">Lacunas classificadas e fila de aquisição</h2>
-<p>Seção 16. <strong>Nenhuma lacuna bloqueante permanece.</strong> A bloqueante da passagem anterior, o acesso ao
-parecer da CIJ, foi fechada com o exemplar integral de 140 páginas localizado em pasta de outra
-disciplina, o que confirma o valor da regra que manda ler a vizinhança antes de buscar fora.</p>
-<table>
-<thead>
-<tr>
-<th>Classe</th>
-<th>O que falta</th>
-<th>Estatuto</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>L3</td>
-<td>a objeção de <a href="../textos/verchick-2012.html">Verchick</a> não foi lida na fonte primária, e por isso não está resumida</td>
-<td>redutível por aquisição</td>
-</tr>
-<tr>
-<td>L3</td>
-<td>o <em>front matter</em> do fascículo não foi acessado, por bloqueio da editora; a confirmação do cargo editorial apoia-se em página institucional arquivada da mesma época</td>
-<td>redutível por aquisição</td>
-</tr>
-<tr>
-<td>L3</td>
-<td>a atribuição da frase de Luhmann à p. 155 de <em>Law as a Social System</em> segue <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span></td>
-<td>redutível pelo exemplar</td>
-</tr>
-<tr>
-<td>L2</td>
-<td>o resultado da sessão da Segunda Turma do TRF6 de 10 de junho de 2026, sobre as apelações de Mariana, não foi encontrado</td>
-<td>dado externo pontual</td>
-</tr>
-<tr>
-<td>L4</td>
-<td>a posição própria de Grove sobre despolitização, e a genealogia de "act of God" no <em>common law</em>, que segue sem fonte de qualidade</td>
-<td>irredutível</td>
-</tr>
-</tbody>
-</table>
-<p><strong>A fila de aquisição</strong> reúne <a href="../textos/lauta-2014.html">Disaster Law</a> (2014), as cinco peças do simpósio sobre
-L'Aquila, a resenha de Karen da Costa, <a href="../textos/lyster-2015.html">Lyster</a>, Verchick, <em>At Risk</em> e o exemplar de
-<em>Law as a Social System</em>. Quarantelli e Beck não entram, porque já estão na mesma pasta.</p>
-<p><strong>Divergências registradas e não arbitradas</strong>, que ficam expostas em vez de resolvidas à força: vinte
-contra vinte e uma contribuições no fascículo; 24 contra 25 de março para o depósito da decisão da
-Cassação; e a paginação de Bostrom entre 1-30 e 1-31.</p>
 <h2 id="sec-problematizacao-dos-pressupostos">Problematização dos pressupostos</h2>
 <p>Seção 17. Lacuna e problematização não são a mesma coisa. As lacunas acima são dos modos canônicos,
 sobretudo de negligência; a problematização é outra operação, e percorre os pressupostos que o texto
@@ -1134,53 +1096,6 @@ zero for the essay, while Semantic Scholar extracted seven references from the s
 by the publisher.</p>
 <p><strong>Consequence for use:</strong> the piece works as a concise, citable statement of a conceptual thesis, <strong>not
 as an authority source</strong>. For authority, the path is <em>Disaster Law</em>, from 2014, which does circulate.</p>
-<h2>Classified gaps and acquisition queue</h2>
-<p>Section 16. <strong>No blocking gap remains.</strong> The blocking one from the previous pass, access to the ICJ
-advisory opinion, was closed with the full 140-page copy located in a folder of another course, which
-confirms the value of the rule that says to read the neighbourhood before searching outside.</p>
-<table>
-<thead>
-<tr>
-<th>Class</th>
-<th>What is missing</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>L3</td>
-<td><a href="../textos/verchick-2012.html">Verchick</a>'s objection was not read in the primary source, and for that reason is not summarised</td>
-<td>reducible by acquisition</td>
-</tr>
-<tr>
-<td>L3</td>
-<td>the <em>front matter</em> of the issue was not accessed, because of a publisher block; confirmation of the editorial position rests on an archived institutional page from the same period</td>
-<td>reducible by acquisition</td>
-</tr>
-<tr>
-<td>L3</td>
-<td>the attribution of Luhmann's sentence to p. 155 of <em>Law as a Social System</em> remains <span class="selo selo-pendente" title="não verificado: afirmado sem registro de conferência">✗</span></td>
-<td>reducible by the copy</td>
-</tr>
-<tr>
-<td>L2</td>
-<td>the outcome of the session of the Second Panel of the TRF6 of June 10, 2026, on the Mariana appeals, was not found</td>
-<td>isolated external datum</td>
-</tr>
-<tr>
-<td>L4</td>
-<td>Grove's own position on depoliticisation, and the genealogy of "act of God" in the <em>common law</em>, which remains without a quality source</td>
-<td>irreducible</td>
-</tr>
-</tbody>
-</table>
-<p><strong>The acquisition queue</strong> brings together <a href="../textos/lauta-2014.html">Disaster Law</a> (2014), the five pieces of the
-L'Aquila symposium, Karen da Costa's review, <a href="../textos/lyster-2015.html">Lyster</a>, Verchick, <em>At Risk</em> and the copy
-of <em>Law as a Social System</em>. Quarantelli and Beck do not enter, because they are already in the same
-folder.</p>
-<p><strong>Divergences recorded and not arbitrated</strong>, which are left exposed rather than resolved by force:
-twenty against twenty-one contributions in the issue; 24 against 25 March for the filing of the
-Cassation decision; and Bostrom's pagination between 1-30 and 1-31.</p>
 <h2>Problematizing the assumptions</h2>
 <p>Section 17. Gap and problematisation are not the same thing. The gaps above are of the canonical
 modes, above all of neglect; problematisation is another operation, and it runs through the
