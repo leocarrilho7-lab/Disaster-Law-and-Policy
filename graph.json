@@ -469,7 +469,7 @@
     {
       "data": {
         "id": "concept:cisne-negro",
-        "label": "Cisne negro",
+        "label": "Black swan",
         "ntype": "concept",
         "href": "conceitos/cisne-negro.html",
         "status": "complete",
@@ -541,7 +541,7 @@
     {
       "data": {
         "id": "concept:incerteza-knightiana",
-        "label": "Incerteza knightiana",
+        "label": "Knightian uncertainty",
         "ntype": "concept",
         "href": "conceitos/incerteza-knightiana.html",
         "status": "complete",
@@ -613,7 +613,7 @@
     {
       "data": {
         "id": "concept:normalizacao-do-desvio",
-        "label": "Normalização do desvio",
+        "label": "Normalization of deviance",
         "ntype": "concept",
         "href": "conceitos/normalizacao-do-desvio.html",
         "status": "complete",
@@ -631,7 +631,7 @@
     {
       "data": {
         "id": "concept:percepcao-de-risco",
-        "label": "Percepção de risco",
+        "label": "Risk perception",
         "ntype": "concept",
         "href": "conceitos/percepcao-de-risco.html",
         "status": "complete",
@@ -721,7 +721,7 @@
     {
       "data": {
         "id": "concept:segredo-estrutural",
-        "label": "Segredo estrutural",
+        "label": "Structural secrecy",
         "ntype": "concept",
         "href": "conceitos/segredo-estrutural.html",
         "status": "complete",
@@ -739,7 +739,7 @@
     {
       "data": {
         "id": "concept:teoria-do-prospecto",
-        "label": "Teoria do prospecto",
+        "label": "Prospect theory",
         "ntype": "concept",
         "href": "conceitos/teoria-do-prospecto.html",
         "status": "complete",
@@ -757,7 +757,7 @@
     {
       "data": {
         "id": "concept:vulnerabilidade",
-        "label": "Vulnerabilidade",
+        "label": "Vulnerability",
         "ntype": "concept",
         "href": "conceitos/vulnerabilidade.html",
         "status": "complete",
