@@ -6,13 +6,19 @@
 <style>
 :root{--bg:#f8f9fa;--fg:#202122;--muted:#54595d;--card:#ffffff;--border:#a2a9b1;
 --link:#3366cc;--link-quebrado:#bf3c2c;--th:#eaecf0;--accent:#6d597a;
-/* A BARRA LATERAL TEM DOIS TAMANHOS, e nao oito (16/08/2026). Antes conviviam 14px na
-   barra e sete valores em `rem` nos filhos, e `rem` se mede pela RAIZ de 16px, e nao pela
-   barra: davam de 10,9 a 14px sem criterio visivel. Agora a barra declara a base aqui e
-   todo filho mede em `em`, isto e, em relacao a ela, de modo que mexer nestas duas linhas
-   move o conjunto inteiro. `--barra-rotulo` e o unico tamanho menor, e vale so para
-   caixa alta: AUTORES, CONCEITOS, TEXTOS, o titulo do indice e o tipo do resultado. */
---barra-texto:16px;--barra-rotulo:0.8em;}
+/* A BARRA LATERAL TEM QUATRO TAMANHOS, e cada um marca um DEGRAU (17/08/2026). Em
+   16/08/2026 o conserto anterior tirou a barra de oito tamanhos sem criterio e a deixou em
+   dois; o preco, reportado pelo pesquisador em 17/08/2026, foi barra plana: o titulo do
+   site, os tres links de navegacao, as sete linhas do indice da pagina e os 76 verbetes
+   saiam todos em 16px, do mesmo peso, e nada dizia ao olho o que vinha antes do que.
+   Os degraus, do maior para o menor: titulo do site (1.15em), indice da pagina e navegacao
+   (1em, a base), lista de verbetes e subsecao do indice (--barra-verbete), rotulo em caixa
+   alta (--barra-rotulo). A base subiu de 16px para 17px na mesma passada, pela outra metade
+   do relato ("a fonte ainda esta pequena"), e NENHUM degrau ficou menor do que era: o menor
+   deles, o verbete a 0.94em de 17px, da os mesmos ~16px de antes.
+   A regra de medida continua a de 16/08: a barra declara a base aqui e todo filho mede em
+   `em`, isto e, em relacao a ela, de modo que mexer nestas linhas move o conjunto inteiro. */
+--barra-texto:17px;--barra-rotulo:0.8em;--barra-verbete:0.94em;}
 :root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--muted:#a2a9b1;--card:#1b1f24;
 --border:#404a55;--link:#88a9e0;--link-quebrado:#e08a7d;--th:#27303a;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;
@@ -26,6 +32,8 @@ font-size:var(--barra-texto);line-height:1.5;}
 nav.sidebar a{display:block;color:var(--link);text-decoration:none;padding:0.18rem 0;}
 nav.sidebar a:hover{text-decoration:underline;}
 nav.sidebar .area{margin-top:1rem;font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);}
+nav.sidebar a.titulo-wiki{font-size:1.15em;line-height:1.25;margin-bottom:0.3rem;}
+nav.sidebar a.verbete{font-size:var(--barra-verbete);line-height:1.35;padding:0.12rem 0;}
 main{flex:1;padding:1.6rem 2.2rem;max-width:740px;background:var(--card);border-left:1px solid var(--border);}
 h1{font-family:"Linux Libertine", Georgia, Times, "Source Serif 4", serif;font-size:28.8px;font-weight:400;line-height:1.3;
 margin:0 0 0.25rem;padding-bottom:0.25rem;border-bottom:1px solid var(--border);}
@@ -85,6 +93,7 @@ th{background:var(--th);font-weight:700;}
 .toc-titulo{font-weight:700;font-size:var(--barra-rotulo);text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:0.3rem;}
 .toc ul{list-style:none;padding-left:0;margin:0;}
 .toc ul ul{padding-left:0.8rem;}
+.toc ul ul a{font-size:var(--barra-verbete);}
 .toc li{margin:0.12rem 0;}
 nav.sidebar{position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
 
@@ -94,115 +103,116 @@ mark{background:#f2cc8f;color:#141413;}
 <body>
 <div class="controles"><button id="lang-toggle" onclick="toggleLang()">EN / PT</button><button onclick="toggleWikiTheme()">Light/Dark</button></div>
 <div class="layout">
-<nav class="sidebar"><a href="index.html"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
+<nav class="sidebar"><a href="index.html" class="titulo-wiki"><strong><span data-chrome-lang="en">Disaster Law and Policy, wiki</span><span data-chrome-lang="pt" hidden>Wiki Disaster Law and Policy</span></strong></a>
 <a href="graph.html"><span data-chrome-lang="en">View the concept graph</span><span data-chrome-lang="pt" hidden>Ver o grafo de conceitos</span></a>
 <a href="tags.html"><span data-chrome-lang="en">Index by tag</span><span data-chrome-lang="pt" hidden>Índice por tag</span></a>
-<input id="busca-campo" type="search" placeholder="search..." data-alvo="busca.html" data-indice="busca.json" data-prefixo="" class="busca-campo">
+<input id="busca-campo" type="search" placeholder="search..." data-ph-en="search..." data-ph-pt="buscar..." data-alvo="busca.html" data-indice="busca.json" data-prefixo="" class="busca-campo">
 <div id="busca-resultados" class="busca-resultados" hidden></div>
 <div class="area"><span data-chrome-lang="en">Sessions</span><span data-chrome-lang="pt" hidden>Sessões</span></div>
-<a href="sessoes/s02.html">S02: Why Study Disaster Law</a>
-<a href="sessoes/s03.html">S03: Risk, Uncertainty, Vulnerability and Resilience</a>
+<a href="sessoes/s02.html" class="verbete">S02: Why Study Disaster Law</a>
+<a href="sessoes/s03.html" class="verbete">S03: Risk, Uncertainty, Vulnerability and Resilience</a>
 <div class="area"><span data-chrome-lang="en">Authors</span><span data-chrome-lang="pt" hidden>Autores</span></div>
-<a href="autores/alemanno.html">Alberto Alemanno</a>
-<a href="autores/tversky.html">Amos Tversky</a>
-<a href="autores/wibisana.html">Andri G. Wibisana</a>
-<a href="autores/van-aaken.html">Anne van Aaken</a>
-<a href="autores/wisner.html">Ben Wisner</a>
-<a href="autores/perrow.html">Charles Perrow</a>
-<a href="autores/farber.html">Daniel A. Farber</a>
-<a href="autores/kahneman.html">Daniel Kahneman</a>
-<a href="autores/binder.html">Denis Binder</a>
-<a href="autores/vaughan.html">Diane Vaughan</a>
-<a href="autores/quarantelli.html">Enrico L. Quarantelli</a>
-<a href="autores/knight.html">Frank H. Knight</a>
-<a href="autores/davis.html">Ian Davis</a>
-<a href="autores/antonovic.html">Janis Antonovic</a>
-<a href="autores/scanlon.html">Joseph Scanlon</a>
-<a href="autores/lauta.html">Kristian Cedervall Lauta</a>
-<a href="autores/faure.html">Michael G. Faure</a>
-<a href="autores/taleb.html">Nassim Nicholas Taleb</a>
-<a href="autores/luhmann.html">Niklas Luhmann</a>
-<a href="autores/slovic.html">Paul Slovic</a>
-<a href="autores/blaikie.html">Piers Blaikie</a>
-<a href="autores/posner.html">Richard A. Posner</a>
-<a href="autores/verchick.html">Robert R. M. Verchick</a>
-<a href="autores/perry.html">Ronald W. Perry</a>
-<a href="autores/lyster.html">Rosemary Lyster</a>
-<a href="autores/cannon.html">Terry Cannon</a>
-<a href="autores/kuhn.html">Thomas S. Kuhn</a>
-<a href="autores/beck.html">Ulrich Beck</a>
+<a href="autores/alemanno.html" class="verbete">Alberto Alemanno</a>
+<a href="autores/tversky.html" class="verbete">Amos Tversky</a>
+<a href="autores/wibisana.html" class="verbete">Andri G. Wibisana</a>
+<a href="autores/van-aaken.html" class="verbete">Anne van Aaken</a>
+<a href="autores/wisner.html" class="verbete">Ben Wisner</a>
+<a href="autores/perrow.html" class="verbete">Charles Perrow</a>
+<a href="autores/farber.html" class="verbete">Daniel A. Farber</a>
+<a href="autores/kahneman.html" class="verbete">Daniel Kahneman</a>
+<a href="autores/binder.html" class="verbete">Denis Binder</a>
+<a href="autores/vaughan.html" class="verbete">Diane Vaughan</a>
+<a href="autores/quarantelli.html" class="verbete">Enrico L. Quarantelli</a>
+<a href="autores/knight.html" class="verbete">Frank H. Knight</a>
+<a href="autores/davis.html" class="verbete">Ian Davis</a>
+<a href="autores/antonovic.html" class="verbete">Janis Antonovic</a>
+<a href="autores/scanlon.html" class="verbete">Joseph Scanlon</a>
+<a href="autores/lauta.html" class="verbete">Kristian Cedervall Lauta</a>
+<a href="autores/faure.html" class="verbete">Michael G. Faure</a>
+<a href="autores/taleb.html" class="verbete">Nassim Nicholas Taleb</a>
+<a href="autores/luhmann.html" class="verbete">Niklas Luhmann</a>
+<a href="autores/slovic.html" class="verbete">Paul Slovic</a>
+<a href="autores/blaikie.html" class="verbete">Piers Blaikie</a>
+<a href="autores/posner.html" class="verbete">Richard A. Posner</a>
+<a href="autores/verchick.html" class="verbete">Robert R. M. Verchick</a>
+<a href="autores/perry.html" class="verbete">Ronald W. Perry</a>
+<a href="autores/lyster.html" class="verbete">Rosemary Lyster</a>
+<a href="autores/cannon.html" class="verbete">Terry Cannon</a>
+<a href="autores/kuhn.html" class="verbete">Thomas S. Kuhn</a>
+<a href="autores/beck.html" class="verbete">Ulrich Beck</a>
 <div class="area"><span data-chrome-lang="en">Texts</span><span data-chrome-lang="pt" hidden>Textos</span></div>
-<a href="textos/wisner-2004.html">At Risk: Natural Hazards, People&#x27;s Vulnerability and Disasters</a>
-<a href="textos/posner-2004.html">Catastrophe: Risk and Response</a>
-<a href="textos/quarantelli-2005.html">Catastrophes Are Different from Disasters</a>
-<a href="textos/lyster-2015.html">Climate Justice and Disaster Law</a>
-<a href="textos/scanlon-1991.html">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
-<a href="textos/verchick-2012.html">Disaster Justice: The Geography of Human Capability</a>
-<a href="textos/lauta-2014.html">Disaster Law</a>
-<a href="textos/farber-faure-2010.html">Disaster Law (edited collection)</a>
-<a href="textos/farber-2010.html">Disaster Law and Policy, 2nd ed.</a>
-<a href="textos/lauta-faure-2016.html">Disaster Risk Management (chapter)</a>
-<a href="textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>
-<a href="textos/ejrr-laquila-2014.html">EJRR symposium on the L&#x27;Aquila Seven</a>
-<a href="textos/verchick-2010.html">Facing Catastrophe</a>
-<a href="textos/alemanno-2011.html">Governing Disasters</a>
-<a href="textos/antonovic-vanaaken-2016.html">Is International Law Conducive to Prevent Looming Disasters?</a>
-<a href="textos/luhmann-2004.html">Law as a Social System</a>
-<a href="textos/perrow-1984.html">Normal Accidents: Living with High-Risk Technologies</a>
-<a href="textos/slovic-1987.html">Perception of Risk</a>
-<a href="textos/kahneman-tversky-1979.html">Prospect Theory: An Analysis of Decision under Risk</a>
-<a href="textos/faure-wibisana-2013.html">Regulating Disasters, Climate Change and Environmental Harm</a>
-<a href="textos/beck-1992.html">Risk Society: Towards a New Modernity</a>
-<a href="textos/knight-1921.html">Risk, Uncertainty and Profit</a>
-<a href="textos/taleb-2007.html">The Black Swan: The Impact of the Highly Improbable</a>
-<a href="textos/vaughan-1996.html">The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</a>
-<a href="textos/binder-2016.html">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
-<a href="textos/kuhn-1970.html">The Structure of Scientific Revolutions</a>
-<a href="textos/perry-2006.html">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
-<a href="textos/perry-quarantelli-2005.html">What Is a Disaster? New Answers to Old Questions (eds.)</a>
+<a href="textos/wisner-2004.html" class="verbete">At Risk: Natural Hazards, People&#x27;s Vulnerability and Disasters</a>
+<a href="textos/posner-2004.html" class="verbete">Catastrophe: Risk and Response</a>
+<a href="textos/quarantelli-2005.html" class="verbete">Catastrophes Are Different from Disasters</a>
+<a href="textos/lyster-2015.html" class="verbete">Climate Justice and Disaster Law</a>
+<a href="textos/scanlon-1991.html" class="verbete">Convergence Revisited: A New Perspective on a Little Studied Topic</a>
+<a href="textos/verchick-2012.html" class="verbete">Disaster Justice: The Geography of Human Capability</a>
+<a href="textos/lauta-2014.html" class="verbete">Disaster Law</a>
+<a href="textos/farber-faure-2010.html" class="verbete">Disaster Law (edited collection)</a>
+<a href="textos/farber-2010.html" class="verbete">Disaster Law and Policy, 2nd ed.</a>
+<a href="textos/lauta-faure-2016.html" class="verbete">Disaster Risk Management (chapter)</a>
+<a href="textos/lauta-2017.html" class="verbete">Dysfunction and Disruption: Disaster Risks and the Law</a>
+<a href="textos/ejrr-laquila-2014.html" class="verbete">EJRR symposium on the L&#x27;Aquila Seven</a>
+<a href="textos/verchick-2010.html" class="verbete">Facing Catastrophe</a>
+<a href="textos/alemanno-2011.html" class="verbete">Governing Disasters</a>
+<a href="textos/antonovic-vanaaken-2016.html" class="verbete">Is International Law Conducive to Prevent Looming Disasters?</a>
+<a href="textos/luhmann-2004.html" class="verbete">Law as a Social System</a>
+<a href="textos/perrow-1984.html" class="verbete">Normal Accidents: Living with High-Risk Technologies</a>
+<a href="textos/slovic-1987.html" class="verbete">Perception of Risk</a>
+<a href="textos/kahneman-tversky-1979.html" class="verbete">Prospect Theory: An Analysis of Decision under Risk</a>
+<a href="textos/faure-wibisana-2013.html" class="verbete">Regulating Disasters, Climate Change and Environmental Harm</a>
+<a href="textos/beck-1992.html" class="verbete">Risk Society: Towards a New Modernity</a>
+<a href="textos/knight-1921.html" class="verbete">Risk, Uncertainty and Profit</a>
+<a href="textos/taleb-2007.html" class="verbete">The Black Swan: The Impact of the Highly Improbable</a>
+<a href="textos/vaughan-1996.html" class="verbete">The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</a>
+<a href="textos/binder-2016.html" class="verbete">The Increasing Application of Criminal Law to Disasters and Tragedies</a>
+<a href="textos/kuhn-1970.html" class="verbete">The Structure of Scientific Revolutions</a>
+<a href="textos/perry-2006.html" class="verbete">What Is a Disaster? (chapter in the Handbook of Disaster Research)</a>
+<a href="textos/perry-quarantelli-2005.html" class="verbete">What Is a Disaster? New Answers to Old Questions (eds.)</a>
 <div class="area"><span data-chrome-lang="en">Legislation</span><span data-chrome-lang="pt" hidden>Legislação</span></div>
-<a href="legislacao/agenda-2030.html">2030 Agenda for Sustainable Development</a>
-<a href="legislacao/adis-abeba-2015.html">Addis Ababa Action Agenda</a>
-<a href="legislacao/habitat-iii-2016.html">Habitat III, New Urban Agenda</a>
-<a href="legislacao/iso-31000-2009.html">ISO 31000:2009, Risk management, principles and guidelines</a>
-<a href="legislacao/iso-guide-73-2009.html">ISO Guide 73:2009, Risk management vocabulary</a>
-<a href="legislacao/protocolo-de-montreal-1987.html">Montreal Protocol on Substances that Deplete the Ozone Layer</a>
-<a href="legislacao/acordo-de-paris-2015.html">Paris Agreement on climate change</a>
-<a href="legislacao/marco-de-sendai-2015.html">Sendai Framework for Disaster Risk Reduction 2015-2030</a>
+<a href="legislacao/agenda-2030.html" class="verbete">2030 Agenda for Sustainable Development</a>
+<a href="legislacao/adis-abeba-2015.html" class="verbete">Addis Ababa Action Agenda</a>
+<a href="legislacao/habitat-iii-2016.html" class="verbete">Habitat III, New Urban Agenda</a>
+<a href="legislacao/iso-31000-2009.html" class="verbete">ISO 31000:2009, Risk management, principles and guidelines</a>
+<a href="legislacao/iso-guide-73-2009.html" class="verbete">ISO Guide 73:2009, Risk management vocabulary</a>
+<a href="legislacao/protocolo-de-montreal-1987.html" class="verbete">Montreal Protocol on Substances that Deplete the Ozone Layer</a>
+<a href="legislacao/acordo-de-paris-2015.html" class="verbete">Paris Agreement on climate change</a>
+<a href="legislacao/marco-de-sendai-2015.html" class="verbete">Sendai Framework for Disaster Risk Reduction 2015-2030</a>
 <div class="area"><span data-chrome-lang="en">Cases</span><span data-chrome-lang="pt" hidden>Julgados</span></div>
-<a href="julgados/itlos-parecer-2024.html">Advisory opinion on climate change and the law of the sea</a>
-<a href="julgados/cij-parecer-clima-2025.html">Advisory opinion on the obligations of States in respect of climate change</a>
-<a href="julgados/brumadinho-denuncia.html">Brumadinho: the criminal charge and the victim count</a>
-<a href="julgados/mariana-stf-homologacao-2024.html">Mariana: approval of the renegotiated settlement</a>
-<a href="julgados/mariana-jf-2024.html">Mariana: criminal acquittal in the Federal Court</a>
-<a href="julgados/mariana-ewhc-2025.html">Município de Mariana and Others v. BHP Group</a>
-<a href="julgados/neubauer-2021.html">Neubauer and Others v. Germany</a>
-<a href="julgados/laquila-cassacao-2016.html">The L&#x27;Aquila case: the seven scientists</a>
-<a href="julgados/urgenda-2019.html">Urgenda Foundation v. State of the Netherlands</a>
-<a href="julgados/klimaseniorinnen-2024.html">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
+<a href="julgados/itlos-parecer-2024.html" class="verbete">Advisory opinion on climate change and the law of the sea</a>
+<a href="julgados/cij-parecer-clima-2025.html" class="verbete">Advisory opinion on the obligations of States in respect of climate change</a>
+<a href="julgados/brumadinho-denuncia.html" class="verbete">Brumadinho: the criminal charge and the victim count</a>
+<a href="julgados/mariana-stf-homologacao-2024.html" class="verbete">Mariana: approval of the renegotiated settlement</a>
+<a href="julgados/mariana-jf-2024.html" class="verbete">Mariana: criminal acquittal in the Federal Court</a>
+<a href="julgados/mariana-ewhc-2025.html" class="verbete">Município de Mariana and Others v. BHP Group</a>
+<a href="julgados/neubauer-2021.html" class="verbete">Neubauer and Others v. Germany</a>
+<a href="julgados/laquila-cassacao-2016.html" class="verbete">The L&#x27;Aquila case: the seven scientists</a>
+<a href="julgados/urgenda-2019.html" class="verbete">Urgenda Foundation v. State of the Netherlands</a>
+<a href="julgados/klimaseniorinnen-2024.html" class="verbete">Verein KlimaSeniorinnen Schweiz and Others v. Switzerland</a>
 <div class="area"><span data-chrome-lang="en">Concepts</span><span data-chrome-lang="pt" hidden>Conceitos</span></div>
-<a href="conceitos/s02-montagem-da-sessao.html">Assembling session S02, 2026.2 (project note)</a>
-<a href="conceitos/cisne-negro.html">Cisne negro</a>
-<a href="conceitos/disaster-risk.html">Disaster risk (effects of uncertainty)</a>
-<a href="conceitos/disaster-vs-catastrophe.html">Disaster vs. catastrophe (institutional capacity)</a>
-<a href="conceitos/quarantelli-criterios-brasil.html">Do Quarantelli&#x27;s six criteria hold in the Brazilian arrangement? (fleeting note)</a>
-<a href="conceitos/dysfunction.html">Dysfunction of a social process</a>
-<a href="conceitos/incerteza-knightiana.html">Incerteza knightiana</a>
-<a href="conceitos/capacidade-institucional.html">Institutional capacity (reference note)</a>
-<a href="conceitos/porcao-juridica.html">Legal bite-sizes (the juridical portion)</a>
-<a href="conceitos/legal-exceptionalism.html">Legal exceptionalism</a>
-<a href="conceitos/normal-accidents.html">Normal accident (a structural property of the system)</a>
-<a href="conceitos/normalizacao-do-desvio.html">Normalização do desvio</a>
-<a href="conceitos/percepcao-de-risco.html">Percepção de risco</a>
-<a href="conceitos/lauta-2017-leitura.html">Reading of Lauta 2017 (literature note)</a>
-<a href="conceitos/risk-society.html">Risk society</a>
-<a href="conceitos/segredo-estrutural.html">Segredo estrutural</a>
-<a href="conceitos/teoria-do-prospecto.html">Teoria do prospecto</a>
-<a href="conceitos/vulnerabilidade.html">Vulnerabilidade</a></nav>
+<a href="conceitos/s02-montagem-da-sessao.html" class="verbete">Assembling session S02, 2026.2 (project note)</a>
+<a href="conceitos/cisne-negro.html" class="verbete">Cisne negro</a>
+<a href="conceitos/disaster-risk.html" class="verbete">Disaster risk (effects of uncertainty)</a>
+<a href="conceitos/disaster-vs-catastrophe.html" class="verbete">Disaster vs. catastrophe (institutional capacity)</a>
+<a href="conceitos/quarantelli-criterios-brasil.html" class="verbete">Do Quarantelli&#x27;s six criteria hold in the Brazilian arrangement? (fleeting note)</a>
+<a href="conceitos/dysfunction.html" class="verbete">Dysfunction of a social process</a>
+<a href="conceitos/incerteza-knightiana.html" class="verbete">Incerteza knightiana</a>
+<a href="conceitos/capacidade-institucional.html" class="verbete">Institutional capacity (reference note)</a>
+<a href="conceitos/porcao-juridica.html" class="verbete">Legal bite-sizes (the juridical portion)</a>
+<a href="conceitos/legal-exceptionalism.html" class="verbete">Legal exceptionalism</a>
+<a href="conceitos/normal-accidents.html" class="verbete">Normal accident (a structural property of the system)</a>
+<a href="conceitos/normalizacao-do-desvio.html" class="verbete">Normalização do desvio</a>
+<a href="conceitos/percepcao-de-risco.html" class="verbete">Percepção de risco</a>
+<a href="conceitos/lauta-2017-leitura.html" class="verbete">Reading of Lauta 2017 (literature note)</a>
+<a href="conceitos/risk-society.html" class="verbete">Risk society</a>
+<a href="conceitos/segredo-estrutural.html" class="verbete">Segredo estrutural</a>
+<a href="conceitos/teoria-do-prospecto.html" class="verbete">Teoria do prospecto</a>
+<a href="conceitos/vulnerabilidade.html" class="verbete">Vulnerabilidade</a></nav>
 <main>
 <h1>Search</h1>
-<div class="meta">Índice embutido nesta página, gerado no build. Funciona offline, sem rede.</div>
-<input id="q" type="search" placeholder="termo..." style="width:100%;padding:0.6rem;font-size:1rem;
+<div class="meta"><span data-chrome-lang="en">Index embedded in this page, generated at build time. It works offline, with no network.</span><span data-chrome-lang="pt" hidden>Índice embutido nesta página, gerado no build. Funciona offline, sem rede.</span></div>
+<input id="q" type="search" placeholder="term..." data-ph-en="term..." data-ph-pt="termo..."
+ style="width:100%;padding:0.6rem;font-size:1rem;
  border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--fg);">
 <div id="res"></div>
 </main>
@@ -243,6 +253,18 @@ mark{background:#f2cc8f;color:#141413;}
     // que e o defeito que esta funcao existe para evitar. Ha teste dedicado a isso.
     document.querySelectorAll('[data-chrome-lang]').forEach(function(el){
       el.hidden = (el.getAttribute('data-chrome-lang') !== l);
+    });
+    // Placeholder e ATRIBUTO, e nao no de texto: nao da para escondê-lo dentro de um <span>, entao
+    // os dois idiomas viajam em data-ph-en/data-ph-pt e a troca acontece aqui. Segue o idioma
+    // PEDIDO, como o resto do cromo, pelo mesmo motivo explicado logo acima.
+    document.querySelectorAll('[data-ph-en]').forEach(function(el){
+      el.placeholder = el.getAttribute(l === 'pt' ? 'data-ph-pt' : 'data-ph-en');
+    });
+    // Trecho da secao "Mentioned without a link in": e texto de OUTRA pagina, entao tem atributo
+    // proprio e segue o idioma PEDIDO, pela mesma razao do cromo -- marca-lo como `data-lang` faria
+    // pagina sem traducao passar a ter bloco 'en' e mataria o recuo do corpo (ver acima).
+    document.querySelectorAll('[data-trecho-lang]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-trecho-lang') !== l);
     });
     // So paginas com bloco data-lang tem corpo bilingue de verdade: busca, tags e o
     // grafo nao tem nenhum, so cromo, e sempre caindo em 'pt' aqui (achado em revisao
