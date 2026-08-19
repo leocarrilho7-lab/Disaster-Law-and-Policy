@@ -137,6 +137,9 @@ input { width: 100%; font: inherit; padding: 10px; border: 1px solid #cfc9bd; bo
            background: #fff; }
 .consent p { margin: 4px 0; font-size: 14.5px; }
 .obrigado { margin: 0 0 12px; font-size: 17px; }
+.recomecar { margin: 16px 0 0; }
+.recomecar button { width: auto; display: inline-block; padding: 8px 14px; font-size: 15px; }
+.recomecar .rotulo { display: inline; margin-left: 8px; text-transform: none; letter-spacing: 0; }
 .paraWiki { margin: 18px 0 0; padding-top: 12px; border-top: 1px solid #cfc9bd; }
 .paraWiki a { font-size: 17px; font-weight: 700; color: #1d4ed8; }
 .paraWiki .rotulo { display: block; margin-top: 5px; color: #4a4a4a; text-transform: none;
@@ -243,7 +246,7 @@ input { width: 100%; font: inherit; padding: 10px; border: 1px solid #cfc9bd; bo
 <label class="aberta" data-item="fb-gostou"><span class="rotulo">What worked. Name the moment, not the feeling.</span><textarea rows="3"></textarea></label>
 <label class="aberta" data-item="fb-melhorar"><span class="rotulo">What to change. Name the moment, not the feeling.</span><textarea rows="3"></textarea></label>
 </fieldset><button type="button" class="op primario avancar" hidden>Next</button></section>
-<section class="etapa" data-etapa="fim" hidden><h2>Time</h2><p class="obrigado">Thank you for playing. What your group decided is recorded.</p><div id="placar"></div><p class="paraWiki"><a href="./index.html">Explore the course wiki</a><span class="rotulo"> every work, author, concept and case in this course, as linked pages</span></p>
+<section class="etapa" data-etapa="fim" hidden><h2>Time</h2><p class="obrigado">Thank you for playing. What your group decided is recorded.</p><div id="placar"></div><p class="recomecar"><button type="button" id="recomecar">Start over</button><span class="rotulo"> clears this device only, and asks first</span></p><p class="paraWiki"><a href="./index.html">Explore the course wiki</a><span class="rotulo"> every work, author, concept and case in this course, as linked pages</span></p>
 </section></div>
 <script>const ARTE = {"volcano": "🌋", "meteor": "☄️", "nuclear": "☢️", "pathogen": "🦠", "tsunami": "🌊", "wildfire": "🔥", "storm": "🌪️", "tailings-dam": "⛏️", "oil-spill": "🛢️", "financial-crash": "📉", "structural-collapse": "🏚️", "heatwave": "🌡️", "drought": "🏜️", "flood": "🌧️", "blackout": "🔌", "chemical": "🧪"};</script>
 <script>const SETUP = {"case-drainage": {"titulo": "The instrument was offline", "texto": "The monitoring device that would have detected this failure mode has been out of service for sixty days. Nobody reported it because the reporting duty sits with the contractor.", "fatores": [{"id": "F1", "nome": "Independent monitoring, not the operator's own", "origem": "decisao"}, {"id": "F2", "nome": "Drainage re-derived after the design change", "origem": "decisao"}, {"id": "F3", "nome": "Self-rescue zone drilled in the last twelve months", "origem": "decisao"}, {"id": "F4", "nome": "Licence renewed on the existing studies", "origem": "decisao"}, {"id": "F5", "nome": "Rainfall above the historical maximum this season", "origem": "sorteio"}, {"id": "F6", "nome": "The one engineer who knew the drainage leaves the company", "origem": "sorteio"}]}, "case-seawall": {"titulo": "The frequency is now actuarial", "texto": "Events of this class now happen often enough that an insurer prices them and pays claims without dispute.", "fatores": []}, "case-reserve": {"titulo": "Sharper mean, same spread", "texto": "The campaign would halve the uncertainty on the seasonal average and leave the year to year spread untouched. A reserve sized on the average is short in about half the seasons, and what decides how short is how far a bad season departs from any average. That departure is the same whichever average turns out to be right.", "fatores": []}, "case-tremors": {"titulo": "One number, one model, one disagreement", "texto": "Every group at the table runs the same forecasting model and accepts its structure. The whole disagreement is over the size of a single coefficient inside it, and each side can say what evidence would move that coefficient.", "fatores": []}, "case-barrier": {"titulo": "The failure is bounded; the disagreement is not", "texto": "The way this structure fails is known and its maximum consequence has been costed. What no one agrees on is whose protection counts, which generation should pay, and what level of residual flooding is acceptable at all.", "fatores": []}, "case-pressure-test": {"titulo": "The safeguard depends on the same failure", "texto": "The backup system shares a power supply, a wall, or a supplier with the system it backs up.", "fatores": []}, "case-novel-pathogen": {"titulo": "Waiting buys information", "texto": "A study already funded will resolve the central question in eighteen months, and its result is what would justify lifting the measure rather than what would justify imposing it. Everyone at the table uses the same transmission model and agrees that deaths are the measure. The measure under discussion can be lifted at any time, and lifting it restores what it removed. The deaths it would have prevented cannot be restored the same way.", "fatores": []}};</script>
@@ -762,6 +765,20 @@ document.querySelectorAll('.contador').forEach(c => {
 });
 
 document.querySelectorAll('.avancar').forEach(b => b.addEventListener('click', avancar));
+
+// APAGA SO A CHAVE DESTE JOGO, e nao o `localStorage` inteiro: o navegador do aluno pode guardar
+// coisa de outra pagina do mesmo dominio, e limpar tudo seria estragar o que nao e nosso. O
+// `confirm` esta aqui porque a acao nao tem volta: o estado nao vai para lugar nenhum antes de
+// sumir, e um toque acidental no fecho apagaria a devolutiva que o grupo esta lendo.
+const botaoRecomecar = document.getElementById('recomecar');
+if (botaoRecomecar) botaoRecomecar.addEventListener('click', () => {
+  if (!confirm('Start over? This device forgets this game: your answers, your case and your key.'))
+    return;
+  Object.keys(localStorage)
+    .filter(k => k.indexOf('jogo-s03-') === 0)
+    .forEach(k => localStorage.removeItem(k));
+  location.reload();
+});
 
 // A PORTADA e a primeira tela e nao e etapa: ela so descobre a entrada. O relogio dela e iniciado
 // aqui a mao, porque `mostrar()` nunca a visita.
