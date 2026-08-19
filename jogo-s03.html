@@ -175,9 +175,10 @@ input { width: 100%; font: inherit; padding: 10px; border: 1px solid #cfc9bd; bo
 <details class="oque"><summary>what is this?</summary><p>Two things at once: the harm could not be undone, and waiting would teach you something. Either one alone is not this. When both hold, waiting is worth something in itself, on top of any benefit of the delay, for the same reason you do not knock down the wall while the survey is still coming back. Acting now spends a choice you cannot buy back later. It also says when to stop waiting, because once the information arrives the reason to hold is gone. Frame a case here when you can name what you would learn later and what could never be undone.</p></details>
 </div>
 <textarea data-v="texto" maxlength="140" placeholder="which regime, and why -- up to 140 characters"></textarea><p class="rotulo contador" data-limite="140">140 left</p>
-</fieldset><button type="button" class="op avancar" hidden>Next</button></section>
+</fieldset><button type="button" class="op primario avancar" hidden>Next</button></section>
 <section class="etapa" hidden data-rodada="s03-r1-commit" data-tipo="escolha" data-minutos="7"><p class="relogio"></p><fieldset><legend class="rotulo">Round 1: name the regime</legend><p>Read your Case card. Place it on ONE layer of the mat and write the decision that layer commands. Then write the strongest argument AGAINST your own choice. Commit before the signal.</p>
 <div id="dificuldades" class="dificuldades" hidden></div>
+<textarea data-v="contra" maxlength="140" rows="2" placeholder="The strongest argument against your own choice."></textarea><p class="rotulo contador" data-limite="140">140 left</p>
 <button type="button" class="op" data-v="A0">Aleatory variability</button>
 <details class="oque"><summary>what is this?</summary><p>Aleatory means the spread is in the process, not in your knowledge of it. Think of two courts handing down different sentences in cases that look the same: no fact was hidden from either bench, and reading one file more carefully would not have closed the gap. Scatter like this is a property of the system, so the answers that work are the ones built to absorb it, such as spare capacity, redundancy and insurance, and not one more study. Frame a case here when everyone already agrees on the range and is arguing about who carries it.</p></details>
 <button type="button" class="op" data-v="L0">Calculable risk</button>
@@ -192,7 +193,7 @@ input { width: 100%; font: inherit; padding: 10px; border: 1px solid #cfc9bd; bo
 <details class="oque"><summary>what is this?</summary><p>Almost all of the damage sits in the rare, huge event, so the average is the wrong thing to look at. Height behaves like the ordinary case: one more person in the room barely moves the average. Wealth does not, because one billionaire moves it entirely. Where losses behave like wealth, the record looks calm right up until it does not, since the events that matter have not happened yet. What you can still control is how exposed you are. Frame a case here when the worst plausible outcome, and not the typical one, is what the decision must answer to.</p></details>
 <button type="button" class="op" data-v="L5">Catastrophic and irreversible</button>
 <details class="oque"><summary>what is this?</summary><p>Two things at once: the harm could not be undone, and waiting would teach you something. Either one alone is not this. When both hold, waiting is worth something in itself, on top of any benefit of the delay, for the same reason you do not knock down the wall while the survey is still coming back. Acting now spends a choice you cannot buy back later. It also says when to stop waiting, because once the information arrives the reason to hold is gone. Frame a case here when you can name what you would learn later and what could never be undone.</p></details>
-</fieldset><button type="button" class="op avancar" hidden>Next</button></section>
+</fieldset><button type="button" class="op primario avancar" hidden>Next</button></section>
 <section class="etapa" hidden data-rodada="s03-r2-signal" data-tipo="recommit" data-minutos="7"><p class="relogio"></p><fieldset><legend class="rotulo">Round 2: the signal arrives</legend><p>Turn over the Signal card. Your Round 1 layer is already marked below. Decide together whether the signal changes the regime: confirm the layer you chose, or place the case on a different one. Either way, say in one sentence what in the signal made you keep it or move.</p>
 <div id="sinal" class="sinal"></div><div id="anterior" class="dificuldades" hidden></div><textarea data-v="porque" rows="2" placeholder="One sentence: what in the signal decided it."></textarea>
 <button type="button" class="op" data-v="A0">Aleatory variability</button>
@@ -202,7 +203,7 @@ input { width: 100%; font: inherit; padding: 10px; border: 1px solid #cfc9bd; bo
 <button type="button" class="op" data-v="L3">Deep uncertainty</button>
 <button type="button" class="op" data-v="L4">Radical uncertainty, catastrophic loss</button>
 <button type="button" class="op" data-v="L5">Catastrophic and irreversible</button>
-</fieldset><button type="button" class="op avancar" hidden>Next</button></section>
+</fieldset><button type="button" class="op primario avancar" hidden>Next</button></section>
 <section class="etapa" hidden data-rodada="s03-r4-feedback" data-tipo="feedback" data-minutos="9"><p class="relogio"></p><fieldset><legend class="rotulo">Round 3: how did this go?</legend><p>One answer per group. This is the part that decides whether the next session is run like this one, so be blunt: a polite form teaches nothing.</p>
 <div class="likert" data-item="fb-jogabilidade"><p>The game was easy to follow: we always knew what to do next.</p><div class="escala">
 <button type="button" class="nota" data-v="1">1</button>
@@ -210,38 +211,38 @@ input { width: 100%; font: inherit; padding: 10px; border: 1px solid #cfc9bd; bo
 <button type="button" class="nota" data-v="3">3</button>
 <button type="button" class="nota" data-v="4">4</button>
 <button type="button" class="nota" data-v="5">5</button>
-</div><p class="rotulo">not at all &rarr; completely</p></div>
+</div><p class="rotulo">1 not at all &middot; 2 slightly &middot; 3 halfway &middot; 4 mostly &middot; 5 completely</p></div>
 <div class="likert" data-item="fb-confianca"><p>We are more confident naming a regime of uncertainty than we were an hour ago.</p><div class="escala">
 <button type="button" class="nota" data-v="1">1</button>
 <button type="button" class="nota" data-v="2">2</button>
 <button type="button" class="nota" data-v="3">3</button>
 <button type="button" class="nota" data-v="4">4</button>
 <button type="button" class="nota" data-v="5">5</button>
-</div><p class="rotulo">not at all &rarr; completely</p></div>
+</div><p class="rotulo">1 not at all &middot; 2 slightly &middot; 3 halfway &middot; 4 mostly &middot; 5 completely</p></div>
 <div class="likert" data-item="fb-aplicacao"><p>The case made the concepts usable, and not only memorable.</p><div class="escala">
 <button type="button" class="nota" data-v="1">1</button>
 <button type="button" class="nota" data-v="2">2</button>
 <button type="button" class="nota" data-v="3">3</button>
 <button type="button" class="nota" data-v="4">4</button>
 <button type="button" class="nota" data-v="5">5</button>
-</div><p class="rotulo">not at all &rarr; completely</p></div>
+</div><p class="rotulo">1 not at all &middot; 2 slightly &middot; 3 halfway &middot; 4 mostly &middot; 5 completely</p></div>
 <div class="likert" data-item="fb-tempo"><p>The time on each step was enough for the work it asked for.</p><div class="escala">
 <button type="button" class="nota" data-v="1">1</button>
 <button type="button" class="nota" data-v="2">2</button>
 <button type="button" class="nota" data-v="3">3</button>
 <button type="button" class="nota" data-v="4">4</button>
 <button type="button" class="nota" data-v="5">5</button>
-</div><p class="rotulo">not at all &rarr; completely</p></div>
+</div><p class="rotulo">1 not at all &middot; 2 slightly &middot; 3 halfway &middot; 4 mostly &middot; 5 completely</p></div>
 <div class="likert" data-item="fb-repetir"><p>We would want another session run like this one.</p><div class="escala">
 <button type="button" class="nota" data-v="1">1</button>
 <button type="button" class="nota" data-v="2">2</button>
 <button type="button" class="nota" data-v="3">3</button>
 <button type="button" class="nota" data-v="4">4</button>
 <button type="button" class="nota" data-v="5">5</button>
-</div><p class="rotulo">not at all &rarr; completely</p></div>
+</div><p class="rotulo">1 not at all &middot; 2 slightly &middot; 3 halfway &middot; 4 mostly &middot; 5 completely</p></div>
 <label class="aberta" data-item="fb-gostou"><span class="rotulo">What worked. Name the moment, not the feeling.</span><textarea rows="3"></textarea></label>
 <label class="aberta" data-item="fb-melhorar"><span class="rotulo">What to change. Name the moment, not the feeling.</span><textarea rows="3"></textarea></label>
-</fieldset><button type="button" class="op avancar" hidden>Next</button></section>
+</fieldset><button type="button" class="op primario avancar" hidden>Next</button></section>
 <section class="etapa" data-etapa="fim" hidden><h2>Time</h2><p class="obrigado">Thank you for playing. What your group decided is recorded.</p><div id="placar"></div><p class="paraWiki"><a href="./index.html">Explore the course wiki</a><span class="rotulo"> every work, author, concept and case in this course, as linked pages</span></p>
 </section></div>
 <script>const ARTE = {"volcano": "🌋", "meteor": "☄️", "nuclear": "☢️", "pathogen": "🦠", "tsunami": "🌊", "wildfire": "🔥", "storm": "🌪️", "tailings-dam": "⛏️", "oil-spill": "🛢️", "financial-crash": "📉", "structural-collapse": "🏚️", "heatwave": "🌡️", "drought": "🏜️", "flood": "🌧️", "blackout": "🔌", "chemical": "🧪"};</script>
@@ -289,7 +290,10 @@ function mostrar(i) {
   // ou troque" sem dizer o que se confirma transforma a rodada numa segunda escolha do zero, e a
   // revisao deixa de ser mensuravel.
   if (etapa && etapa.dataset.tipo === 'recommit') {
-    const escolhido = estado[ID_ESCOLHA];
+    // `camadaDe` porque a Rodada 1 tambem grava {camada, contra} desde 19/08/2026: sem ele o
+    // recommit deixaria de marcar a escolha anterior e o bloco "your Round 1 answer" sumiria,
+    // calado, que e a falha que este bloco existe para impedir.
+    const escolhido = camadaDe(estado[ID_ESCOLHA]);
     const alvo = etapa.querySelector('#anterior');
     if (alvo && escolhido) {
       const c = CAMADAS.find(x => x.id === escolhido);
@@ -304,6 +308,18 @@ function mostrar(i) {
   }
   if (etapa && etapa.dataset.tipo === 'escolha') {
     const alvo = etapa.querySelector('#dificuldades');
+    // QUEM JA ESCOLHEU VE A ESCOLHA, e nao o eco: sem isto, quem volta a esta tela ou retoma a
+    // partida no aparelho encontraria de novo o texto da Rodada 0 no lugar do que decidiu.
+    const jaEscolheu = camadaDe(estado[ID_ESCOLHA]);
+    if (alvo && jaEscolheu) {
+      const c = CAMADAS.find(x => x.id === jaEscolheu);
+      alvo.innerHTML = '<p class="rotulo">your choice</p><p><strong>'
+        + String(c ? c.nome : jaEscolheu).replace(/[<&]/g, ch => ch === '<' ? '&lt;' : '&amp;')
+        + '</strong></p>';
+      alvo.hidden = false;
+      iniciarRelogio(etapa);
+      return;
+    }
     const bruto = String(estado[ID_BRAINSTORM] || '').trim();
     const termos = bruto.split(',').map(s => s.trim()).filter(Boolean);
     if (alvo && termos.length) {
@@ -388,7 +404,7 @@ function encerrar(motivo) {
 function camadaDe(v) {
   if (!v) return v;
   if (typeof v === 'string' && v.charAt(0) === '{') {
-    try { return (JSON.parse(v) || {}).camada || ''; } catch (e) { return ''; }
+    try { return (JSON.parse(v) || {}).layer || ''; } catch (e) { return ''; }
   }
   return v;
 }
@@ -418,7 +434,7 @@ function blocoChave(k) {
   };
   // `ID_ESCOLHA` e a RODADA 1, lida so com a carta de caso, e por isso ela e conferida contra
   // `modal_caso`, e nunca contra `modal`, que e a resposta DEPOIS do sinal.
-  const meu = estado[ID_ESCOLHA];
+  const meu = camadaDe(estado[ID_ESCOLHA]);
   const r1 = k.modal_caso || k.modal;
   const acertou = meu && meu === r1;
   // O QUE O RECOMMIT EXISTE PARA MEDIR nao e so a camada final: e se o grupo REVISOU quando o sinal
@@ -467,9 +483,12 @@ function montarPlacar() {
     // jogo, nao e conferida contra a chave e nao tem rotulo legivel, so id de campo.
     if (r.id === ID_FEEDBACK) return;
     let v = estado[r.id];
-    // Rotulo por extenso, nunca o codigo: mesma regra ja aplicada em `blocoChave` e no fecho de
-    // sala. O `id` cru so sobrevive se a camada nao estiver na lista, que e defeito visivel.
-    const camada = CAMADAS.find(x => x.id === v);
+    // Rotulo por extenso, nunca o codigo E NUNCA O JSON. Desde 19/08/2026 o recommit grava
+    // {camada, porque} num voto so, e a Rodada 1 passou a gravar {camada, contra}: comparar o
+    // valor CRU com `CAMADAS` nao casa nada, e o fecho voltava a imprimir o objeto inteiro na
+    // tela do aluno. `camadaDe` existe para desembrulhar as duas formas, e o eco ficara de fora
+    // dele. Medido ao vivo em 19/08: "Round 2: the signal arrives: {"camada":"L2","porque":""}".
+    const camada = CAMADAS.find(x => x.id === camadaDe(v));
     if (camada) v = camada.nome;
     if (typeof v === 'string' && v.length > 90) v = v.slice(0, 90) + '...';
     h += '<li>' + r.titulo + ': <strong>' + v + '</strong></li>';
@@ -627,9 +646,32 @@ document.querySelectorAll('.etapa[data-rodada]').forEach(etapa => {
     // modo solo. Sem chance de vazar chave: e o que o proprio aluno acabou de escrever.
     const termos = (etapa.dataset.tipo === 'brainstorm')
       ? String(valor || '').split(',').map(s => s.trim()).filter(Boolean) : [];
+    // A RODADA 1 CONFIRMA O QUE FOI DECIDIDO, e nao um "Recorded." mudo (19/08/2026). O bloco de
+    // cima nao serve para isso: ele vive DENTRO do fieldset que esta linha substitui, entao pintar
+    // a escolha nele some no mesmo instante. Medido ao jogar: apos o clique o espaco ficava vazio.
+    // Aqui ficam as duas coisas que a rodada produziu, a camada e o argumento contrario.
+    const esc = etapa.dataset.tipo === 'escolha' ? camadaDe(valor) : '';
+    if (esc) {
+      const c = CAMADAS.find(x => x.id === esc);
+      let contra = '';
+      try { contra = (JSON.parse(valor) || {}).against || ''; } catch (e) { contra = ''; }
+      const limpa = s => String(s).replace(/[<&]/g, ch => ch === '<' ? '&lt;' : '&amp;');
+      alvo.innerHTML = '<div class="dificuldades"><p class="rotulo">your choice</p>'
+        + '<p><strong>' + limpa(c ? c.nome : esc) + '</strong></p>'
+        + (contra ? '<p class="rotulo">your argument against it</p><p>' + limpa(contra) + '</p>'
+                  : '') + '</div>';
+      etapa.querySelector('.avancar').hidden = false;
+      return;
+    }
     alvo.innerHTML = r
-      ? '<div class="chave"><p><strong>Now answer this to yourself.</strong></p><p>' + r
-        + '</p></div>'
+      // A TELA DO VERSO ENTRAVA SEM DIZER O QUE ERA (19/08/2026). O grupo lia a pergunta e nao
+      // sabia de onde ela vinha, se devia responder na tela, se era enviada nem se valia nota; foi
+      // exatamente o que aconteceu com o professor ao jogar. O rotulo diz a procedencia, e a linha
+      // de baixo diz por que a pergunta importa para o regime que ele acabou de escolher.
+      ? '<div class="chave"><p class="rotulo">the back of your case card, for you alone</p>'
+        + '<p><strong>Now answer this to yourself.</strong></p><p>' + r + '</p>'
+        + '<p>Nothing here is sent and nothing is scored. If more study moves the number, your '
+        + 'case sits in a different regime than if it does not.</p></div>'
       : termos.length
         ? '<p class="enviado">Recorded. What your group named:</p><ul class="seus">'
           + termos.map(t => '<li>' + t.replace(/[<&]/g, c => c === '<' ? '&lt;' : '&amp;')
@@ -678,17 +720,25 @@ document.querySelectorAll('.etapa[data-rodada]').forEach(etapa => {
   // porque o servidor recusa id de rodada desconhecido (`sala.votar`, 404), entao nao ha um segundo
   // canal para a frase sem inventar uma rodada que nao existe.
   const valorDoRecommit = camada => JSON.stringify(
-    {camada: camada, porque: (etapa.querySelector('textarea') || {value: ''}).value.trim()});
+    {layer: camada, why: (etapa.querySelector('textarea') || {value: ''}).value.trim()});
+  // A RODADA 1 GRAVA IGUAL, pelo mesmo motivo: a camada e o argumento contrario num voto so,
+  // porque `sala.votar` recusa id de rodada que nao existe e nao ha segundo canal para o texto.
+  const valorDaEscolha = camada => JSON.stringify(
+    {layer: camada, against: (etapa.querySelector('textarea') || {value: ''}).value.trim()});
+  const gravaJunto = t => t === 'recommit' || t === 'escolha';
   etapa.querySelectorAll('.op').forEach(b => b.addEventListener('click', () => {
     if (b.classList.contains('avancar')) {
       // REGRAVA AO AVANCAR, e nao e redundancia: clicar na camada envia, e quem digitar a frase
       // DEPOIS disso perderia o que escreveu, calado. Aqui a ultima versao do campo prevalece.
-      if (etapa.dataset.tipo === 'recommit' && estado[etapa.dataset.rodada]) {
-        gravar(valorDoRecommit(camadaDe(estado[etapa.dataset.rodada])));
+      if (gravaJunto(etapa.dataset.tipo) && estado[etapa.dataset.rodada]) {
+        const c = camadaDe(estado[etapa.dataset.rodada]);
+        gravar(etapa.dataset.tipo === 'recommit' ? valorDoRecommit(c) : valorDaEscolha(c));
       }
       return;
     }
-    responder(etapa.dataset.tipo === 'recommit' ? valorDoRecommit(b.dataset.v) : b.dataset.v);
+    responder(etapa.dataset.tipo === 'recommit' ? valorDoRecommit(b.dataset.v)
+              : etapa.dataset.tipo === 'escolha' ? valorDaEscolha(b.dataset.v)
+              : b.dataset.v);
   }));
 });
 
