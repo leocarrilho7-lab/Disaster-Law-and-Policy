@@ -513,27 +513,9 @@ function montarPlacar() {
   // ENTREGA DECLARADA, e nao suposta (19/08/2026). Coleta que falha calada e pior que coleta que
   // nao existe: o grupo sairia da sala achando que respondeu. Se ficou pendencia, a tela diz
   // quantas e oferece o bloco copiavel, que e o ultimo recurso e nao depende de rede nenhuma.
-  if (COLETA.url && estado.pesquisa === true) {
-    const p = pendentes();
-    h += p === 0
-      ? '<p class="enviado">All your answers reached the instructor.</p>'
-      : '<div class="chave"><p class="rotulo">' + p + ' answer(s) did not reach the instructor</p>'
-        + '<p>Your answers are safe on this device. Show this screen to the instructor, or copy '
-        + 'the block below and send it to him.</p>'
-        + '<textarea readonly rows="4" id="socorro"></textarea>'
-        + '<button type="button" class="op primario" id="copiar">Copy my answers</button></div>';
-  }
+  if (COLETA.url && estado.pesquisa === true) h += '<div id="entrega"></div>';
   alvo.innerHTML = h;
-  const socorro = document.getElementById('socorro');
-  if (socorro) {
-    socorro.value = JSON.stringify({sessao: COLETA.sessao, grupo: estado.coleta_id,
-                                    apelido: estado.apelido, caso: estado.caso,
-                                    pendentes: lerFila()});
-    document.getElementById('copiar').addEventListener('click', () => {
-      socorro.select();
-      try { document.execCommand('copy'); } catch (e) { /* o aluno copia a mao */ }
-    });
-  }
+  pintarEntrega();
   if (MODO !== 'sala') return;
 
   // O MURAL DA TURMA, ordenado por etapas concluidas. Foi a escolha do professor em 15/08/2026,
@@ -640,11 +622,39 @@ function escoarFila() {
       const atual = lerFila();
       if (atual.length && atual[0].em === linha.em) { atual.shift(); gravarFila(atual); }
       escoando = false;
+      pintarEntrega();
       if (lerFila().length) escoarFila();
     })
-    .catch(() => { escoando = false; });   // fica na fila; a proxima gravacao tenta de novo
+    .catch(() => { escoando = false; pintarEntrega(); });   // fica na fila; a proxima gravacao tenta de novo
 }
 function pendentes() { return lerFila().length; }
+
+// A ENTREGA E REPINTADA, e nao fotografada (19/08/2026). O fecho e montado no instante em que a
+// ultima resposta entra na fila, e `escoarFila` manda uma linha por vez, cada uma com ida e volta
+// ao Apps Script: no primeiro teste de ponta a ponta na pagina publicada a tela anunciou "3
+// answer(s) did not reach the instructor" com as cinco linhas ja recebidas pelo servidor. O numero
+// era o de linhas em voo. Agora quem escoa repinta, entao o alarme falso se desfaz sozinho.
+function pintarEntrega() {
+  const caixa = document.getElementById('entrega');
+  if (!caixa) return;
+  const p = pendentes();
+  caixa.innerHTML = p === 0
+    ? '<p class="enviado">All your answers reached the instructor.</p>'
+    : '<div class="chave"><p class="rotulo">' + p + ' answer(s) still on the way</p>'
+      + '<p>Your answers are safe on this device. If this does not clear, show this screen to the '
+      + 'instructor, or copy the block below and send it to him.</p>'
+      + '<textarea readonly rows="4" id="socorro"></textarea>'
+      + '<button type="button" class="op primario" id="copiar">Copy my answers</button></div>';
+  const socorro = document.getElementById('socorro');
+  if (!socorro) return;
+  socorro.value = JSON.stringify({sessao: COLETA.sessao, grupo: estado.coleta_id,
+                                  apelido: estado.apelido, caso: estado.caso,
+                                  pendentes: lerFila()});
+  document.getElementById('copiar').addEventListener('click', () => {
+    socorro.select();
+    try { document.execCommand('copy'); } catch (e) { /* o aluno copia a mao */ }
+  });
+}
 
 function sondar() {
   return fetch('/icones').then(r => r.json())
