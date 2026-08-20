@@ -57,6 +57,14 @@ legend { padding: 0 6px; }
 /* `font: inherit` NAO traz a cor junto: o atalho `font` nao inclui `color`, e controle de
    formulario nao herda cor do pai. Quem pinta o fundo pinta a tinta, sempre no mesmo lugar,
    senao a metade que falta vem do sistema operacional do aluno. */
+/* O `hidden` TEM DE VENCER O CSS (19/08/2026). A regra logo abaixo da `display: block` a botao, e
+   regra de autor derrota o `[hidden] { display: none }` da folha do navegador: `.avancar` ficava
+   com o atributo `hidden` E visivel, entao o `Next` das Rodadas 1 e 2 -- que so deve aparecer
+   depois da resposta -- era clicavel desde o inicio, e clicar PULAVA a rodada sem gravar nem
+   enviar nada. Foi assim que a Rodada 1 sumiu do teste do professor, e em sala custaria uma
+   rodada inteira por grupo apressado. Vale para todo `[hidden]`, e nao so para o botao, porque
+   qualquer regra de display futura reabriria o mesmo buraco em outro elemento. */
+[hidden] { display: none !important; }
 button, .op { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 12px 14px;
               font: inherit; color: #1b1b1b; border: 1px solid #cfc9bd; border-radius: 6px;
               background: #fff; cursor: pointer; }
@@ -338,6 +346,15 @@ function mostrar(i) {
 }
 function avancar() {
   const atual = etapas().findIndex(e => !e.hidden);
+  // SEGUNDA CAMADA, e nao redundancia (19/08/2026). Nas rodadas de camada o `Next` so deveria
+  // existir depois da resposta, e ele estava clicavel porque `button, .op { display: block }`
+  // derrotava o `[hidden]`. O CSS ja foi corrigido; esta guarda existe para o dia em que outra
+  // regra de display reabrir o buraco, porque a falha nao tem sintoma: a rodada passa, o estado
+  // fica vazio, nenhuma linha e enviada e o grupo nao ve aviso nenhum. Uma rodada perdida por
+  // grupo apressado e dado que nao volta.
+  const e = etapas()[atual];
+  if (e && (e.dataset.tipo === 'escolha' || e.dataset.tipo === 'recommit')
+      && !estado[e.dataset.rodada]) return;
   // Chegar ao fim pela ultima rodada tambem monta o placar: o fecho e o mesmo, mude
   // o motivo (terminou ou estourou o tempo).
   if (atual === etapas().length - 2) { if (relogioGlobal) clearInterval(relogioGlobal);
