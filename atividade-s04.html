@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S04: Application to the European Court of Human Rights</title>
+<style>
+:root { color-scheme: only light;
+        --papel:#fbfaf7; --tinta:#1b1b1b; --fraco:#6b665c; --linha:#ddd8cc; --acc:#1f4f8a;
+        --painel:#f3f0e8; --ok:#1f5d3a; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.55 Georgia,'Times New Roman',serif;
+       background:var(--papel); color:var(--tinta); }
+h1 { font:600 1.5rem/1.25 'Segoe UI',system-ui,sans-serif; margin:0 0 .8rem; }
+h2 { font:600 1.1rem/1.3 'Segoe UI',system-ui,sans-serif; margin:1.8rem 0 .6rem; }
+h3 { font:600 1rem/1.3 'Segoe UI',system-ui,sans-serif; margin:1.4rem 0 .4rem; }
+.topo { position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:.5rem;
+        padding:.55rem .9rem; background:#fff; border-bottom:1px solid var(--linha); }
+.marca { font:600 .8rem/1 'Segoe UI',system-ui,sans-serif; letter-spacing:.08em;
+         text-transform:uppercase; color:var(--fraco); }
+.cresce { flex:1; }
+.relogio { font:600 .9rem/1 'Segoe UI',system-ui,sans-serif; color:var(--acc); }
+button { font:600 .85rem/1 'Segoe UI',system-ui,sans-serif; cursor:pointer;
+         color:#1b1b1b; background:#fff; border:1px solid #bdb7a8; border-radius:4px;
+         padding:.5em .9em; }
+button:disabled { opacity:.45; cursor:not-allowed; }
+.chip { padding:.4em .7em; font-size:.78rem; }
+.folha { max-width:46rem; margin:0 auto; padding:1.4rem 1.1rem 7rem; }
+.tela[hidden] { display:none; }
+.anc { font:600 .72rem/1 'Segoe UI',system-ui,sans-serif; color:var(--fraco);
+       background:var(--painel); padding:.15em .4em; border-radius:3px; white-space:nowrap; }
+.codigo { background:var(--painel); padding:.6em .8em; border-radius:5px; }
+.codigo .discreto { float:right; font-size:.72rem; padding:.3em .6em; }
+.codigo b { font:700 1.1rem/1 ui-monospace,Consolas,monospace; letter-spacing:.14em; }
+.consent { margin:1.2rem 0; padding:.9rem 1rem; border-left:4px solid #6f93a8; background:#fff; }
+.consent label { display:block; margin:.4em 0; font-family:'Segoe UI',system-ui,sans-serif;
+                 font-size:.95rem; }
+.camadas { display:grid; gap:.5rem; margin:1rem 0; }
+.camada { display:grid; grid-template-columns:auto 1fr; gap:.15rem .6rem; align-items:baseline;
+          padding:.7em .9em; border:1px solid var(--linha); border-left:6px solid var(--c);
+          border-radius:5px; background:#fff; cursor:pointer; }
+.camada input { grid-row:1/4; align-self:center; }
+.cid { font:700 .8rem/1 ui-monospace,Consolas,monospace; }
+.cnome { font:600 .98rem/1.3 'Segoe UI',system-ui,sans-serif; }
+.cregime { grid-column:2; font-size:.88rem; color:var(--fraco); }
+.cgat { grid-column:2; font-size:.82rem; color:var(--fraco); font-style:italic; }
+.camada:has(input:checked) { box-shadow:0 0 0 2px var(--c) inset; background:#fffdf6; }
+.chips { display:grid; gap:.4rem; margin:.5rem 0 1rem; }
+.chipcam { display:flex; align-items:baseline; gap:.45rem; padding:.45em .8em; background:#fff;
+           border:1px solid var(--linha); border-left:5px solid var(--c); border-radius:4px;
+           cursor:pointer; font:.9rem/1.35 'Segoe UI',system-ui,sans-serif; }
+.chipcam b { font:700 .8rem/1 ui-monospace,Consolas,monospace; }
+.chipcam:has(input:checked) { background:#1b1b1b; color:#fff; }
+#g-notas h3 { margin:1.1em 0 .2em; font:600 .8rem/1.3 'Segoe UI',system-ui,sans-serif;
+              color:var(--fraco); text-transform:uppercase; letter-spacing:.06em; }
+#g-notas p { margin:0; white-space:pre-wrap; }
+#g-notas ul { margin:.2em 0 0; padding-left:1.2em; }
+#g-notas li { margin:.35em 0; }
+.vazio { color:var(--fraco); font-style:italic; }
+.vazio[hidden] { display:none; }
+.just { display:block; margin:1rem 0; font-family:'Segoe UI',system-ui,sans-serif;
+        font-size:.9rem; }
+.just textarea { display:block; width:100%; margin-top:.3em; font:15px/1.5 Georgia,serif;
+                 padding:.5em; border:1px solid var(--linha); border-radius:4px; }
+.sub { border-left:3px solid var(--linha); padding-left:.9rem; margin:1rem 0; }
+.sub .origem { float:right; font:600 .7rem/1.6 'Segoe UI',system-ui,sans-serif;
+               color:var(--fraco); background:var(--painel); padding:.2em .5em; border-radius:3px; }
+.pedido { font-weight:700; }
+.aponta { background:var(--painel); border-left:4px solid var(--acc);
+          padding:.7em .9em; border-radius:0 5px 5px 0;
+          font:.9rem/1.5 'Segoe UI',system-ui,sans-serif; }
+.normas details { border:1px solid var(--linha); border-radius:5px; margin:.5rem 0;
+                  background:#fff; }
+.normas summary { padding:.6em .8em; cursor:pointer;
+                  font:600 .92rem/1.3 'Segoe UI',system-ui,sans-serif; }
+.normas ul { margin:0; padding:.2em 1.4em .9em; font-size:.9rem; }
+.normas li { margin:.35em 0; }
+.ressalva { background:#fdf4e3; border:1px solid #e3cf9e; padding:.7em .9em; border-radius:5px;
+            font:.86rem/1.5 'Segoe UI',system-ui,sans-serif; }
+.weditor { border:1px solid var(--linha); border-radius:6px; overflow:hidden; background:#fff; }
+.wtoolbar { display:flex; flex-wrap:wrap; gap:3px; align-items:center; padding:5px 7px;
+            background:var(--painel); border-bottom:1px solid var(--linha); }
+.wbtn { min-width:28px; height:28px; padding:0 7px; border:1px solid var(--acc);
+        background:var(--acc); color:#fff; border-radius:4px; font-size:12px; font-weight:700; }
+.wtoolbar select { height:28px; border:1px solid var(--linha); border-radius:4px; background:#fff;
+                   color:#1b1b1b; font-size:12px; }
+.wsep { width:1px; height:20px; background:var(--linha); margin:0 3px; }
+.wruler { height:22px; background:var(--painel); border-bottom:1px solid var(--linha);
+          position:relative; }
+.rtrack { position:absolute; left:26px; right:14px; top:0; bottom:0; }
+.rnums { position:absolute; inset:0; font-size:9px; color:var(--fraco); pointer-events:none; }
+.rnums b { font-weight:800; color:var(--tinta); }
+.rmark { position:absolute; width:0; height:0; cursor:ew-resize; }
+.rmark.first { top:0; border-left:5px solid transparent; border-right:5px solid transparent;
+               border-top:6px solid var(--acc); }
+.rmark.left { bottom:0; border-left:5px solid transparent; border-right:5px solid transparent;
+              border-bottom:6px solid var(--acc); }
+.rmark.right { bottom:0; right:0; border-left:5px solid transparent;
+               border-right:5px solid transparent; border-bottom:6px solid var(--acc); }
+.editrow { display:flex; }
+.editmin { flex:1; min-height:340px; max-height:62vh; overflow:auto; padding:18px 24px;
+           outline:none; font-family:'Times New Roman',Georgia,serif; font-size:16px;
+           line-height:1.55; background:#fff; color:#1f2328; }
+.mcab { text-align:center; font-weight:700; text-transform:uppercase; margin:.2em 0; }
+.msec { font-weight:700; margin:1.4em 0 .4em; }
+.mnum { font-weight:700; }
+.mdado { margin:.5em 0; text-align:justify; background:#f7f5ef; padding:.3em .5em;
+         border-left:3px solid #ddd8cc; }
+.mrot { margin:1em 0 .2em; font:600 .82rem/1.45 'Segoe UI',system-ui,sans-serif; color:#8a5a00; }
+.mpreencher { margin:.4em 0 .9em; text-indent:1.5cm; text-align:justify; min-height:1.6em;
+              border-bottom:1px dotted #c9c2b2; }
+.conta { display:flex; gap:1rem; align-items:center;
+         font:.82rem/1.5 'Segoe UI',system-ui,sans-serif; color:var(--fraco); }
+.pend { color:#8a5a00; }
+.alerta { margin:0; padding:.6em .9em; background:#fdecea; border-bottom:1px solid #e0a9a2;
+          color:#8a1c12; font:600 .85rem/1.4 'Segoe UI',system-ui,sans-serif; }
+.alerta[hidden] { display:none; }
+.enviar { font-size:1rem; padding:.7em 1.6em; background:var(--ok); color:#fff;
+          border-color:var(--ok); }
+.recibo { background:#fff; border:1px solid var(--linha); border-radius:6px; padding:1rem 1.1rem;
+          margin:1.2rem 0; }
+.feito { color:#1f5d3a; font:600 .9rem/1.5 'Segoe UI',system-ui,sans-serif; }
+.feito[hidden] { display:none; }
+.legenda { font:.8rem/1.5 'Segoe UI',system-ui,sans-serif; color:var(--fraco);
+           background:var(--painel); padding:.5em .7em; border-radius:4px; }
+.fbitem { margin:1rem 0; }
+.fbitem p { margin:0 0 .3em; }
+.escala { display:flex; gap:.4rem; flex-wrap:wrap; }
+.escala .op { display:flex; align-items:baseline; gap:.3rem; border:1px solid var(--linha);
+              border-radius:4px; padding:.35em .6em; background:#fff; cursor:pointer;
+              font:600 .85rem/1 'Segoe UI',system-ui,sans-serif; }
+.escala .op:has(input:checked) { background:#1b1b1b; color:#fff; border-color:#1b1b1b; }
+.recibo span { font:700 1.05rem/1.4 ui-monospace,Consolas,monospace; }
+.entrega { font:.85rem/1.5 'Segoe UI',system-ui,sans-serif; }
+.esq summary { cursor:pointer; font:600 .88rem/1.3 'Segoe UI',system-ui,sans-serif;
+               color:var(--fraco); }
+.rodape { position:fixed; left:0; right:0; bottom:0; z-index:20; display:flex; gap:.6rem;
+          align-items:center; padding:.6rem .9rem; background:#fff;
+          border-top:1px solid var(--linha); }
+.passo { flex:1; text-align:center; font:.78rem/1.4 'Segoe UI',system-ui,sans-serif;
+         color:var(--fraco); }
+.gaveta { position:fixed; inset:0 0 0 auto; width:min(30rem,92vw); z-index:30; background:#fff;
+          border-left:1px solid var(--linha); box-shadow:-8px 0 24px rgba(0,0,0,.14);
+          overflow-y:auto; padding:1rem 1.2rem 3rem; }
+.gaveta[hidden] { display:none; }
+.gaveta .fechar { position:sticky; top:0; float:right; }
+.fatos { font-size:.97rem; }
+table { border-collapse:collapse; width:100%; font-size:.88rem; }
+th,td { border:1px solid var(--linha); padding:.4em .6em; text-align:left; vertical-align:top; }
+</style>
+</head>
+<body>
+<script>window.COLETA_URL="https://script.google.com/macros/s/AKfycbyghyBvwBXRZ722IHeJLMqQwart6Px1kXJwbcetJd5fr-6RK3sgZNIb424DReGv7QgU/exec";</script>
+<header class="topo"><span class="marca">S04: Application to the European Court of Human Rights</span><span class="cresce"></span><button type="button" id="b-fatos" class="chip">The facts</button><button type="button" id="b-normas" class="chip">Framework</button><button type="button" id="b-notas" class="chip">Your notes</button><span class="relogio" id="relogio"></span></header><p class="alerta" id="aviso-armazem" hidden>This device is not saving your work. Do not close this tab, and send often.</p><main class="folha"><section class="tela" data-tela="entry"><h1>Before you start</h1><p>You are about to draft an application to the European Court of Human Rights, as a team,
+in this class. The facts stay on screen throughout, and you can move back and forward
+between screens at any time.</p>
+<p><strong>This activity is worth one extra point on the written examination, and filing the
+application is what earns it.</strong> Work that stays on this device and is never sent does not
+count, so send it before the hour is over. You can amend it and send it again as many times
+as you like: the last version you send is the one that counts.</p>
+<p>Your table code is given by the system. Do not change it and do not share it with another
+table: it is what keeps your work together.</p><p class="codigo">Your table code: <b id="codigo-mesa">...</b><button type="button" id="b-recomecar" class="chip discreto">Not your table? Start over</button></p><div class="consent"><h2>Use of your answers in research</h2><p>This class is part of a research project on how law students classify uncertainty. If you
+agree, the answers of this table may be used, without names, in that research. If you do
+not agree, you still take part in the class in exactly the same way, and nothing you write
+is sent to the researcher.</p>
+<p>At the end you may leave an email address to receive the answer key. That address is stored
+on its own, without your table code, and cannot be matched to anything this table wrote.</p><label><input type="radio" name="consent" value="sim"> I agree</label><label><input type="radio" name="consent" value="nao"> I do not agree</label></div></section><section class="tela" data-tela="facts"><h1>The facts</h1><div class="fatos"><p><strong>The applicants.</strong> X and Y, father and son, Romanian nationals, lived
+in Baia Mare, in a residential district next to the Săsar tailings pond and the extraction facility
+operated under the mining concession of a company referred to here as the Company. <span class="anc">§§ 6, 7, 10</span></p>
+<p><strong>The process.</strong> The Company extracted gold and silver from low-grade ore by spraying it with sodium
+cyanide. <span class="anc">§ 7</span> Official documents attest the toxicity of sodium cyanide. <span class="anc">§ 65</span></p>
+<p><strong>What the 1993 impact assessment said.</strong> An environmental impact assessment was
+carried out in 1993 to obtain the environmental compliance certificate. Its authors recognised Baia
+Mare as a town already polluted by intensive industrial activity, particularly mining. <span class="anc">§ 14</span> The
+Săsar pond was considered a risk because of its proximity to the housing district. <span class="anc">§ 16</span> On the
+effects of sodium cyanide on human health, the specialists concluded that there was no risk of
+poisoning provided the relevant norms were complied with and no accident occurred, while expressing
+uncertainty about the impact of the process on the environment. <span class="anc">§ 17</span> Their conclusions rested on
+the economic and social advantages of the project and on the finding that the activity could not
+influence the current characteristics of the region to any significant extent. <span class="anc">§ 18</span></p>
+<p><strong>What the State authorised.</strong> On 30 December 1998 the Ministries of Labour and of Health
+authorised the Company to use sodium cyanide in the extraction process. <span class="anc">§ 20</span> On 3 June 1999 a
+Government decision granted it a concession licence over the tailings ponds; under Article 16 of
+that licence the holder was required to protect the environment. <span class="anc">§ 20</span> On 23 August 1999 the
+Baia Mare municipality authorised the operation, subject to an environmental permit. <span class="anc">§ 21</span> An
+expert report commissioned by the police found that operation had begun after 11 June 1999 and
+that production capacity was already exceeded by 75% by the end of that year. <span class="anc">§ 21</span></p>
+<p><strong>The two public debates.</strong> Minutes of two public debates on the operating permit, dated 24 November
+1999 and 3 December 1999, were produced to the Court after the hearing, partly illegible. The first
+names no author and bears no signature; ten people took part and at least five raised questions
+about the danger of the technology for the environment and for their health. It does not appear
+from the file that the organisers answered those questions. <span class="anc">§ 22</span> The second appears to have been
+drawn up by a representative of the Environmental Protection Authority, but bears neither signature
+nor stamp; eleven people raised questions, including on water quality if the activity were
+authorised. The representative assured participants that there was no indication of suspended
+particles in the atmosphere. No environmental impact assessment was presented on that occasion.
+<span class="anc">§§ 22, 23</span></p>
+<p><strong>The accident.</strong> On 30 January 2000, a large quantity of polluted water, estimated at close to
+100,000 m³, containing among other substances sodium cyanide, was discharged into the Săsar river,
+then into the Lăpuş and the Someş. From the Someş it reached the Tisza. Moving at 2.1 to 2.4 km/h,
+it crossed the Romanian border into Hungary at Tiszalök, passed near Szolnok, crossed into
+Serbia-Montenegro near Belgrade, re-entered Romania at Porțile de Fier and flowed into the Danube.
+<strong>In 14 days the polluted water travelled 800 km</strong>, reaching the Black Sea through the Danube delta.
+<span class="anc">§ 24</span></p>
+<p><strong>What caused it.</strong> The Task Force Baia Mare report, drawn up in December 2000 at the request of the
+European Union Environment Commissioner, identified three causes. First, a gold extraction
+technology resting on an inadequate design of the tailings ponds, the main criticism being the
+absence of any emergency discharge system. Second, the authorisation of construction plans that
+were inadequate and not adapted to the specific climatic conditions of the region; the UNEP/OCHA
+report adds that the ponds had two openings, contrary to the closed-circuit principle of the
+technology, allowing uncontrolled quantities of sodium cyanide to escape into the air or the
+groundwater. Third, inadequate monitoring of the ponds, of the operation of the technology and of
+the maintenance of the installations. The report states that the weather was only partly
+responsible, and that conditions were difficult but not exceptional. <span class="anc">§ 31</span></p>
+<p>The same report classified abandoned mines as a real and significant risk to human health,
+particularly for people living nearby, and held that States must in principle take all necessary
+measures to ensure adequate environmental protection in such situations: surveillance, closure and
+immediate repair. Its press release placed the Company's operation in the category of high-risk mining
+activities. <span class="anc">§ 26</span></p>
+<p><strong>What happened afterwards.</strong> In 2000 the first applicant petitioned administrative authorities,
+asking them to investigate whether the activity endangered him and his family. <span class="anc">§§ 34, 35</span> The
+Ministry of the Environment replied on 1 April 2002 that the company was operating under a lawful
+exploitation licence <span class="anc">§ 37</span>, and again on 27 November 2003. <span class="anc">§ 40</span> He
+also lodged criminal complaints. <span class="anc">§ 41</span> On 20 November 2001 the county prosecutor discontinued the
+proceedings, on the ground that the facts complained of did not constitute offences under the
+Romanian Criminal Code. <span class="anc">§ 46</span> In February and March 2002 the Supreme Court of Justice declared
+itself without jurisdiction and rejected the complaint. <span class="anc">§ 47</span> On 12 December 2002 the prosecutor at the Cluj court of appeal found <strong>force
+majeure on account of the weather conditions</strong>. <span class="anc">§ 51</span> On 29 January 2003 the chief prosecutor at
+the Supreme Court of Justice quashed that decision. <span class="anc">§ 52</span> A fresh complaint in 2005 produced no
+order. <span class="anc">§ 49</span></p>
+<p><strong>What happened to the plant.</strong> On 18 December 2001 the National Agency for Mineral Resources issued a
+rider transferring the licence, and three environmental operating permits were subsequently issued
+by the Ministry. <span class="anc">§§ 63, 64</span> A second impact assessment, commissioned by the company in 2001,
+concluded that no significant effect had been established. <span class="anc">§§ 53, 59, 60</span></p>
+<p><strong>The second applicant.</strong> In 1996 he developed the first symptoms of asthma; the applicants say the
+condition worsened in 2001. Medical certificates of 21 November 2001 and 18 June 2002 attest
+moderate persistent asthma, the second declaring him unfit for compulsory military service, and the
+condition was reconfirmed on 14 August 2007. <span class="anc">§ 69</span></p>
+<hr /></div></section><section class="tela" data-tela="layers"><h1>Brainstorm: which regimes are in play?</h1><p>Read the facts, then talk it through as a table. Which regimes of uncertainty were the
+authorities in when they decided? More than one may be present, and usually is.</p>
+<p>Do not settle too fast. Say out loud what makes each one fit or not fit, and mark everything
+the table can defend from the facts. There is no penalty for being wrong: what is being
+studied is how the assessment is made.</p>
+<p>You will see these answers again when you write the application, and you can change your mind
+then.</p><div class="camadas"><label class="camada" style="--c:#6f93a8"><input type="checkbox" name="camada_mesa" value="A0"><span class="cid">A0</span><span class="cnome">Aleatory variability (noise)</span><span class="cregime">Irreducible randomness. More data sharpens the estimate of the distribution; it never removes the spread.</span><span class="cgat">Trigger: More study would not change what you do.</span></label><label class="camada" style="--c:#81b29a"><input type="checkbox" name="camada_mesa" value="L0"><span class="cid">L0</span><span class="cnome">Calculable risk</span><span class="cregime">Probabilities can be estimated from a record that still describes the world.</span><span class="cgat">Trigger: You can name the distribution and defend where it came from.</span></label><label class="camada" style="--c:#a3b18a"><input type="checkbox" name="camada_mesa" value="L1"><span class="cid">L1</span><span class="cnome">Parametric uncertainty</span><span class="cregime">The model holds, but its inputs are contested.</span><span class="cgat">Trigger: Experts argue about a number, not about the structure.</span></label><label class="camada" style="--c:#f2cc8f"><input type="checkbox" name="camada_mesa" value="L2"><span class="cid">L2</span><span class="cnome">Model uncertainty</span><span class="cregime">Rival models fit the same past and disagree about the future.</span><span class="cgat">Trigger: The disagreement is about the structure, not a parameter.</span></label><label class="camada" style="--c:#e9a178"><input type="checkbox" name="camada_mesa" value="L3"><span class="cid">L3</span><span class="cnome">Deep uncertainty</span><span class="cregime">No agreed model, no agreed probabilities, no agreed values.</span><span class="cgat">Trigger: You can describe futures but cannot rank them by likelihood.</span></label><label class="camada" style="--c:#e07a5f"><input type="checkbox" name="camada_mesa" value="L4"><span class="cid">L4</span><span class="cnome">Radical uncertainty, catastrophic loss</span><span class="cregime">The worst case is unbounded in a way the record cannot show.</span><span class="cgat">Trigger: The tail dominates the mean, and the tail is not estimable.</span></label><label class="camada" style="--c:#9b2226"><input type="checkbox" name="camada_mesa" value="L5"><span class="cid">L5</span><span class="cnome">Collapse; catastrophic and irreversible</span><span class="cregime">The harm cannot be undone, and waiting buys real information.</span><span class="cgat">Trigger: Irreversibility plus a live prospect of learning.</span></label></div><h2>Where did you not agree?</h2><p>Mark any regime the table argued about and did not settle. Leave empty if you agreed on
+everything.</p><div class="chips"><label class="chipcam" style="--c:#6f93a8"><input type="checkbox" name="divergencia" value="A0"><b>A0</b> <span>Aleatory variability (noise)</span></label><label class="chipcam" style="--c:#81b29a"><input type="checkbox" name="divergencia" value="L0"><b>L0</b> <span>Calculable risk</span></label><label class="chipcam" style="--c:#a3b18a"><input type="checkbox" name="divergencia" value="L1"><b>L1</b> <span>Parametric uncertainty</span></label><label class="chipcam" style="--c:#f2cc8f"><input type="checkbox" name="divergencia" value="L2"><b>L2</b> <span>Model uncertainty</span></label><label class="chipcam" style="--c:#e9a178"><input type="checkbox" name="divergencia" value="L3"><b>L3</b> <span>Deep uncertainty</span></label><label class="chipcam" style="--c:#e07a5f"><input type="checkbox" name="divergencia" value="L4"><b>L4</b> <span>Radical uncertainty, catastrophic loss</span></label><label class="chipcam" style="--c:#9b2226"><input type="checkbox" name="divergencia" value="L5"><b>L5</b> <span>Collapse; catastrophic and irreversible</span></label></div><label class="just">In one line, what decided it for your table?<textarea id="just" rows="2"></textarea></label></section><section class="tela" data-tela="consequences"><h1>What follows from that</h1><p>You have named the regimes. Now draw the legal consequences for public policy, under the two
+frameworks this course uses, and compare them.</p><div class="quadro"><h3>The disaster policy cycle, as the course sets it out</h3><ol class="marco"><li>Prevention</li><li>Mitigation</li><li>Preparedness</li><li>Response</li><li>Recovery</li></ol><p>Given the regimes you named, what does each phase of the cycle require of the State here?
+Write the consequence, not the definition.
+Aim for about 25 words in each. There is no limit.</p><textarea id="cons_ciclo" rows="5"></textarea></div><div class="quadro"><h3>The Sendai Framework 2015-2030, Priorities for Action 1 to 4</h3><ol class="marco"><li>Priority 1: Understanding disaster risk</li><li>Priority 2: Strengthening disaster risk governance to manage disaster risk</li><li>Priority 3: Investing in disaster risk reduction for resilience</li><li>Priority 4: Enhancing disaster preparedness for effective response and to Build Back Better in recovery, rehabilitation and reconstruction</li></ol><p>Same question, under Sendai. Which Priority for Action does this case engage, and what
+would it have required?
+Aim for about 25 words in each. There is no limit.</p><textarea id="cons_sendai" rows="5"></textarea></div><div class="quadro comparar"><p>Where do the two frameworks pull apart for this case? Name one thing the cycle makes visible
+that Sendai does not, or the other way round, and say which you will rely on in the
+application.</p><textarea id="cons_comparar" rows="4"></textarea></div></section><section class="tela" data-tela="brief"><h1>Your instructions</h1><p>You and your team have been retained by the applicants, X and Y,
+to prepare and submit an application to the European Court of Human Rights against Romania.</p>
+<p>Write the application. It must be a legal document, not an essay: state the facts you rely on,
+identify the provisions breached, and argue why the State is responsible. Use the paragraph
+numbers of the judgment when you rely on a fact, in the form of a reference in brackets.</p>
+<p>Your submission must cover the four points below. They are the elements of this course so far,
+and each is worth the same.</p><article class="sub"><h3>1. Regulatory failure and dysfunction<span class="origem">Session 2</span></h3><p>Was this harm an external shock, or a dysfunction of a process that the State licensed,
+supervised and drew a benefit from? Take a position and argue it from the facts. Say what
+follows, on the view you take, for the State's duty. Say also whether what happened is a
+disaster or a catastrophe in Quarantelli's sense, and what turns on that for the remedy
+you ask for.</p></article><article class="sub"><h3>2. The regime of uncertainty<span class="origem">Session 3</span></h3><p>You have already named the regimes. Now defend that assessment in the application. Show,
+from the facts, which regime the authorities were in when they decided, and what the
+decision rule of that regime required of them. Compare it with how they in fact acted.</p></article><article class="sub"><h3>3. The disaster policy cycle<span class="origem">Session 4, first part</span></h3><p>Take the five phases, prevention, mitigation, preparedness, response and recovery, and
+locate the State's conduct in each. Where did the law do most of the work, and where did
+it do least? Name the phase that carries most weight for your case, and say why.</p></article><article class="sub"><h3>4. The principles<span class="origem">Session 4, second part</span></h3><p>Argue the case under precaution, prevention, information and participation. For each one,
+point to the provision you rely on and to the fact you say breaches it. Then take the
+question the session puts: which should govern when the risk is catastrophic and hard to
+reverse, the precautionary approach or cost-benefit analysis, and why.</p></article><p class="pedido">Close with what you ask the Court to declare and to award.</p><p class="aponta">The provisions you may rely on are in <b>The legal framework</b>, at the top of the screen. Open it while you draft: it is there to be consulted, not to be read now.</p></section><section class="tela" data-tela="editor"><h1>The application</h1><p>The application form is already open below, in the form the Court uses, and everything the
+case file gives you is already filled in. Write only in the numbered paragraphs marked for
+you. There is no character limit. Your work is saved on this device as you type, and you can
+go back to any screen and return without losing it.</p>
+<p><strong>Your earlier answers are in Your notes, at the top of the screen.</strong> Open it as you write:
+the regimes you named and the consequences you drew are the raw material of the argument,
+and this is the moment to reconsider them.</p><template id="modelo-peticao"><p class="mcab">EUROPEAN COURT OF HUMAN RIGHTS</p><p class="mcab">Application under Article 34 of the Convention and Rule 47 of the Rules of Court</p><p class="msec">A. THE APPLICANTS</p><p class="mdado" contenteditable="false"><span class="mnum">1.</span> X, Romanian national, resident in Baia Mare, Maramures county, Romania.</p><p class="mdado" contenteditable="false"><span class="mnum">2.</span> Y, Romanian national, resident at the same address, son of the first applicant.</p><p class="msec">B. THE RESPONDENT STATE</p><p class="mdado" contenteditable="false"><span class="mnum">3.</span> Romania.</p><p class="msec">C. THE APPLICANTS&#x27; REPRESENTATIVES</p><p class="mrot" contenteditable="false">Your Law firm. Use your surnames, in the form: Ionescu, Moreau and Weber Associates</p><p class="mpreencher"><span class="mnum" contenteditable="false">4.</span> </p><p class="msec">D. STATEMENT OF THE FACTS</p><p class="mdado" contenteditable="false"><span class="mnum">5.</span> The applicants lived in a residential district of Baia Mare, next to the Sasar tailings pond and to the extraction facility operated under the mining concession of a company referred to here as the Company. The Company extracted gold and silver from low-grade ore by spraying it with sodium cyanide.</p><p class="mdado" contenteditable="false"><span class="mnum">6.</span> An environmental impact assessment carried out in 1993 recognised Baia Mare as a town already polluted by intensive mining, and treated the Sasar pond as a risk because of its proximity to housing. On the effects of sodium cyanide on human health the specialists concluded that there was no risk of poisoning provided the norms were complied with and no accident occurred, while expressing uncertainty about the impact on the environment. Their conclusions rested on the economic and social advantages of the project.</p><p class="mdado" contenteditable="false"><span class="mnum">7.</span> Two public debates on the operating permit were held on 24 November and 3 December 1999. The minutes bear no signature. Questions were raised about the danger of the technology for health and for the environment, and it does not appear that the organisers answered them. No environmental impact assessment was presented on either occasion.</p><p class="mdado" contenteditable="false"><span class="mnum">8.</span> On 30 January 2000 approximately 100,000 cubic metres of water containing sodium cyanide were discharged into the Sasar, and from there into the Lapus, the Somes, the Tisza and the Danube. In fourteen days the polluted water travelled 800 kilometres, crossing into Hungary and into Serbia-Montenegro before reaching the Black Sea.</p><p class="mdado" contenteditable="false"><span class="mnum">9.</span> The Task Force Baia Mare report of December 2000, drawn up at the request of the European Union Environment Commissioner, identified three causes: an inadequate design of the tailings ponds, the main criticism being the absence of any emergency discharge system; the authorisation of construction plans not adapted to the climatic conditions of the region; and inadequate monitoring of the ponds, of the technology and of the maintenance of the installations. The report states that the weather was only partly responsible, and that conditions were difficult but not exceptional.</p><p class="mdado" contenteditable="false"><span class="mnum">10.</span> The first applicant petitioned the administrative authorities and lodged criminal complaints. The proceedings were discontinued on 20 November 2001. On 12 December 2002 the prosecutor at the Cluj court of appeal found force majeure on account of the weather. That decision was quashed on 29 January 2003. A fresh complaint in 2005 produced no order. The plant did not stop, and three environmental operating permits were subsequently issued.</p><p class="mdado" contenteditable="false"><span class="mnum">11.</span> The second applicant developed the first symptoms of asthma in 1996. Medical certificates of 21 November 2001 and 18 June 2002 attest moderate persistent asthma.</p><p class="msec">E. STATEMENT OF ALLEGED VIOLATIONS AND RELEVANT ARGUMENTS</p><p class="mrot" contenteditable="false">Task 1, from Session 2. Write your argument on regulatory failure and dysfunction. Take a position and support it from the numbered facts above. Aim for about 50 words. There is no limit: write more if the argument needs it.</p><p class="mpreencher"><span class="mnum" contenteditable="false">12.</span> </p><p class="mrot" contenteditable="false">Task 2, from Session 3. Defend here the regimes of uncertainty your table selected, from the facts, and say what each one required of the authorities. Aim for about 50 words. There is no limit: write more if the argument needs it.</p><p class="mpreencher"><span class="mnum" contenteditable="false">13.</span> </p><p class="mrot" contenteditable="false">Task 3, from Session 4. Set out the State conduct across the five phases of the cycle, and say which phase carries your case. Aim for about 50 words. There is no limit: write more if the argument needs it.</p><p class="mpreencher"><span class="mnum" contenteditable="false">14.</span> </p><p class="mrot" contenteditable="false">Task 4, from Session 4. Argue the case under precaution, prevention, information and participation. For each one, cite the provision from the framework and the fact you rely on. Aim for about 50 words. There is no limit: write more if the argument needs it.</p><p class="mpreencher"><span class="mnum" contenteditable="false">15.</span> </p><p class="msec">F. STATEMENT RELATIVE TO ARTICLE 35 OF THE CONVENTION</p><p class="mdado" contenteditable="false"><span class="mnum">16.</span> The applicants exhausted the domestic remedies available to them, having petitioned the administrative authorities and lodged criminal complaints which produced no effective outcome. The application is introduced within the time-limit laid down in Article 35 of the Convention.</p><p class="msec">G. STATEMENT OF THE OBJECT OF THE APPLICATION</p><p class="mrot" contenteditable="false">State what you ask the Court to declare, and what you ask it to award. Aim for about 50 words. There is no limit: write more if the argument needs it.</p><p class="mpreencher"><span class="mnum" contenteditable="false">17.</span> </p><p class="msec">H. DECLARATION AND SIGNATURE</p><p class="mdado" contenteditable="false"><span class="mnum">18.</span> The applicants hereby declare that, to the best of their knowledge and belief, the information given in the present application form is correct.</p><p class="mdado mlocal" contenteditable="false"><span class="mnum">19.</span> Done at Baia Mare, on <span id="data-peticao">...</span>.</p><p class="mrot" contenteditable="false">Sign for your Law firm.</p><p class="mpreencher"><span class="mnum" contenteditable="false">20.</span> </p></template><div class="weditor"><div class="wtoolbar"><button type="button" class="wbtn" title="Undo" onmousedown="return wcmd(event,'undo')">&#8634;</button><button type="button" class="wbtn" title="Redo" onmousedown="return wcmd(event,'redo')">&#8635;</button><span class="wsep"></span><select title="Font" onchange="wcmdVal(event,'fontName',this.value)"><option value="Times New Roman">Times</option><option value="Georgia">Georgia</option><option value="Arial">Arial</option></select><select title="Size" onchange="wcmdVal(event,'fontSize',this.value)"><option value="3">10</option><option value="4" selected>12</option><option value="5">14</option><option value="6">18</option></select><span class="wsep"></span><button type="button" class="wbtn" title="Bold" onmousedown="return wcmd(event,'bold')"><b>B</b></button><button type="button" class="wbtn" title="Italic" onmousedown="return wcmd(event,'italic')"><i>I</i></button><button type="button" class="wbtn" title="Underline" onmousedown="return wcmd(event,'underline')"><u>U</u></button><span class="wsep"></span><button type="button" class="wbtn" title="Left" onmousedown="return wcmd(event,'justifyLeft')">Left</button><button type="button" class="wbtn" title="Centre" onmousedown="return wcmd(event,'justifyCenter')">Centre</button><button type="button" class="wbtn" title="Justify" onmousedown="return wcmd(event,'justifyFull')">Justify</button><span class="wsep"></span><button type="button" class="wbtn" title="Bulleted list" onmousedown="return wcmd(event,'insertUnorderedList')">&#8226;</button><button type="button" class="wbtn" title="Numbered list" onmousedown="return wcmd(event,'insertOrderedList')">1.</button><button type="button" class="wbtn" title="Decrease indent" onmousedown="return wcmd(event,'outdent')">&#8612;</button><button type="button" class="wbtn" title="Increase indent" onmousedown="return wcmd(event,'indent')">&#8614;</button><span class="wsep"></span><button type="button" class="wbtn" title="Clear formatting" onmousedown="return wcmd(event,'removeFormat')">clear</button></div><div class="wruler"><div class="rtrack" id="rtrack"><div class="rnums" id="rnums"></div><span class="rmark first" id="mk-first" title="First line indent" onmousedown="rulerDown(event,'first')"></span><span class="rmark left" id="mk-left" title="Left indent" onmousedown="rulerDown(event,'left')"></span><span class="rmark right" id="mk-right" title="Right indent" onmousedown="rulerDown(event,'right')"></span></div></div><div class="editrow"><div class="editmin" id="peca" contenteditable="true" spellcheck="true" onpaste="return onPaste(event)" onkeyup="saveSel();gravarPeca()" onmouseup="saveSel()"></div></div></div><p class="conta"><span id="conta">0 words</span><span class="pend" id="pend"></span></p><button type="button" class="enviar" id="b-enviar">Send</button></section><section class="tela" data-tela="sent"><h1>Filed</h1><p>Your application has been filed, and <strong>the one extra point on the written examination is
+secured</strong>.</p>
+<p>You may still amend it and send it again until the hour is over. The last version you send is
+the one that counts.</p>
+<p>Two things remain, and both are optional. Press Next.</p><div class="recibo"><p><b>Filing reference</b><br><span id="protocolo">...</span></p><p><b>Filed on</b><br><span id="carimbo">...</span></p><p class="entrega" id="entrega"></p></div></section><section class="tela" data-tela="email"><h1>Get the answer key</h1><p>Leave an email address and the answer key for this exercise will be sent to you after the
+class. One address per line, if more than one of you wants it.</p>
+<p>This is optional, and it changes nothing about your points. Your address is stored on its own,
+without your table code, and cannot be matched to anything this table wrote.</p><label class="just">Email address, one per line<textarea id="emails" rows="3" autocomplete="off"></textarea></label><button type="button" class="enviar" id="b-email">Send my address</button><p class="feito" id="email-feito" hidden>Address received. The answer key will be sent after the class.</p></section><section class="tela" data-tela="feedback"><h1>How did this go?</h1><p>One answer per table. This is the part that decides whether the next session is run like this
+one, so be blunt: a polite form teaches nothing. It is optional, and it feeds the research.</p><p class="legenda">1 = not at all &middot; 2 = slightly &middot; 3 = halfway &middot; 4 = mostly &middot; 5 = completely</p><div class="fbitem"><p>The activity was easy to follow: we always knew what to do next.</p><div class="escala"><label class="op"><input type="radio" name="fb-clareza" value="1"><b>1</b> <span>not at all</span></label><label class="op"><input type="radio" name="fb-clareza" value="2"><b>2</b> <span>slightly</span></label><label class="op"><input type="radio" name="fb-clareza" value="3"><b>3</b> <span>halfway</span></label><label class="op"><input type="radio" name="fb-clareza" value="4"><b>4</b> <span>mostly</span></label><label class="op"><input type="radio" name="fb-clareza" value="5"><b>5</b> <span>completely</span></label></div></div><div class="fbitem"><p>Writing inside the application form made the task feel like legal work.</p><div class="escala"><label class="op"><input type="radio" name="fb-forma" value="1"><b>1</b> <span>not at all</span></label><label class="op"><input type="radio" name="fb-forma" value="2"><b>2</b> <span>slightly</span></label><label class="op"><input type="radio" name="fb-forma" value="3"><b>3</b> <span>halfway</span></label><label class="op"><input type="radio" name="fb-forma" value="4"><b>4</b> <span>mostly</span></label><label class="op"><input type="radio" name="fb-forma" value="5"><b>5</b> <span>completely</span></label></div></div><div class="fbitem"><p>We could see how Sessions 2, 3 and 4 connect in one case.</p><div class="escala"><label class="op"><input type="radio" name="fb-elementos" value="1"><b>1</b> <span>not at all</span></label><label class="op"><input type="radio" name="fb-elementos" value="2"><b>2</b> <span>slightly</span></label><label class="op"><input type="radio" name="fb-elementos" value="3"><b>3</b> <span>halfway</span></label><label class="op"><input type="radio" name="fb-elementos" value="4"><b>4</b> <span>mostly</span></label><label class="op"><input type="radio" name="fb-elementos" value="5"><b>5</b> <span>completely</span></label></div></div><div class="fbitem"><p>The time was enough for the work the task asked for.</p><div class="escala"><label class="op"><input type="radio" name="fb-tempo" value="1"><b>1</b> <span>not at all</span></label><label class="op"><input type="radio" name="fb-tempo" value="2"><b>2</b> <span>slightly</span></label><label class="op"><input type="radio" name="fb-tempo" value="3"><b>3</b> <span>halfway</span></label><label class="op"><input type="radio" name="fb-tempo" value="4"><b>4</b> <span>mostly</span></label><label class="op"><input type="radio" name="fb-tempo" value="5"><b>5</b> <span>completely</span></label></div></div><div class="fbitem"><p>We would want another session run like this one.</p><div class="escala"><label class="op"><input type="radio" name="fb-repetir" value="1"><b>1</b> <span>not at all</span></label><label class="op"><input type="radio" name="fb-repetir" value="2"><b>2</b> <span>slightly</span></label><label class="op"><input type="radio" name="fb-repetir" value="3"><b>3</b> <span>halfway</span></label><label class="op"><input type="radio" name="fb-repetir" value="4"><b>4</b> <span>mostly</span></label><label class="op"><input type="radio" name="fb-repetir" value="5"><b>5</b> <span>completely</span></label></div></div><label class="just">What worked. Name the moment, not the feeling.<textarea id="fb-gostou" rows="2"></textarea></label><label class="just">What to change. Name the moment, not the feeling.<textarea id="fb-melhorar" rows="2"></textarea></label><label class="just">Audit memo. Now think about the subject itself, and not about this class. What was missing from the way the law handles a disaster like this one? Name one important question that went unasked.<textarea id="fb-auditoria" rows="2"></textarea></label><button type="button" class="enviar" id="b-feedback">Send feedback</button><p class="feito" id="feedback-feito" hidden>Feedback received. Thank you.</p></section></main>
+<aside class="gaveta" id="g-fatos" hidden><button type="button" class="fechar" data-alvo="g-fatos">Close</button><h2>The facts</h2><div class="fatos"><p><strong>The applicants.</strong> X and Y, father and son, Romanian nationals, lived
+in Baia Mare, in a residential district next to the Săsar tailings pond and the extraction facility
+operated under the mining concession of a company referred to here as the Company. <span class="anc">§§ 6, 7, 10</span></p>
+<p><strong>The process.</strong> The Company extracted gold and silver from low-grade ore by spraying it with sodium
+cyanide. <span class="anc">§ 7</span> Official documents attest the toxicity of sodium cyanide. <span class="anc">§ 65</span></p>
+<p><strong>What the 1993 impact assessment said.</strong> An environmental impact assessment was
+carried out in 1993 to obtain the environmental compliance certificate. Its authors recognised Baia
+Mare as a town already polluted by intensive industrial activity, particularly mining. <span class="anc">§ 14</span> The
+Săsar pond was considered a risk because of its proximity to the housing district. <span class="anc">§ 16</span> On the
+effects of sodium cyanide on human health, the specialists concluded that there was no risk of
+poisoning provided the relevant norms were complied with and no accident occurred, while expressing
+uncertainty about the impact of the process on the environment. <span class="anc">§ 17</span> Their conclusions rested on
+the economic and social advantages of the project and on the finding that the activity could not
+influence the current characteristics of the region to any significant extent. <span class="anc">§ 18</span></p>
+<p><strong>What the State authorised.</strong> On 30 December 1998 the Ministries of Labour and of Health
+authorised the Company to use sodium cyanide in the extraction process. <span class="anc">§ 20</span> On 3 June 1999 a
+Government decision granted it a concession licence over the tailings ponds; under Article 16 of
+that licence the holder was required to protect the environment. <span class="anc">§ 20</span> On 23 August 1999 the
+Baia Mare municipality authorised the operation, subject to an environmental permit. <span class="anc">§ 21</span> An
+expert report commissioned by the police found that operation had begun after 11 June 1999 and
+that production capacity was already exceeded by 75% by the end of that year. <span class="anc">§ 21</span></p>
+<p><strong>The two public debates.</strong> Minutes of two public debates on the operating permit, dated 24 November
+1999 and 3 December 1999, were produced to the Court after the hearing, partly illegible. The first
+names no author and bears no signature; ten people took part and at least five raised questions
+about the danger of the technology for the environment and for their health. It does not appear
+from the file that the organisers answered those questions. <span class="anc">§ 22</span> The second appears to have been
+drawn up by a representative of the Environmental Protection Authority, but bears neither signature
+nor stamp; eleven people raised questions, including on water quality if the activity were
+authorised. The representative assured participants that there was no indication of suspended
+particles in the atmosphere. No environmental impact assessment was presented on that occasion.
+<span class="anc">§§ 22, 23</span></p>
+<p><strong>The accident.</strong> On 30 January 2000, a large quantity of polluted water, estimated at close to
+100,000 m³, containing among other substances sodium cyanide, was discharged into the Săsar river,
+then into the Lăpuş and the Someş. From the Someş it reached the Tisza. Moving at 2.1 to 2.4 km/h,
+it crossed the Romanian border into Hungary at Tiszalök, passed near Szolnok, crossed into
+Serbia-Montenegro near Belgrade, re-entered Romania at Porțile de Fier and flowed into the Danube.
+<strong>In 14 days the polluted water travelled 800 km</strong>, reaching the Black Sea through the Danube delta.
+<span class="anc">§ 24</span></p>
+<p><strong>What caused it.</strong> The Task Force Baia Mare report, drawn up in December 2000 at the request of the
+European Union Environment Commissioner, identified three causes. First, a gold extraction
+technology resting on an inadequate design of the tailings ponds, the main criticism being the
+absence of any emergency discharge system. Second, the authorisation of construction plans that
+were inadequate and not adapted to the specific climatic conditions of the region; the UNEP/OCHA
+report adds that the ponds had two openings, contrary to the closed-circuit principle of the
+technology, allowing uncontrolled quantities of sodium cyanide to escape into the air or the
+groundwater. Third, inadequate monitoring of the ponds, of the operation of the technology and of
+the maintenance of the installations. The report states that the weather was only partly
+responsible, and that conditions were difficult but not exceptional. <span class="anc">§ 31</span></p>
+<p>The same report classified abandoned mines as a real and significant risk to human health,
+particularly for people living nearby, and held that States must in principle take all necessary
+measures to ensure adequate environmental protection in such situations: surveillance, closure and
+immediate repair. Its press release placed the Company's operation in the category of high-risk mining
+activities. <span class="anc">§ 26</span></p>
+<p><strong>What happened afterwards.</strong> In 2000 the first applicant petitioned administrative authorities,
+asking them to investigate whether the activity endangered him and his family. <span class="anc">§§ 34, 35</span> The
+Ministry of the Environment replied on 1 April 2002 that the company was operating under a lawful
+exploitation licence <span class="anc">§ 37</span>, and again on 27 November 2003. <span class="anc">§ 40</span> He
+also lodged criminal complaints. <span class="anc">§ 41</span> On 20 November 2001 the county prosecutor discontinued the
+proceedings, on the ground that the facts complained of did not constitute offences under the
+Romanian Criminal Code. <span class="anc">§ 46</span> In February and March 2002 the Supreme Court of Justice declared
+itself without jurisdiction and rejected the complaint. <span class="anc">§ 47</span> On 12 December 2002 the prosecutor at the Cluj court of appeal found <strong>force
+majeure on account of the weather conditions</strong>. <span class="anc">§ 51</span> On 29 January 2003 the chief prosecutor at
+the Supreme Court of Justice quashed that decision. <span class="anc">§ 52</span> A fresh complaint in 2005 produced no
+order. <span class="anc">§ 49</span></p>
+<p><strong>What happened to the plant.</strong> On 18 December 2001 the National Agency for Mineral Resources issued a
+rider transferring the licence, and three environmental operating permits were subsequently issued
+by the Ministry. <span class="anc">§§ 63, 64</span> A second impact assessment, commissioned by the company in 2001,
+concluded that no significant effect had been established. <span class="anc">§§ 53, 59, 60</span></p>
+<p><strong>The second applicant.</strong> In 1996 he developed the first symptoms of asthma; the applicants say the
+condition worsened in 2001. Medical certificates of 21 November 2001 and 18 June 2002 attest
+moderate persistent asthma, the second declaring him unfit for compulsory military service, and the
+condition was reconfirmed on 14 August 2007. <span class="anc">§ 69</span></p>
+<hr /></div></aside>
+<aside class="gaveta" id="g-normas" hidden><button type="button" class="fechar" data-alvo="g-normas">Close</button><h2>The legal framework</h2><div class="normas"><p class="ressalva">STIPULATED FOR THIS EXERCISE ONLY. The instruments below are taken as applicable to the facts
+of this case for the purposes of this class. Questions of ratification, of entry into force,
+and of whether a given instrument bound Romania at the material time are set aside here, and
+should not be argued. In a real application they would have to be established first.
+</p><details open><summary>European Convention on Human Rights</summary><ul><li>Article 2 (right to life), first sentence: positive obligation to take appropriate steps to safeguard life</li><li>Article 8 (private and family life, home), paragraphs 1 and 2</li><li>Article 13 (effective remedy)</li><li>Article 1 of Protocol No. 1 (peaceful enjoyment of possessions)</li><li>Article 34 (individual applications) and Article 35 (admissibility criteria)</li><li>Article 41 (just satisfaction)</li></ul></details><details open><summary>Romanian domestic law, as set out in the judgment, section II.A</summary><ul><li>Constitution, Article 35, paragraphs 1, 2 and 3: right to a healthy and balanced environment, duty of the State to legislate for it</li><li>Law no. 137/1995, Article 5, letters a), b), d) and e): access to information, right to associate, right to apply to the authorities for prevention or harm, right to compensation</li><li>Law no. 137/1995, Article 6: environmental protection as a duty of the central administrative authorities</li><li>Law no. 137/1995, Article 7: responsibility of the central environmental authority and its territorial agencies</li><li>Law no. 137/1995, Article 9: the operating permit shall not issue where no variant eliminates the negative effects</li><li>Law no. 137/1995, Article 10: suspension of the permit on non-compliance, up to six months, then power to stop the activity</li><li>Law no. 137/1995, Article 85, item 1, letter c): accidental pollution through failure of supervision, as an offence</li><li>Law no. 137/1995, Article 86: findings and prosecutions of the competent authority&#x27;s own motion</li><li>Procedure of 11 April 1996, items 1 to 5: purpose of the public debate, minimum information to be disclosed, decision criteria, and the procedural timetable</li><li>Law no. 544/2001: access to information of public interest</li></ul></details><details open><summary>International instruments, as set out in the judgment, section II.B</summary><ul><li>Stockholm Declaration 1972, Principle 21 (no-harm) and Principles 1, 2, 13, 17, 18 and 19</li><li>Rio Declaration 1992, Principle 15 (precaution), Principle 10 (information and participation), Principle 2 (no-harm), Principle 17 (environmental impact assessment)</li><li>Aarhus Convention 1998, Article 3 (general provisions), Article 4 (access to environmental information) and Article 9 (access to justice)</li><li>International Court of Justice, Gabcikovo-Nagymaros Project (Hungary/Slovakia), 25 September 1997: vigilance and prevention, and the need for precautionary measures</li><li>Parliamentary Assembly of the Council of Europe, Resolution 1430 (2005) on industrial hazards, paragraphs 2, 8, 9 and 10</li><li>Directive 96/82/EC (Seveso II), Article 19, as referred to in Resolution 1430 (2005)</li><li>European Commission, COM(2000) 664 final, on the safety of mining activities</li><li>Directive 2006/21/EC on the management of waste from extractive industries</li></ul></details><details open><summary>Case-law you are expected to cite: Kolyadenko and Others v. Russia (2012)</summary><ul><li>Paragraph 157: the positive obligation under Article 2 entails above all a primary duty on the State to put in place a legislative and administrative framework designed to provide effective deterrence against threats to the right to life</li><li>Paragraph 159: among these preventive measures particular emphasis should be placed on the public&#x27;s right to information; the regulations must also provide procedures for identifying shortcomings and errors committed by those responsible at different levels</li><li>Paragraphs 160 and 161: the choice of means falls within the margin of appreciation, and the scope of the obligation depends on the origin of the threat and the extent to which the risk is susceptible to mitigation</li><li>Paragraph 166: the authorities had positive obligations to assess all the potential risks inherent in the operation, and to take practical measures to ensure the effective protection of those whose lives might be endangered</li><li>Paragraph 181: informing the public of the inherent risks was one of the essential practical measures needed to ensure effective protection of the citizens concerned</li><li>Paragraph 190: in the particular context of dangerous activities an official criminal investigation is indispensable, given that public authorities are often the only entities with sufficient knowledge to establish the complex phenomena that might have caused an incident</li><li>Paragraph 191: the competent authorities must act with exemplary diligence and promptness and must of their own motion initiate investigations</li><li>Operative part: violation of Article 2 in its substantive aspect; violation of Article 2 in its procedural aspect; violation of Article 8 and of Article 1 of Protocol No. 1</li></ul></details></div></aside>
+<aside class="gaveta" id="g-notas" hidden><button type="button" class="fechar" data-alvo="g-notas">Close</button><h2>Your notes</h2><p class="vazio" id="notas-vazio">You have not answered anything yet.</p><div id="notas-corpo"></div></aside>
+<nav class="rodape"><button type="button" id="b-back">Back</button><span class="passo" id="passo"></span><button type="button" id="b-next">Next</button></nav>
+<script>
+const CFG = {"sessao": "s04", "minutos": 60, "limite": 20000, "camadas": {"A0": {"nome": "Aleatory variability (noise)", "regime": "Irreducible randomness. More data sharpens the estimate of the distribution; it never removes the spread."}, "L0": {"nome": "Calculable risk", "regime": "Probabilities can be estimated from a record that still describes the world."}, "L1": {"nome": "Parametric uncertainty", "regime": "The model holds, but its inputs are contested."}, "L2": {"nome": "Model uncertainty", "regime": "Rival models fit the same past and disagree about the future."}, "L3": {"nome": "Deep uncertainty", "regime": "No agreed model, no agreed probabilities, no agreed values."}, "L4": {"nome": "Radical uncertainty, catastrophic loss", "regime": "The worst case is unbounded in a way the record cannot show."}, "L5": {"nome": "Collapse; catastrophic and irreversible", "regime": "The harm cannot be undone, and waiting buys real information."}}};
+const COLETA_URL = window.COLETA_URL || '';
+const SLOT = 'dlp-s04-v1';
+const FILA = SLOT + '-fila';
+const Armazem = (function () {
+  let mem = {}, vivo = true;
+  try { localStorage.setItem('_probe', '1'); localStorage.removeItem('_probe'); }
+  catch (e) { vivo = false; }
+  return {
+    vivo: function () { return vivo; },
+    ler: function (k) {
+      try { return vivo ? localStorage.getItem(k) : (k in mem ? mem[k] : null); }
+      catch (e) { return k in mem ? mem[k] : null; }
+    },
+    gravar: function (k, v) {
+      try { if (vivo) localStorage.setItem(k, v); else mem[k] = v; }
+      catch (e) { mem[k] = v; }   
+    }
+  };
+})();
+if (!Armazem.vivo()) {
+  const av = document.getElementById('aviso-armazem');
+  if (av) av.hidden = false;
+}
+const estado = JSON.parse(Armazem.ler(SLOT) || '{}');
+function salvar() { Armazem.gravar(SLOT, JSON.stringify(estado)); }
+function novoCodigo() {
+  const alfabeto = 'ACDEFGHJKLMNPQRTUVWXY34679';   
+  let s = '';
+  const r = new Uint8Array(5);
+  (window.crypto || window.msCrypto).getRandomValues(r);
+  for (let i = 0; i < 5; i++) s += alfabeto[r[i] % alfabeto.length];
+  return 'T-' + s;
+}
+if (!estado.codigo) { estado.codigo = novoCodigo(); salvar(); }
+function lerFila() { try { return JSON.parse(Armazem.ler(FILA) || '[]'); } catch (e) { return []; } }
+function gravarFila(f) { Armazem.gravar(FILA, JSON.stringify(f)); }
+function enfileirar(evento) {
+  
+  const linha = Object.assign({sessao: CFG.sessao, token: estado.codigo,
+                               em: new Date().toISOString()}, evento);
+  const f = lerFila(); f.push(linha); gravarFila(f);
+  escoar();
+  return linha;
+}
+function enfileirarSemMesa(evento) {
+  const linha = Object.assign({sessao: CFG.sessao, token: '',
+                               em: new Date().toISOString()}, evento);
+  const f = lerFila(); f.push(linha); gravarFila(f);
+  escoar();
+  return linha;
+}
+let escoando = false;
+function escoar() {
+  if (!COLETA_URL || escoando) return;
+  const f = lerFila();
+  if (!f.length) { pintarEntrega(); return; }
+  escoando = true;
+  const linha = f[0];
+  fetch(COLETA_URL, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'},
+                     body: JSON.stringify(linha)})
+    .then(() => {
+      const a = lerFila();
+      if (a.length && a[0].em === linha.em && a[0].evento === linha.evento
+          && a[0].parte === linha.parte) { a.shift(); gravarFila(a); }
+      escoando = false; pintarEntrega();
+      if (lerFila().length) escoar();
+    })
+    .catch(() => { escoando = false; pintarEntrega(); });
+}
+function pintarEntrega() {
+  const el = document.getElementById('entrega');
+  if (!el) return;
+  const n = lerFila().length;
+  if (!COLETA_URL) { el.textContent = 'Saved on this device. No collection point is configured.'; return; }
+  el.textContent = n ? (n + ' part(s) still on their way. Keep this page open.')
+                     : 'Everything reached the instructor.';
+}
+function peca() { return document.getElementById('peca'); }
+function gravarPeca() {
+  estado.peca_html = peca().innerHTML;
+  estado.peca_txt = peca().innerText;
+  salvar();
+  const n = (estado.peca_txt.trim().match(/\S+/g) || []).length;
+  document.getElementById('conta').textContent = n + (n === 1 ? ' word' : ' words');
+}
+function partir(t, limite) {
+  if (t.length <= limite) return [t];
+  const p = [];
+  for (let i = 0; i < t.length; i += limite) p.push(t.slice(i, i + limite));
+  return p;
+}
+function recibo(data, codigo) {
+  const p = n => String(n).padStart(2, '0');
+  const local = data.getFullYear() + p(data.getMonth() + 1) + p(data.getDate())
+              + p(data.getHours()) + p(data.getMinutes());
+  return {
+    protocolo: 'S04-' + codigo.replace('T-', '') + '-' + local,
+    visivel: p(data.getDate()) + '/' + p(data.getMonth() + 1) + '/' + data.getFullYear()
+             + ', ' + p(data.getHours()) + ':' + p(data.getMinutes()) + ':' + p(data.getSeconds()),
+    utc: data.toISOString()
+  };
+}
+const telas = Array.from(document.querySelectorAll('.tela'));
+function ir(i) {
+  estado.tela = Math.max(0, Math.min(telas.length - 1, i));
+  telas.forEach((t, k) => { t.hidden = (k !== estado.tela); });
+  document.getElementById('b-back').disabled = (estado.tela === 0);
+  const ultima = (estado.tela === telas.length - 1);
+  document.getElementById('b-next').disabled = ultima;
+  document.getElementById('passo').textContent =
+    'Screen ' + (estado.tela + 1) + ' of ' + telas.length;
+  salvar();
+  window.scrollTo(0, 0);
+  if (telas[estado.tela].dataset.tela === 'editor') rulerInit();
+}
+document.getElementById('b-back').addEventListener('click', () => ir(estado.tela - 1));
+document.getElementById('b-next').addEventListener('click', () => ir(estado.tela + 1));
+function gaveta(id, on) { document.getElementById(id).hidden = !on; }
+document.getElementById('b-fatos').addEventListener('click', () => gaveta('g-fatos', true));
+document.getElementById('b-normas').addEventListener('click', () => gaveta('g-normas', true));
+function pintarNotas() {
+  const linhas = [];
+  const bloco = (rot, val) => { if (val && String(val).trim()) linhas.push(
+    '<h3>' + rot + '</h3><p>' + String(val).replace(/[<>&]/g, s =>
+      ({'<':'&lt;','>':'&gt;','&':'&amp;'}[s])) + '</p>'); };
+  const porExtenso = ids => (ids || []).map(id => {
+    const c = CFG.camadas[id];
+    return c ? (id + '. ' + c.nome + '. ' + c.regime) : id;
+  });
+  const lista = (rot, ids) => { const ls = porExtenso(ids); if (ls.length) linhas.push(
+    '<h3>' + rot + '</h3><ul>' + ls.map(x =>
+      '<li>' + x.replace(/[<>&]/g, s => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[s])) + '</li>'
+    ).join('') + '</ul>'); };
+  lista('Regimes you named', estado.camada_mesa);
+  lista('Where you did not agree', estado.divergencia);
+  bloco('What decided it', estado.just);
+  bloco('Under the policy cycle', estado.cons_ciclo);
+  bloco('Under the Sendai Framework', estado.cons_sendai);
+  bloco('Where the two pull apart', estado.cons_comparar);
+  document.getElementById('notas-corpo').innerHTML = linhas.join('');
+  document.getElementById('notas-vazio').hidden = linhas.length > 0;
+}
+document.getElementById('b-notas').addEventListener('click', () => {
+  pintarNotas(); gaveta('g-notas', true);
+});
+document.querySelectorAll('.gaveta .fechar').forEach(b =>
+  b.addEventListener('click', () => gaveta(b.dataset.alvo, false)));
+if (!estado.inicio) { estado.inicio = new Date().toISOString(); salvar(); }
+function tique() {
+  const resta = CFG.minutos * 60000 - (Date.now() - new Date(estado.inicio).getTime());
+  const s = Math.max(0, Math.floor(resta / 1000));
+  document.getElementById('relogio').textContent =
+    String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+}
+setInterval(tique, 1000); tique();
+document.querySelectorAll('input[name="consent"]').forEach(r =>
+  r.addEventListener('change', () => {
+    estado.consentiu = (r.value === 'sim'); salvar();
+    enfileirar({evento: 'consentimento', consentiu: estado.consentiu});
+  }));
+function marcadas(nome) {
+  return Array.from(document.querySelectorAll('input[name="' + nome + '"]:checked'))
+              .map(c => c.value);
+}
+['camada_mesa', 'divergencia'].forEach(nome =>
+  document.querySelectorAll('input[name="' + nome + '"]').forEach(c =>
+    c.addEventListener('change', () => {
+      estado[nome] = marcadas(nome); salvar();
+      if (estado.consentiu) enfileirar({evento: nome, valor: estado[nome].join(' ')});
+    })));
+['cons_ciclo', 'cons_sendai', 'cons_comparar'].forEach(id => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener('change', () => {
+    estado[id] = el.value; salvar();
+    if (estado.consentiu) enfileirar({evento: id, valor: el.value});
+  });
+});
+const just = document.getElementById('just');
+if (just) just.addEventListener('change', () => {
+  estado.just = just.value; salvar();
+  if (estado.consentiu) enfileirar({evento: 'justificativa', valor: just.value});
+});
+document.getElementById('b-enviar').addEventListener('click', () => {
+  gravarPeca();
+  const agora = new Date();
+  const rec = recibo(agora, estado.codigo);
+  estado.protocolo = estado.protocolo || rec.protocolo;
+  estado.enviado_em = rec.utc;
+  estado.enviado_visivel = rec.visivel;
+  salvar();
+  if (estado.consentiu) {
+    const partes = partir(estado.peca_html || '', CFG.limite);
+    partes.forEach((p, i) => enfileirar({evento: 'peticao-parte', protocolo: estado.protocolo,
+                                         parte: i + 1, de: partes.length, valor: p,
+                                         camada_mesa: (estado.camada_mesa || []).join(' '),
+                                         divergencia: (estado.divergencia || []).join(' ')}));
+  }
+  document.getElementById('protocolo').textContent = estado.protocolo;
+  document.getElementById('carimbo').textContent = estado.enviado_visivel;
+  ir(telas.findIndex(t => t.dataset.tela === 'sent'));
+  pintarEntrega();
+});
+document.getElementById('b-email').addEventListener('click', () => {
+  const campo = document.getElementById('emails');
+  const enderecos = campo.value.split(/[\n,;]+/).map(s => s.trim()).filter(s => s.includes('@'));
+  if (!enderecos.length) { campo.focus(); return; }
+  
+  enfileirarSemMesa({evento: 'email-gabarito', valor: enderecos.join(' ')});
+  campo.value = '';
+  document.getElementById('email-feito').hidden = false;
+});
+document.getElementById('b-feedback').addEventListener('click', () => {
+  const escalas = {};
+  document.querySelectorAll('.fbitem input:checked').forEach(r => { escalas[r.name] = r.value; });
+  const abertas = {};
+  document.querySelectorAll('[data-tela="feedback"] textarea').forEach(t => {
+    if (t.value.trim()) abertas[t.id] = t.value.trim();
+  });
+  if (estado.consentiu) enfileirar({evento: 'feedback', escalas: escalas, abertas: abertas});
+  estado.feedback = {escalas: escalas, abertas: abertas}; salvar();
+  document.getElementById('feedback-feito').hidden = false;
+});
+var _sel = null;
+function saveSel() {
+  var s = window.getSelection();
+  if (s && s.rangeCount) {
+    var r = s.getRangeAt(0), n = r.commonAncestorContainer;
+    n = n.nodeType === 1 ? n : n.parentNode;
+    if (n && n.closest && n.closest('.editmin')) _sel = r.cloneRange();
+  }
+}
+function restoreSel() { if (_sel) { var s = window.getSelection(); s.removeAllRanges(); s.addRange(_sel); } }
+function wcmd(e, c) { if (e && e.preventDefault) e.preventDefault(); restoreSel();
+  try { document.execCommand(c, false, null); } catch (_) {} saveSel(); gravarPeca(); return false; }
+function wcmdVal(e, c, v) { if (e && e.preventDefault) e.preventDefault(); restoreSel();
+  try { document.execCommand(c, false, v); } catch (_) {} saveSel(); gravarPeca(); return false; }
+function onPaste(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  var t = '';
+  try { t = (e.clipboardData || window.clipboardData).getData('text/plain'); } catch (_) {}
+  restoreSel();
+  try { document.execCommand('insertText', false, t); } catch (_) {}
+  saveSel(); gravarPeca(); return false;
+}
+window.addEventListener('resize', function () {
+  var el = document.getElementById('rnums');
+  if (el) { el.dataset.done = ''; el.innerHTML = ''; }
+  rulerInit();
+});
+function rulerInit() {
+  var el = document.getElementById('rnums');
+  if (!el || el.dataset.done) return;
+  var t = document.getElementById('rtrack');
+  if (!t || !t.clientWidth) return;
+  var w = t.clientWidth, q = 37.8 / 4, h = '';
+  for (var x = 0, i = 0; x < w; x += q, i++) {
+    var lbl = (i % 4 === 0) ? ('<b>' + (i / 4) + '</b>') : (i % 2 === 0 ? '|' : '&middot;');
+    h += '<span style="position:absolute;left:' + x + 'px;top:6px">' + lbl + '</span>';
+  }
+  el.innerHTML = h; el.dataset.done = '1';
+}
+var _rdrag = null;
+function rulerDown(e, which) {
+  e.preventDefault(); _rdrag = which;
+  document.onmousemove = rulerMove;
+  document.onmouseup = function () { document.onmousemove = null; document.onmouseup = null; _rdrag = null; };
+}
+function rulerMove(e) {
+  if (!_rdrag) return;
+  var t = document.getElementById('rtrack'), ed = document.getElementById('peca');
+  if (!t || !ed) return;
+  var r = t.getBoundingClientRect();
+  var x = Math.max(0, Math.min(r.width, e.clientX - r.left));
+  var cm = (x / 37.8).toFixed(2) + 'cm';
+  if (_rdrag === 'first') ed.style.textIndent = cm;
+  else if (_rdrag === 'left') ed.style.paddingLeft = cm;
+  else ed.style.paddingRight = cm;
+  var mk = document.getElementById('mk-' + _rdrag);
+  if (mk) { mk.style.left = (_rdrag === 'right' ? 'auto' : x + 'px');
+            mk.style.right = (_rdrag === 'right' ? (r.width - x) + 'px' : 'auto'); }
+}
+document.getElementById('codigo-mesa').textContent = estado.codigo;
+document.getElementById('b-recomecar').addEventListener('click', () => {
+  const aviso = 'This deletes the application, the answers and the table code on this device, and '
+              + 'starts a new table. Work already sent is not affected. Continue?';
+  if (!window.confirm(aviso)) return;
+  Armazem.gravar(SLOT, '{}');
+  Armazem.gravar(FILA, '[]');
+  location.reload();
+});
+function preencherData() {
+  const alvo = document.getElementById('data-peticao');
+  if (!alvo) return;
+  const meses = ['January','February','March','April','May','June','July','August','September',
+                 'October','November','December'];
+  const d = new Date();
+  alvo.textContent = d.getDate() + ' ' + meses[d.getMonth()] + ' ' + d.getFullYear();
+}
+if (estado.peca_html) {
+  peca().innerHTML = estado.peca_html;
+} else {
+  const tpl = document.getElementById('modelo-peticao');
+  if (tpl) { peca().innerHTML = tpl.innerHTML; }
+}
+preencherData();
+salvar();
+if (estado.just && just) just.value = estado.just;
+['cons_ciclo', 'cons_sendai', 'cons_comparar'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el && estado[id]) el.value = estado[id];
+});
+['camada_mesa', 'divergencia'].forEach(n => {
+  (estado[n] || []).forEach(v => {
+    const el = document.querySelector('input[name="' + n + '"][value="' + v + '"]');
+    if (el) el.checked = true;
+  });
+});
+if (typeof estado.consentiu === 'boolean') {
+  const el = document.querySelector('input[name="consent"][value="' + (estado.consentiu ? 'sim' : 'nao') + '"]');
+  if (el) el.checked = true;
+}
+if (estado.protocolo) {
+  document.getElementById('protocolo').textContent = estado.protocolo;
+  document.getElementById('carimbo').textContent = estado.enviado_visivel || '';
+}
+gravarPeca();
+ir(estado.tela || 0);
+escoar();
+</script>
+</body>
+</html>
