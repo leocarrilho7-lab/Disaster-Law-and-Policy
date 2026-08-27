@@ -12,8 +12,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 741.19,
-        "y": 0.0
+        "x": 421.18,
+        "y": 83.17
       }
     },
     {
@@ -28,8 +28,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 972.52,
-        "y": 69.81
+        "x": 319.48,
+        "y": 78.67
       }
     },
     {
@@ -44,8 +44,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 511.78,
-        "y": 564.95
+        "x": 412.85,
+        "y": 592.71
       }
     },
     {
@@ -60,8 +60,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 823.11,
-        "y": 27.42
+        "x": 361.17,
+        "y": 111.8
       }
     },
     {
@@ -76,8 +76,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 45.6,
-        "y": 578.38
+        "x": 164.79,
+        "y": 703.06
       }
     },
     {
@@ -92,8 +92,24 @@
       },
       "classes": "author",
       "position": {
-        "x": 19.37,
-        "y": 558.25
+        "x": 132.03,
+        "y": 704.83
+      }
+    },
+    {
+      "data": {
+        "id": "author:chen",
+        "label": "Jim Chen",
+        "ntype": "author",
+        "href": "autores/chen.html",
+        "status": "stub",
+        "ano": null,
+        "grau_entrada": 0
+      },
+      "classes": "author",
+      "position": {
+        "x": 788.3,
+        "y": 0.0
       }
     },
     {
@@ -108,8 +124,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 5.05,
-        "y": 534.93
+        "x": 115.0,
+        "y": 686.3
       }
     },
     {
@@ -124,8 +140,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 661.48,
-        "y": 46.88
+        "x": 675.03,
+        "y": 157.45
       }
     },
     {
@@ -140,8 +156,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 586.09,
-        "y": 64.22
+        "x": 662.32,
+        "y": 275.56
       }
     },
     {
@@ -156,8 +172,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 322.96,
-        "y": 680.08
+        "x": 0.0,
+        "y": 585.58
       }
     },
     {
@@ -172,8 +188,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 402.16,
-        "y": 640.35
+        "x": 13.26,
+        "y": 519.73
       }
     },
     {
@@ -188,8 +204,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 883.39,
-        "y": 68.85
+        "x": 481.4,
+        "y": 81.93
       }
     },
     {
@@ -204,8 +220,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 659.33,
-        "y": 170.84
+        "x": 546.24,
+        "y": 312.71
       }
     },
     {
@@ -220,8 +236,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 998.41,
-        "y": 213.75
+        "x": 541.81,
+        "y": 90.57
       }
     },
     {
@@ -236,8 +252,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 974.64,
-        "y": 158.56
+        "x": 737.58,
+        "y": 283.36
       }
     },
     {
@@ -252,8 +268,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 575.98,
-        "y": 485.03
+        "x": 485.9,
+        "y": 538.63
       }
     },
     {
@@ -268,8 +284,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 918.61,
-        "y": 670.28
+        "x": 746.23,
+        "y": 677.84
       }
     },
     {
@@ -284,8 +300,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 999.9,
-        "y": 273.94
+        "x": 764.17,
+        "y": 165.47
       }
     },
     {
@@ -300,8 +316,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 781.01,
-        "y": 630.92
+        "x": 635.52,
+        "y": 648.37
       }
     },
     {
@@ -316,7 +332,7 @@
       },
       "classes": "author",
       "position": {
-        "x": 871.53,
+        "x": 718.73,
         "y": 760.0
       }
     },
@@ -332,8 +348,40 @@
       },
       "classes": "author",
       "position": {
-        "x": 137.09,
-        "y": 664.45
+        "x": 221.99,
+        "y": 734.84
+      }
+    },
+    {
+      "data": {
+        "id": "author:sun",
+        "label": "Lisa Grow Sun",
+        "ntype": "author",
+        "href": "autores/sun.html",
+        "status": "stub",
+        "ano": null,
+        "grau_entrada": 0
+      },
+      "classes": "author",
+      "position": {
+        "x": 821.45,
+        "y": 18.09
+      }
+    },
+    {
+      "data": {
+        "id": "author:sunstein",
+        "label": "Cass R. Sunstein",
+        "ntype": "author",
+        "href": "autores/sunstein.html",
+        "status": "stub",
+        "ano": null,
+        "grau_entrada": 0
+      },
+      "classes": "author",
+      "position": {
+        "x": 1000.0,
+        "y": 11.44
       }
     },
     {
@@ -348,8 +396,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 139.12,
-        "y": 577.76
+        "x": 45.72,
+        "y": 549.28
       }
     },
     {
@@ -364,8 +412,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 273.42,
-        "y": 675.16
+        "x": 18.79,
+        "y": 610.64
       }
     },
     {
@@ -380,8 +428,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 1000.0,
-        "y": 96.76
+        "x": 287.97,
+        "y": 96.93
       }
     },
     {
@@ -396,8 +444,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 51.01,
-        "y": 468.17
+        "x": 313.58,
+        "y": 711.46
       }
     },
     {
@@ -412,8 +460,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 887.72,
-        "y": 313.85
+        "x": 640.82,
+        "y": 130.49
       }
     },
     {
@@ -428,8 +476,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 536.28,
-        "y": 5.43
+        "x": 736.05,
+        "y": 335.84
       }
     },
     {
@@ -444,8 +492,8 @@
       },
       "classes": "author",
       "position": {
-        "x": 0.0,
-        "y": 508.29
+        "x": 88.81,
+        "y": 673.86
       }
     },
     {
@@ -462,8 +510,8 @@
       },
       "classes": "concept note-referencia",
       "position": {
-        "x": 314.18,
-        "y": 462.52
+        "x": 297.99,
+        "y": 554.08
       }
     },
     {
@@ -480,8 +528,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 315.85,
-        "y": 483.6
+        "x": 223.14,
+        "y": 515.27
       }
     },
     {
@@ -498,8 +546,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 369.45,
-        "y": 408.8
+        "x": 262.49,
+        "y": 464.55
       }
     },
     {
@@ -516,8 +564,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 493.85,
-        "y": 469.9
+        "x": 394.31,
+        "y": 526.29
       }
     },
     {
@@ -534,8 +582,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 440.77,
-        "y": 364.56
+        "x": 338.29,
+        "y": 438.01
       }
     },
     {
@@ -552,8 +600,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 324.78,
-        "y": 520.5
+        "x": 185.49,
+        "y": 535.35
       }
     },
     {
@@ -570,8 +618,8 @@
       },
       "classes": "concept note-literaria",
       "position": {
-        "x": 391.57,
-        "y": 385.92
+        "x": 297.62,
+        "y": 459.19
       }
     },
     {
@@ -588,8 +636,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 413.33,
-        "y": 367.81
+        "x": 315.9,
+        "y": 436.31
       }
     },
     {
@@ -606,8 +654,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 339.94,
-        "y": 432.64
+        "x": 318.9,
+        "y": 532.12
       }
     },
     {
@@ -624,8 +672,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 229.9,
-        "y": 431.25
+        "x": 316.02,
+        "y": 600.71
       }
     },
     {
@@ -642,8 +690,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 291.33,
-        "y": 563.61
+        "x": 187.0,
+        "y": 588.1
       }
     },
     {
@@ -660,8 +708,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 276.04,
-        "y": 317.18
+        "x": 191.11,
+        "y": 403.01
       }
     },
     {
@@ -678,8 +726,8 @@
       },
       "classes": "concept note-fugaz",
       "position": {
-        "x": 585.1,
-        "y": 541.15
+        "x": 471.01,
+        "y": 589.51
       }
     },
     {
@@ -696,8 +744,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 360.53,
-        "y": 465.83
+        "x": 269.53,
+        "y": 518.97
       }
     },
     {
@@ -714,8 +762,8 @@
       },
       "classes": "concept note-projeto",
       "position": {
-        "x": 415.13,
-        "y": 487.21
+        "x": 348.52,
+        "y": 557.77
       }
     },
     {
@@ -732,8 +780,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 226.65,
-        "y": 448.04
+        "x": 337.02,
+        "y": 604.01
       }
     },
     {
@@ -750,8 +798,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 291.92,
-        "y": 603.97
+        "x": 129.73,
+        "y": 591.72
       }
     },
     {
@@ -768,8 +816,8 @@
       },
       "classes": "concept note-permanente",
       "position": {
-        "x": 260.14,
-        "y": 463.78
+        "x": 224.62,
+        "y": 546.23
       }
     },
     {
@@ -784,8 +832,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 123.93,
-        "y": 313.38
+        "x": 83.0,
+        "y": 413.99
       }
     },
     {
@@ -800,8 +848,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 348.83,
-        "y": 281.05
+        "x": 226.99,
+        "y": 359.48
       }
     },
     {
@@ -816,8 +864,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 380.23,
-        "y": 313.7
+        "x": 255.09,
+        "y": 384.15
       }
     },
     {
@@ -832,8 +880,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 116.58,
-        "y": 280.09
+        "x": 62.7,
+        "y": 396.67
       }
     },
     {
@@ -848,8 +896,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 336.9,
-        "y": 312.48
+        "x": 307.27,
+        "y": 383.31
       }
     },
     {
@@ -864,8 +912,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 137.98,
-        "y": 251.84
+        "x": 65.17,
+        "y": 372.24
       }
     },
     {
@@ -880,8 +928,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 155.36,
-        "y": 289.18
+        "x": 82.09,
+        "y": 351.66
       }
     },
     {
@@ -896,8 +944,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 183.32,
-        "y": 259.12
+        "x": 102.67,
+        "y": 333.62
       }
     },
     {
@@ -912,8 +960,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 174.9,
-        "y": 230.17
+        "x": 102.51,
+        "y": 377.09
       }
     },
     {
@@ -928,8 +976,8 @@
       },
       "classes": "julgado",
       "position": {
-        "x": 219.0,
-        "y": 230.16
+        "x": 132.18,
+        "y": 341.25
       }
     },
     {
@@ -944,8 +992,8 @@
       },
       "classes": "legislation",
       "position": {
-        "x": 474.54,
-        "y": 257.74
+        "x": 325.65,
+        "y": 325.41
       }
     },
     {
@@ -960,8 +1008,8 @@
       },
       "classes": "legislation",
       "position": {
-        "x": 739.97,
-        "y": 248.02
+        "x": 401.99,
+        "y": 263.86
       }
     },
     {
@@ -976,8 +1024,8 @@
       },
       "classes": "legislation",
       "position": {
-        "x": 748.57,
-        "y": 212.74
+        "x": 417.34,
+        "y": 238.0
       }
     },
     {
@@ -992,8 +1040,8 @@
       },
       "classes": "legislation",
       "position": {
-        "x": 570.37,
-        "y": 186.24
+        "x": 525.85,
+        "y": 275.43
       }
     },
     {
@@ -1008,8 +1056,8 @@
       },
       "classes": "legislation",
       "position": {
-        "x": 518.31,
-        "y": 322.31
+        "x": 369.65,
+        "y": 374.93
       }
     },
     {
@@ -1024,8 +1072,8 @@
       },
       "classes": "legislation",
       "position": {
-        "x": 251.13,
-        "y": 375.35
+        "x": 168.08,
+        "y": 452.66
       }
     },
     {
@@ -1040,8 +1088,8 @@
       },
       "classes": "legislation",
       "position": {
-        "x": 712.51,
-        "y": 286.34
+        "x": 501.74,
+        "y": 244.18
       }
     },
     {
@@ -1056,8 +1104,8 @@
       },
       "classes": "legislation",
       "position": {
-        "x": 291.46,
-        "y": 191.88
+        "x": 160.25,
+        "y": 288.8
       }
     },
     {
@@ -1072,8 +1120,8 @@
       },
       "classes": "session",
       "position": {
-        "x": 608.15,
-        "y": 421.45
+        "x": 474.45,
+        "y": 463.77
       }
     },
     {
@@ -1088,8 +1136,24 @@
       },
       "classes": "session",
       "position": {
-        "x": 281.74,
-        "y": 527.95
+        "x": 218.26,
+        "y": 573.78
+      }
+    },
+    {
+      "data": {
+        "id": "session:s04",
+        "label": "S04: Disaster Policy Cycle and Principles",
+        "ntype": "session",
+        "href": "sessoes/s04.html",
+        "status": "complete",
+        "ano": null,
+        "grau_entrada": 3
+      },
+      "classes": "session",
+      "position": {
+        "x": 795.85,
+        "y": 110.3
       }
     },
     {
@@ -1104,8 +1168,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 705.64,
-        "y": 101.24
+        "x": 436.91,
+        "y": 172.61
       }
     },
     {
@@ -1120,8 +1184,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 861.65,
-        "y": 141.53
+        "x": 361.78,
+        "y": 164.22
       }
     },
     {
@@ -1136,8 +1200,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 451.39,
-        "y": 477.09
+        "x": 349.97,
+        "y": 520.25
       }
     },
     {
@@ -1152,8 +1216,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 752.37,
-        "y": 119.0
+        "x": 399.99,
+        "y": 191.22
       }
     },
     {
@@ -1168,8 +1232,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 620.63,
-        "y": 197.07
+        "x": 459.77,
+        "y": 235.61
       }
     },
     {
@@ -1184,8 +1248,24 @@
       },
       "classes": "text",
       "position": {
-        "x": 669.22,
-        "y": 126.65
+        "x": 586.22,
+        "y": 218.4
+      }
+    },
+    {
+      "data": {
+        "id": "text:farber-chen-verchick-sun-2010",
+        "label": "Disaster Law and Policy",
+        "ntype": "text",
+        "href": "textos/farber-chen-verchick-sun-2010.html",
+        "status": "stub",
+        "ano": 2010,
+        "grau_entrada": 4
+      },
+      "classes": "text",
+      "position": {
+        "x": 745.04,
+        "y": 74.33
       }
     },
     {
@@ -1200,8 +1280,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 631.33,
-        "y": 112.78
+        "x": 608.01,
+        "y": 236.07
       }
     },
     {
@@ -1216,8 +1296,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 575.17,
-        "y": 103.74
+        "x": 625.63,
+        "y": 315.37
       }
     },
     {
@@ -1232,8 +1312,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 324.59,
-        "y": 574.42
+        "x": 121.14,
+        "y": 555.51
       }
     },
     {
@@ -1248,8 +1328,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 372.25,
-        "y": 540.06
+        "x": 137.44,
+        "y": 515.91
       }
     },
     {
@@ -1264,8 +1344,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 786.72,
-        "y": 145.09
+        "x": 473.49,
+        "y": 171.7
       }
     },
     {
@@ -1280,8 +1360,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 704.12,
-        "y": 186.43
+        "x": 523.94,
+        "y": 331.75
       }
     },
     {
@@ -1296,8 +1376,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 646.54,
-        "y": 240.63
+        "x": 466.15,
+        "y": 292.17
       }
     },
     {
@@ -1312,8 +1392,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 609.01,
-        "y": 141.13
+        "x": 579.67,
+        "y": 291.27
       }
     },
     {
@@ -1328,8 +1408,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 849.45,
-        "y": 224.3
+        "x": 508.98,
+        "y": 176.23
       }
     },
     {
@@ -1344,8 +1424,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 833.97,
-        "y": 191.41
+        "x": 621.17,
+        "y": 287.68
       }
     },
     {
@@ -1360,8 +1440,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 465.23,
-        "y": 437.16
+        "x": 392.35,
+        "y": 503.64
       }
     },
     {
@@ -1376,8 +1456,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 852.92,
-        "y": 620.22
+        "x": 690.53,
+        "y": 635.7
       }
     },
     {
@@ -1392,8 +1472,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 827.92,
-        "y": 638.6
+        "x": 672.47,
+        "y": 653.21
       }
     },
     {
@@ -1408,8 +1488,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 852.15,
-        "y": 260.1
+        "x": 661.46,
+        "y": 195.64
       }
     },
     {
@@ -1424,8 +1504,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 710.3,
-        "y": 565.21
+        "x": 573.23,
+        "y": 593.01
       }
     },
     {
@@ -1440,8 +1520,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 800.83,
-        "y": 681.52
+        "x": 655.57,
+        "y": 692.82
       }
     },
     {
@@ -1456,8 +1536,24 @@
       },
       "classes": "text",
       "position": {
-        "x": 222.02,
-        "y": 575.66
+        "x": 233.22,
+        "y": 641.77
+      }
+    },
+    {
+      "data": {
+        "id": "text:sunstein-2005",
+        "label": "Laws of Fear: Beyond the Precautionary Principle",
+        "ntype": "text",
+        "href": "textos/sunstein-2005.html",
+        "status": "stub",
+        "ano": 2005,
+        "grau_entrada": 1
+      },
+      "classes": "text",
+      "position": {
+        "x": 916.5,
+        "y": 53.64
       }
     },
     {
@@ -1472,8 +1568,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 251.46,
-        "y": 507.21
+        "x": 159.66,
+        "y": 525.39
       }
     },
     {
@@ -1488,8 +1584,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 200.99,
-        "y": 470.25
+        "x": 295.6,
+        "y": 620.63
       }
     },
     {
@@ -1504,8 +1600,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 798.8,
-        "y": 276.8
+        "x": 551.7,
+        "y": 191.15
       }
     },
     {
@@ -1520,8 +1616,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 786.44,
-        "y": 298.06
+        "x": 567.1,
+        "y": 201.41
       }
     },
     {
@@ -1536,8 +1632,8 @@
       },
       "classes": "text",
       "position": {
-        "x": 156.6,
-        "y": 503.13
+        "x": 186.63,
+        "y": 614.07
       }
     }
   ],
@@ -1599,6 +1695,15 @@
     {
       "data": {
         "id": "e6",
+        "source": "author:chen",
+        "target": "text:farber-chen-verchick-sun-2010",
+        "etype": "escreveu"
+      },
+      "classes": "escreveu"
+    },
+    {
+      "data": {
+        "id": "e7",
         "source": "author:davis",
         "target": "text:wisner-2004",
         "etype": "escreveu"
@@ -1607,7 +1712,7 @@
     },
     {
       "data": {
-        "id": "e7",
+        "id": "e8",
         "source": "author:farber",
         "target": "text:farber-2010",
         "etype": "escreveu"
@@ -1616,18 +1721,9 @@
     },
     {
       "data": {
-        "id": "e8",
-        "source": "author:farber",
-        "target": "text:farber-faure-2010",
-        "etype": "escreveu"
-      },
-      "classes": "escreveu"
-    },
-    {
-      "data": {
         "id": "e9",
-        "source": "author:faure",
-        "target": "text:farber-faure-2010",
+        "source": "author:farber",
+        "target": "text:farber-chen-verchick-sun-2010",
         "etype": "escreveu"
       },
       "classes": "escreveu"
@@ -1635,8 +1731,8 @@
     {
       "data": {
         "id": "e10",
-        "source": "author:faure",
-        "target": "text:faure-wibisana-2013",
+        "source": "author:farber",
+        "target": "text:farber-faure-2010",
         "etype": "escreveu"
       },
       "classes": "escreveu"
@@ -1645,7 +1741,7 @@
       "data": {
         "id": "e11",
         "source": "author:faure",
-        "target": "text:lauta-faure-2016",
+        "target": "text:farber-faure-2010",
         "etype": "escreveu"
       },
       "classes": "escreveu"
@@ -1653,6 +1749,24 @@
     {
       "data": {
         "id": "e12",
+        "source": "author:faure",
+        "target": "text:faure-wibisana-2013",
+        "etype": "escreveu"
+      },
+      "classes": "escreveu"
+    },
+    {
+      "data": {
+        "id": "e13",
+        "source": "author:faure",
+        "target": "text:lauta-faure-2016",
+        "etype": "escreveu"
+      },
+      "classes": "escreveu"
+    },
+    {
+      "data": {
+        "id": "e14",
         "source": "author:kahneman",
         "target": "text:kahneman-tversky-1979",
         "etype": "escreveu"
@@ -1661,7 +1775,7 @@
     },
     {
       "data": {
-        "id": "e13",
+        "id": "e15",
         "source": "author:knight",
         "target": "text:knight-1921",
         "etype": "escreveu"
@@ -1670,7 +1784,7 @@
     },
     {
       "data": {
-        "id": "e14",
+        "id": "e16",
         "source": "author:kuhn",
         "target": "text:kuhn-1970",
         "etype": "escreveu"
@@ -1679,7 +1793,7 @@
     },
     {
       "data": {
-        "id": "e15",
+        "id": "e17",
         "source": "author:lauta",
         "target": "text:lauta-2014",
         "etype": "escreveu"
@@ -1688,7 +1802,7 @@
     },
     {
       "data": {
-        "id": "e16",
+        "id": "e18",
         "source": "author:lauta",
         "target": "text:lauta-2017",
         "etype": "escreveu"
@@ -1697,7 +1811,7 @@
     },
     {
       "data": {
-        "id": "e17",
+        "id": "e19",
         "source": "author:lauta",
         "target": "text:lauta-faure-2016",
         "etype": "escreveu"
@@ -1706,7 +1820,7 @@
     },
     {
       "data": {
-        "id": "e18",
+        "id": "e20",
         "source": "author:luhmann",
         "target": "text:luhmann-2004",
         "etype": "escreveu"
@@ -1715,7 +1829,7 @@
     },
     {
       "data": {
-        "id": "e19",
+        "id": "e21",
         "source": "author:lyster",
         "target": "text:lyster-2015",
         "etype": "escreveu"
@@ -1724,7 +1838,7 @@
     },
     {
       "data": {
-        "id": "e20",
+        "id": "e22",
         "source": "author:perrow",
         "target": "text:perrow-1984",
         "etype": "escreveu"
@@ -1733,7 +1847,7 @@
     },
     {
       "data": {
-        "id": "e21",
+        "id": "e23",
         "source": "author:perry",
         "target": "text:perry-2006",
         "etype": "escreveu"
@@ -1742,26 +1856,8 @@
     },
     {
       "data": {
-        "id": "e22",
-        "source": "author:perry",
-        "target": "text:perry-quarantelli-2005",
-        "etype": "escreveu"
-      },
-      "classes": "escreveu"
-    },
-    {
-      "data": {
-        "id": "e23",
-        "source": "author:posner",
-        "target": "text:posner-2004",
-        "etype": "escreveu"
-      },
-      "classes": "escreveu"
-    },
-    {
-      "data": {
         "id": "e24",
-        "source": "author:quarantelli",
+        "source": "author:perry",
         "target": "text:perry-quarantelli-2005",
         "etype": "escreveu"
       },
@@ -1770,6 +1866,24 @@
     {
       "data": {
         "id": "e25",
+        "source": "author:posner",
+        "target": "text:posner-2004",
+        "etype": "escreveu"
+      },
+      "classes": "escreveu"
+    },
+    {
+      "data": {
+        "id": "e26",
+        "source": "author:quarantelli",
+        "target": "text:perry-quarantelli-2005",
+        "etype": "escreveu"
+      },
+      "classes": "escreveu"
+    },
+    {
+      "data": {
+        "id": "e27",
         "source": "author:quarantelli",
         "target": "text:quarantelli-2005",
         "etype": "escreveu"
@@ -1778,7 +1892,7 @@
     },
     {
       "data": {
-        "id": "e26",
+        "id": "e28",
         "source": "author:scanlon",
         "target": "text:scanlon-1991",
         "etype": "escreveu"
@@ -1787,7 +1901,7 @@
     },
     {
       "data": {
-        "id": "e27",
+        "id": "e29",
         "source": "author:slovic",
         "target": "text:slovic-1987",
         "etype": "escreveu"
@@ -1796,7 +1910,25 @@
     },
     {
       "data": {
-        "id": "e28",
+        "id": "e30",
+        "source": "author:sun",
+        "target": "text:farber-chen-verchick-sun-2010",
+        "etype": "escreveu"
+      },
+      "classes": "escreveu"
+    },
+    {
+      "data": {
+        "id": "e31",
+        "source": "author:sunstein",
+        "target": "text:sunstein-2005",
+        "etype": "escreveu"
+      },
+      "classes": "escreveu"
+    },
+    {
+      "data": {
+        "id": "e32",
         "source": "author:taleb",
         "target": "text:taleb-2007",
         "etype": "escreveu"
@@ -1805,7 +1937,7 @@
     },
     {
       "data": {
-        "id": "e29",
+        "id": "e33",
         "source": "author:tversky",
         "target": "text:kahneman-tversky-1979",
         "etype": "escreveu"
@@ -1814,7 +1946,7 @@
     },
     {
       "data": {
-        "id": "e30",
+        "id": "e34",
         "source": "author:van-aaken",
         "target": "text:antonovic-vanaaken-2016",
         "etype": "escreveu"
@@ -1823,7 +1955,7 @@
     },
     {
       "data": {
-        "id": "e31",
+        "id": "e35",
         "source": "author:vaughan",
         "target": "text:vaughan-1996",
         "etype": "escreveu"
@@ -1832,7 +1964,16 @@
     },
     {
       "data": {
-        "id": "e32",
+        "id": "e36",
+        "source": "author:verchick",
+        "target": "text:farber-chen-verchick-sun-2010",
+        "etype": "escreveu"
+      },
+      "classes": "escreveu"
+    },
+    {
+      "data": {
+        "id": "e37",
         "source": "author:verchick",
         "target": "text:verchick-2010",
         "etype": "escreveu"
@@ -1841,7 +1982,7 @@
     },
     {
       "data": {
-        "id": "e33",
+        "id": "e38",
         "source": "author:verchick",
         "target": "text:verchick-2012",
         "etype": "escreveu"
@@ -1850,7 +1991,7 @@
     },
     {
       "data": {
-        "id": "e34",
+        "id": "e39",
         "source": "author:wibisana",
         "target": "text:faure-wibisana-2013",
         "etype": "escreveu"
@@ -1859,7 +2000,7 @@
     },
     {
       "data": {
-        "id": "e35",
+        "id": "e40",
         "source": "author:wisner",
         "target": "text:wisner-2004",
         "etype": "escreveu"
@@ -1868,7 +2009,7 @@
     },
     {
       "data": {
-        "id": "e36",
+        "id": "e41",
         "source": "concept:capacidade-institucional",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
@@ -1877,7 +2018,7 @@
     },
     {
       "data": {
-        "id": "e37",
+        "id": "e42",
         "source": "concept:capacidade-institucional",
         "target": "concept:disaster-vs-catastrophe",
         "etype": "relaciona_se_com"
@@ -1886,7 +2027,7 @@
     },
     {
       "data": {
-        "id": "e38",
+        "id": "e43",
         "source": "concept:capacidade-institucional",
         "target": "concept:legal-exceptionalism",
         "etype": "relaciona_se_com"
@@ -1895,7 +2036,7 @@
     },
     {
       "data": {
-        "id": "e39",
+        "id": "e44",
         "source": "concept:capacidade-institucional",
         "target": "concept:normal-accidents",
         "etype": "relaciona_se_com"
@@ -1904,7 +2045,7 @@
     },
     {
       "data": {
-        "id": "e40",
+        "id": "e45",
         "source": "concept:cisne-negro",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
@@ -1913,54 +2054,9 @@
     },
     {
       "data": {
-        "id": "e41",
-        "source": "concept:cisne-negro",
-        "target": "concept:incerteza-knightiana",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e42",
-        "source": "concept:cisne-negro",
-        "target": "concept:incerteza-knightiana",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e43",
-        "source": "concept:cisne-negro",
-        "target": "concept:normal-accidents",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e44",
-        "source": "concept:disaster-risk",
-        "target": "concept:dysfunction",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e45",
-        "source": "concept:disaster-risk",
-        "target": "concept:dysfunction",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
         "id": "e46",
-        "source": "concept:disaster-risk",
-        "target": "concept:legal-exceptionalism",
+        "source": "concept:cisne-negro",
+        "target": "concept:incerteza-knightiana",
         "etype": "relaciona_se_com"
       },
       "classes": "relaciona_se_com"
@@ -1968,8 +2064,8 @@
     {
       "data": {
         "id": "e47",
-        "source": "concept:disaster-risk",
-        "target": "concept:legal-exceptionalism",
+        "source": "concept:cisne-negro",
+        "target": "concept:incerteza-knightiana",
         "etype": "relaciona_se_com"
       },
       "classes": "relaciona_se_com"
@@ -1977,8 +2073,8 @@
     {
       "data": {
         "id": "e48",
-        "source": "concept:disaster-risk",
-        "target": "concept:porcao-juridica",
+        "source": "concept:cisne-negro",
+        "target": "concept:normal-accidents",
         "etype": "relaciona_se_com"
       },
       "classes": "relaciona_se_com"
@@ -1987,7 +2083,7 @@
       "data": {
         "id": "e49",
         "source": "concept:disaster-risk",
-        "target": "concept:risk-society",
+        "target": "concept:dysfunction",
         "etype": "relaciona_se_com"
       },
       "classes": "relaciona_se_com"
@@ -1995,6 +2091,51 @@
     {
       "data": {
         "id": "e50",
+        "source": "concept:disaster-risk",
+        "target": "concept:dysfunction",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e51",
+        "source": "concept:disaster-risk",
+        "target": "concept:legal-exceptionalism",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e52",
+        "source": "concept:disaster-risk",
+        "target": "concept:legal-exceptionalism",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e53",
+        "source": "concept:disaster-risk",
+        "target": "concept:porcao-juridica",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e54",
+        "source": "concept:disaster-risk",
+        "target": "concept:risk-society",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e55",
         "source": "concept:disaster-vs-catastrophe",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
@@ -2003,7 +2144,7 @@
     },
     {
       "data": {
-        "id": "e51",
+        "id": "e56",
         "source": "concept:disaster-vs-catastrophe",
         "target": "concept:dysfunction",
         "etype": "relaciona_se_com"
@@ -2012,7 +2153,7 @@
     },
     {
       "data": {
-        "id": "e52",
+        "id": "e57",
         "source": "concept:dysfunction",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
@@ -2021,7 +2162,7 @@
     },
     {
       "data": {
-        "id": "e53",
+        "id": "e58",
         "source": "concept:dysfunction",
         "target": "concept:legal-exceptionalism",
         "etype": "relaciona_se_com"
@@ -2030,7 +2171,7 @@
     },
     {
       "data": {
-        "id": "e54",
+        "id": "e59",
         "source": "concept:dysfunction",
         "target": "concept:normal-accidents",
         "etype": "relaciona_se_com"
@@ -2039,7 +2180,7 @@
     },
     {
       "data": {
-        "id": "e55",
+        "id": "e60",
         "source": "concept:incerteza-knightiana",
         "target": "concept:cisne-negro",
         "etype": "relaciona_se_com"
@@ -2048,7 +2189,7 @@
     },
     {
       "data": {
-        "id": "e56",
+        "id": "e61",
         "source": "concept:incerteza-knightiana",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
@@ -2057,7 +2198,7 @@
     },
     {
       "data": {
-        "id": "e57",
+        "id": "e62",
         "source": "concept:incerteza-knightiana",
         "target": "concept:risk-society",
         "etype": "relaciona_se_com"
@@ -2066,7 +2207,7 @@
     },
     {
       "data": {
-        "id": "e58",
+        "id": "e63",
         "source": "concept:lauta-2017-leitura",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
@@ -2075,7 +2216,7 @@
     },
     {
       "data": {
-        "id": "e59",
+        "id": "e64",
         "source": "concept:lauta-2017-leitura",
         "target": "concept:disaster-vs-catastrophe",
         "etype": "relaciona_se_com"
@@ -2084,53 +2225,8 @@
     },
     {
       "data": {
-        "id": "e60",
-        "source": "concept:lauta-2017-leitura",
-        "target": "concept:dysfunction",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e61",
-        "source": "concept:lauta-2017-leitura",
-        "target": "concept:legal-exceptionalism",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e62",
-        "source": "concept:legal-exceptionalism",
-        "target": "concept:disaster-risk",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e63",
-        "source": "concept:legal-exceptionalism",
-        "target": "concept:dysfunction",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e64",
-        "source": "concept:legal-exceptionalism",
-        "target": "concept:porcao-juridica",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
         "id": "e65",
-        "source": "concept:normal-accidents",
+        "source": "concept:lauta-2017-leitura",
         "target": "concept:dysfunction",
         "etype": "relaciona_se_com"
       },
@@ -2139,6 +2235,51 @@
     {
       "data": {
         "id": "e66",
+        "source": "concept:lauta-2017-leitura",
+        "target": "concept:legal-exceptionalism",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e67",
+        "source": "concept:legal-exceptionalism",
+        "target": "concept:disaster-risk",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e68",
+        "source": "concept:legal-exceptionalism",
+        "target": "concept:dysfunction",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e69",
+        "source": "concept:legal-exceptionalism",
+        "target": "concept:porcao-juridica",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e70",
+        "source": "concept:normal-accidents",
+        "target": "concept:dysfunction",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e71",
         "source": "concept:normalizacao-do-desvio",
         "target": "concept:capacidade-institucional",
         "etype": "relaciona_se_com"
@@ -2147,7 +2288,7 @@
     },
     {
       "data": {
-        "id": "e67",
+        "id": "e72",
         "source": "concept:normalizacao-do-desvio",
         "target": "concept:normal-accidents",
         "etype": "relaciona_se_com"
@@ -2156,7 +2297,7 @@
     },
     {
       "data": {
-        "id": "e68",
+        "id": "e73",
         "source": "concept:normalizacao-do-desvio",
         "target": "concept:segredo-estrutural",
         "etype": "relaciona_se_com"
@@ -2165,7 +2306,7 @@
     },
     {
       "data": {
-        "id": "e69",
+        "id": "e74",
         "source": "concept:percepcao-de-risco",
         "target": "concept:incerteza-knightiana",
         "etype": "relaciona_se_com"
@@ -2174,7 +2315,7 @@
     },
     {
       "data": {
-        "id": "e70",
+        "id": "e75",
         "source": "concept:percepcao-de-risco",
         "target": "concept:risk-society",
         "etype": "relaciona_se_com"
@@ -2183,7 +2324,7 @@
     },
     {
       "data": {
-        "id": "e71",
+        "id": "e76",
         "source": "concept:percepcao-de-risco",
         "target": "concept:teoria-do-prospecto",
         "etype": "relaciona_se_com"
@@ -2192,53 +2333,8 @@
     },
     {
       "data": {
-        "id": "e72",
-        "source": "concept:porcao-juridica",
-        "target": "concept:disaster-risk",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e73",
-        "source": "concept:porcao-juridica",
-        "target": "concept:dysfunction",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e74",
-        "source": "concept:porcao-juridica",
-        "target": "concept:lauta-2017-leitura",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e75",
-        "source": "concept:porcao-juridica",
-        "target": "concept:legal-exceptionalism",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e76",
-        "source": "concept:quarantelli-criterios-brasil",
-        "target": "concept:disaster-vs-catastrophe",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
         "id": "e77",
-        "source": "concept:risk-society",
+        "source": "concept:porcao-juridica",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
       },
@@ -2247,6 +2343,51 @@
     {
       "data": {
         "id": "e78",
+        "source": "concept:porcao-juridica",
+        "target": "concept:dysfunction",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e79",
+        "source": "concept:porcao-juridica",
+        "target": "concept:lauta-2017-leitura",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e80",
+        "source": "concept:porcao-juridica",
+        "target": "concept:legal-exceptionalism",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e81",
+        "source": "concept:quarantelli-criterios-brasil",
+        "target": "concept:disaster-vs-catastrophe",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e82",
+        "source": "concept:risk-society",
+        "target": "concept:disaster-risk",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e83",
         "source": "concept:risk-society",
         "target": "concept:legal-exceptionalism",
         "etype": "relaciona_se_com"
@@ -2255,53 +2396,8 @@
     },
     {
       "data": {
-        "id": "e79",
-        "source": "concept:risk-society",
-        "target": "concept:normal-accidents",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e80",
-        "source": "concept:s02-montagem-da-sessao",
-        "target": "concept:disaster-vs-catastrophe",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e81",
-        "source": "concept:s02-montagem-da-sessao",
-        "target": "concept:normal-accidents",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e82",
-        "source": "concept:s02-montagem-da-sessao",
-        "target": "concept:risk-society",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
-        "id": "e83",
-        "source": "concept:segredo-estrutural",
-        "target": "concept:capacidade-institucional",
-        "etype": "relaciona_se_com"
-      },
-      "classes": "relaciona_se_com"
-    },
-    {
-      "data": {
         "id": "e84",
-        "source": "concept:segredo-estrutural",
+        "source": "concept:risk-society",
         "target": "concept:normal-accidents",
         "etype": "relaciona_se_com"
       },
@@ -2310,6 +2406,51 @@
     {
       "data": {
         "id": "e85",
+        "source": "concept:s02-montagem-da-sessao",
+        "target": "concept:disaster-vs-catastrophe",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e86",
+        "source": "concept:s02-montagem-da-sessao",
+        "target": "concept:normal-accidents",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e87",
+        "source": "concept:s02-montagem-da-sessao",
+        "target": "concept:risk-society",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e88",
+        "source": "concept:segredo-estrutural",
+        "target": "concept:capacidade-institucional",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e89",
+        "source": "concept:segredo-estrutural",
+        "target": "concept:normal-accidents",
+        "etype": "relaciona_se_com"
+      },
+      "classes": "relaciona_se_com"
+    },
+    {
+      "data": {
+        "id": "e90",
         "source": "concept:segredo-estrutural",
         "target": "concept:normalizacao-do-desvio",
         "etype": "relaciona_se_com"
@@ -2318,7 +2459,7 @@
     },
     {
       "data": {
-        "id": "e86",
+        "id": "e91",
         "source": "concept:teoria-do-prospecto",
         "target": "concept:incerteza-knightiana",
         "etype": "relaciona_se_com"
@@ -2327,7 +2468,7 @@
     },
     {
       "data": {
-        "id": "e87",
+        "id": "e92",
         "source": "concept:teoria-do-prospecto",
         "target": "concept:percepcao-de-risco",
         "etype": "relaciona_se_com"
@@ -2336,7 +2477,7 @@
     },
     {
       "data": {
-        "id": "e88",
+        "id": "e93",
         "source": "concept:vulnerabilidade",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
@@ -2345,7 +2486,7 @@
     },
     {
       "data": {
-        "id": "e89",
+        "id": "e94",
         "source": "concept:vulnerabilidade",
         "target": "concept:disaster-risk",
         "etype": "relaciona_se_com"
@@ -2354,7 +2495,7 @@
     },
     {
       "data": {
-        "id": "e90",
+        "id": "e95",
         "source": "concept:vulnerabilidade",
         "target": "concept:risk-society",
         "etype": "relaciona_se_com"
@@ -2363,7 +2504,7 @@
     },
     {
       "data": {
-        "id": "e91",
+        "id": "e96",
         "source": "julgado:brumadinho-denuncia",
         "target": "concept:porcao-juridica",
         "etype": "instancia_conceito"
@@ -2372,7 +2513,7 @@
     },
     {
       "data": {
-        "id": "e92",
+        "id": "e97",
         "source": "julgado:cij-parecer-clima-2025",
         "target": "legislation:acordo-de-paris-2015",
         "etype": "cita"
@@ -2381,7 +2522,7 @@
     },
     {
       "data": {
-        "id": "e93",
+        "id": "e98",
         "source": "julgado:cij-parecer-clima-2025",
         "target": "legislation:protocolo-de-montreal-1987",
         "etype": "cita"
@@ -2390,7 +2531,7 @@
     },
     {
       "data": {
-        "id": "e94",
+        "id": "e99",
         "source": "julgado:cij-parecer-clima-2025",
         "target": "concept:disaster-risk",
         "etype": "instancia_conceito"
@@ -2399,7 +2540,7 @@
     },
     {
       "data": {
-        "id": "e95",
+        "id": "e100",
         "source": "julgado:cij-parecer-clima-2025",
         "target": "concept:porcao-juridica",
         "etype": "instancia_conceito"
@@ -2408,7 +2549,7 @@
     },
     {
       "data": {
-        "id": "e96",
+        "id": "e101",
         "source": "julgado:itlos-parecer-2024",
         "target": "legislation:acordo-de-paris-2015",
         "etype": "cita"
@@ -2417,7 +2558,7 @@
     },
     {
       "data": {
-        "id": "e97",
+        "id": "e102",
         "source": "julgado:itlos-parecer-2024",
         "target": "concept:disaster-risk",
         "etype": "instancia_conceito"
@@ -2426,53 +2567,8 @@
     },
     {
       "data": {
-        "id": "e98",
-        "source": "julgado:itlos-parecer-2024",
-        "target": "concept:porcao-juridica",
-        "etype": "instancia_conceito"
-      },
-      "classes": "instancia_conceito"
-    },
-    {
-      "data": {
-        "id": "e99",
-        "source": "julgado:klimaseniorinnen-2024",
-        "target": "concept:porcao-juridica",
-        "etype": "instancia_conceito"
-      },
-      "classes": "instancia_conceito"
-    },
-    {
-      "data": {
-        "id": "e100",
-        "source": "julgado:laquila-cassacao-2016",
-        "target": "concept:legal-exceptionalism",
-        "etype": "instancia_conceito"
-      },
-      "classes": "instancia_conceito"
-    },
-    {
-      "data": {
-        "id": "e101",
-        "source": "julgado:mariana-ewhc-2025",
-        "target": "concept:porcao-juridica",
-        "etype": "instancia_conceito"
-      },
-      "classes": "instancia_conceito"
-    },
-    {
-      "data": {
-        "id": "e102",
-        "source": "julgado:mariana-jf-2024",
-        "target": "concept:porcao-juridica",
-        "etype": "instancia_conceito"
-      },
-      "classes": "instancia_conceito"
-    },
-    {
-      "data": {
         "id": "e103",
-        "source": "julgado:mariana-stf-homologacao-2024",
+        "source": "julgado:itlos-parecer-2024",
         "target": "concept:porcao-juridica",
         "etype": "instancia_conceito"
       },
@@ -2481,7 +2577,7 @@
     {
       "data": {
         "id": "e104",
-        "source": "julgado:neubauer-2021",
+        "source": "julgado:klimaseniorinnen-2024",
         "target": "concept:porcao-juridica",
         "etype": "instancia_conceito"
       },
@@ -2490,6 +2586,51 @@
     {
       "data": {
         "id": "e105",
+        "source": "julgado:laquila-cassacao-2016",
+        "target": "concept:legal-exceptionalism",
+        "etype": "instancia_conceito"
+      },
+      "classes": "instancia_conceito"
+    },
+    {
+      "data": {
+        "id": "e106",
+        "source": "julgado:mariana-ewhc-2025",
+        "target": "concept:porcao-juridica",
+        "etype": "instancia_conceito"
+      },
+      "classes": "instancia_conceito"
+    },
+    {
+      "data": {
+        "id": "e107",
+        "source": "julgado:mariana-jf-2024",
+        "target": "concept:porcao-juridica",
+        "etype": "instancia_conceito"
+      },
+      "classes": "instancia_conceito"
+    },
+    {
+      "data": {
+        "id": "e108",
+        "source": "julgado:mariana-stf-homologacao-2024",
+        "target": "concept:porcao-juridica",
+        "etype": "instancia_conceito"
+      },
+      "classes": "instancia_conceito"
+    },
+    {
+      "data": {
+        "id": "e109",
+        "source": "julgado:neubauer-2021",
+        "target": "concept:porcao-juridica",
+        "etype": "instancia_conceito"
+      },
+      "classes": "instancia_conceito"
+    },
+    {
+      "data": {
+        "id": "e110",
         "source": "julgado:urgenda-2019",
         "target": "concept:porcao-juridica",
         "etype": "instancia_conceito"
@@ -2498,7 +2639,7 @@
     },
     {
       "data": {
-        "id": "e106",
+        "id": "e111",
         "source": "legislation:iso-31000-2009",
         "target": "concept:disaster-risk",
         "etype": "define_conceito"
@@ -2507,7 +2648,7 @@
     },
     {
       "data": {
-        "id": "e107",
+        "id": "e112",
         "source": "legislation:iso-guide-73-2009",
         "target": "concept:disaster-risk",
         "etype": "define_conceito"
@@ -2516,7 +2657,7 @@
     },
     {
       "data": {
-        "id": "e108",
+        "id": "e113",
         "source": "text:beck-1992",
         "target": "concept:legal-exceptionalism",
         "etype": "desenvolve_conceito"
@@ -2525,7 +2666,7 @@
     },
     {
       "data": {
-        "id": "e109",
+        "id": "e114",
         "source": "text:beck-1992",
         "target": "concept:risk-society",
         "etype": "desenvolve_conceito"
@@ -2534,7 +2675,7 @@
     },
     {
       "data": {
-        "id": "e110",
+        "id": "e115",
         "source": "text:beck-1992",
         "target": "session:s02",
         "etype": "pertence_a_sessao"
@@ -2543,7 +2684,7 @@
     },
     {
       "data": {
-        "id": "e111",
+        "id": "e116",
         "source": "text:beck-1992",
         "target": "session:s03",
         "etype": "pertence_a_sessao"
@@ -2552,7 +2693,16 @@
     },
     {
       "data": {
-        "id": "e112",
+        "id": "e117",
+        "source": "text:farber-chen-verchick-sun-2010",
+        "target": "session:s04",
+        "etype": "pertence_a_sessao"
+      },
+      "classes": "pertence_a_sessao"
+    },
+    {
+      "data": {
+        "id": "e118",
         "source": "text:kahneman-tversky-1979",
         "target": "concept:disaster-risk",
         "etype": "desenvolve_conceito"
@@ -2561,7 +2711,7 @@
     },
     {
       "data": {
-        "id": "e113",
+        "id": "e119",
         "source": "text:kahneman-tversky-1979",
         "target": "concept:incerteza-knightiana",
         "etype": "desenvolve_conceito"
@@ -2570,7 +2720,7 @@
     },
     {
       "data": {
-        "id": "e114",
+        "id": "e120",
         "source": "text:kahneman-tversky-1979",
         "target": "concept:teoria-do-prospecto",
         "etype": "desenvolve_conceito"
@@ -2579,7 +2729,7 @@
     },
     {
       "data": {
-        "id": "e115",
+        "id": "e121",
         "source": "text:kahneman-tversky-1979",
         "target": "session:s03",
         "etype": "pertence_a_sessao"
@@ -2588,7 +2738,7 @@
     },
     {
       "data": {
-        "id": "e116",
+        "id": "e122",
         "source": "text:knight-1921",
         "target": "concept:disaster-risk",
         "etype": "desenvolve_conceito"
@@ -2597,7 +2747,7 @@
     },
     {
       "data": {
-        "id": "e117",
+        "id": "e123",
         "source": "text:knight-1921",
         "target": "concept:incerteza-knightiana",
         "etype": "desenvolve_conceito"
@@ -2606,7 +2756,7 @@
     },
     {
       "data": {
-        "id": "e118",
+        "id": "e124",
         "source": "text:knight-1921",
         "target": "session:s03",
         "etype": "pertence_a_sessao"
@@ -2615,7 +2765,7 @@
     },
     {
       "data": {
-        "id": "e119",
+        "id": "e125",
         "source": "text:lauta-2017",
         "target": "legislation:acordo-de-paris-2015",
         "etype": "cita"
@@ -2624,7 +2774,7 @@
     },
     {
       "data": {
-        "id": "e120",
+        "id": "e126",
         "source": "text:lauta-2017",
         "target": "legislation:adis-abeba-2015",
         "etype": "cita"
@@ -2633,7 +2783,7 @@
     },
     {
       "data": {
-        "id": "e121",
+        "id": "e127",
         "source": "text:lauta-2017",
         "target": "legislation:agenda-2030",
         "etype": "cita"
@@ -2642,7 +2792,7 @@
     },
     {
       "data": {
-        "id": "e122",
+        "id": "e128",
         "source": "text:lauta-2017",
         "target": "legislation:habitat-iii-2016",
         "etype": "cita"
@@ -2651,7 +2801,7 @@
     },
     {
       "data": {
-        "id": "e123",
+        "id": "e129",
         "source": "text:lauta-2017",
         "target": "legislation:iso-31000-2009",
         "etype": "cita"
@@ -2660,7 +2810,7 @@
     },
     {
       "data": {
-        "id": "e124",
+        "id": "e130",
         "source": "text:lauta-2017",
         "target": "legislation:marco-de-sendai-2015",
         "etype": "cita"
@@ -2669,7 +2819,7 @@
     },
     {
       "data": {
-        "id": "e125",
+        "id": "e131",
         "source": "text:lauta-2017",
         "target": "text:alemanno-2011",
         "etype": "cita"
@@ -2678,7 +2828,7 @@
     },
     {
       "data": {
-        "id": "e126",
+        "id": "e132",
         "source": "text:lauta-2017",
         "target": "text:antonovic-vanaaken-2016",
         "etype": "cita"
@@ -2687,7 +2837,7 @@
     },
     {
       "data": {
-        "id": "e127",
+        "id": "e133",
         "source": "text:lauta-2017",
         "target": "text:binder-2016",
         "etype": "cita"
@@ -2696,7 +2846,7 @@
     },
     {
       "data": {
-        "id": "e128",
+        "id": "e134",
         "source": "text:lauta-2017",
         "target": "text:ejrr-laquila-2014",
         "etype": "cita"
@@ -2705,7 +2855,7 @@
     },
     {
       "data": {
-        "id": "e129",
+        "id": "e135",
         "source": "text:lauta-2017",
         "target": "text:farber-2010",
         "etype": "cita"
@@ -2714,7 +2864,7 @@
     },
     {
       "data": {
-        "id": "e130",
+        "id": "e136",
         "source": "text:lauta-2017",
         "target": "text:farber-faure-2010",
         "etype": "cita"
@@ -2723,7 +2873,7 @@
     },
     {
       "data": {
-        "id": "e131",
+        "id": "e137",
         "source": "text:lauta-2017",
         "target": "text:faure-wibisana-2013",
         "etype": "cita"
@@ -2732,7 +2882,7 @@
     },
     {
       "data": {
-        "id": "e132",
+        "id": "e138",
         "source": "text:lauta-2017",
         "target": "text:kuhn-1970",
         "etype": "cita"
@@ -2741,7 +2891,7 @@
     },
     {
       "data": {
-        "id": "e133",
+        "id": "e139",
         "source": "text:lauta-2017",
         "target": "text:lauta-2014",
         "etype": "cita"
@@ -2750,7 +2900,7 @@
     },
     {
       "data": {
-        "id": "e134",
+        "id": "e140",
         "source": "text:lauta-2017",
         "target": "text:lauta-faure-2016",
         "etype": "cita"
@@ -2759,7 +2909,7 @@
     },
     {
       "data": {
-        "id": "e135",
+        "id": "e141",
         "source": "text:lauta-2017",
         "target": "text:luhmann-2004",
         "etype": "cita"
@@ -2768,7 +2918,7 @@
     },
     {
       "data": {
-        "id": "e136",
+        "id": "e142",
         "source": "text:lauta-2017",
         "target": "text:lyster-2015",
         "etype": "cita"
@@ -2777,7 +2927,7 @@
     },
     {
       "data": {
-        "id": "e137",
+        "id": "e143",
         "source": "text:lauta-2017",
         "target": "text:posner-2004",
         "etype": "cita"
@@ -2786,7 +2936,7 @@
     },
     {
       "data": {
-        "id": "e138",
+        "id": "e144",
         "source": "text:lauta-2017",
         "target": "text:verchick-2010",
         "etype": "cita"
@@ -2795,7 +2945,7 @@
     },
     {
       "data": {
-        "id": "e139",
+        "id": "e145",
         "source": "text:lauta-2017",
         "target": "text:verchick-2012",
         "etype": "cita"
@@ -2804,7 +2954,7 @@
     },
     {
       "data": {
-        "id": "e140",
+        "id": "e146",
         "source": "text:lauta-2017",
         "target": "concept:disaster-risk",
         "etype": "desenvolve_conceito"
@@ -2813,7 +2963,7 @@
     },
     {
       "data": {
-        "id": "e141",
+        "id": "e147",
         "source": "text:lauta-2017",
         "target": "concept:dysfunction",
         "etype": "desenvolve_conceito"
@@ -2822,7 +2972,7 @@
     },
     {
       "data": {
-        "id": "e142",
+        "id": "e148",
         "source": "text:lauta-2017",
         "target": "concept:legal-exceptionalism",
         "etype": "desenvolve_conceito"
@@ -2831,7 +2981,7 @@
     },
     {
       "data": {
-        "id": "e143",
+        "id": "e149",
         "source": "text:lauta-2017",
         "target": "session:s02",
         "etype": "pertence_a_sessao"
@@ -2840,7 +2990,7 @@
     },
     {
       "data": {
-        "id": "e144",
+        "id": "e150",
         "source": "text:perrow-1984",
         "target": "concept:capacidade-institucional",
         "etype": "desenvolve_conceito"
@@ -2849,7 +2999,7 @@
     },
     {
       "data": {
-        "id": "e145",
+        "id": "e151",
         "source": "text:perrow-1984",
         "target": "concept:legal-exceptionalism",
         "etype": "desenvolve_conceito"
@@ -2858,7 +3008,7 @@
     },
     {
       "data": {
-        "id": "e146",
+        "id": "e152",
         "source": "text:perrow-1984",
         "target": "concept:normal-accidents",
         "etype": "desenvolve_conceito"
@@ -2867,7 +3017,7 @@
     },
     {
       "data": {
-        "id": "e147",
+        "id": "e153",
         "source": "text:perrow-1984",
         "target": "session:s02",
         "etype": "pertence_a_sessao"
@@ -2876,7 +3026,16 @@
     },
     {
       "data": {
-        "id": "e148",
+        "id": "e154",
+        "source": "text:posner-2004",
+        "target": "session:s04",
+        "etype": "pertence_a_sessao"
+      },
+      "classes": "pertence_a_sessao"
+    },
+    {
+      "data": {
+        "id": "e155",
         "source": "text:quarantelli-2005",
         "target": "text:perry-2006",
         "etype": "cita"
@@ -2885,7 +3044,7 @@
     },
     {
       "data": {
-        "id": "e149",
+        "id": "e156",
         "source": "text:quarantelli-2005",
         "target": "text:perry-quarantelli-2005",
         "etype": "cita"
@@ -2894,7 +3053,7 @@
     },
     {
       "data": {
-        "id": "e150",
+        "id": "e157",
         "source": "text:quarantelli-2005",
         "target": "text:scanlon-1991",
         "etype": "cita"
@@ -2903,7 +3062,7 @@
     },
     {
       "data": {
-        "id": "e151",
+        "id": "e158",
         "source": "text:quarantelli-2005",
         "target": "concept:disaster-vs-catastrophe",
         "etype": "desenvolve_conceito"
@@ -2912,7 +3071,7 @@
     },
     {
       "data": {
-        "id": "e152",
+        "id": "e159",
         "source": "text:quarantelli-2005",
         "target": "session:s02",
         "etype": "pertence_a_sessao"
@@ -2921,71 +3080,8 @@
     },
     {
       "data": {
-        "id": "e153",
-        "source": "text:slovic-1987",
-        "target": "concept:capacidade-institucional",
-        "etype": "desenvolve_conceito"
-      },
-      "classes": "desenvolve_conceito"
-    },
-    {
-      "data": {
-        "id": "e154",
-        "source": "text:slovic-1987",
-        "target": "concept:percepcao-de-risco",
-        "etype": "desenvolve_conceito"
-      },
-      "classes": "desenvolve_conceito"
-    },
-    {
-      "data": {
-        "id": "e155",
-        "source": "text:slovic-1987",
-        "target": "session:s03",
-        "etype": "pertence_a_sessao"
-      },
-      "classes": "pertence_a_sessao"
-    },
-    {
-      "data": {
-        "id": "e156",
-        "source": "text:taleb-2007",
-        "target": "concept:cisne-negro",
-        "etype": "desenvolve_conceito"
-      },
-      "classes": "desenvolve_conceito"
-    },
-    {
-      "data": {
-        "id": "e157",
-        "source": "text:taleb-2007",
-        "target": "concept:disaster-risk",
-        "etype": "desenvolve_conceito"
-      },
-      "classes": "desenvolve_conceito"
-    },
-    {
-      "data": {
-        "id": "e158",
-        "source": "text:taleb-2007",
-        "target": "concept:incerteza-knightiana",
-        "etype": "desenvolve_conceito"
-      },
-      "classes": "desenvolve_conceito"
-    },
-    {
-      "data": {
-        "id": "e159",
-        "source": "text:taleb-2007",
-        "target": "session:s03",
-        "etype": "pertence_a_sessao"
-      },
-      "classes": "pertence_a_sessao"
-    },
-    {
-      "data": {
         "id": "e160",
-        "source": "text:vaughan-1996",
+        "source": "text:slovic-1987",
         "target": "concept:capacidade-institucional",
         "etype": "desenvolve_conceito"
       },
@@ -2994,6 +3090,78 @@
     {
       "data": {
         "id": "e161",
+        "source": "text:slovic-1987",
+        "target": "concept:percepcao-de-risco",
+        "etype": "desenvolve_conceito"
+      },
+      "classes": "desenvolve_conceito"
+    },
+    {
+      "data": {
+        "id": "e162",
+        "source": "text:slovic-1987",
+        "target": "session:s03",
+        "etype": "pertence_a_sessao"
+      },
+      "classes": "pertence_a_sessao"
+    },
+    {
+      "data": {
+        "id": "e163",
+        "source": "text:sunstein-2005",
+        "target": "session:s04",
+        "etype": "pertence_a_sessao"
+      },
+      "classes": "pertence_a_sessao"
+    },
+    {
+      "data": {
+        "id": "e164",
+        "source": "text:taleb-2007",
+        "target": "concept:cisne-negro",
+        "etype": "desenvolve_conceito"
+      },
+      "classes": "desenvolve_conceito"
+    },
+    {
+      "data": {
+        "id": "e165",
+        "source": "text:taleb-2007",
+        "target": "concept:disaster-risk",
+        "etype": "desenvolve_conceito"
+      },
+      "classes": "desenvolve_conceito"
+    },
+    {
+      "data": {
+        "id": "e166",
+        "source": "text:taleb-2007",
+        "target": "concept:incerteza-knightiana",
+        "etype": "desenvolve_conceito"
+      },
+      "classes": "desenvolve_conceito"
+    },
+    {
+      "data": {
+        "id": "e167",
+        "source": "text:taleb-2007",
+        "target": "session:s03",
+        "etype": "pertence_a_sessao"
+      },
+      "classes": "pertence_a_sessao"
+    },
+    {
+      "data": {
+        "id": "e168",
+        "source": "text:vaughan-1996",
+        "target": "concept:capacidade-institucional",
+        "etype": "desenvolve_conceito"
+      },
+      "classes": "desenvolve_conceito"
+    },
+    {
+      "data": {
+        "id": "e169",
         "source": "text:vaughan-1996",
         "target": "concept:normal-accidents",
         "etype": "desenvolve_conceito"
@@ -3002,7 +3170,7 @@
     },
     {
       "data": {
-        "id": "e162",
+        "id": "e170",
         "source": "text:vaughan-1996",
         "target": "concept:normalizacao-do-desvio",
         "etype": "desenvolve_conceito"
@@ -3011,7 +3179,7 @@
     },
     {
       "data": {
-        "id": "e163",
+        "id": "e171",
         "source": "text:vaughan-1996",
         "target": "concept:segredo-estrutural",
         "etype": "desenvolve_conceito"
@@ -3020,7 +3188,7 @@
     },
     {
       "data": {
-        "id": "e164",
+        "id": "e172",
         "source": "text:vaughan-1996",
         "target": "session:s03",
         "etype": "pertence_a_sessao"
@@ -3029,7 +3197,7 @@
     },
     {
       "data": {
-        "id": "e165",
+        "id": "e173",
         "source": "text:wisner-2004",
         "target": "concept:capacidade-institucional",
         "etype": "desenvolve_conceito"
@@ -3038,7 +3206,7 @@
     },
     {
       "data": {
-        "id": "e166",
+        "id": "e174",
         "source": "text:wisner-2004",
         "target": "concept:disaster-risk",
         "etype": "desenvolve_conceito"
@@ -3047,7 +3215,7 @@
     },
     {
       "data": {
-        "id": "e167",
+        "id": "e175",
         "source": "text:wisner-2004",
         "target": "concept:vulnerabilidade",
         "etype": "desenvolve_conceito"
@@ -3056,7 +3224,7 @@
     },
     {
       "data": {
-        "id": "e168",
+        "id": "e176",
         "source": "text:wisner-2004",
         "target": "session:s03",
         "etype": "pertence_a_sessao"
@@ -3070,21 +3238,21 @@
       "label": "session",
       "color": "#f2cc8f",
       "size": 38,
-      "count": 2
+      "count": 3
     },
     {
       "cls": "author",
       "label": "author",
       "color": "#3d5a80",
       "size": 34,
-      "count": 28
+      "count": 31
     },
     {
       "cls": "text",
       "label": "text",
       "color": "#e07a5f",
       "size": 46,
-      "count": 28
+      "count": 30
     },
     {
       "cls": "legislation",
