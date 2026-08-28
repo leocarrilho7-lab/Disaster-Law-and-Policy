@@ -222,8 +222,10 @@ fonte nomeia: este nó nasceu da nota 9 de <a href="../textos/lauta-2017.html">D
 nasceu da lista de leitura da S04, que cita "Aspen". Título, edição e ano são os mesmos, e a
 comparação foi feita em 28/08/2026.</p>
 <p>A citação do Lauta foi REAPONTADA para o nó que tem lastro, onde cinco excertos estão localizados no
-espelho e conferidos contra a folha. Este nó fica como marca da duplicação, sem aresta de entrada, e
-por isso a <code>FF-15</code> passa a reportar um órfão: consequência declarada, e não perda.</p>
+espelho e conferidos contra a folha. Este nó fica como marca da duplicação, e perdeu a única aresta
+de ENTRADA que tinha. Ainda assim a <code>FF-15</code> segue em zero órfãos, medido depois da mudança: ela conta
+como ligado o nó que aparece em qualquer ponta de aresta, e este continua apontando para o manual e
+para <a href="../textos/lauta-2017.html">Dysfunction and Disruption: Disaster Risks and the Law</a>. Eu previra que subiria para um, e a medição me desmentiu.</p>
 <p>Apagar o nó depende da mão do pesquisador, porque o hook de remoção reserva exclusão de arquivo do
 projeto para quem responde pelo acervo.</p></div>
 <div data-lang="en"><p>FARBER, Daniel A. et al. <em>Disaster Law and Policy</em>. 2. ed. New York: Wolters Kluwer Law &amp; Business, 2010.</p>
@@ -234,8 +236,11 @@ records is only the publisher each source names: this node came from note 9 of
 list, which cites "Aspen". Title, edition and year are the same, and the comparison was made on
 28/08/2026.</p>
 <p>Lauta's citation was REPOINTED to the node that carries evidence, where five excerpts are located in
-the mirror and checked against the sheet. This node remains as a marker of the duplication, with no
-inbound edge, and for that reason <code>FF-15</code> now reports one orphan: a declared consequence, not a loss.</p>
+the mirror and checked against the sheet. This node remains as a marker of the duplication, and it
+lost the only INBOUND edge it had. Even so <code>FF-15</code> still reports zero orphans, measured after the
+change: it counts as linked any node appearing at either end of an edge, and this one still points to
+the manual and to <a href="../textos/lauta-2017.html">Lauta 2017</a>. I had predicted it would rise to one, and the
+measurement proved me wrong.</p>
 <p>Deleting the node is the researcher's to do by hand, because the removal hook reserves deletion of a
 project file for whoever answers for the collection.</p></div>
 
