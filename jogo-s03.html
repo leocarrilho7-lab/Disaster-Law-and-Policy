@@ -646,7 +646,8 @@ function escoarFila() {
   // continua sendo JSON, e quem o le e o `doPost`, que faz o parse.
   fetch(COLETA.url, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'},
                      body: JSON.stringify(linha)})
-    .then(() => {
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
       const atual = lerFila();
       if (atual.length && atual[0].em === linha.em) { atual.shift(); gravarFila(atual); }
       escoando = false;

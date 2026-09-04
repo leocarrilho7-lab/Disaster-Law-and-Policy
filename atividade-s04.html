@@ -424,7 +424,8 @@ function escoar() {
   const linha = f[0];
   fetch(COLETA_URL, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'},
                      body: JSON.stringify(linha)})
-    .then(() => {
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
       const a = lerFila();
       if (a.length && a[0].em === linha.em && a[0].evento === linha.evento
           && a[0].parte === linha.parte) { a.shift(); gravarFila(a); }
