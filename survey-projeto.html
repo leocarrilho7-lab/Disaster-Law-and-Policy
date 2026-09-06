@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating the initiatives of your group</title>
+<style>
+:root { --tinta:#2E3C4E; --suave:#4A5A68; --quente:#C3643D; --papel:#FAF8F3; --linha:#D8D2C6; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--papel); color:var(--suave);
+       font:16px/1.6 Georgia, 'Times New Roman', serif; }
+section { max-width:44rem; margin:0 auto; padding:1.4rem 1.2rem; border-bottom:1px solid var(--linha); }
+h1 { font-size:1.6rem; color:var(--tinta); margin:.2em 0 .6em; }
+h2 { font-size:1.2rem; color:var(--tinta); margin:.2em 0 .8em; }
+p { margin:.5em 0 .8em; }
+.nota { font-size:.9rem; color:var(--quente); }
+.q { display:block; font-weight:bold; color:var(--tinta); margin:1.1em 0 .4em; }
+textarea, input, select { display:block; width:100%; margin-top:.4em; padding:.5em; font:inherit;
+           border:1px solid var(--linha); border-radius:4px; background:#fff; }
+.ops { display:flex; flex-direction:column; gap:.3em; }
+.op { display:block; padding:.45em .6em; border:1px solid var(--linha); border-radius:5px;
+      background:#fff; cursor:pointer; font-weight:normal; }
+.op input { display:inline; width:auto; margin:0 .4em 0 0; }
+.consent { margin:1em 0; padding:.8em 1em; border-left:4px solid var(--quente); background:#fff; }
+button { margin-top:1em; padding:.7em 1.6em; font:inherit; font-weight:bold; color:#fff;
+         background:var(--tinta); border:0; border-radius:5px; cursor:pointer; }
+button:disabled { background:var(--linha); }
+button.sec { background:#fff; color:var(--tinta); border:1px solid var(--linha); margin-left:.6em; }
+</style>
+</head>
+<body>
+<section id="notice"><h1>Rating the initiatives of your group</h1><div class="consent"><p>This form is part of the course work of Disaster Law and Policy, FGV Direito Rio. It is anonymous: it records your group code, not your name. The professor uses the ratings to rank the initiatives and shows the class only aggregated results. The extra point is registered through E-Class, not through this form. These ratings are course data, not research data; any use in research would require prior approval by FGV&#x27;s ethics committee (CEPH). By continuing you confirm that you have read this.</p></div><button type="button" id="agree">I have read this. Continue.</button></section><div id="group" hidden><section><h2>Your group and the initiative</h2><label class="q">Group code (five letters, the same as on the initiative sheet)<input name="group" maxlength="5" pattern="[A-Z]{5}" style="text-transform:uppercase"></label><label class="q">How many members does your group have?<select name="members"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select></label><label class="q">Initiative number on the sheet<select name="n"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></label><label class="q">Initiative title<input id="title" maxlength="80"></label></section></div><div id="questions" hidden><section><h2>Your rating, alone</h2><p class="q">I would personally give at least ten hours between 3 November and 4 December to carry this out.</p><div class="ops"><label class="op"><input type="radio" name="q1" value="1"> 1 strongly disagree</label><label class="op"><input type="radio" name="q1" value="2"> 2</label><label class="op"><input type="radio" name="q1" value="3"> 3</label><label class="op"><input type="radio" name="q1" value="4"> 4</label><label class="op"><input type="radio" name="q1" value="5"> 5 strongly agree</label></div><p class="q">I would take charge of contacting the partner myself.</p><div class="ops"><label class="op"><input type="radio" name="q2" value="1"> 1 strongly disagree</label><label class="op"><input type="radio" name="q2" value="2"> 2</label><label class="op"><input type="radio" name="q2" value="3"> 3</label><label class="op"><input type="radio" name="q2" value="4"> 4</label><label class="op"><input type="radio" name="q2" value="5"> 5 strongly agree</label></div><p class="q">After this action, the group we named would be better prepared for the hazard we named.</p><div class="ops"><label class="op"><input type="radio" name="q3" value="1"> 1 strongly disagree</label><label class="op"><input type="radio" name="q3" value="2"> 2</label><label class="op"><input type="radio" name="q3" value="3"> 3</label><label class="op"><input type="radio" name="q3" value="4"> 4</label><label class="op"><input type="radio" name="q3" value="5"> 5 strongly agree</label></div><p class="q">We have, or can get within two weeks, a contact who can confirm this group needs it.</p><div class="ops"><label class="op"><input type="radio" name="q4" value="1"> 1 strongly disagree</label><label class="op"><input type="radio" name="q4" value="2"> 2</label><label class="op"><input type="radio" name="q4" value="3"> 3</label><label class="op"><input type="radio" name="q4" value="4"> 4</label><label class="op"><input type="radio" name="q4" value="5"> 5 strongly agree</label></div><p class="q">Repeated every year, this action would reduce the harm of the next disaster for this group.</p><div class="ops"><label class="op"><input type="radio" name="q5" value="1"> 1 strongly disagree</label><label class="op"><input type="radio" name="q5" value="2"> 2</label><label class="op"><input type="radio" name="q5" value="3"> 3</label><label class="op"><input type="radio" name="q5" value="4"> 4</label><label class="op"><input type="radio" name="q5" value="5"> 5 strongly agree</label></div><p class="q">This can be done by 4 December with the time, money and access we actually have.</p><div class="ops"><label class="op"><input type="radio" name="q6" value="1"> 1 strongly disagree</label><label class="op"><input type="radio" name="q6" value="2"> 2</label><label class="op"><input type="radio" name="q6" value="3"> 3</label><label class="op"><input type="radio" name="q6" value="4"> 4</label><label class="op"><input type="radio" name="q6" value="5"> 5 strongly agree</label></div><p class="q">With small changes, I could run this in my home community or country.</p><div class="ops"><label class="op"><input type="radio" name="q7" value="1"> 1 strongly disagree</label><label class="op"><input type="radio" name="q7" value="2"> 2</label><label class="op"><input type="radio" name="q7" value="3"> 3</label><label class="op"><input type="radio" name="q7" value="4"> 4</label><label class="op"><input type="radio" name="q7" value="5"> 5 strongly agree</label></div><p class="q">This action incorporates disaster risk knowledge into education in the sense of Priority 1, paragraph 24(l).</p><div class="ops"><label class="op"><input type="radio" name="q8" value="1"> 1 strongly disagree</label><label class="op"><input type="radio" name="q8" value="2"> 2</label><label class="op"><input type="radio" name="q8" value="3"> 3</label><label class="op"><input type="radio" name="q8" value="4"> 4</label><label class="op"><input type="radio" name="q8" value="5"> 5 strongly agree</label></div><p class="q">Which stage does it mainly serve?</p><div class="ops"><label class="op"><input type="radio" name="q9" value="prevention"> prevention</label><label class="op"><input type="radio" name="q9" value="mitigation"> mitigation</label><label class="op"><input type="radio" name="q9" value="preparedness"> preparedness</label><label class="op"><input type="radio" name="q9" value="response"> response</label><label class="op"><input type="radio" name="q9" value="recovery"> recovery</label></div><p class="q">Would it collect anything from community members (interviews, questionnaires, recordings, photographs)?</p><div class="ops"><label class="op"><input type="radio" name="q10a" value="yes"> yes</label><label class="op"><input type="radio" name="q10a" value="no"> no</label><label class="op"><input type="radio" name="q10a" value="not sure"> not sure</label></div><p class="q">Is everyone the action reaches an adult who can consent for themselves, outside the excluded groups listed in the call?</p><div class="ops"><label class="op"><input type="radio" name="q10b" value="yes"> yes</label><label class="op"><input type="radio" name="q10b" value="no"> no</label><label class="op"><input type="radio" name="q10b" value="not sure"> not sure</label></div><label class="q">The one thing most likely to make this fail:<textarea id="q11" rows="2"></textarea></label><button type="button" id="another">Submit and rate another initiative</button> <button type="button" id="finish" class="sec">Submit and finish</button><p id="sent" hidden>Sent. Thank you.</p><p id="pending" class="nota"></p></section></div><script>
+const CFG = {sessao: "projeto-2026", coleta: "https://script.google.com/macros/s/AKfycbyghyBvwBXRZ722IHeJLMqQwart6Px1kXJwbcetJd5fr-6RK3sgZNIb424DReGv7QgU/exec"};
+const SLOT = 'dlp-projeto-survey';
+const Armazem = (function () {
+  let mem = {}, vivo = true;
+  try { localStorage.setItem('_p', '1'); localStorage.removeItem('_p'); } catch (e) { vivo = false; }
+  return {
+    ler: k => { try { return vivo ? localStorage.getItem(k) : mem[k]; } catch (e) { return mem[k]; } },
+    gravar: (k, v) => { try { if (vivo) localStorage.setItem(k, v); else mem[k] = v; }
+                        catch (e) { mem[k] = v; } }
+  };
+})();
+function lista() { try { return JSON.parse(Armazem.ler(SLOT) || '[]'); } catch (e) { return []; } }
+function gravarLista(f) { Armazem.gravar(SLOT, JSON.stringify(f)); }
+function marcado(nome) {
+  const el = document.querySelector('input[name="' + nome + '"]:checked');
+  return el ? el.value : '';
+}
+function valor(sel) { const el = document.querySelector(sel); return el ? String(el.value).trim() : ''; }
+function coletar() {
+  
+  const d = { sessao: CFG.sessao, em: new Date().toISOString(), evento: 'avaliacao',
+              protocolo: Math.random().toString(36).slice(2, 8),
+              token: valor('input[name="group"]').toUpperCase(), members: valor('select[name="members"]'),
+              n: valor('select[name="n"]'), title: valor('#title') };
+  ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10a', 'q10b'].forEach(function (k) { d[k] = marcado(k); });
+  d.q11 = valor('#q11');
+  return d;
+}
+function completo(d) {
+  if (!/^[A-Z]{5}$/.test(d.token)) { return 'Group code: five letters.'; }
+  for (const k of ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10a', 'q10b']) {
+    if (!d[k]) { return 'Please answer every item before sending.'; }
+  }
+  return '';
+}
+function escoar() {
+  const f = lista();
+  if (!f.length || !CFG.coleta) { pintar(); return; }
+  const linha = f[0];
+  
+  fetch(CFG.coleta, { method: 'POST',
+                      headers: { 'Content-Type': 'text' + '/' + 'plain;charset=utf-8' },
+                      body: JSON.stringify(linha) })
+    .then(function (r) {
+      if (!r.ok) { throw new Error('HTTP ' + r.status); }
+      const atual = lista();
+      if (atual.length && atual[0].em === linha.em) { atual.shift(); gravarLista(atual); }
+      pintar();
+      if (lista().length) { escoar(); }
+    })
+    .catch(function () { pintar(); });
+}
+function pintar() {
+  const el = document.getElementById('pending');
+  if (!el) { return; }
+  if (!CFG.coleta) { el.textContent = 'No collection point is configured; nothing was sent.'; return; }
+  const n = lista().length;
+  el.textContent = n ? (n + ' rating(s) still on their way. Keep this page open.') : '';
+}
+function enviar(fim) {
+  const d = coletar();
+  const falta = completo(d);
+  if (falta) { document.getElementById('pending').textContent = falta; return; }
+  const f = lista(); f.push(d); gravarLista(f);
+  document.querySelectorAll('#questions input:checked').forEach(function (i) { i.checked = false; });
+  document.getElementById('q11').value = '';
+  if (fim) {
+    document.getElementById('questions').hidden = true;
+    document.getElementById('group').hidden = true;
+    document.getElementById('sent').hidden = false;
+  } else {
+    const sel = document.querySelector('select[name="n"]');
+    if (sel.selectedIndex < sel.options.length - 1) { sel.selectedIndex += 1; }
+    document.getElementById('title').value = '';
+    window.scrollTo(0, 0);
+  }
+  escoar();
+}
+document.getElementById('agree').addEventListener('click', function () {
+  document.getElementById('agree').hidden = true;
+  document.getElementById('group').hidden = false;
+  document.getElementById('questions').hidden = false;
+});
+document.getElementById('another').addEventListener('click', function () { enviar(false); });
+document.getElementById('finish').addEventListener('click', function () { enviar(true); });
+pintar();
+escoar();
+</script>
+</body>
+</html>
