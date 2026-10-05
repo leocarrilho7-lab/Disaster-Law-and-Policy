@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choosing the class initiative</title>
+<style>
+:root { --tinta:#2E3C4E; --suave:#4A5A68; --quente:#C3643D; --papel:#FAF8F3; --linha:#D8D2C6; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--papel); color:var(--suave); font:16px/1.6 Georgia, 'Times New Roman', serif; }
+section { max-width:44rem; margin:0 auto; padding:1.4rem 1.2rem; border-bottom:1px solid var(--linha); }
+h1 { font-size:1.6rem; color:var(--tinta); margin:.2em 0 .6em; }
+.nota { font-size:.9rem; color:var(--quente); }
+.op { display:block; padding:.7em .8em; margin:.6em 0; border:1px solid var(--linha); border-radius:6px; background:#fff; cursor:pointer; }
+.op input { margin-right:.5em; }
+.op b { color:var(--tinta); }
+.op small { display:block; margin-top:.3em; }
+.consent { margin:1em 0; padding:.8em 1em; border-left:4px solid var(--quente); background:#fff; }
+button { margin-top:1em; padding:.7em 1.6em; font:inherit; font-weight:bold; color:#fff; background:var(--tinta); border:0; border-radius:5px; cursor:pointer; }
+</style>
+</head>
+<body>
+<section><h1>Choosing the class initiative</h1><div class="consent"><p>This vote is a course activity. It records only the proposal you choose, without your name or group, and will not be used as research data. One vote per person.</p></div></section>
+<section id="cedula"><label class="op"><input type="radio" name="escolha" value="ESPIT-5"><b>University Emergency Tabletop Exercise</b> (ESPIT)<small>A tabletop simulation for students or staff at a university in Rio: heavy rain floods the area at 4 p.m. and public transport is disrupted. Participants choose actions with prepared cards and compare them with the university's procedures and official guidance.</small></label><label class="op"><input type="radio" name="escolha" value="RIRSK-5"><b>Know your self-rescue zone: dam safety for community leaders</b> (RIRSK)<small>A 90-minute civic session, in person or online, for community leaders and civil defence volunteers in a Rio de Janeiro state municipality downstream of a dam: what the self-rescue zone is, how to read the public emergency plan, and residents' rights to information and drills.</small></label><label class="op"><input type="radio" name="escolha" value="DISASTERCLASS-1"><b>Heatwave Preparedness for Community Residents</b> (DISASTERCLASS)<small>A 60 to 90-minute session for adult residents of a Rio de Janeiro community: heat risk, prevention, official heat warnings and reliable information, with a short guide left with the partner.</small></label><label class="op"><input type="radio" name="escolha" value="MARIO-2"><b>Know your city's risk plan: civic session for local leaders</b> (MARIO)<small>A two-hour session for leaders of residents' associations in flood- and landslide-prone areas of Rio: what Law 12,608/2012 requires of the municipality, how to read the contingency plan, and how to file an access-to-information request, with a request template.</small></label><label class="op"><input type="radio" name="escolha" value="TFRJK-1"><b>Early Warning Training for Community Leaders</b> (TFRJK)<small>A two-hour workshop for association leaders and adult residents of Morro da Formiga (Rio), exposed to landslides: reading instability signs, the evacuation protocol and passing on alerts.</small></label><button type="button" id="votar">Vote</button><p id="invalid" class="nota"></p></section>
+<section aria-live="polite"><p id="ja" hidden>You have already voted on this device. Thank you.</p><p id="sent" hidden>Vote received. Thank you.</p><p id="pending" class="nota"></p><button type="button" id="retry" hidden>Try again</button></section>
+<script>
+const CFG = {"sessao": "voto-2026", "coleta": "https://script.google.com/macros/s/AKfycbyghyBvwBXRZ722IHeJLMqQwart6Px1kXJwbcetJd5fr-6RK3sgZNIb424DReGv7QgU/exec", "ids": ["ESPIT-5", "RIRSK-5", "DISASTERCLASS-1", "MARIO-2", "TFRJK-1"]};
+const SLOT = 'dlp-voto-2026', VOTOU = 'dlp-voto-2026-votou';
+const Armazem = (function () {
+  let mem = {}, vivo = true;
+  try { localStorage.setItem('_p', '1'); localStorage.removeItem('_p'); } catch (e) { vivo = false; }
+  return {
+    ler: k => { try { return vivo ? localStorage.getItem(k) : mem[k]; } catch (e) { return mem[k]; } },
+    gravar: (k, v) => { try { if (vivo) localStorage.setItem(k, v); else mem[k] = v; } catch (e) { mem[k] = v; } }
+  };
+})();
+function lista() { try { return JSON.parse(Armazem.ler(SLOT) || '[]'); } catch (e) { return []; } }
+function gravarLista(f) { Armazem.gravar(SLOT, JSON.stringify(f)); }
+let escoando = false, confirmou = false;
+async function escoar() {
+  if (escoando) { return; }
+  escoando = true; pintar();
+  try {
+    while (lista().length && CFG.coleta) {
+      const linha = lista()[0];
+      const r = await fetch(CFG.coleta, { method: 'POST',
+        headers: { 'Content-Type': 'text' + '/' + 'plain;charset=utf-8' }, body: JSON.stringify(linha) });
+      if (!r.ok) { throw new Error('HTTP ' + r.status); }
+      const body = await r.json();
+      if (!body || body.ok !== true) { throw new Error('Receipt not confirmed'); }
+      const atual = lista();
+      if (!atual.length || JSON.stringify(atual[0]) !== JSON.stringify(linha)) { break; }
+      atual.shift(); gravarLista(atual); confirmou = true;
+    }
+  } catch (e) {
+  } finally { escoando = false; pintar(); }
+}
+function pintar() {
+  const n = lista().length, votou = !!Armazem.ler(VOTOU);
+  document.getElementById('cedula').hidden = votou;
+  document.getElementById('ja').hidden = !votou || n > 0 || confirmou;
+  document.getElementById('sent').hidden = !(confirmou && !n && CFG.coleta);
+  document.getElementById('retry').hidden = !n || !CFG.coleta || escoando;
+  const el = document.getElementById('pending');
+  if (!CFG.coleta) { el.textContent = 'No collection point is configured; nothing was sent.'; return; }
+  el.textContent = n ? 'Your vote is pending; receipt not confirmed. Keep this page open and retry.' : '';
+}
+document.getElementById('votar').addEventListener('click', function () {
+  const el = document.querySelector('input[name="escolha"]:checked');
+  const aviso = document.getElementById('invalid');
+  if (!el || !CFG.ids.includes(el.value)) { aviso.textContent = 'Choose one proposal.'; return; }
+  aviso.textContent = '';
+  if (Armazem.ler(VOTOU)) { pintar(); return; }
+  const f = lista();
+  f.push({ sessao: CFG.sessao, em: new Date().toISOString(), evento: 'voto', token: 'VOTO',
+           protocolo: Math.random().toString(36).slice(2, 8), escolha: el.value });
+  gravarLista(f); Armazem.gravar(VOTOU, '1'); confirmou = false;
+  pintar(); escoar();
+});
+document.getElementById('retry').addEventListener('click', escoar);
+pintar();
+escoar();
+</script>
+</body>
+</html>
